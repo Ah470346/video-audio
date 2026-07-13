@@ -1,0 +1,17 @@
+#!/bin/sh
+# Auto-refresh the codebase-memory-mcp graph before each commit.
+# Requires codebase-memory-mcp on PATH; silently skips if missing.
+BIN="codebase-memory-mcp"
+command -v "$BIN" >/dev/null 2>&1 || exit 0
+
+# Get absolute path of repository root
+REPO_ROOT=$(git rev-parse --show-toplevel)
+
+"$BIN" cli index_repository "{\"repo_path\": \"$REPO_ROOT\", \"mode\": \"fast\", \"persistence\": true}" >/dev/null 2>&1
+
+if ! git diff --quiet -- .codebase-memory 2>/dev/null || \
+   [ -n "$(git status --porcelain -- .codebase-memory 2>/dev/null)" ]; then
+  git add .codebase-memory
+fi
+
+exit 0
