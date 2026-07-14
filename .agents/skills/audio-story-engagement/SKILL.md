@@ -16,8 +16,8 @@ Mọi yêu cầu tạo truyện phải thành một kịch bản audio được 
 
 **1. Xưng hô & bối cảnh:** kể ở **ngôi thứ nhất**. Không dùng địa danh thật — địa điểm gọi chung: *nhà tôi, làng tôi, công ty tôi, thành phố tôi đang sống...*, không "Hà Nội", "Sài Gòn". Tên riêng thì phân tuyến theo mức thân thuộc:
 - **Người thân/thân thuộc → gọi bằng quan hệ, KHÔNG tên riêng:** *chồng tôi, mẹ tôi, em gái tôi, bà ngoại tôi, bạn thân tôi*. Cụm quan hệ mang sẵn khoảng cách tình cảm nên người nghe tự lắp mẹ mình, em mình vào chỗ đó (mirror neurons + oxytocin); một cái tên lạ ở đó chỉ chen vào giữa.
-- **Người lạ → được đặt tên, nhưng phải là tên Hán-Việt** (kiểu Trung Quốc): *Trần Trạch, Bạch Tiểu Tiểu, Lâm Xung, Đường Bá Chi*. Không tên thuần Việt, không tên Tây — chúng ghim truyện vào một bối cảnh cụ thể và phá giọng. Tối đa ~4–5 tên cho một truyện ngắn; tai không giữ nổi hơn.
-- **Xen kẽ 3 lớp gọi, đừng dán chặt một nhãn:** tên riêng ↔ đại từ (*anh ta, cô ấy, gã, hắn, người đàn ông đó*) ↔ danh xưng kiểu Trung (*Trần thiếu, Đường phu nhân, Hà lão gia / Hà lão, Bạch tiểu thư, Lâm quản gia, Trạch ca*). "Trần Trạch bước vào. Trần Trạch ngồi xuống. Trần Trạch nhìn tôi" nghe như biên bản; tiếng Việt còn cho phép **bỏ hẳn chủ ngữ** — dùng cả lựa chọn đó.
+- **Người lạ → được đặt tên, nhưng phải là tên Hán-Việt** (kiểu Trung Quốc): *Trần Trạch, Tô Vân Thư, Lâm Xung, Đường Bá Chi*. Không tên thuần Việt, không tên Tây — chúng ghim truyện vào một bối cảnh cụ thể và phá giọng. **Các tên trong tài liệu chỉ là ví dụ cấu trúc/khẩu vị, KHÔNG phải danh sách để bê nguyên vào truyện; mỗi truyện phải tự chọn hoặc tự ghép tên mới phù hợp vai nhân vật.** Tối đa ~4–5 tên cho một truyện ngắn; tai không giữ nổi hơn.
+- **Xen kẽ 3 lớp gọi, đừng dán chặt một nhãn:** tên riêng ↔ đại từ (*anh ta, cô ấy, gã, hắn, người đàn ông đó*) ↔ danh xưng kiểu Trung (*Trần thiếu, Đường phu nhân, Hà lão gia / Hà lão, Tô tiểu thư, Lâm quản gia, Trạch ca*). "Trần Trạch bước vào. Trần Trạch ngồi xuống. Trần Trạch nhìn tôi" nghe như biên bản; tiếng Việt còn cho phép **bỏ hẳn chủ ngữ** — dùng cả lựa chọn đó.
 - **Chọn nhãn theo góc nhìn người kể, không phải để tránh lặp.** Sợ gã đó → *hắn*; cần nhờ vả → *Trần thiếu*; vừa bị phản bội → *Trần Trạch*, trống không, lạnh tanh. Đổi cách gọi khi quan hệ đổi nhiệt. Khi cảnh có hai người cùng giới, **rõ ràng thắng đa dạng**: gọi tên, kể cả lần thứ ba.
 - → Bảng danh xưng đầy đủ, cách dựng tên, quy tắc xen kẽ, ví dụ đối chiếu: [references/xung-ho-dat-ten.md](references/xung-ho-dat-ten.md).
 
@@ -39,13 +39,16 @@ KHÔNG viết ngay. Thực hiện tuần tự:
 
 **Bước 1 — Câu Hỏi Trung Tâm.** Chốt MỘT câu hỏi lớn xuyên suốt mà người nghe khao khát biết đáp án — "món nợ" treo từ phút đầu, chỉ trả đầy đủ ở phút cuối. Phải chứa **hậu quả cá nhân** (ai đó sẽ mất gì), không chỉ là thông tin.
 
-**Bước 2 — Bản Đồ Dopamine.** Phác nhanh trước khi viết: **chọn kiểu mở đầu** (chốt một kiểu từ menu ở [references/mo-dau.md](references/mo-dau.md) theo thể loại + tiền đề — mỗi truyện đều phải qua bước chọn này, đừng mặc định flash-forward); 3–7 vòng lặp mở (gieo lúc nào, đóng lúc nào); vị trí các cú twist (tránh dồn hết vào cuối); chu kỳ hy vọng↔tuyệt vọng (≥3 lần đảo chiều); điểm đặt "Aha!" + foreshadow tương ứng.
+**Bước 2 — CHỌN KIỂU MỞ ĐẦU (CỔNG CHẶN thứ hai, làm trước khi viết bất kỳ đoạn nào của truyện thật).** Đoạn mở là phần quyết định người nghe ở lại hay tắt — KHÔNG được tự chọn ngầm rồi viết luôn. Thực hiện: (1) tra bảng chọn theo thể loại/tiền đề ở [references/mo-dau.md](references/mo-dau.md) (mục 4–5) để khoanh vùng 3–4 kiểu phù hợp nhất trong menu 10 kiểu; (2) viết nháp **3–4 đoạn mở ngắn** (mỗi đoạn 2–4 câu, đủ câu mồi + neo tối thiểu — xem cấu trúc 3 nhịp ở mo-dau.md mục 2), mỗi đoạn dùng một kỹ thuật khác nhau và **ghi rõ tên kỹ thuật đang áp dụng** trước mỗi đoạn (ví dụ: "1. Flash-forward hậu quả — ..."); (3) trình danh sách đánh số và **DỪNG chờ người dùng chọn** (hoặc yêu cầu chỉnh/trộn). Chỉ khi người dùng chốt mới viết toàn bộ kịch bản, mở rộng đúng đoạn đã chọn (được phép biên tập câu chữ cho khớp mạch truyện, không đổi kỹ thuật).
+> *Ngoại lệ duy nhất:* người dùng đã tự cho sẵn câu/đoạn mở đầu cụ thể → xác nhận nhanh rồi đi tiếp. Bỏ qua Bước 2 và tự chọn kiểu mở rồi viết thẳng cả truyện là lỗi nghiêm trọng, ngang hàng với bỏ qua Bước 0.
 
-**Bước 3 — Viết** theo 10 kỹ thuật (tóm tắt bên dưới; bản đầy đủ ở references).
+**Bước 3 — Bản Đồ Dopamine.** Phác nhanh trước khi viết: 3–7 vòng lặp mở (gieo lúc nào, đóng lúc nào); vị trí các cú twist (tránh dồn hết vào cuối); chu kỳ hy vọng↔tuyệt vọng (≥3 lần đảo chiều); điểm đặt "Aha!" + foreshadow tương ứng.
 
-**Bước 4 — Tự kiểm tra** bằng checklist trước khi trả kết quả.
+**Bước 4 — Viết** theo 10 kỹ thuật (tóm tắt bên dưới; bản đầy đủ ở references), mở rộng đúng đoạn mở đã chốt ở Bước 2 thành đoạn mở hoàn chỉnh của truyện.
 
-**Bước 5 — Lưu kịch bản** vào đúng thư mục thể loại tại `/Users/truongdv/Documents/video-audio/kich-ban/`: `drama/`, `trinh-tham/`, `kinh-di/`, `tinh-cam/`, `hai-huoc/`.
+**Bước 5 — Tự kiểm tra** bằng checklist trước khi trả kết quả.
+
+**Bước 6 — Lưu kịch bản** vào đúng thư mục thể loại tại `/Users/truongdv/Documents/video-audio/kich-ban/`: `drama/`, `trinh-tham/`, `kinh-di/`, `tinh-cam/`, `hai-huoc/`.
 - Tên file: `ten-viet-thuong-khong-dau.md` (gạch ngang phân cách, ví dụ `chong-toi-ngoai-tinh.md`).
 - **Nội dung file THUẦN TRUYỆN:** bắt đầu bằng câu đầu tiên (chính là hook), kết bằng câu cuối. CẤM heading tiêu đề, CẤM metadata (thể loại/ngôi kể/số chữ/hướng dẫn đọc), CẤM dấu ngăn cách `---`/`***` giữa các hồi (chuyển cảnh bằng lời văn + dòng trắng), CẤM thẻ `[SFX]`/`[BGM]`/tên chương — trừ khi người dùng CHỦ ĐỘNG yêu cầu lớp chỉ dẫn sản xuất. Ghi chú cho người sản xuất (nếu có) để ở file riêng hoặc trả lời riêng.
 
@@ -53,7 +56,7 @@ KHÔNG viết ngay. Thực hiện tuần tự:
 
 Đây là bản rút gọn để thao tác nhanh. Khi cần ví dụ, edge-case, hoặc bảng quy đổi chi tiết → đọc [references/ky-thuat-chi-tiet.md](references/ky-thuat-chi-tiet.md).
 
-1. **Hook 30 giây sinh tử.** Mở đầu là một **MÓN NỢ**, không phải một câu văn hay: câu mồi phải mở ra câu hỏi người nghe không chịu nổi nếu không biết đáp án — **và phải là câu hỏi của chính truyện này** (câu sốc mở ra câu hỏi truyện không định trả lời = *hook nói dối*, mất niềm tin vào kênh). KHÔNG lý lịch/bối cảnh/thời tiết/tỉnh dậy sau giấc mơ. Câu đầu tiên phải tự đứng được. Tiêu đề là "hook số 0" — mở một vòng lặp, đừng tiết lộ hết ruột.
+1. **Hook 30 giây sinh tử.** Mở đầu là một **MÓN NỢ**, không phải một câu văn hay: câu mồi phải mở ra câu hỏi người nghe không chịu nổi nếu không biết đáp án — **và phải là câu hỏi của chính truyện này** (câu sốc mở ra câu hỏi truyện không định trả lời = *hook nói dối*, mất niềm tin vào kênh). KHÔNG lý lịch/bối cảnh/thời tiết/tỉnh dậy sau giấc mơ. Câu đầu tiên phải tự đứng được. Tiêu đề là "hook số 0" — mở một vòng lặp, đừng tiết lộ hết ruột. **Đây là phần quyết định người nghe ở lại hay tắt — luôn đi qua Bước 2 (cổng chặn chọn kiểu mở) trước khi viết, không tự chọn ngầm.**
    - **Chọn kiểu mở đầu theo món nợ muốn tạo, không theo "kiểu nào nghe ngầu"** — menu 10 kiểu (flash-forward hậu quả · nghịch lý · in medias res · thú nhận cấm kỵ · chi tiết sai lệch · cold open thoại · vật chứng lệch · đếm ngược · đảo kỳ vọng · người kể tự tố) + bảng chọn theo thể loại/tiền đề + kiểu mở giết truyện: [references/mo-dau.md](references/mo-dau.md).
    - **Luật chống tụt hook** (lỗi phổ biến hơn cả câu mồi yếu): đoạn mở đi đúng 3 nhịp — **câu mồi** (1 câu, mở nợ) → **neo tối thiểu** (2–4 câu: ai/ở đâu/muốn gì, cài qua hành động đang diễn ra) → **móc thứ hai** (siết hoặc mở thêm một câu hỏi *trước khi* món nợ đầu nguội). Câu mồi chấn động rồi lùi về giải thích = mất người nghe ở giây 40, không phải giây 8.
 2. **Zeigarnik — vòng lặp mở.** Luôn có ≥2 vòng lặp mở cùng lúc; **mở vòng mới TRƯỚC khi đóng vòng cũ**. Phân 3 tầng: lớn (Câu Hỏi Trung Tâm) / trung (bí ẩn phụ) / nhỏ (căng thẳng trong cảnh). Nhỏ giọt manh mối 10–20%/lần. Cliffhanger cuối mỗi phân đoạn nhưng **XOAY VÒNG 4 loại**: cắt trước đỉnh điểm / tiết lộ chấn động / ngã ba quyết định / mầm họa mới. Viết cliffhanger NGẮN, cắt phựt.
@@ -90,7 +93,7 @@ Vài mapping cốt lõi: giết→*đoạt mạng/kết liễu/xuống tay*; ch�
 
 - [ ] **Văn phong:** không câu nào sến/sáo/bolero; không ẩn dụ mòn; câu dứt khoát, ít chữ; mỗi câu tả đều "làm việc"?
 - [ ] **Xưng hô:** người thân gọi bằng quan hệ (không tên riêng)? Tên người lạ đều là Hán-Việt? Không nhãn nào lặp quá 2 lần liên tiếp? Cảnh nhiều người vẫn rõ ai là ai?
-- [ ] **Mở đầu:** đã CHỌN kiểu mở phù hợp thể loại/tiền đề (không mặc định một kiểu)? Câu mồi mở món nợ đúng của truyện này (không phải hook nói dối)? Đoạn mở đủ 3 nhịp, không tụt vào giải thích? Câu Hỏi Trung Tâm gieo trong 1–2 phút đầu?
+- [ ] **Mở đầu:** đã qua CỔNG CHẶN Bước 2 (trình 3–4 đoạn mở gắn tên kỹ thuật, chờ người dùng chọn) chứ không tự chọn ngầm? Câu mồi mở món nợ đúng của truyện này (không phải hook nói dối)? Đoạn mở đủ 3 nhịp, không tụt vào giải thích? Câu Hỏi Trung Tâm gieo trong 1–2 phút đầu?
 - [ ] Mọi thời điểm có ≥2 vòng lặp mở? ≥3 lần đảo chiều hy vọng↔tuyệt vọng?
 - [ ] Twist lớn có ≥2 hạt giống gieo trước (gieo 3 lần)?
 - [ ] Cảm xúc TẢ bằng cơ thể/âm thanh, không KỂ tên? Nhịp câu tương phản cao trào/lắng đọng?

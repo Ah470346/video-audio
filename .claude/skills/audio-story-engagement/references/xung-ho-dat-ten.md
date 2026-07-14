@@ -19,7 +19,9 @@ Nhiều người cùng vai → phân biệt bằng thứ bậc hoặc đặc đi
 
 ## 2. Tuyến người lạ — tên Hán-Việt, xen kẽ 3 lớp
 
-Người ngoài gia đình được đặt tên, và tên phải mang màu Hán-Việt (kiểu Trung Quốc): **Trần Trạch, Bạch Tiểu Tiểu, Lâm Xung, Đường Bá Chi, Hà Cẩn, Tiết Vân Thư, Cố Thanh Hoành.** Không dùng tên thuần Việt (Nguyễn Văn Tùng, Trâm Anh) và không dùng tên Tây (David, Anna) — chúng kéo truyện về đúng một bối cảnh cụ thể và phá giọng.
+**Luật thêm để tránh agent hiểu sai:** mọi tên xuất hiện trong tài liệu này chỉ là **ví dụ minh họa khẩu vị đặt tên**, không phải "danh sách mặc định" để bê nguyên vào truyện. Khi viết truyện thật, phải tự chọn hoặc tự ghép tên mới phù hợp vai nhân vật; nếu thấy mình đang định dùng lại nguyên tên ví dụ trong skill, hãy dừng và đổi.
+
+Người ngoài gia đình được đặt tên, và tên phải mang màu Hán-Việt (kiểu Trung Quốc): **Trần Trạch, Tô Vân Thư, Lâm Xung, Đường Bá Chi, Hà Cẩn, Tiết Vân Thư, Cố Thanh Hoành.** Không dùng tên thuần Việt (Nguyễn Văn Tùng, Trâm Anh) và không dùng tên Tây (David, Anna) — chúng kéo truyện về đúng một bối cảnh cụ thể và phá giọng.
 
 Cách dựng tên: **họ Hán-Việt + tên 1–2 chữ**.
 - Họ hay dùng: Trần, Lâm, Bạch, Đường, Hà, Tiết, Cố, Tô, Lý, Vương, Tạ, Chu, Diệp, Mộ Dung, Thượng Quan, Âu Dương.
@@ -31,7 +33,7 @@ Với mỗi nhân vật lạ, luân phiên **ba lớp gọi**:
 
 | Lớp | Ví dụ | Dùng khi |
 |---|---|---|
-| **Tên riêng** | *Trần Trạch*, *Bạch Tiểu Tiểu* | Lần đầu giới thiệu; khi cần chỉ đích danh giữa nhiều người; khi cái tên được nhấn có sức nặng |
+| **Tên riêng** | *Trần Trạch*, *Tô Vân Thư* | Lần đầu giới thiệu; khi cần chỉ đích danh giữa nhiều người; khi cái tên được nhấn có sức nặng |
 | **Đại từ** | *anh ta, cô ấy, gã, hắn, lão, người đàn ông đó, cậu ấy* | Khi trong cảnh chỉ có một người có thể là chủ ngữ — không thể nhầm |
 | **Danh xưng** | *Trần thiếu, Đường phu nhân, Hà lão gia* | Khi muốn dựng địa vị, sự xa cách, hoặc thái độ (nịnh, sợ, mỉa) |
 
@@ -42,7 +44,7 @@ Ghép **họ + hậu tố**. Đây là kho làm giàu vốn từ — dùng đún
 | Danh xưng | Nghĩa / sắc thái | Ví dụ |
 |---|---|---|
 | **… thiếu** | Cậu ấm nhà giàu, trẻ, có quyền | *Trần thiếu*, *Đường thiếu* |
-| **… tiểu thư** | Con gái nhà quyền quý | *Bạch tiểu thư* |
+| **… tiểu thư** | Con gái nhà quyền quý | *Tô tiểu thư* |
 | **… công tử** | Con trai nhà quyền quý; hơi khách sáo | *Lâm công tử* |
 | **… phu nhân** | Vợ của người có địa vị | *Đường phu nhân* |
 | **… lão gia** | Chủ nhà lớn tuổi, uy quyền | *Hà lão gia* |
@@ -82,3 +84,10 @@ Và luôn có lựa chọn thứ tư: **bỏ chủ ngữ**. Tiếng Việt cho p
 | *"Vợ ông Hà bảo tôi ngồi xuống."* | *"Hà phu nhân bảo tôi ngồi xuống."* | Danh xưng gọn hơn và dựng luôn địa vị |
 | *"Anh ta đưa cho anh ta phong bì."* (cảnh có 2 người) | *"Trần thiếu đưa cho gã tài xế phong bì."* | Cảnh nhiều người: rõ ràng thắng đa dạng |
 | *"Ông Hà, người giàu nhất vùng và rất được kính trọng, gật đầu."* | *"Hà lão gia gật đầu."* | Một danh xưng thay cả câu giải thích |
+
+## 6. Chống bê nguyên tên ví dụ
+
+- Nếu một tên đã xuất hiện trong skill/reference, xem nó là **mẫu cấu trúc**, không phải asset có sẵn.
+- Trước khi chốt bản truyện, tự rà nhanh: có đang dùng lại nguyên xi một tên ví dụ như *Trần Trạch*, *Tô Vân Thư*, *Lâm Xung*, *Đường Bá Chi* chỉ vì nó nằm sẵn trong tài liệu không?
+- Nếu có, đổi sang biến thể cùng tông: ví dụ *Tô Vân Thư* → *Tạ Vân Khanh*, *Lâm Xung* → *Lâm Nghiêm*, *Đường Bá Chi* → *Đường Trường Yến*.
+- Mục tiêu là giữ **khẩu vị tên** ổn định, không lặp lại **chính cái tên** qua nhiều truyện.
