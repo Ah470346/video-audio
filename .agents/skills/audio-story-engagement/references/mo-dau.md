@@ -1,129 +1,314 @@
-# Kỹ Thuật Mở Đầu — Menu Đầy Đủ & Cách Chọn
+# Audio Story Opening Techniques
 
-Bản chi tiết cho Kỹ thuật 1 (Hook 30 giây) trong SKILL.md. Đọc khi cần chọn kiểu mở đầu, lấy ví dụ, hoặc chữa một đoạn mở bị tụt.
+Use this reference to choose, write, and diagnose openings. A hook is not a shocking sentence; it is **a concrete promise about the question, conflict, and reward the story will pay**.
 
-## Mục lục
-1. Nguyên lý: mở đầu là một MÓN NỢ, không phải một câu hay
-2. Cấu trúc 3 nhịp của đoạn mở — luật chống tụt hook
-3. Menu 10 kiểu mở đầu (cơ chế + ví dụ + hợp với gì)
-4. Bảng chọn theo thể loại & tiền đề
-5. Ràng buộc từ skill tiền đề
-6. Đa dạng hóa ở cấp kênh (đừng mở giống nhau mãi)
-7. Những kiểu mở đầu giết truyện
+> **Curiosity = understanding enough to know what is missing. Confusion = lacking the anchor needed to ask a question.** Do not call vagueness mystery.
 
----
+## 1. What Retention Data Actually Suggests
 
-## 1. Nguyên lý: mở đầu là một MÓN NỢ, không phải một câu hay
+YouTube defines **Intro** as the percentage of viewers still watching after 30 seconds. A strong intro often correlates with:
 
-Người nghe audio quyết định ở lại hay đi trong 8–30 giây đầu, và họ **không đánh giá văn hay** — não chỉ cấp "ngân sách chú ý" khi phát hiện một **lỗ hổng thông tin**: điều bất thường, nguy hiểm, hoặc mâu thuẫn.
+- the first 30 seconds matching title/thumbnail expectation;
+- the rest of the content continuing to hold interest.
 
-Nên phép thử của một đoạn mở KHÔNG phải *"câu này có ấn tượng không?"* mà là:
+This does **not** prove that everyone decides at second 8, that every story needs two shocks in 30 seconds, or that one formula fits every channel. Use these principles as drafting frames, then adjust with the channel's own retention data.
 
-> **"Câu này mở ra một câu hỏi mà người nghe KHÔNG chịu nổi nếu không biết đáp án — và câu hỏi đó có phải câu hỏi của TRUYỆN này không?"**
+When reading retention:
 
-Vế sau quan trọng ngang vế trước. Một câu sốc mở ra câu hỏi mà truyện không định trả lời = **hook nói dối** — người nghe ở lại 2 phút rồi bỏ, và lần sau không tin kênh nữa. Mọi kiểu mở đầu dưới đây chỉ là các cách khác nhau để **tạo món nợ và ghim nó vào Câu Hỏi Trung Tâm** (Bước 1).
+- **Immediate drop:** expectation mismatch, slow start, weak audio, or confusing first sentence.
+- **Spike:** may be compelling or confusing enough that people rewind.
+- **Top moment late:** consider moving the promise/material earlier, not necessarily copying the climax into the opening.
 
-## 2. Cấu trúc 3 nhịp của đoạn mở — luật chống tụt hook
+## 2. Opening Contract
 
-Lỗi phổ biến nhất KHÔNG phải câu đầu yếu, mà là **câu đầu mạnh rồi tụt** — viết được một câu chấn động xong lập tức lùi về giải thích lý lịch, quan hệ, bối cảnh. Người nghe bị nhấc lên rồi thả xuống, và họ đi ở giây thứ 40, không phải giây thứ 8.
+Before writing, complete:
 
-Đoạn mở (~30–60 giây đầu) phải đi đúng ba nhịp:
+```text
+Title/thumbnail promise:
+Central question:
+Main emotion:
+End reward type: truth / cost / reunion / escape / solved case / laughter...
+```
 
-1. **CÂU MỒI (1 câu, tự đứng được).** Mở món nợ. Tách riêng khỏi mọi thứ vẫn khiến người lạ muốn nghe câu thứ hai.
-2. **NEO TỐI THIỂU (2–4 câu).** Chỉ đủ để người nghe biết *ai đang kể, đang đứng ở đâu, đang muốn gì* — cài **qua hành động đang diễn ra**, không qua tiểu sử. Đây là nhịp duy nhất được phép "định vị", và nó phải ngắn đến mức gần như không nhận ra.
-3. **MÓC THỨ HAI (1–2 câu chốt).** **Trước khi món nợ đầu tiên kịp nguội**, mở thêm một câu hỏi mới hoặc siết chặt câu hỏi cũ, rồi mới đẩy vào truyện. Đây là thứ giữ người nghe qua phút thứ 2 — đúng luật Zeigarnik "mở vòng mới trước khi đóng vòng cũ".
+The opening must belong to the same contract.
 
-**Phép thử tụt hook:** đọc to 60 giây đầu. Nếu có bất kỳ câu nào chỉ làm nhiệm vụ *giải thích*, chưa mở/siết câu hỏi nào — cắt hoặc đẩy nó xuống sau. Thông tin nền gần như luôn cài được muộn hơn ta tưởng.
+Matched Vietnamese example:
 
-## 3. Menu 10 kiểu mở đầu
+**Title:** *Em gái song sinh đưa bằng chứng tôi ngoại tình ngay tại lễ cưới*
 
-Phân loại theo **cơ chế** (mở loại câu hỏi gì), không theo hình thức. Chọn theo món nợ muốn tạo, đừng chọn theo "kiểu nào nghe ngầu".
+**Opening:**
 
-**1. Flash-forward hậu quả** — mở bằng một mảnh của cảnh đích (thường là lúc trả giá / sụp đổ), rồi quay về kể từ đầu.
-*Món nợ: "làm sao đến được khoảnh khắc đó?"*
-> *"Ngày mẹ chồng tôi quỳ trước cửa nhà tôi, trời đang mưa."*
-Mạnh nhất khi truyện phải nén ức chế lâu — nó **hứa trước cái đích** nên người nghe chịu đựng được đoạn giữa. Bù lại nó **tiêu mất yếu tố bất ngờ của cảnh đó**, nên chỉ hé một mảnh mơ hồ (thấy *có* chuyện gì, không thấy *chuyện gì*).
+> *Trên màn hình giữa sảnh cưới là ảnh tôi bước vào khách sạn với một người đàn ông lạ. Tôi không nhìn bức ảnh. Tôi nhìn em gái mình, vì chiếc váy trong ảnh đang nằm trong tủ của nó.*
 
-**2. Tuyên bố nghịch lý** — một câu tự mâu thuẫn với lẽ thường.
-*Món nợ: "sao có thể như thế được?"*
-> *"Ngày tôi biết chồng ngoại tình cũng là ngày hạnh phúc nhất đời tôi."*
-Rẻ, nhanh, hợp mọi thể loại. Rủi ro: nghịch lý phải **có lời giải thật và thỏa đáng**; nghịch lý chỉ để câu view (giải thích ra thì nhạt) là hook nói dối.
+Listeners know the event, evidence, closest opponent, and anomaly. The question becomes how the photo was made and what the sister wants.
 
-**3. Cảnh giữa khủng hoảng (in medias res)** — bắt đầu khi mọi thứ đã bùng nổ.
-*Món nợ: "chuyện gì đang xảy ra, và vì sao?"*
-> *"Cửa phòng ngủ khóa từ bên trong. Tôi đứng ngoài, tay vẫn cầm chìa."*
-An toàn nhất, hiếm khi hỏng. Bù lại ít "sắc" hơn các kiểu khác — hợp khi bản thân tình huống đã đủ lạ.
+False hook example:
 
-**4. Lời thú nhận cấm kỵ** — người kể tự nhận điều đáng lẽ phải giấu.
-*Món nợ: "vì sao họ lại làm/để cho điều đó xảy ra?"*
-> *"Tôi đứng ngay đó nhìn. Và tôi không ngăn."*
-Tạo thân mật tức thì (người nghe thành người duy nhất được biết) + oxytocin sớm. Cực hợp ngôi 1.
+> *Ngày tôi tỉnh dậy trong quan tài, người đầu tiên tôi thấy là chồng mình.*
 
-**5. Chi tiết sai lệch (the wrong detail)** — một cảnh đời thường hoàn toàn bình thường, chỉ MỘT chi tiết lệch, kể bằng giọng phẳng.
-*Món nợ: "cái gì sai ở đây?"*
-> *"Bàn ăn dọn bốn bộ bát đũa. Nhà tôi chỉ có ba người."*
-**Kiểu mạnh nhất cho kinh dị**, và bị dùng ít nhất so với sức mạnh của nó. Nguyên tắc: **giọng càng bình thản, chi tiết càng rợn**. Đừng giải thích, đừng cho người kể hoảng — để người nghe tự thấy trước.
+If the story is actually a wedding drama with no coffin, resurrection, or strong symbolic payoff, this borrows attention from another story. Cut it.
 
-**6. Cold open bằng thoại** — câu đầu tiên là một câu thoại, không bối cảnh, không dẫn.
-*Món nợ: "ai đang nói với ai, và vì sao được nói thế?"*
-> *"'Ký vào đây, rồi tôi nói cho cô biết con cô đang ở đâu.'"*
-**Đặc sản của audio:** giọng người bật lên ngay giây 0, không cần một chữ dẫn truyện nào. Cài neo (ai/ở đâu) ngay câu sau. Rất hợp mở màn hệ thống (giọng lạ vang lên trong đầu nhân vật).
+## 3. Four Functions Of The First 30-60 Seconds
 
-**7. Vật chứng lệch** — mở bằng một đồ vật / tin nhắn / tờ giấy nói lên điều không nên nói.
-*Món nợ: "thứ này nghĩa là gì?"*
-> *"Chiếc nhẫn cưới nằm trong túi áo khoác của chồng tôi. Vấn đề là — nó không phải nhẫn của tôi."*
-Vật chứng có sẵn tính vật lý → hợp tai người nghe, và nó **tự động trở thành hạt giống setup–payoff** (Kỹ thuật 6). Cho nó quay lại ở kết = callback khép vòng gần như miễn phí.
+The opening does not need a fixed sentence count. It must naturally complete four functions:
 
-**8. Đồng hồ đếm ngược** — câu đầu đặt một mốc thời gian cứng.
-*Món nợ: "kịp không, và chuyện gì xảy ra nếu không kịp?"*
-> *"Còn bốn mươi phút nữa chồng tôi về đến nhà. Tôi phải quyết định xong trước lúc đó."*
-Tạo căng thẳng cơ học, không cần bí ẩn. Hợp khi cốt truyện đơn giản hoặc tập ngắn. Mốc phải **cụ thể và có hậu quả rõ**, nếu không chỉ là mẹo rỗng.
+### 3.1 Transformation
 
-**9. Đảo vai/đảo kỳ vọng** — dựng một khung cảnh ai cũng biết luật, rồi để người kể hành xử ngược.
-*Món nợ: "vì sao họ không phản ứng như người bình thường?"*
-> *"Tôi đến lễ tang của chồng tôi để chắc chắn anh ta nằm trong đó thật."*
-Hợp cả hài (lệch pha gây cười) lẫn drama lạnh. Đòi hỏi khung cảnh phải **quen thuộc tuyệt đối** thì cú lệch mới đọc được.
+Something just happened that makes the old state impossible.
 
-**10. Người kể tự tố (unreliable narrator)** — người kể báo trước rằng họ không đáng tin.
-*Món nợ: "chỗ nào là thật?"*
-> *"Tôi sẽ kể chuyện này đúng một lần. Có vài chỗ tôi sẽ nói dối, và tôi sẽ không chỉ ra chỗ nào."*
-Biến toàn bộ truyện thành một vòng lặp mở, và **hợp thức hóa sẵn cú twist cuối**. Nguy hiểm: phải trả nợ thật ở kết (chỉ ra chỗ nói dối), nếu không người nghe thấy bị lừa. Chỉ dùng khi twist đã được thiết kế xong.
+> *Luật sư đặt hai bản di chúc lên bàn. Cả hai đều có chữ ký của bố tôi.*
 
-## 4. Bảng chọn theo thể loại & tiền đề
+### 3.2 Minimal Anchor
 
-Ưu tiên theo thứ tự; nếu ý tưởng đã chốt ở Bước 0 gợi kiểu khác, cứ theo ý tưởng — bảng này là điểm khởi hành, không phải cùm.
+Give enough to imagine who narrates, where they are, and what they want now. Embed through action, not biography.
 
-| Thể loại | Kiểu ưu tiên | Vì sao |
+> *Tôi kéo ghế sát mẹ. Bà chỉ cần ký vào bản thứ nhất, căn nhà sẽ vẫn thuộc về gia đình tôi.*
+
+### 3.3 Bounded Gap
+
+State what is known and what is not.
+
+> *Vấn đề là bản thứ hai được ký ba ngày sau khi bố qua đời.*
+
+Not "a terrible secret is coming." The listener must know the gap is in **signature, timing, and beneficiary**.
+
+### 3.4 Direction Of Movement
+
+What does the character do next, or what is about to force action?
+
+> *Tôi còn mười phút trước khi mẹ đặt bút. Tôi nhắn cho người duy nhất từng giả được chữ của bố.*
+
+Compressed map:
+
+> **transformation -> anchor -> gap -> action/deadline**
+
+This is a map, not a sentence template. You may reorder it if listeners still understand.
+
+## 4. Menu Of 10 Opening Types
+
+### 1. Flash-Forward Consequence
+
+**Debt:** how did the character reach this outcome?
+
+> *Ba tháng sau ngày bị đuổi khỏi nhà, tôi trở lại đúng lúc mẹ chồng phải đọc tên mình trong danh sách bị đơn.*
+
+Use when the middle requires long suffering/escalation and listeners need a promise that the balance will shift. Do not reveal the whole payoff; show only reversed state.
+
+### 2. Paradox Statement
+
+**Debt:** why can two apparently opposite things be true?
+
+> *Ngày biết chồng phản bội cũng là ngày tôi thôi sợ mất anh.*
+
+Use when the answer is internal transformation or relationship reversal. Avoid flashy two-part lines with trivial explanations.
+
+### 3. In Medias Res
+
+**Debt:** what is happening and how can the character get out?
+
+> *Cửa phòng ngủ khóa từ bên trong. Tôi đứng ngoài, tay cầm chiếc chìa duy nhất.*
+
+Use for clear physical situations already in motion. Anchor one person, one goal, one obstacle before adding more.
+
+### 4. Costly Confession
+
+**Debt:** why did the narrator do it, and what will the truth cost?
+
+> *Tôi đã nhìn thấy em gái đổi hai phong bì. Tôi im lặng vì phong bì còn lại chứa bí mật của tôi.*
+
+Use for first person, moral conflict, imperfect narrator. Avoid vague confessions like "I made a terrible mistake"; name the action and hide cause/consequence.
+
+### 5. Wrong Detail
+
+**Debt:** why does one small detail not fit the normal world?
+
+> *Bàn ăn có bốn đôi đũa. Nhà tôi chỉ có ba người, và bộ thứ tư vẫn còn ấm.*
+
+Strong for horror, mystery, and detective stories. One clear anomaly is stronger than fog.
+
+### 6. Cold Open Dialogue
+
+**Debt:** who is speaking, to whom, and what does the line force?
+
+> *“Ký vào đây, rồi tôi cho cô nghe giọng thật của chồng cô.”*
+>
+> *Người đàn ông đặt điện thoại giữa bàn. Tôi nhận ra giọng nói trong file, nhưng người đó đã mất ba năm.*
+
+Use for audio immediacy, confrontation, system, or phone call. Anchor identity/relationship after one or two lines.
+
+### 7. Off Evidence/Object
+
+**Debt:** what does this object prove, and can it be trusted?
+
+> *Chiếc nhẫn cưới nằm trong túi áo chồng tôi. Mặt trong khắc ngày cưới của một người phụ nữ khác.*
+
+Good for drama/mystery and setup-payoff. Do not treat one object as absolute proof; let characters verify and choose.
+
+### 8. Countdown
+
+**Debt:** can the character make it, and what happens if they fail?
+
+> *Còn hai mươi phút trước khi mẹ ký giấy chuyển viện. Tôi phải chứng minh bác sĩ trong phòng không phải người đã gọi cho bà tối qua.*
+
+Use for clear goal, short story, action/investigation. Avoid fake deadlines that expire without consequence.
+
+### 9. Role/Expectation Reversal
+
+**Debt:** why does this person react against social role?
+
+> *Trong lễ đính hôn của mình, tôi là người duy nhất hy vọng chú rể sẽ bỏ trốn.*
+
+Use for cold drama, comedy, romance, or victim/antagonist role reversal. The explanation must come from goal and past, not random shock.
+
+### 10. Narrator With A Blind Spot
+
+**Debt:** what will listeners realize before the narrator?
+
+> *Tôi từng tin mình hiểu em gái hơn bất kỳ ai. Vì thế, khi nó hỏi mượn váy cưới, tôi chỉ thấy một đứa em đang cố làm lành.*
+
+Use for misinterpretation, self-deception, or biased first person. Unreliable narration must stay consistent with what the narrator knows, believes, and avoids.
+
+## 5. Choose By Genre And Premise
+
+| Genre | Often fitting types | Question to create |
 |---|---|---|
-| **Drama** | 1 flash-forward · 2 nghịch lý · 7 vật chứng | Món nợ là "quan hệ này sẽ vỡ thế nào" — cần hứa trước cảnh vỡ |
-| **Trinh thám** | 5 chi tiết sai · 7 vật chứng · 3 in medias res · 10 tự tố | Mở bằng câu đố cụ thể, không bằng cảm xúc |
-| **Kinh dị** | 5 chi tiết sai · 6 cold open thoại · 3 in medias res | Nỗi sợ đến từ "sai ở đâu đó" trước khi có gì lộ mặt |
-| **Tình cảm** | 2 nghịch lý · 1 flash-forward (cảnh chia ly) · 9 đảo kỳ vọng | Món nợ là "vì sao hai người này không đến được với nhau" |
-| **Hài hước** | 9 đảo kỳ vọng · 2 nghịch lý · 6 cold open thoại | Cười sinh ra từ lệch pha — phải dựng khung quen rồi bẻ ngay |
+| **Drama** | flash-forward, paradox, confession, evidence | Who betrayed whom, why, how does the relationship flip? |
+| **Mystery** | wrong detail, evidence, in medias res, blind spot | What truth explains every trace? |
+| **Horror** | wrong detail, cold open, in medias res | Which world rule has been broken? |
+| **Romance** | paradox, confession, role reversal | What blocks two people from choosing each other? |
+| **Comedy** | role reversal, cold open, paradox | Which deviation will escalate logically? |
 
-| Tiền đề | Ràng buộc mở đầu |
-|---|---|
-| **Trùng sinh** | Mốc kinh điển: tỉnh dậy ngay TRƯỚC bi kịch gốc (biến thể của 3 in medias res). Câu mồi phải cho thấy **cả hai lớp thời gian** cùng lúc, để món nợ "kiếp trước" bật lên ngay. |
-| **Hệ thống** | 6 cold open bằng giọng hệ thống là mặc định — giọng lạ + luật chơi + hình phạt gói trong 2 câu. |
-| **Xuyên sách** | 2 nghịch lý hoặc 9 đảo kỳ vọng ("tôi biết mình sẽ tắt thở ở chương ba"). |
-| **Truyện rác** | **BẮT BUỘC** 1 flash-forward hậu quả HOẶC một tuyên bố lạnh của người kể — đây là hợp đồng ngầm, không phải lựa chọn thẩm mỹ. Thiếu nó, ức chế thành rage bait và người nghe bỏ đi. |
+This table is a starting point. Choose the type that highlights this premise's specific conflict.
 
-## 5. Ràng buộc từ skill tiền đề
+## 6. Openings For Book Transmigration, Reincarnation, System
 
-Khi có skill `audio-story-premise-*` đang chạy cùng, **ràng buộc của tiền đề THẮNG bảng chọn theo thể loại**. Ví dụ "truyện rác drama": drama gợi ý flash-forward *hoặc* nghịch lý *hoặc* vật chứng, nhưng truyện rác **bắt buộc** flash-forward/tuyên bố lạnh → chọn flash-forward. Lý do: tiền đề quy định *hợp đồng* với người nghe, thể loại chỉ quy định *chất liệu*.
+These often become stiff because the agent tries to explain two worlds at once.
 
-## 6. Đa dạng hóa ở cấp kênh
+### Two-Layer Information Rule
 
-Kịch bản không sống một mình — chúng lên cùng một kênh. **Mười truyện cùng mở bằng flash-forward thì đến truyện thứ tư người nghe đã đoán được trò**, và cú mở hết tác dụng dù từng câu vẫn hay. Khi viết nhiều tập/nhiều truyện cho cùng một kênh, xoay kiểu mở đầu như xoay cliffhanger (Kỹ thuật 2): **không lặp cùng một kiểu quá 2 truyện liên tiếp.** Nếu người dùng đã có sẵn các truyện trước trong `kich-ban/`, liếc qua câu đầu của chúng trước khi chọn.
+The opening needs only:
 
-## 7. Những kiểu mở đầu giết truyện
+1. current situation;
+2. one concrete future/original-result detail and its source;
+3. what the knowledge makes the character do differently now.
 
-| Kiểu mở | Vì sao chết | Thay bằng |
-|---|---|---|
-| Lý lịch / giới thiệu bản thân (*"Tôi năm nay 32 tuổi, chồng tôi hiền lành..."*) | Không có món nợ nào. Người nghe không quan tâm nhân vật cho tới khi nhân vật gặp rắc rối. | Bất kỳ kiểu nào trong menu; cài lý lịch nhỏ giọt sau |
-| Thời tiết / tả cảnh mở màn | Trì hoãn thuần túy | 5 (chi tiết sai) nếu cần không khí |
-| Tỉnh dậy sau giấc mơ / báo mộng | Món nợ vừa mở đã bị hủy — người nghe học được rằng truyện có thể "hoàn tác", nên thôi tin mọi cú sốc sau | 3 in medias res |
-| Câu hỏi tu từ ném vào người nghe (*"Bạn đã bao giờ bị phản bội chưa?"*) | Sáo, và nó hỏi về đời người nghe thay vì mở nợ trong truyện | 4 lời thú nhận |
-| Hook sốc không liên quan truyện | Hook nói dối — mất niềm tin vào kênh | Ghim câu mồi vào Câu Hỏi Trung Tâm |
-| Câu mồi mạnh rồi info-dump | Tụt hook, mất người nghe ở giây 40 | Áp cấu trúc 3 nhịp (mục 2) |
-| Mở bằng chính cú twist cuối | Tiêu sạch món nợ lớn nhất | Flash-forward chỉ hé *có chuyện*, không hé *chuyện gì* |
+Do not explain book history, author, whole cast, or transmigration mechanics immediately.
+
+### Book Transmigration Pronoun Repair
+
+**Stiff/confusing:**
+
+> *Đứa bé vừa đạp một cú làm tôi nghẹn thở, còn người đàn ông sắp làm chồng tôi tin một tờ giấy hơn tin chính nó. Tôi đã đọc cảnh này trong một cuốn tiểu thuyết trước khi mở mắt trong thân xác nhân vật sắp chết vì nó.*
+
+Problems: `chính nó` and `vì nó` are ambiguous; knowledge is declared but not proven; fetal movement is not tied to the mother's goal.
+
+**More natural:**
+
+> *Đứa bé trong bụng đạp mạnh đúng lúc Vệ Minh đặt tờ kết quả xét nghiệm xuống bàn. Anh tin con số “không cùng huyết thống” hơn tin tôi. Còn tôi biết tờ giấy ấy là giả, vì trong cuốn tiểu thuyết tôi đọc đêm qua, chính nó đã đẩy người vợ mang thai đến cái kết ở chương mười hai.*
+>
+> *Chỉ khác một điều: lần này, người vợ đó là tôi. Và trước khi Vệ Minh kịp hủy hôn, tôi phải tìm ra ai đã đổi mẫu xét nghiệm.*
+
+The revision names object, result, danger, and action. Foreknowledge becomes limited advantage, not decoration.
+
+### Reincarnation
+
+Anchor with an unmistakable time marker, then a different choice from the old life.
+
+> *Mùi cháo gừng kéo tôi tỉnh dậy. Trên lịch là ngày 12 tháng Tám, đúng ba ngày trước khi tôi ký giấy giao công ty cho chồng. Kiếp trước, tôi đã ký. Lần này, tôi gọi luật sư trước khi bước xuống giường.*
+
+### System
+
+First system appearance needs only:
+
+- current task;
+- relevant cost/reward;
+- one limit that prevents infinite magic.
+
+> *[Nhiệm vụ: giữ cô dâu ở lại lễ đường trong mười phút. Thất bại: mất ký ức về người em trai.]*
+>
+> *Tôi không hỏi hệ thống là gì. Cô dâu đã đặt tay lên cửa.*
+
+Do not spend a page on menus, points, and shops before action.
+
+## 7. Prevent Drop After The First Sentence
+
+Common failure: first sentence opens crisis, next five paragraphs explain childhood.
+
+After the hook, each next paragraph should at least:
+
+- **tighten:** raise consequence or deadline;
+- **clarify:** answer a small part so the question sharpens;
+- **push:** make the character choose/action into the next event.
+
+Background enters only when it changes how the current action is understood.
+
+**Drop:**
+
+> *Tôi thấy tên em gái trên giấy đăng ký kết hôn của chồng. Tôi và nó sinh ra trong một gia đình bình thường. Từ nhỏ chúng tôi đã rất giống nhau...*
+
+**Keeps force:**
+
+> *Tôi thấy tên em gái trên giấy đăng ký kết hôn của chồng. Dòng ngày tháng là tuần trước. Tôi gọi cho nó ngay trước mặt anh; tiếng chuông vang lên từ căn phòng khóa ở cuối hành lang.*
+
+Sibling history can come later when the locked room makes it relevant.
+
+## 8. Write Three Opening Drafts
+
+Do not endlessly polish one first sentence. Draft three mechanisms:
+
+1. **Object/evidence version:** start with something tangible/audible.
+2. **Choice version:** start with what the character is doing and the cost.
+3. **Consequence version:** start with a near-future reversed state.
+
+For each:
+
+- read aloud 45-60 seconds;
+- underline unclear nouns/pronouns;
+- write the question listeners will ask;
+- write the answer the story will actually pay;
+- choose the version that creates the right question, not the prettiest prose.
+
+Quick scoring:
+
+| Criterion | 0 | 1 | 2 |
+|---|---|---|---|
+| Title match | off | generally related | exact event/promise |
+| Easy to imagine | vague | clear after reread | clear by ear |
+| Specific question | none | generic | listeners know what is missing |
+| Character direction | only commentary | reaction | choice/action |
+| Payability | false hook | partial payoff | payoff has a place in plot |
+
+Discard versions with 0 in title match, clarity, or payability.
+
+## 9. Tests And Common Errors
+
+Ear checklist:
+
+- [ ] After one listen, one can say who does what where.
+- [ ] Every `nó/hắn/anh ấy/cô ấy/điều đó` has one plausible antecedent; `này/đó/ấy` does not point to an unintroduced object.
+- [ ] The opened question is the one the story will answer.
+- [ ] There is at least one concrete noun/object/action, not only abstract concepts.
+- [ ] Character has near goal or decision, not only commentary.
+- [ ] Book-transmigration/reincarnation knowledge changes action immediately.
+- [ ] No biography interrupts between hook and first action.
+- [ ] Emotion is anchored in meaningful behavior/body detail, not stock reaction.
+- [ ] Read-aloud flow does not require a rewind to understand.
+
+Cut:
+
+- generic warning: *“Không ai biết bi kịch sắp ập đến.”*
+- self-praise: *“Đây là bí mật kinh hoàng nhất bạn từng nghe.”*
+- emotion before cause: heartbeat, breathlessness, shaking before danger is clear;
+- dangling pronouns: *“anh tin nó hơn chính nó”*;
+- premise lecture: *“Tôi xuyên vào một cuốn truyện thuộc thể loại...”*;
+- identity lists before the event;
+- shock stacking without causal spine;
+- hook that can be removed without changing the story.
+
+## 10. Sources
+
+- [YouTube Help: Audience retention key moments](https://support.google.com/youtube/answer/9314415?hl=en)
+- [Meta-analysis of the Zeigarnik effect (2025)](https://www.nature.com/articles/s41599-025-05000-w)
+- [ACL Workshop: Framework for narrative surprise](https://aclanthology.org/2025.wnu-1.7/)
+
+Operating conclusion: open with a concrete change, give enough anchor to ask the right question, then make the character act. A shocking sentence that cannot do these jobs is only noise at the start.

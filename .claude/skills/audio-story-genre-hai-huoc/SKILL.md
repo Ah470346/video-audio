@@ -1,97 +1,245 @@
 ---
 name: audio-story-genre-hai-huoc
 description: |
-  Skill chuyên môn thể loại HÀI HƯỚC (bao gồm hài tình huống, hài đen, satire, hài lãng mạn, hài gia đình).
-  Sử dụng KẾT HỢP với skill nền tảng "audio-story-engagement" — skill này KHÔNG thay thế skill base mà BỔ SUNG chuyên môn riêng của thể loại hài hước.
-  Kích hoạt khi người dùng yêu cầu viết truyện hài, hài hước, truyện cười, hài tình huống, hoặc bất kỳ câu chuyện nào có mục tiêu chính là tạo tiếng cười/sự thú vị hài hước.
+  Specialist skill for COMEDY (`hai huoc`): situation comedy, character comedy, romantic comedy, family comedy, dark comedy, satire, parody, and absurd comedy. Always use with `audio-story-engagement`; add premise modifiers when relevant. Trigger when the user's desired main reward is laughter, irony, comic release, or satirical perspective, not merely because the story contains a few jokes.
 ---
 
-# Thể Loại HÀI HƯỚC
+# Audio Story Genre: Comedy
 
-**Kết hợp:** áp skill nền `audio-story-engagement` TRƯỚC (hook, Zeigarnik, pacing, mirror neurons, checklist, an toàn từ vựng). Hài hước vẫn cần cốt truyện CHẶT, không phải chỉ xâu chuỗi câu đùa; mọi kỹ thuật nền vẫn bắt buộc.
+Story comedy is not a chain of punchlines. It is a character pursuing a serious goal with increasingly wrong tactics inside a world that still reacts logically.
 
-## Vì sao gây nghiện
-Tiếng cười là dopamine tức thì (thưởng ngay, khác thể loại khác phải chờ). Hài TRUYỆN gây nghiện vì KẾT HỢP dopamine tức thì (cười) VỚI dopamine kéo dài (cốt truyện). Ba cơ chế:
-- **Giải nghịch lý:** não thấy điều "sai" so với kỳ vọng, nếu vô hại nhưng bất ngờ → cười (cơ chế của MỌI câu đùa).
-- **Vượt trội:** cười khi thấy mình "thông minh/may mắn hơn" nhân vật (hài tình huống).
-- **Giải phóng:** xây căng thẳng → phá bằng điều bất ngờ → cười = giải tỏa (hài đen, satire).
+## 1. Coordination Contract
 
-**Keyword:** dở khóc dở cười, trớ trêu, xui xẻo, nhầm lẫn, tai nạn hài; "ai cũng gặp nhưng không ai kể", "đừng uống nước khi nghe"; hàng xóm, đồng nghiệp kỳ quặc, gia đình hài; vợ chồng, crush, mẹ chồng, sếp; "Murphy's law".
+- Use `audio-story-engagement` as the base and follow [../audio-story-engagement/references/phoi-hop-skills.md](../audio-story-engagement/references/phoi-hop-skills.md).
+- This skill defines the source of laughter and comic payoff. It does not replace approval gates, safety, Vietnamese address rules, or output format.
+- Do not impose fixed counts for jokes per minute, punchline length, or callbacks.
+- Run `audio-story-final-polish` last, while preserving intentional comic roughness and rhythm.
 
-## Câu Hỏi Trung Tâm
-Vẫn CẦN, nhưng mang tính "tình huống" hơn "bi kịch". Công thức: *"Liệu [nhân vật] có thoát khỏi [tình huống oái oăm ngày càng tệ] — hay mọi nỗ lực chỉ khiến mọi thứ TỆ HƠN?"*
-- Hài tình huống: "Một lời nói dối vô hại buổi sáng sẽ leo thang đến mức nào trước khi vỡ lở?"
-- Hài lãng mạn: "Anh ấy có tỏ tình thành công khi mọi nỗ lực đều biến thành thảm họa?"
-- Satire: "Hệ thống này ngu ngốc đến mức nào nếu một người cố chấp hành đúng quy trình?"
+## 2. Genre Contract
 
-## Cơ chế câu đùa: Setup → [lặng] → Punchline
-- **Setup** dẫn não theo hướng A (bình thường) → **khoảng trống** ngắn để tạo kỳ vọng → **punchline** đáp hướng B (bất ngờ nhưng hợp lý khi nghĩ lại).
-- **Bảy kỹ thuật tạo cười:**
-  1. **Đảo kỳ vọng** — "Tôi dành cả đêm chuẩn bị lời tỏ tình hoàn hảo. Sáng ra tôi thức dậy — quên sạch."
-  2. **Leo thang phi lý** — tệ → tệ hơn → TỆ HƠN NỮA (đổ cà phê → trốn toilet → kẹt cửa → sếp gõ → người yêu cũ gọi).
-  3. **Callback** — nhắc lại chi tiết đùa cũ ở bối cảnh mới → cười to hơn.
-  4. **Rule of Three** — hai cái bình thường + cái thứ ba phá cách ("vali có: quần áo, giấy tờ, và một con gà").
-  5. **Understatement** — nói giảm tình huống nghiêm trọng ("Bếp cháy đen. Vợ tôi: 'Tối nay ăn ngoài nhé.'").
-  6. **Dramatic irony hài** — người nghe biết điều nhân vật không biết (crush đứng sau lưng).
-  7. **Bathos** — từ cao trào cảm xúc rơi xuống chi tiết tầm thường ("Giây phút thiêng liêng nhất... bụng tôi sôi.").
-- **Timing:** từ hài ở CUỐI câu, từ cuối cùng (❌ "Con gà chạy ra từ vali" ✅ "Tôi mở vali — và chạy ra... một con gà"). Khoảng lặng SAU punchline `[ngừng 1–2 giây]`. KHÔNG giải thích câu đùa (phải giải thích = không hài).
+Comedy needs:
 
-## Hài hước là NHÂN VẬT, không chỉ câu đùa
-- **"Đặc sản":** mỗi nhân vật hài cần MỘT đặc điểm cực đoan (lạc quan bất trị / overthink / cứng nhắc phi lý / xui xẻo mãn tính / tự tin quá mức) làm nguồn hài không cạn.
-- **Comic flaw ≠ tragic flaw:** khuyết điểm tạo RẮC RỐI nhưng không tạo BI KỊCH — nhân vật bị bẽ mặt, đứng dậy, bị bẽ lại (resilient), không bị hủy hoại vĩnh viễn.
-- **Straight man & funny man:** funny man gây tình huống, straight man phản ứng "tỉnh" → KHUẾCH ĐẠI tiếng cười. Truyện ngôi 1: người kể thường là straight man.
+1. **Recognizable expectation:** listeners understand what normal should be.
+2. **Deviation:** character, situation, or system breaks the expectation.
+3. **A frame safe enough to laugh:** harm level and joke target fit the tone.
+4. **Consequence:** deviation forces response; it does not vanish after the punchline.
+5. **Point of view:** narrator or character sees irony in a specific way.
 
-## Cấu trúc "tuyết lăn" (snowball)
-Sự kiện nhỏ (nói dối/sai lầm/hiểu lầm nhỏ) → cố sửa → sai lầm thứ hai lớn hơn → cố sửa → thứ ba lớn hơn NỮA → MỌI THỨ BÙNG NỔ → hậu quả hài + bài học nhẹ.
-- **"Càng cố sửa càng tệ":** mỗi nỗ lực tạo vấn đề MỚI lớn hơn; người nghe thấy thảm họa đến mà nhân vật không thấy (dramatic irony); ≥3 vòng leo thang trước bùng nổ.
-- **"Domino hài":** nhiều tuyến hài nhỏ chạy song song → VA CHẠM vào nhau (vợ chuẩn bị bất ngờ sinh nhật + chồng lén mua quà + hàng xóm tưởng họ sắp ly hôn → ba tuyến gặp nhau = hỗn loạn).
+Benign-violation research is useful as a diagnostic: a violation is more likely to feel funny when it is simultaneously a violation and safe enough. "Safe enough" varies by distance, culture, and power asymmetry. This is not the only theory of comedy.
 
-## Sub-genre & đặc thù
-- **Hài tình huống:** nhân vật bình thường + tình huống bất thường; vũ khí = tuyết lăn, dramatic irony. Hiểu lầm phải HỢP LÝ (giải được bằng 1 câu → chỉ bực bội, không hài).
-- **Hài đen:** đề cập điều cấm kỵ/đau buồn bằng giọng nhẹ; PHẢI có lớp sâu ("cười vì không biết phản ứng thế nào trước sự phi lý của đời"); vũ khí = understatement, bathos. PUNCH UP (cười vào quyền lực, số phận), không PUNCH DOWN (cười vào người yếu thế).
-- **Hài lãng mạn:** KẾT HỢP kỹ thuật tình cảm (push-pull, slow burn) + hài (leo thang, dramatic irony); nỗ lực lãng mạn → thảm họa. Cười CÙNG nhân vật, không cười VÀO; tình cảm phải THẬT.
-- **Hài gia đình:** xung đột thế hệ, dynamics quen thuộc → người nghe nhận ra gia đình MÌNH; nền là TÌNH YÊU (cười vì yêu, không vì ghét).
-- **Satire:** phóng đại sự phi lý của hệ thống; có LỚP Ý NGHĨA ("cười, rồi nghĩ 'đúng thật'"); phóng đại VỪA ĐỦ (quá mức → mất thuyết phục).
+**Genre test:** if removing the funny comparisons leaves no comic contradiction in character/situation, the story is relying on author voice rather than a comic engine.
 
-## Nhịp, thoại & giọng kể
-- **Tần suất cười:** ≥1 khoảnh khắc hài mỗi 60–90 giây (không cần câu đùa lớn — có thể là quan sát hài, phản ứng hài, chi tiết phi lý, giọng châm biếm). Quá 2 phút không có gì hài → người nghe quên đang nghe thể loại gì.
-- **Nhịp "xây–đập":** xây tình huống nghiêm túc (để người nghe tin) → ĐẬP bằng chi tiết bất ngờ → xây tiếp → đập mạnh hơn → BÙNG NỔ. Mỗi "beat" = dồn (setup) → chờ (lặng) → BỤP (punchline) → rung (reaction). Timing > content: `[ngừng nửa giây]` trước, `[ngừng 1 giây]` sau; phản ứng nhân vật ngay sau punchline khuếch đại cười.
-- **Thoại hài NGẮN:** câu ≤15 từ, punchline ≤7 từ. Mẫu: deadpan ("Nhà cháy à? Ừ. Tối nay ăn gì?") · sarcasm · non-sequitur ("Anh có yêu em không?" — "Bạn có biết flamingo ngủ bằng một chân không?") · echo (lặp lời người khác giọng khác).
-- **Running gag:** thiết lập đầu → quay lại giữa → lại ở cuối, mỗi lần bối cảnh mới hài hơn (callback tích lũy: cười nhẹ → to → sặc). Audio đặc biệt hiệu quả (người nghe nhận ra pattern = "insider joke").
-- **Giọng kể = nguồn hài thứ hai:** quan sát hài, tự giễu, so sánh bất ngờ ("tâm trạng tôi như wifi công cộng — có đấy nhưng không kết nối được"). Chọn MỘT kiểu giọng (dry / animated / tự giễu / observational) và giữ nhất quán.
+## 3. Comedy Mechanisms
 
-## Twist hài & kết
-- **Grand punchline:** cả truyện hướng tới MỘT punchline lớn cuối — mọi tuyến hài hội tụ (lời nói dối lộ cùng lúc, chi tiết đầu quay lại với nghĩa mới).
-- **"Hóa ra...":** "Hóa ra bà nội biết hết từ đầu — và đang quay video."
-- **Kết hài vẫn cần CẢM XÚC:** sau hỗn loạn, nhân vật vẫn được yêu thương → phần thưởng kép (dopamine + oxytocin). ("Nhà đầy bọt xà phòng. Con gà chưa bắt lại. Nhưng bà nội cười khàn: 'Đây là sinh nhật vui nhất đời bà.'")
+Choose one or combine deliberately:
 
-## Cấu trúc hồi
-- **Hồi 1 (15–20%):** nhân vật (với "đặc sản") + thế giới bình thường; sự kiện khởi phát (nói dối/sai lầm "có gì đâu"); hook hài; câu đùa đầu trong 30 giây (thiết lập "hợp đồng" hài).
-- **Hồi 2A (25–30%):** hậu quả đầu → cố sửa → tệ hơn; thêm nhân vật phụ hài; dramatic irony; running gag bắt đầu.
-- **Hồi 2B (25–30%):** mọi tuyến chồng chất gần bùng nổ; hết cách giấu/sửa; running gag lần 2 (hài hơn); "chạy trời không khỏi nắng".
-- **Hồi 3 (15–20%):** grand punchline (mọi thứ vỡ cùng lúc); callback lớn nhất; kết ấm áp (được chấp nhận/tha thứ); câu cuối = callback hài cuối hoặc câu ấm → nụ cười + xúc động.
+| Mechanism | How it works | Avoid |
+|---|---|---|
+| Expectation mismatch | A is set up; B follows another logic | random result unrelated to setup |
+| Disproportion | reaction too large/small for situation | one-size reaction repeated |
+| Escalating commitment | character keeps defending an old error | making them stupid arbitrarily |
+| Dramatic irony | listener knows what character does not | stretching what one question could solve |
+| Status | powerful person loses footing or reverse | humiliating the powerless |
+| Recognition | everyday truth named unexpectedly | generic meme observation |
+| Language | double meaning, rhythm, literal reading | jokes that require seeing text |
+| Callback | old detail returns with new function | repeating the same line unchanged |
 
-## Bẫy cần tránh (hài hước)
-| Bẫy | Cách tránh |
-|-----|-----------|
-| Chỉ đùa, không có truyện | Hài phải có cốt truyện + câu hỏi trung tâm + nhân vật có mục tiêu |
-| Giải thích câu đùa | Tin người nghe; phải giải thích = đùa hỏng |
-| Punch down (cười vào người yếu) | Cười vào tình huống, quyền lực, sự phi lý |
-| Nhân vật chỉ để cười | Vẫn cần mong muốn thật, lo lắng thật |
-| Hài quá cố (try-hard) | Hài từ NHÂN VẬT + TÌNH HUỐNG, không từ tác giả cố |
-| Punchline sai vị trí | Từ hài luôn ở CUỐI câu |
-| Đùa liên tục không nghỉ | Xen 1–2 khoảnh khắc nghiêm túc/ấm |
-| Phi lý nhưng không hợp lý | Mỗi bước leo thang có logic "sai nhưng đúng" |
+A larger deviation is not automatically funnier. Play frame, harm level, character, and explanation all matter.
 
-## Tiêu đề & keyword
-**Tò mò:** dở khóc dở cười, trớ trêu, oái oăm, xui xẻo, nhầm lẫn, bí mật vỡ lở, đám cưới hỗn loạn, ngày xui nhất đời. **Kỳ vọng cười:** cười sặc, đừng uống nước khi nghe, tình huống khó đỡ, bá đạo, "chuyện thật 100%". **Đồng cảm:** ai cũng gặp, vợ chồng, crush, sếp, mẹ chồng, hàng xóm.
-Mẫu tiêu đề: *"Tôi nói dối vợ MỘT câu — và cả khu phố biết trước tôi"* · *"Ngày tôi tỏ tình — và được... ba người nhận lời cùng lúc"* · *"Bữa tiệc 'chỉ mời vài người thân' có 47 khách — tôi không biết 40 người"*.
+## 4. Central Question And Comic Engine
 
-## Checklist bổ sung hài hước (sau checklist nền)
-- [ ] ≥1 khoảnh khắc hài mỗi 60–90 giây? Punchline luôn ở CUỐI câu?
-- [ ] Không giải thích câu đùa nào? Có leo thang tuyết lăn (cố sửa → TỆ HƠN)?
-- [ ] Có ≥1 running gag (callback ≥3 lần)? Nhân vật có "đặc sản" hài?
-- [ ] Có dramatic irony? Hài punch UP không punch DOWN?
-- [ ] Có khoảnh khắc ấm xen giữa? Grand punchline hội tụ mọi tuyến ở cuối?
-- [ ] Kết có cảm xúc ấm? Có khoảng lặng trước/sau punchline quan trọng?
-- [ ] Có cốt truyện thật với câu hỏi trung tâm (không chỉ xâu chuỗi câu đùa)?
+Template:
+
+> *Can [character] achieve [serious goal] before [mistake/blind spot] pushes the situation beyond control?*
+
+Vietnamese examples:
+
+- *Tôi có giấu được việc đặt hai bàn tiệc cùng ngày trước khi hai gia đình tới cùng một nhà hàng?*
+- *Một nhân viên tuân thủ đúng từng quy định vô lý sẽ buộc công ty thừa nhận quy trình sai ở đâu?*
+- *Tôi có tỏ tình được khi em gái đã dùng nhầm bản nháp của tôi làm bài phát biểu đám cưới?*
+
+Write the comic engine in one sentence:
+
+```text
+Whenever the character tries to [goal], [trait/situation rule] makes them [repeatable mistake type with variation].
+```
+
+Example:
+
+> *Mỗi khi Minh cố chứng minh mình là người tổ chức chuyên nghiệp, thói quen không dám nói “không” khiến anh nhận thêm một yêu cầu mâu thuẫn.*
+
+The engine must create multiple different scenes from the same logic. If it creates only one punchline, it is a gag, not an engine.
+
+## 5. Comic Characters
+
+Build from contradiction, not labels:
+
+| Slot | Example |
+|---|---|
+| Image they want to keep | person who controls everything |
+| Blind spot | cannot see they talk too much |
+| Real competence | handles crises fast |
+| Unbearable threshold | being seen as unprofessional |
+
+Comedy happens when the blind spot damages the image, while real competence lets the character survive long enough for the situation to continue.
+
+Characters need real goals and vulnerability. Do not turn body type, illness, regional accent, poverty, or trauma into the default punchline. The "straight" character also needs a blind spot; they are not just an explainer.
+
+Comic pairs come from conflicting logics: improviser vs rule follower, face-saving person vs blunt truth-teller, accurately pessimistic person vs wrongly optimistic but useful person, metaphor-understander vs literal listener. Roles can switch by arena.
+
+## 6. Beats And Punchlines
+
+Basic beat:
+
+> **clear setup -> listener forms expectation -> pivot -> consequence/reaction**
+
+Use pauses only when voice and production support them. Do not insert `[pause]` tags into pure story unless requested.
+
+Put the meaning-changing information near the end of a sentence unit when possible, but do not sacrifice natural syntax or clarity. "Punchline must be the final word" is too rigid.
+
+Vietnamese calibration:
+
+**Forced:**
+
+> *Từ trong vali, một con gà bất ngờ chạy ra khiến tất cả chúng tôi hoảng hốt.*
+
+**Cleaner:**
+
+> *Tôi mở vali. Quần áo không có. Có một con gà.*
+
+The laugh comes from pacing and dry confirmation, not from inverted syntax.
+
+Reaction may confirm absurdity, misunderstand further, preserve face, shift power, or create the next problem. Do not explain why the punchline is funny, but clarify facts if listeners may miss what happened.
+
+Useful tools: rule of three, understatement/overstatement, bathos, misdirection, literalization. Use them when they serve character logic.
+
+## 7. Situation Escalation
+
+Good snowball is causal:
+
+> **small mistake -> cover/fix attempt because of character -> solution creates new obligation -> threads collide -> final choice**
+
+Escalation axes:
+
+- number of people who know;
+- contradictory promises;
+- public exposure;
+- cost of confessing.
+
+Misunderstandings work only when characters have a reason not to ask plainly, answering now carries real cost, each delay creates new action/evidence, and the reveal leaves consequence.
+
+The world must react. Bills still matter, guests still respond, bosses still have goals, and harmed people do not forget because the scene needs a laugh.
+
+## 8. Running Gags And Callbacks
+
+A running gag must change function, not merely repeat three times.
+
+| Pass | Possible function |
+|---|---|
+| setup | introduces object/line/trait |
+| variation | appears where its meaning changes |
+| payoff | solves or detonates the main conflict |
+
+Example: a distorted speaker first ruins a speech, later leaks a phone call, and finally becomes the only way to transmit a real apology.
+
+Not every comedy needs a running gag. Observational comedy or satire may use an idea motif instead.
+
+## 9. Comedy Branches
+
+- **Situation comedy:** goal and obligations collide. Prioritize causality, timing, and status.
+- **Character/family comedy:** familiar life logics collide. Know whether the story laughs with, laughs at, or critiques someone.
+- **Romantic comedy:** deviation lets two people see each other more clearly. Accidents cannot replace chemistry or consent.
+- **Dark comedy:** define target, distance, and harm level. Laugh at power, ritual, denial, or absurdity; do not sacrifice the powerless as punchline. Follow base safety.
+- **Satire:** establish system rules, let characters follow them to absurd consequence, and keep critique target consistent.
+- **Absurd/surreal:** the world can be unreal but must have internal logic. Listeners need to know what is normal there.
+
+## 10. Audio Rhythm And Dialogue
+
+- Laugh frequency depends on the promise: sketch is denser than dramedy. Use listening tests/retention, not a rigid 60-90 second law.
+- A joke sentence does not have to be under 15 words. Length serves setup, voice, and breath.
+- Distinguish voices by goal, logic, and status; do not make everyone quip.
+- Leave room after big beats when listeners need to catch the pivot; the gap can be an action, not a silence tag.
+- A serious passage does not forget the genre if it raises cost or deepens later payoff.
+- Modern comparisons such as wifi/apps work only when age, job, and voice fit. Do not turn narration into a meme pile.
+
+Test on someone who does not know the setup. Note where they miss facts, predict too early, understand but do not laugh because harm is too large, or laugh at the reaction instead of the planned punchline.
+
+## 11. Flexible Structures
+
+- **Snowball:** one mistake protected by later mistakes; payoff when threads collide.
+- **Goal comedy:** simple goal, varied arenas.
+- **Status reversal:** the seemingly powerful person reveals dependence.
+- **Satirical demonstration:** one rule/system tested across cases, exposing contradictions.
+- **Comic reconciliation:** opposing logics cooperate without becoming identical.
+
+Endings may be warm, sour, open, or sharp. Pay off the promised comic experience.
+
+## 12. Hybrids And Premises
+
+- **Comedy + drama:** if drama is main, jokes must not erase damage; if comedy is main, reduce harm and keep recoverability.
+- **Comedy + romance:** laughter creates chemistry or exposes vulnerability; it does not replace romantic choice.
+- **Comedy + mystery:** solution stays fair; deviation may live in hypotheses or the investigator.
+- **Comedy + horror:** decide where listeners should fear or laugh; stray quips can break dread.
+- **Comedy + system/xuyên sách:** humor comes from mismatch between rules/expectations and behavior, not from long UI explanations.
+- **Comedy + truyen-rac:** keep consequences recoverable; if foolishness causes severe harm to innocents, tone shifts toward drama/rage bait.
+
+## 13. Repair Examples
+
+**Author trying to joke:**
+
+> *Sếp tôi tức như một con hổ bị mất wifi, nhìn buồn cười không chịu được.*
+
+**Comic engine:**
+
+> *Sếp cấm cả phòng dùng điện thoại trong cuộc họp về chuyển đổi số. Ba phút sau, ông hỏi vì sao không ai quét mã để xem tài liệu.*
+
+Absurdity comes from the character's goal and rule.
+
+**Absurdity without consequence:**
+
+> *Tôi mời nhầm một trăm người và ai cũng vui vẻ tới dự.*
+
+**Causal chain:**
+
+> *Tôi gửi nhầm thiệp cho cả danh sách khách hàng. Xóa tin không kịp, tôi bèn bảo đó là “sự kiện tri ân”. Đến lúc giám đốc hỏi ngân sách, tôi đã có tám mươi sáu người xác nhận tham dự và một ban nhạc tự nguyện.*
+
+**Punching down weak:** laughing because a poor employee does not know luxury rituals.
+
+**Better:** laugh because the company forces employees to learn luxury rituals to hide unpaid wages. The target becomes the power system.
+
+## 14. Common Traps
+
+| Trap | Repair |
+|---|---|
+| Quips in every sentence | Let characters speak by goal; keep punchlines where setup exists |
+| Character is stupid so plot can move | Use consistent blind spot, status, or commitment |
+| Punchline forced to final word | Prioritize natural syntax and clear idea units |
+| Every scene worsens in the same way | Change axis: knowledge, status, publicity, obligation |
+| Misunderstanding prolonged by fake silence | Create reason and cost for not speaking |
+| Running gag repeats unchanged | Change function or meaning each time |
+| Dark comedy becomes cruelty | Check target, power, harm, and distance |
+| Satire has no target | Define the system/belief being criticized |
+| Warm ending mandatory | Pay the promised tone; warmth is optional |
+| Rhythm controlled by `[pause]` tags | Write rhythm through sentence/action; add cues only if requested |
+
+## 15. Checklist
+
+- [ ] Does the genre contract include expectation, deviation, safe-enough frame, consequence, and point of view?
+- [ ] Can the comic engine generate multiple scenes?
+- [ ] Does the character have a real goal, desired image, blind spot, and competence?
+- [ ] Does each beat provide enough setup for the pivot?
+- [ ] Is the punchline clear by ear and natural in Vietnamese syntax?
+- [ ] Does escalation come from choices to fix/cover, not random events?
+- [ ] Does misunderstanding have reason and real cost?
+- [ ] Are joke target and power asymmetry appropriate?
+- [ ] Does any running gag change function?
+- [ ] Do serious passages still serve goal/cost?
+- [ ] Does the ending pay comic consequence, not mandatory lesson or warmth?
+- [ ] No quotas for joke count, sentence length, or callback count?
+
+## 16. Basis
+
+- [PubMed: Benign violations](https://pubmed.ncbi.nlm.nih.gov/20587696/)
+- [PubMed: Benign violation, power asymmetry and culture](https://pubmed.ncbi.nlm.nih.gov/31275204/)
+- [PubMed: Final-note expectancy and humor](https://pubmed.ncbi.nlm.nih.gov/36180930/)
+- [Purdue OWL: Writing Compelling Characters](https://owl.purdue.edu/owl/subject_specific_writing/creative_writing/writers/fiction-basics/writing_compelling_characters.html)

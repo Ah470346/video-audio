@@ -1,0 +1,5 @@
+# Strict final audio QA runs inside the OmniVoice virtual environment.
+# Install with:
+# /Users/truongdv/k2fsa-omnivoice311/.venv/bin/python -m pip install -r requirements-strict-verification.txt
+faster-whisper==1.2.1
+git+https://github.com/MahmoudAshraf97/ctc-forced-aligner.git@11855d1

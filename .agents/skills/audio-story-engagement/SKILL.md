@@ -1,106 +1,150 @@
 ---
 name: audio-story-engagement
 description: |
-  Skill NỀN TẢNG (base) để viết kịch bản truyện audio gây nghiện bằng cơ chế tâm lý (dopamine loop, Zeigarnik, phần thưởng biến thiên, mirror neurons, pacing, oxytocin, cortisol...).
-  LUÔN dùng skill này mỗi khi người dùng yêu cầu "tạo/viết truyện", "viết kịch bản truyện audio", "viết truyện drama/ngoại tình/trinh thám/kinh dị/tình cảm/hài...", hoặc BẤT KỲ yêu cầu sáng tác truyện kể nào — bất kể thể loại, kể cả khi họ không gọi tên skill.
-  Skill này KHÔNG quy định thể loại; nó quy định CÁCH TƯ DUY + CẤU TRÚC để giữ chân người nghe. Khi có thể loại cụ thể, DÙNG KÈM skill genre tương ứng (audio-story-genre-*) và premise (audio-story-premise-*) nếu có.
+  Base skill for writing high-retention Vietnamese audio-story scripts through clear promises, causality, character motivation, narrative rewards, pacing, immersion, narrator-led prose, and selective dialogue.
+  ALWAYS use this skill whenever the user asks to create/write a story, write an audio-story script, write drama/adultery/mystery/horror/romance/comedy fiction, or any narrative fiction request, even if the user does not name the skill.
+  This skill does NOT define the genre. It defines the thinking model and structure for keeping listeners engaged. When the request has a concrete genre, use the matching `audio-story-genre-*` skill as well; use `audio-story-premise-*` when the premise includes reincarnation, a system, transmigration into a book, rage-bait/truyen-rac, or related mechanics.
 ---
 
-# Audio Story Engagement — Nền Tảng Tâm Lý Cho Kịch Bản Truyện Audio
+# Audio Story Engagement
 
-Mọi yêu cầu tạo truyện phải thành một kịch bản audio được thiết kế để **kích hoạt dopamine liên tục**. Dopamine là hóa chất của **khao khát và kỳ vọng**, không phải niềm vui. Nhiệm vụ không phải "kể chuyện hay" mà là **thiết kế chuỗi phần thưởng tâm lý** khiến người nghe không thể tắt.
+Turn every story request into a Vietnamese audio script that is understandable in one listen, driven by motivation, causality, and emotional progression. Do not merely list events; design expectation and payoff so the listener wants the next minute. Do not claim that wording can reliably "trigger" dopamine, oxytocin, cortisol, mirror neurons, or similar biological effects. Treat those labels only as old mnemonics; the practical writing operations live in [references/ky-thuat-chi-tiet.md](references/ky-thuat-chi-tiet.md).
 
-**Nguyên tắc tối thượng:** mỗi phút audio phải trả lời được *"tại sao người nghe KHÔNG được tắt ngay lúc này?"* Không trả lời được → viết lại đoạn đó.
+When this skill runs with genre, premise, or final-polish skills, follow the shared priority contract in [references/phoi-hop-skills.md](references/phoi-hop-skills.md). Specialist skills must not skip approval gates, loosen safety rules, impose hard quotas, or change a user-approved creative intent.
 
-## Hai luật cứng luôn áp dụng
+**Core test:** every audio minute must answer, "Why should the listener not stop right now?" If a section cannot answer that, rewrite it.
 
-**1. Xưng hô & bối cảnh:** kể ở **ngôi thứ nhất**. Không dùng địa danh thật — địa điểm gọi chung: *nhà tôi, làng tôi, công ty tôi, thành phố tôi đang sống...*, không "Hà Nội", "Sài Gòn". Tên riêng thì phân tuyến theo mức thân thuộc:
-- **Người thân/thân thuộc → gọi bằng quan hệ, KHÔNG tên riêng:** *chồng tôi, mẹ tôi, em gái tôi, bà ngoại tôi, bạn thân tôi*. Cụm quan hệ mang sẵn khoảng cách tình cảm nên người nghe tự lắp mẹ mình, em mình vào chỗ đó (mirror neurons + oxytocin); một cái tên lạ ở đó chỉ chen vào giữa.
-- **Người lạ → được đặt tên, nhưng phải là tên Hán-Việt** (kiểu Trung Quốc): *Trần Trạch, Tô Vân Thư, Lâm Xung, Đường Bá Chi*. Không tên thuần Việt, không tên Tây — chúng ghim truyện vào một bối cảnh cụ thể và phá giọng. **Các tên trong tài liệu chỉ là ví dụ cấu trúc/khẩu vị, KHÔNG phải danh sách để bê nguyên vào truyện; mỗi truyện phải tự chọn hoặc tự ghép tên mới phù hợp vai nhân vật.** Tối đa ~4–5 tên cho một truyện ngắn; tai không giữ nổi hơn.
-- **Xen kẽ 3 lớp gọi, đừng dán chặt một nhãn:** tên riêng ↔ đại từ (*anh ta, cô ấy, gã, hắn, người đàn ông đó*) ↔ danh xưng kiểu Trung (*Trần thiếu, Đường phu nhân, Hà lão gia / Hà lão, Tô tiểu thư, Lâm quản gia, Trạch ca*). "Trần Trạch bước vào. Trần Trạch ngồi xuống. Trần Trạch nhìn tôi" nghe như biên bản; tiếng Việt còn cho phép **bỏ hẳn chủ ngữ** — dùng cả lựa chọn đó.
-- **Chọn nhãn theo góc nhìn người kể, không phải để tránh lặp.** Sợ gã đó → *hắn*; cần nhờ vả → *Trần thiếu*; vừa bị phản bội → *Trần Trạch*, trống không, lạnh tanh. Đổi cách gọi khi quan hệ đổi nhiệt. Khi cảnh có hai người cùng giới, **rõ ràng thắng đa dạng**: gọi tên, kể cả lần thứ ba.
-- → Bảng danh xưng đầy đủ, cách dựng tên, quy tắc xen kẽ, ví dụ đối chiếu: [references/xung-ho-dat-ten.md](references/xung-ho-dat-ten.md).
+## Project Defaults
 
-**2. Văn phong DỨT KHOÁT, HIỆN ĐẠI — KHÔNG SẾN** (lớp lọc chạy ĐÈ lên mọi kỹ thuật; lọc TRƯỚC khi giữ câu nào lại). Mặc định: **ít chữ, câu gọn, chi tiết cụ thể, để cảm xúc lộ qua hành động.** Sến giết sự hấp dẫn nhanh hơn cả cốt truyện dở.
-- **Cắt, đừng tô:** mỗi câu mô tả phải đẩy truyện / tăng tò mò / tăng căng thẳng. Chỉ để "đẹp" hay "buồn" → xóa. Ưu tiên hành động + thoại + tiết lộ hơn tả cảnh, tả cảm xúc.
-- **Cấm ẩn dụ cảm xúc sáo mòn:** không "tim tan vỡ", "lệ rơi như mưa", "đau như dao cứa", "thế giới sụp đổ". Thay bằng chi tiết khô: *"Tôi đặt bát cơm xuống. Không ăn nữa."*
-- **Không than, không kể lể:** nhân vật hiện đại nuốt cảm xúc vào trong; một hành động nhỏ nói thay. Người nghe tự thấy đau — đừng đau hộ họ.
-- **Một chi tiết đắt hơn ba chi tiết đẹp:** chọn MỘT chi tiết cảm giác chính xác rồi dừng. Gạch bớt tính từ/trạng từ; giữ danh từ + động từ mạnh.
-- **Phép thử:** gạch mọi câu "nghe như lời bolero". Câu nào bê nguyên sang 10 truyện khác mà không đổi gì → sáo, viết lại cho cụ thể.
+Apply these defaults unless the user asks otherwise. Direct user requirements for point of view, setting, naming system, ending, or style override defaults within the boundaries of safety, logic, and one-listen clarity.
 
-> Bảng đối chiếu SẾN → DỨT KHOÁT: *"Nước mắt tuôn như mưa, tim tan nát"* → *"Tôi không khóc. Tôi chỉ thấy tay mình lạnh."* | *"Ánh mắt trìu mến vô bờ"* → *"Anh nhìn tôi lâu hơn bình thường đúng một giây."*
+### 1. Pronouns, Address, And Setting
 
-## Quy trình bắt buộc khi nhận yêu cầu tạo truyện
+Write in **first person** by default. Do not use real place names; use generic locations such as *nhà tôi, làng tôi, công ty tôi, thành phố tôi đang sống*. Do not use "Hà Nội" or "Sài Gòn" unless the user explicitly requests a real Vietnamese setting.
 
-KHÔNG viết ngay. Thực hiện tuần tự:
+- Build Vietnamese address forms (`xưng hô`) pair by pair. Consider relative age, kinship/rank, power, intimacy, public/private context, and current emotion. Kinship labels often anchor family relations in narration; names are natural in dialogue when needed for clarity, contrast, or a relationship temperature shift.
+- Default names: Chinese-style Sino-Vietnamese names (`tên phong cách Trung Quốc/Hán-Việt`) with common Chinese surnames and preferably two-syllable given names, e.g. the structure of *Lâm Vân Khê, Cố Thừa Ngôn*. Keep Vietnamese address forms; do not import `ta-ngươi` into modern stories. Use natural Vietnamese names only when the user asks for a Vietnamese setting. The naming system must match the story world. Never copy sample names from the skill into the actual story.
+- Ear clarity beats anti-repetition. Use name, relation, title, pronoun, or omitted subject according to point of view. In scenes with multiple people, repeat names/roles when a pronoun could be ambiguous.
+- A change in address form is a relationship beat: *anh-em -> tôi-anh*, given name -> title, intimate -> distant only after an action/emotion makes the shift meaningful.
+- For pair maps, default naming, ambiguous pronouns, and audio-first examples, read [references/xung-ho-dat-ten.md](references/xung-ho-dat-ten.md).
 
-**Bước 0 — TÌM & ĐỀ XUẤT Ý TƯỞNG (CỔNG CHẶN, làm đầu tiên).** Trước khi viết bất kỳ câu nào: (1) tìm trên mạng mô-típ/chủ đề đang hot cho đúng thể loại, (2) chắt lọc thành **3–5 ý tưởng khác biệt rõ rệt** (mỗi ý: hook/tiêu đề + logline 1–2 câu + điểm xoáy/twist), (3) trình danh sách đánh số và **DỪNG chờ người dùng chốt**. Chỉ khi người dùng chốt/trộn/đổi ý mới đi tiếp. → Chi tiết cách search, mẫu trình bày, fallback khi không có web: đọc [references/tim-y-tuong.md](references/tim-y-tuong.md).
-> *Ngoại lệ duy nhất:* người dùng đã tự mô tả sẵn cốt truyện cụ thể → xác nhận nhanh rồi đi tiếp. Bỏ qua Bước 0 và viết luôn cả kịch bản là lỗi nghiêm trọng.
+### 2. Firm Modern Prose, Not Sentimental Prose
 
-**Bước 1 — Câu Hỏi Trung Tâm.** Chốt MỘT câu hỏi lớn xuyên suốt mà người nghe khao khát biết đáp án — "món nợ" treo từ phút đầu, chỉ trả đầy đủ ở phút cuối. Phải chứa **hậu quả cá nhân** (ai đó sẽ mất gì), không chỉ là thông tin.
+Default style: fewer words, clean sentences, concrete details, emotion revealed through action. Sentimentality (`sến`) kills appeal faster than a weak plot.
 
-**Bước 2 — CHỌN KIỂU MỞ ĐẦU (CỔNG CHẶN thứ hai, làm trước khi viết bất kỳ đoạn nào của truyện thật).** Đoạn mở là phần quyết định người nghe ở lại hay tắt — KHÔNG được tự chọn ngầm rồi viết luôn. Thực hiện: (1) tra bảng chọn theo thể loại/tiền đề ở [references/mo-dau.md](references/mo-dau.md) (mục 4–5) để khoanh vùng 3–4 kiểu phù hợp nhất trong menu 10 kiểu; (2) viết nháp **3–4 đoạn mở ngắn** (mỗi đoạn 2–4 câu, đủ câu mồi + neo tối thiểu — xem cấu trúc 3 nhịp ở mo-dau.md mục 2), mỗi đoạn dùng một kỹ thuật khác nhau và **ghi rõ tên kỹ thuật đang áp dụng** trước mỗi đoạn (ví dụ: "1. Flash-forward hậu quả — ..."); (3) trình danh sách đánh số và **DỪNG chờ người dùng chọn** (hoặc yêu cầu chỉnh/trộn). Chỉ khi người dùng chốt mới viết toàn bộ kịch bản, mở rộng đúng đoạn đã chọn (được phép biên tập câu chữ cho khớp mạch truyện, không đổi kỹ thuật).
-> *Ngoại lệ duy nhất:* người dùng đã tự cho sẵn câu/đoạn mở đầu cụ thể → xác nhận nhanh rồi đi tiếp. Bỏ qua Bước 2 và tự chọn kiểu mở rồi viết thẳng cả truyện là lỗi nghiêm trọng, ngang hàng với bỏ qua Bước 0.
+- Cut rather than decorate. Every description must push plot, curiosity, tension, character, or consequence. If it exists only to sound beautiful or sad, delete it.
+- Avoid stale emotional metaphors: no *tim tan vỡ, lệ rơi như mưa, đau như dao cứa, thế giới sụp đổ*. Prefer dry concrete behavior: *"Tôi đặt bát cơm xuống. Không ăn nữa."*
+- Do not whine or over-explain grief. Modern characters often swallow feeling; one small action should let listeners feel it themselves.
+- One precise detail is better than three pretty details. Reduce adjectives/adverbs; keep strong nouns and verbs.
+- Test every sentence that sounds like `bolero` melodrama. If it could be pasted into ten other stories unchanged, make it specific.
 
-**Bước 3 — Bản Đồ Dopamine.** Phác nhanh trước khi viết: 3–7 vòng lặp mở (gieo lúc nào, đóng lúc nào); vị trí các cú twist (tránh dồn hết vào cuối); chu kỳ hy vọng↔tuyệt vọng (≥3 lần đảo chiều); điểm đặt "Aha!" + foreshadow tương ứng.
+Vietnamese calibration examples must stay Vietnamese:
 
-**Bước 4 — Viết** theo 10 kỹ thuật (tóm tắt bên dưới; bản đầy đủ ở references), mở rộng đúng đoạn mở đã chốt ở Bước 2 thành đoạn mở hoàn chỉnh của truyện.
+> *"Nước mắt tuôn như mưa, tim tan nát"* -> *"Tôi không khóc. Tôi chỉ thấy tay mình lạnh."*
+>
+> *"Ánh mắt trìu mến vô bờ"* -> *"Anh nhìn tôi lâu hơn bình thường đúng một giây."*
 
-**Bước 5 — Tự kiểm tra** bằng checklist trước khi trả kết quả.
+### 3. Narrator-Led By Default, Dialogue As Impact
 
-**Bước 6 — Lưu kịch bản** vào đúng thư mục thể loại tại `/Users/truongdv/Documents/video-audio/kich-ban/`: `drama/`, `trinh-tham/`, `kinh-di/`, `tinh-cam/`, `hai-huoc/`.
-- Tên file: `ten-viet-thuong-khong-dau.md` (gạch ngang phân cách, ví dụ `chong-toi-ngoai-tinh.md`).
-- **Nội dung file THUẦN TRUYỆN:** bắt đầu bằng câu đầu tiên (chính là hook), kết bằng câu cuối. CẤM heading tiêu đề, CẤM metadata (thể loại/ngôi kể/số chữ/hướng dẫn đọc), CẤM dấu ngăn cách `---`/`***` giữa các hồi (chuyển cảnh bằng lời văn + dòng trắng), CẤM thẻ `[SFX]`/`[BGM]`/tên chương — trừ khi người dùng CHỦ ĐỘNG yêu cầu lớp chỉ dẫn sản xuất. Ghi chú cho người sản xuất (nếu có) để ở file riêng hoặc trả lời riêng.
+For single-voice audio/TTS stories, use the narrator as the spine: summarize routine exchanges, connect choice to consequence, guide psychology, and push plot. Direct dialogue is scarce. A scene does not need dialogue unless the exact wording matters. If the user asks for audio drama, scripted dialogue, or multiple actors, treat that as a different mode, but still require every line to function.
 
-## 10 kỹ thuật cốt lõi (bản tóm tắt)
+- Keep direct speech only when the wording itself performs an action (confession, refusal, command, threat, promise), shifts power/relationship, reveals voice or subtext, lands a joke/twist/emotional beat, or cannot be paraphrased without losing force.
+- Compress procedural communication: greetings, logistics, repeated arguments, known information, and plot explanation should become narration or be cut. Do not narrate an idea and then make a character repeat it.
+- Narrate psychology as a process: what the character notices -> how they interpret/misinterpret it -> what they want -> what they choose. Avoid repeating labels like *tôi buồn, tôi sốc, tôi tức*.
+- Vary narrative distance: summary, one concrete detail, a line of inner logic, a staged moment, then a strong line of dialogue with immediate consequence. Do not turn the whole story into a flat event report, and do not stage long exchanges when power, information, or decision does not change.
+- For dialogue selection, narrative distance, and editing examples, read [references/ky-thuat-chi-tiet.md](references/ky-thuat-chi-tiet.md#10-narrative-voice-dialogue-and-subtext).
 
-Đây là bản rút gọn để thao tác nhanh. Khi cần ví dụ, edge-case, hoặc bảng quy đổi chi tiết → đọc [references/ky-thuat-chi-tiet.md](references/ky-thuat-chi-tiet.md).
+## Mandatory Workflow For Story Creation
 
-1. **Hook 30 giây sinh tử.** Mở đầu là một **MÓN NỢ**, không phải một câu văn hay: câu mồi phải mở ra câu hỏi người nghe không chịu nổi nếu không biết đáp án — **và phải là câu hỏi của chính truyện này** (câu sốc mở ra câu hỏi truyện không định trả lời = *hook nói dối*, mất niềm tin vào kênh). KHÔNG lý lịch/bối cảnh/thời tiết/tỉnh dậy sau giấc mơ. Câu đầu tiên phải tự đứng được. Tiêu đề là "hook số 0" — mở một vòng lặp, đừng tiết lộ hết ruột. **Đây là phần quyết định người nghe ở lại hay tắt — luôn đi qua Bước 2 (cổng chặn chọn kiểu mở) trước khi viết, không tự chọn ngầm.**
-   - **Chọn kiểu mở đầu theo món nợ muốn tạo, không theo "kiểu nào nghe ngầu"** — menu 10 kiểu (flash-forward hậu quả · nghịch lý · in medias res · thú nhận cấm kỵ · chi tiết sai lệch · cold open thoại · vật chứng lệch · đếm ngược · đảo kỳ vọng · người kể tự tố) + bảng chọn theo thể loại/tiền đề + kiểu mở giết truyện: [references/mo-dau.md](references/mo-dau.md).
-   - **Luật chống tụt hook** (lỗi phổ biến hơn cả câu mồi yếu): đoạn mở đi đúng 3 nhịp — **câu mồi** (1 câu, mở nợ) → **neo tối thiểu** (2–4 câu: ai/ở đâu/muốn gì, cài qua hành động đang diễn ra) → **móc thứ hai** (siết hoặc mở thêm một câu hỏi *trước khi* món nợ đầu nguội). Câu mồi chấn động rồi lùi về giải thích = mất người nghe ở giây 40, không phải giây 8.
-2. **Zeigarnik — vòng lặp mở.** Luôn có ≥2 vòng lặp mở cùng lúc; **mở vòng mới TRƯỚC khi đóng vòng cũ**. Phân 3 tầng: lớn (Câu Hỏi Trung Tâm) / trung (bí ẩn phụ) / nhỏ (căng thẳng trong cảnh). Nhỏ giọt manh mối 10–20%/lần. Cliffhanger cuối mỗi phân đoạn nhưng **XOAY VÒNG 4 loại**: cắt trước đỉnh điểm / tiết lộ chấn động / ngã ba quyết định / mầm họa mới. Viết cliffhanger NGẮN, cắt phựt.
-3. **Phần thưởng biến thiên.** Trước mỗi tình tiết, hỏi *"người nghe quen thể loại sẽ đoán gì?"* rồi phá khuôn: đúng kỳ vọng nhưng SỚM hơn / hậu quả NGƯỢC chiều / đảo vai nạn nhân–thủ phạm. Twist phải **bất ngờ nhưng tất yếu** (đã foreshadow). Chu kỳ hy vọng–tuyệt vọng: không cho thắng/thua quá 2 nhịp liên tiếp. Chiến thắng phải có giá.
-4. **Mirror neurons.** CẤM kể tên cảm xúc, TẢ triệu chứng cơ thể (sợ → hơi thở đứt quãng; ghen → nóng bừng mặt, siết chặt điện thoại). Mỗi cảnh chỉ MỘT triệu chứng đắt, KHÔ. Ưu tiên âm thanh (đặc thù audio). "Zoom cận cảnh" 1 chi tiết chỉ ở 1–2 đỉnh điểm cả truyện. Thoại có **subtext** (nói một đằng nghĩ một nẻo); dùng ngắt lời, im lặng, câu bỏ lửng.
-5. **Pacing cho audio.** Cao trào → câu ngắn, động từ mạnh, cắt trạng từ. Lắng đọng → câu dài hơn (nhưng vẫn đọc-một-hơi-được và vẫn gieo điều gì đó). Sau 3–4 đoạn cùng nhịp PHẢI đổi nhịp. Im lặng là vũ khí. Đổi "chất liệu" (thoại→hành động→nội tâm→tả) mỗi 2–3 phút. Tương phản cả TÔNG cảm xúc, không chỉ nhịp câu.
-6. **Setup–payoff & "Aha!".** Mỗi twist lớn cần 2–3 hạt giống gieo trước, ngụy trang giữa cảnh (không đặt cuối câu/cuối đoạn). Quy tắc "gieo 3 lần": lướt qua → hơi lạ → phát nổ. Cho người nghe đoán ra sự thật ~10–20 giây TRƯỚC nhân vật (dramatic irony). Callback khép vòng.
-7. **Neo cảm xúc (oxytocin).** Trong 2 phút đầu, cho thấy nhân vật có ≥1 điều đáng quý sắp bị đe dọa. Mọi cảnh nhân vật phải ĐANG MUỐN điều gì và bị cản. Cho nhân vật khuyết điểm con người. Phản diện phải có logic riêng. Đặt nhân vật vào **song đề** (chọn giữa hai điều đều mất), không chỉ khó khăn.
-8. **Cortisol & leo thang.** Cược mỗi hồi phải LỚN HƠN hồi trước (thể diện → hôn nhân → con cái → nhân phẩm/mạng sống). Sau mỗi cú sốc lớn cho 30–60 giây hạ nhiệt (vẫn gieo hạt giống mới). Dùng đồng hồ đếm ngược khi truyện chùng.
-9. **Thiết kế âm thanh** (khi người dùng cần lớp sản xuất). Thẻ vuông `[tiếng mưa]`, `[im lặng 3 giây]`. 3 loại: ambience (báo chuyển cảnh) / âm biến cố (cú giật) / nhạc nền (dâng trước cao trào, cắt phựt tại cú sốc). Motif âm thanh gắn với manh mối = "gieo 3 lần" bằng âm thanh. Nếu truyện thuần giọng đọc → lồng âm thanh vào lời văn, không dùng thẻ.
-10. **Giọng kể.** Cho người kể một giọng riêng nhất quán (chua chát / tỉnh táo lạnh / hài cay đắng) — đỡ lấy các đoạn trầm. Nội tâm phải sắc, ngắn, chỉ xuất hiện khi *tiến triển* điều gì (lê thê = lỗi ru ngủ số một). Người kể *diễn giải*, có thể không đáng tin. Câu chữ mang khẩu khí người kể.
+Do not start drafting the story immediately. Run these steps in order.
 
-## Cấu trúc phân đoạn & độ dài
+### Step 0: Research And Propose Ideas
 
-- Mỗi phân đoạn là một "đơn vị dopamine": Mở 10% (móc nối tức thì, không tóm tắt dài) → Thân 75% (≥1 tiến triển thật + 1 dao động hy vọng/tuyệt vọng + gieo/tưới hạt giống) → Kết 15% (cliffhanger xoay vòng, thông tin sốc ở những từ CUỐI).
-- Mỗi tập phải có vòng cung cảm xúc riêng hoàn chỉnh NGOÀI cliffhanger.
-- Độ dài: nếu người dùng không nêu → hỏi ngắn (một tập hay nhiều tập, dài cỡ nào). Serial gọn ~1.200–2.500 chữ/tập (~5–15 phút, tốc độ kể tiếng Việt ~130–160 chữ/phút). Tính bằng TAI, không bằng mắt.
+Before writing any story prose, first: (1) research current motifs/topics for the requested genre, (2) distill them into **3-5 clearly different ideas**; each idea must include a hook/title, a 1-2 sentence logline, and a twist/angle, (3) present the numbered list and **stop for the user to choose**.
 
-## Thiết kế kết thúc đọng lại
+Exception: the user already gave a sufficiently specific premise/plot, or explicitly authorized the agent to choose and proceed. In that case, briefly state the chosen direction and continue. Genre/premise skills may not use themselves as an excuse to skip this gate when the brief is still open.
 
-Trả trọn Câu Hỏi Trung Tâm là mức tối thiểu. Twist cuối phải là chốt của foreshadow (không phải cú lừa mới). Công lý/nhân quả có thể lệch chuẩn nhưng phải tương xứng cái giá nhân vật đã trả — kết dễ dãi xóa sạch căng thẳng. Đóng bằng callback mang nghĩa mới. Câu cuối để lại dư âm, không "bài học rút ra". Chừa mầm cho phần sau được phép (gieo vòng lặp MỚI); bỏ nợ cũ thì không.
+Read [references/tim-y-tuong.md](references/tim-y-tuong.md) for the research method, output format, and fallback when web access is unavailable.
 
-## Những lỗi giết chết sự hấp dẫn (CẤM)
+### Step 1: Central Question
 
-Mở đầu bằng lý lịch/bối cảnh · info-dump · kể tên cảm xúc · đóng hết vòng lặp giữa truyện · nhân vật thụ động (trùng hợp được GÂY rắc rối, không được GIẢI rắc rối) · twist không gieo trước · cliffhanger một màu · nhịp văn đều đều · câu không đọc-to-được · kết bỏ nợ · nội tâm lê thê · thoại "nói toạc" (không subtext) · tông cảm xúc một màu · **sến/hoa mỹ/sáo mòn** · tả để cho đẹp · đau hộ người nghe · đặt tên riêng cho người thân · tên thuần Việt/tên Tây cho người lạ · gọi mãi một nhãn (lặp tên).
+Lock one central question that listeners want answered from the first minute and that is fully paid off at the end. It must include personal stakes: who loses what, not just what information is missing.
 
-## An toàn nền tảng — từ vựng chống kiểm duyệt (BẮT BUỘC)
+### Step 2: Opening Selection Gate
 
-Kịch bản thành video/audio đăng TikTok/YouTube; AI kiểm duyệt quét giọng đọc + phụ đề. Từ trực diện về bạo lực/cái chết/tự hại làm video bị bóp hoặc gỡ — dù là hư cấu. **Luật:** không dùng từ nhạy cảm trực diện khi có từ thay thế mạnh tương đương; từ thay thế phải NGHIỆT NGÃ HƠN hoặc ÍT NHẤT BẰNG bản gốc (Hán-Việt trang trọng / tả trạng thái cụ thể / điện ảnh), KHÔNG dùng nói giảm nhạt ("ra đi", "không còn trên đời"). Thay NGAY KHI VIẾT, không viết xong mới sửa. Tiêu đề cũng phải sạch. Ngữ cảnh vô hại ("chết cười", "giết thời gian") thì giữ.
+Before writing the real story, choose the opening type with the user. Use [references/mo-dau.md](references/mo-dau.md) to select the 3-4 best opening techniques from the 10-type menu, then draft **3-4 short opening options**, each using a different technique and each providing transformation, minimal anchor, specific gap, and movement. Label each technique, present the options, and **stop for the user to choose**.
 
-Vài mapping cốt lõi: giết→*đoạt mạng/kết liễu/xuống tay*; chết→*tắt thở/bỏ mạng/ngừng thở*; xác→*thi thể*; tự tử→*tự kết liễu/tìm đến cái kết*; đâm/chém→*vung nhát dao/phóng lưỡi dao*; máu→*vệt đỏ/dòng ấm*; sát nhân→*hung thủ/kẻ đoạt mạng*; quan tài→*cỗ áo quan*. → **Bảng đầy đủ 20 dòng + quy tắc + ví dụ:** [references/an-toan-tu-vung.md](references/an-toan-tu-vung.md) (đọc và áp trước khi trả kết quả).
+Exception: the user already gave a concrete opening line/paragraph, or explicitly authorized the agent to choose and continue. When choosing under authorization, briefly note the technique/reason outside the story file, then proceed.
 
-## Checklist tự kiểm tra (rà trước khi trả kết quả — tự sửa, không hỏi lại)
+### Step 3: Expectation And Causality Map
 
-- [ ] **Văn phong:** không câu nào sến/sáo/bolero; không ẩn dụ mòn; câu dứt khoát, ít chữ; mỗi câu tả đều "làm việc"?
-- [ ] **Xưng hô:** người thân gọi bằng quan hệ (không tên riêng)? Tên người lạ đều là Hán-Việt? Không nhãn nào lặp quá 2 lần liên tiếp? Cảnh nhiều người vẫn rõ ai là ai?
-- [ ] **Mở đầu:** đã qua CỔNG CHẶN Bước 2 (trình 3–4 đoạn mở gắn tên kỹ thuật, chờ người dùng chọn) chứ không tự chọn ngầm? Câu mồi mở món nợ đúng của truyện này (không phải hook nói dối)? Đoạn mở đủ 3 nhịp, không tụt vào giải thích? Câu Hỏi Trung Tâm gieo trong 1–2 phút đầu?
-- [ ] Mọi thời điểm có ≥2 vòng lặp mở? ≥3 lần đảo chiều hy vọng↔tuyệt vọng?
-- [ ] Twist lớn có ≥2 hạt giống gieo trước (gieo 3 lần)?
-- [ ] Cảm xúc TẢ bằng cơ thể/âm thanh, không KỂ tên? Nhịp câu tương phản cao trào/lắng đọng?
-- [ ] Cược leo thang qua từng hồi? Cliffhanger xoay vòng loại?
-- [ ] Nhân vật có mong muốn cụ thể + khuyết điểm + ra quyết định chủ động? Có ≥1 song đề?
-- [ ] Thoại cảnh căng có subtext? Có tương phản tông cảm xúc (≥1 vùng dịu)? Có callback khép vòng?
-- [ ] Đọc to: trôi tự nhiên, không hụt hơi? Câu Hỏi Trung Tâm trả trọn ở kết?
-- [ ] **An toàn:** đã quét toàn bộ qua bảng từ vựng an toàn, không còn từ cấm chưa quy đổi?
+Before drafting, outline the central question/goal, required subloops, where loops open/progress/close, the choice -> consequence chain, information/emotional/power rewards, and setup for twists. Do not impose fixed numbers of loops or reversals.
 
-Khi có thể loại cụ thể: giữ nguyên toàn bộ khung này, dùng KÈM skill `audio-story-genre-*` để lấy chất liệu đặc thù. Không hỏi lại người dùng về chi tiết kỹ thuật — tự áp dụng; chỉ hỏi khi thiếu thông tin cốt yếu (độ dài, một tập hay nhiều tập).
+### Step 4: Draft
+
+Draft using the 10 core techniques summarized below. Expand the user-approved Step 2 opening into the actual opening of the story.
+
+### Step 5: Self-Check
+
+Run the checklist below and self-repair before returning or saving.
+
+### Step 6: Mandatory Final Polish
+
+After completing the draft and the base/genre/premise checklists, use `audio-story-final-polish` to repair causality, motivation, plot depth, emotional reaction, dialogue, Vietnamese address forms, pronouns, and read-aloud rhythm. Keep the narrator as the spine; do not add extra back-and-forth just to make scenes "lively." This must be the final content pass. If any story content changes afterward, run `audio-story-final-polish` again from the beginning.
+
+### Step 7: Save The Script
+
+Save complete scripts under `/Users/truongdv/Documents/projects/video-audio/kich-ban/` in the folder for the main genre: `drama/`, `trinh-tham/`, `kinh-di/`, `tinh-cam/`, or `hai-huoc/`. Hybrid stories go under the main genre. Premises such as `xuyên sách`, `hệ thống`, `trùng sinh`, or `truyện rác` do not get their own folders.
+
+- File name: `ten-viet-thuong-khong-dau.md`, words separated by hyphens, e.g. `chong-toi-ngoai-tinh.md`.
+- The saved file must contain **pure story only**: start with the first hook sentence and end with the final story sentence. Do not include title headings, metadata, genre/POV/word-count notes, read-aloud instructions, `---`/`***` act separators, `[SFX]`/`[BGM]`, or chapter labels unless the user explicitly requests production cues. Put production notes, if any, in a separate response or file.
+
+## 10 Core Techniques
+
+This is the quick operating version. For examples, edge cases, and deeper tables, read [references/ky-thuat-chi-tiet.md](references/ky-thuat-chi-tiet.md).
+
+1. **Hook and promise.** Open with a concrete change, enough anchor for listeners to know what they are missing, and a push into action. Match the title; do not use false hooks or shock stacking. For opening menus and transmigration/reincarnation openings, read [references/mo-dau.md](references/mo-dau.md).
+2. **Open loops.** Each loop needs a specific question/goal, a reason to care, progress path, and intended closure. Use loop count according to length. Provide real progress instead of endless interruption.
+3. **Variable rewards.** Vary reward type: information, capability, emotion, power reversal, confirmation, or fair surprise. Rewards must be earned through choice, investigation, or tradeoff.
+4. **Immersive detail.** Choose senses and reactions according to what the character wants/notices. Prefer action that shows emotion. Do not replace every feeling with a stock body symptom.
+5. **Audio pacing.** Each scene needs goal -> obstacle -> turn. Control pace through events, narrative distance, sentence rhythm, dialogue turns, and information load. Read aloud.
+6. **Setup-payoff and "Aha!".** Design backward from payoff to required clues. Surprise must be hard to predict but explainable in retrospect, and it must change decision/relationship, not merely provide trivia.
+7. **Emotional investment.** Give characters specific wants, inner conflict, agency, and individual detail. Understand antagonist motives without excusing responsibility.
+8. **Escalation and release.** Increase cost, proximity, deadline, irreversibility, or relationship pressure. Quiet scenes must still create consequence, alliance shifts, clues, or decisions.
+9. **Sound as information** when production layers are requested. Use sound to locate, signal change, or create motif. In pure narrated stories, write sound into action; do not add SFX/BGM tags unless requested.
+10. **Narrative voice and dialogue.** Let the narrator summarize, guide psychology, connect causality, and shift distance. Keep direct dialogue only when the exact words must be heard.
+
+## Segments And Length
+
+- Every segment must create a meaningful change: an obstructed goal, a character choice, changed information/power/relationship, and a consequence that pushes the next section.
+- Every episode must have its own emotional arc in addition to any cliffhanger.
+- If the user does not specify length, ask briefly whether it is one episode or multiple episodes and approximate duration. Compact serial episodes often run around 1,200-2,500 Vietnamese words, roughly 5-15 minutes at 130-160 Vietnamese words/minute. Judge by the ear, not by the page.
+
+## Ending Design
+
+Fully answer the Central Question at minimum. A final twist must pay off prior foreshadowing, not introduce a brand-new cheat. Justice/causality may be morally uneven, but the price must match what characters did and lost. End with a callback that now means something different. The final sentence should leave resonance, not a moral lesson. A sequel seed is allowed only if it opens a new loop; do not leave the old debt unpaid.
+
+## Fatal Engagement Problems
+
+Do not use: character-profile openings; info-dumps; ambiguous pronouns; passive protagonists; events with no causality; unsetup twists; hiding information the narrator would obviously know; one-note cliffhangers; flat rhythm; unreadable sentences; unpaid endings; repetitive inner conclusions; dialogue explaining what both people know; long exchanges where power/information/decision does not change; narration followed by dialogue repeating the same idea; flat event-report narration; one-note emotional tone; sentimental/flowery cliche (`sến`); description only for beauty; feeling pain on behalf of the listener; wrong Vietnamese address forms; naming systems that mismatch setting; mechanical label rotation.
+
+## Safety And Sensitive Content
+
+There is no reliable "unsafe word -> safe synonym" table. Judge the whole scene by context, focus, tone, realism, graphic detail, and imitability. Keep events clear but move weight toward choice and consequence. Remove methods, instructions, romanticization, and shock-only details. Review title, thumbnail, captions, and audio as well. Use extra caution for self-harm, sexual violence, and minors. Read [references/an-toan-tu-vung.md](references/an-toan-tu-vung.md) for risk levels, the 7-step editing process, before/after examples, and current policy sources.
+
+## Self-Check Before Returning
+
+- [ ] **Style:** no sentimental/cliche/bolero lines; no stale metaphors; firm concise prose; every description works?
+- [ ] **Address forms:** every pair fits age/rank/power/emotion? Naming system matches the story world? Pronouns are clear in one listen? Address shifts are motivated?
+- [ ] **Opening:** Step 2 gate completed or explicitly waived? It matches the title and has transformation + anchor + specific gap + movement?
+- [ ] Open loops progress and close appropriately for the length?
+- [ ] Major twists have enough setup without spotlighting?
+- [ ] Emotion appears through detail/action/choice, not stock symptom lists?
+- [ ] Conflict escalates on at least one meaningful axis? Quiet scenes still work?
+- [ ] Characters have specific wants, inner conflict, and active decisions? Consequences come from choices?
+- [ ] **Narration/dialogue:** narrator is the spine and shifts distance; every remaining direct line needs to be heard verbatim and creates action/relationship/subtext/payoff?
+- [ ] Emotional tone varies when the story needs it? Callback, if used, changes meaning?
+- [ ] Read aloud: natural flow and no breathless lines? Central Question fully answered at the end?
+- [ ] **Safety:** sensitive scenes have function and avoid instruction/graphic detail/romanticization? Context, focus, title, captions, visuals, and sound have been reviewed?
+
+When a concrete genre is present, keep this base framework and also use the matching `audio-story-genre-*` skill. Do not ask the user about technical craft details; apply them yourself. Ask only when essential creative information is missing, such as length or one-episode vs multi-episode.

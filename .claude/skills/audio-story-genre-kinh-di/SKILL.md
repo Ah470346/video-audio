@@ -1,104 +1,272 @@
 ---
 name: audio-story-genre-kinh-di
 description: |
-  Skill chuyên môn thể loại KINH DỊ (bao gồm ma quái, tâm linh, creepypasta, kinh dị tâm lý, urban legend).
-  Sử dụng KẾT HỢP với skill nền tảng "audio-story-engagement" — skill này KHÔNG thay thế skill base mà BỔ SUNG chuyên môn riêng của thể loại kinh dị.
-  Kích hoạt khi người dùng yêu cầu viết truyện kinh dị, ma, tâm linh, rùng rợn, creepy, hoặc bất kỳ câu chuyện nào nhằm tạo cảm giác sợ hãi/bất an.
+  Specialist skill for HORROR (`kinh di`): supernatural, folk horror, psychological horror, cosmic horror, rule horror, creepypasta, and survival horror. Always use with `audio-story-engagement`; add premise modifiers when relevant. Trigger when the story's main reward is unease/fear and the character must understand, endure, or confront a threat.
 ---
 
-# Thể Loại KINH DỊ
+# Audio Story Genre: Horror
 
-**Kết hợp:** áp skill nền `audio-story-engagement` TRƯỚC (hook, Zeigarnik, pacing, mirror neurons, checklist, an toàn từ vựng). Skill này chỉ BỔ SUNG chất liệu đặc thù kinh dị; mọi kỹ thuật nền vẫn bắt buộc.
+Effective horror is not the most graphic description. It makes something listeners considered safe become unreliable, then forces the character to act before they fully understand the threat.
 
-## Vì sao gây nghiện
-Kinh dị khai thác hệ thống cảnh báo nguy hiểm nguyên thủy (amygdala) — não KHÔNG THỂ bỏ qua tín hiệu đe dọa. Kinh dị audio đặc biệt mạnh vì **tai không nhắm được**: âm thanh vào thẳng não. Ba cơ chế:
-- **Siêu cảnh giác:** đe dọa mơ hồ → não dồn 200–300% chú ý, không lơ đãng nổi.
-- **Thung lũng rợn (uncanny):** thứ GẦN GIỐNG bình thường nhưng SAI một chút gây rợn mạnh hơn cả điều rõ ràng đáng sợ.
-- **Dread (khiếp sợ dự đoán):** nỗi sợ TRƯỚC sự kiện mạnh hơn chính sự kiện — khoảng chờ tạo 90% nỗi sợ.
+## 1. Coordination Contract
 
-**Keyword:** ma, hồn, bóng đen, tiếng động lạ, nhà hoang, nghĩa trang; 3 giờ sáng, đêm khuya, một mình, bóng tối; có ai đó đang nhìn, không giải thích được; ám ảnh, nguyền rủa, báo oán; "tôi không tin vào ma — cho đến đêm hôm đó".
+- Use `audio-story-engagement` as the base and follow [../audio-story-engagement/references/phoi-hop-skills.md](../audio-story-engagement/references/phoi-hop-skills.md).
+- This skill defines fear source, threat rules, and horror payoff. It does not replace approval gates, Vietnamese address rules, safety, or output format.
+- Do not impose hard ratios for dread/scare, jumpscare count, phenomenon count, or silence duration.
+- Add production sound tags only when the user asks for production cues. Default story files remain pure narration.
+- Run `audio-story-final-polish` last, but do not polish away intentional gaps or broken rhythms.
 
-## Câu Hỏi Trung Tâm
-Kinh dị xoay quanh **sự KHÔNG BIẾT**. Công thức: *"CÁI GÌ đang [ở đây/theo dõi tôi], và khi tôi phát hiện — liệu tôi còn an toàn hay đã quá muộn?"*
-- Ma quái: "Cái gì đang ở trong nhà cùng tôi, và nó muốn gì?"
-- Kinh dị tâm lý: "Điều tôi thấy là thật — hay chính đầu óc tôi đang phản bội tôi?"
-- Creepypasta: "Quy tắc kỳ lạ này tồn tại vì lý do gì, và chuyện gì xảy ra nếu phá vỡ nó?"
+## 2. Genre Contract
 
-## Luật số 1: nỗi sợ đến từ điều CHƯA THẤY
-- **Ít hơn = đáng sợ hơn.** Trí tưởng tượng người nghe luôn tạo ra thứ đáng sợ HƠN mọi mô tả. ❌ tả con ma chi tiết (mặt trắng, máu, tóc dài → não xử lý xong → hết sợ). ✅ "Có gì đó ở góc phòng. Tôi không nhìn rõ. Nhưng tôi biết nó đang nhìn tôi."
-- **Hé lộ từng phần:** chỉ nghe (tiếng thở, bước chân) → chỉ thấy một phần (bóng, ngón tay) → cảm nhận bằng da (hơi lạnh, chạm vào tóc) → nhìn thấy nhưng KHÔNG hoàn toàn rõ (hoặc thấy → biến mất ngay).
-- **80/20:** 80% thời lượng là xây bầu không khí + dự đoán (dread), 20% là scare thật. Đảo ngược → người nghe chai lỳ sau 5 phút.
+A horror story needs:
 
-## Xây bầu không khí (đặc thù audio)
-- **Ưu tiên giác quan:** thính giác ★★★★★ (vũ khí số 1: tiếng động lạ, im lặng đột ngột, tiếng thở) > xúc giác ★★★★ (da: lạnh, chạm, tóc gáy dựng) > thị giác ★★★ (hạn chế ánh sáng, nhìn thoáng, góc mắt) > khứu giác ★★★ (mùi lạ không giải thích) > vị giác ★★ ("vị kim loại trong miệng").
-- **"Sai sai nhưng không biết sai ở đâu":** cảnh bình thường + MỘT chi tiết sai (đồng hồ luôn dừng 3:17; ảnh gia đình mỗi lần nhìn khác đi; hàng xóm chào "chào buổi sáng" lúc 11 giờ đêm) → uncanny.
-- **Không gian co hẹp dần:** cả nhà an toàn, chỉ tầng hầm lạ → phòng ngủ cũng lạ → cả GIƯỜNG cũng không an toàn → không còn nơi trốn.
-- **Âm thanh là vũ khí chủ lực:** im lặng đột ngột (cắt hết nền → 2 giây → tiếng thở rất gần); âm thanh không nguồn gốc; lặp lại bất thường rồi NGỪNG rồi lặp nhịp khác; "tiếng đúng lẽ ra không có" (bước chân khi ở một mình, hát ru từ phòng trống).
+1. **Something worth protecting:** body, loved one, identity, memory, home, belief, or autonomy.
+2. **A threat with signs:** listeners feel it through consequence, rule, or intrusion.
+3. **Limited understanding:** the character lacks enough information to act safely.
+4. **Choice under fear:** flee, stay, check, trust someone, break a rule, or pay a price.
+5. **Aftertaste:** confronting the threat changes the world/character's meaning, whether ending is closed or open.
 
-## Vòng lặp & "quy tắc 3 lần"
-- Vòng lặp kinh dị giữ LÂU hơn thể loại khác: mở ("có gì đó ở tầng hầm") → nhân vật TRÁNH đối mặt, phủ nhận (hành vi sợ thật) → gợi nhắc liên tục, mỗi lần khác một chút → kéo 4–5 phân đoạn → buộc xuống → phát hiện → mở vòng lặp LỚN HƠN.
-- **Quy tắc 3 lần cho hiện tượng:** lần 1 mơ hồ (giải thích được bằng lý trí) → lần 2 khó giải thích (vẫn cố tự thuyết phục) → lần 3 KHÔNG THỂ phủ nhận (buộc chấp nhận "có gì đó thật").
-- **Cliffhanger kinh dị:** "Tôi quay lại... và nó đã không còn ở đó" (đáng sợ hơn "nó vẫn ở đó" → nó đi đâu?); kết bằng âm thanh không phải hình ảnh ("tiếng đó lại vang lên — ngay sau lưng tôi"); "bình thường hóa sai" ("sáng hôm sau mọi thứ bình thường. Quá bình thường.").
+"Knowing nothing" does not create fear by itself. Listeners need to know what may be lost, which sign shows danger is near, and what the character can attempt.
 
-## Các loại nỗi sợ để khai thác
-- **Nguyên thủy:** bóng tối, cô lập, bị theo dõi/rình rập, mất kiểm soát cơ thể, mất ranh giới thực–ảo.
-- **Văn hóa Việt:** ma trơi, bóng đè, ma nhập, oan hồn; mùi nhang nửa đêm, đèn dầu tự tắt; cây đa, giếng cổ, nhà hoang; giờ xấu 12h–3h; báo oán, lời nguyền gia tộc.
-- **Tâm lý (đáng sợ nhất):** paranoia; gaslighting siêu nhiên (bằng chứng biến mất, ai cũng nói "bạn tưởng tượng"); ký ức sai; "có gì đó sai với TÔI" (nhân vật là nguồn cơn).
+## 3. Separate Four Often-Mixed Experiences
 
-## Mirror neurons — triệu chứng sợ (KHÔNG BAO GIỜ viết "tôi sợ")
-| Trạng thái | Triệu chứng cơ thể | Âm thanh kèm |
-|-----------|--------------------|--------------|
-| Bất an nhẹ | Gáy hơi lạnh, ngoái lại | — |
-| Sợ | Tim đập mạnh, lạnh sống lưng, tay ướt | Tiếng thở nông |
-| Hoảng loạn | Chân cứng đờ, không thở được, muốn chạy mà không nhúc nhích | Thở hổn hển |
-| Kinh hoàng | Mất tiếng, cơ thể tê liệt, nước mắt tự chảy | Im lặng hoàn toàn (mất cả tiếng thở) |
-| Rợn (uncanny) | Tóc gáy dựng, da nổi gai, buồn nôn nhẹ | — |
+| Experience | Source | Use when | Common error |
+|---|---|---|---|
+| **Dread** | expectation of coming harm | intrusion, waiting | delay with no progress |
+| **Suspense** | concern for an important outcome | character acts under risk | hiding info without goal |
+| **Startle** | sudden stimulus | mark event/reveal | loud sound replacing fear |
+| **Disgust/gore** | body violation, contamination | functional body horror | graphic detail to compensate for weak threat |
 
-## Nhịp "chậm → chậm hơn → BỤP"
-Bình thường → gợn sóng nhỏ (một chi tiết sai) → im lặng bất thường (khoảng lặng kéo dài) → căng thẳng tĩnh (câu ngắn, tả cảm giác cơ thể, chờ đợi) → CÚ SỐC (câu cực ngắn, đột ngột) → chạy trốn (nhịp nhanh) → hậu chấn (thở dốc) → bình thường giả → lặp.
-- **Đếm ngược bằng cảm giác:** "Tim tôi đập. Một nhịp. Hai nhịp. Im lặng. Ba nhịp." → người nghe đồng bộ nhịp tim → cú sốc đến, tim họ giật.
-- **Im lặng trước bão DÀI hơn bạn nghĩ:** 3–5 giây hiệu quả gấp bội 1 giây. Ghi rõ `[im lặng hoàn toàn — 4 giây]`.
-- **"Signature sound" cho thực thể:** gán một âm thanh đặc trưng — mỗi lần vang lên, người nghe tự sợ mà không cần mô tả ("mỗi lần nó đến gần, có tiếng lạo xạo — như ai bẻ từng đốt ngón tay").
+Horror can work even when listeners know the outcome. The tension may be how the character gets there, what they can change, or what the event means.
 
-## Mô hình twist mạnh
-- **"Nó ở trong, không phải ở ngoài":** thứ đáng sợ nằm TRONG nhân vật (bệnh tâm lý, bị ám, ký ức bị đè nén).
-- **"Luật chơi thay đổi":** nhân vật đã tìm cách đối phó → quy tắc đổi mà không ai biết.
-- **"Vòng lặp":** kết quay lại đầu, mỗi vòng tệ hơn.
-- **"Người kể đã chết":** cuối mới hé lộ lời kể đến từ phía bên kia.
-- **"Kẻ thù là bản thân":** hiện tượng do chính nhân vật gây ra mà không biết (mộng du, phân ly).
-- **"Không có kết":** bí ẩn không giải hết, nhưng đủ manh mối để người nghe tự ghép → ghép xong ước mình đừng ghép. (Chỉ khi người dùng chấp nhận kết mở; nếu không, vẫn đóng Câu Hỏi Trung Tâm.)
+## 4. Central Question
 
-## Cấu trúc hồi
-- **Hồi 1 – Bình thường... hơi sai (15–20%):** thiết lập nhanh; cài chi tiết "sai sai" đầu (nhẹ, giải thích được); trao cổ phần cảm xúc; hook "có gì đó sai — chắc tôi tưởng tượng".
-- **Hồi 2A – Leo thang & phủ nhận (25–30%):** hiện tượng lần 2 khó giải thích hơn; nhân vật phủ nhận; không gian an toàn bị xâm phạm; gieo manh mối về NGUỒN GỐC.
-- **Hồi 2B – Chấp nhận & đối mặt (25–30%):** hiện tượng lần 3 không thể phủ nhận; tìm cách đối phó; khám phá nguồn gốc (quá khứ, tội lỗi, lời nguyền); không gian thu hẹp; "trận đầu tiên" chưa thắng.
-- **Hồi 3 – Cao trào & dư âm (15–20%):** đối đầu cuối/sự thật cuối; twist (nếu có); kết để lại dư âm — một chi tiết cho thấy "chưa hết"; câu cuối là cú rùng mình, không giải thích.
+Combine threat, stake, and choice:
 
-## Bẫy cần tránh (kinh dị)
-| Bẫy | Cách tránh |
-|-----|-----------|
-| Jumpscare liên tục | Tối đa 2–3 scare thật cả truyện; còn lại xây dread |
-| Mô tả ma quá chi tiết | Hé từng phần, luôn giữ ≥1 ẩn số |
-| Giải thích hết cuối truyện | Giải thích vừa đủ, để lại 1 chi tiết không giải thích |
-| Nhân vật quá dũng cảm | Phải SỢ thật (trốn, phủ nhận, run) |
-| Nhân vật ngu ngốc ("sao mày đi vào đó?!") | Cho lý do hợp lý phải đối mặt (con bị kẹt, không đường khác) |
-| Gore thay cho nỗi sợ | Gore chừng mực, phục vụ cốt truyện; ghê ≠ sợ |
-| Kết "chỉ là mơ" | Nếu dùng: khi tỉnh, MỘT chi tiết từ mơ vẫn ở đây |
-| Quá nhiều hiện tượng siêu nhiên | Càng ít, mỗi hiện tượng càng đáng sợ |
+> *What is the threat intruding into, what rule does it follow, and what will the character pay to protect/escape it?*
 
-## Âm thanh (nếu có sản xuất)
-Ambience rợn (gió rít, cửa cọt kẹt) chuyển cảnh; cú sốc âm thanh (đập cửa, ly vỡ) cho jumpscare — dùng ÍT; âm thanh "sai" (tiếng ru trong nhà trống, cười trẻ con lúc 3h) cho uncanny; im lặng cắt ngang trước cú sốc lớn nhất; âm thanh lặp lại tạo pattern rồi phá; "infrasound gợi ý" ("tiếng ù ù rất thấp, như từ lòng đất").
+Vietnamese examples:
 
-## Tiêu đề & keyword
-**Tò mò:** nhà hoang, tầng hầm, gác mái, 3 giờ sáng, gương, ảnh cũ, di vật, lời nguyền, giếng cổ, con đường không có trên bản đồ. **Gây sợ:** tiếng bước chân, tiếng thở, có ai đó ở đây, nhìn tôi, đằng sau lưng, biến mất, bóng đen. **"Chuyện thật":** "Tôi không tin vào ma — cho đến đêm đó", "ai tin thì tin, nhưng tôi biết tôi đã thấy gì".
-Mẫu tiêu đề: *"Tôi nhìn thấy mình — đứng ngoài cửa sổ nhà mình — lúc 2 giờ sáng"* · *"Đứa con tôi vẫy tay chào — nhưng con tôi đang ngồi cạnh tôi"* · *"Bà tôi tắt thở 3 năm rồi. Nhưng đêm qua, bà gọi điện cho tôi."*
+- *Ai đang gọi cho tôi bằng giọng của mẹ đã mất, và tôi có dám cắt cuộc gọi nếu đó là cách duy nhất em trai còn sống liên lạc về?*
+- *Quy tắc “không mở cửa sau tiếng gõ thứ ba” bảo vệ gia đình hay giữ một thứ khác ở trong nhà?*
+- *Ký ức nào của tôi đang biến mất mỗi khi căn phòng mới xuất hiện?*
 
-## Checklist bổ sung kinh dị (sau checklist nền)
-- [ ] 80/20: 80% dread, 20% scare? Tối đa 3 jumpscare cả truyện?
-- [ ] Thực thể hé lộ TỪNG PHẦN, không mô tả hết? Có ≥1 ẩn số giữ tới cuối?
-- [ ] Hiện tượng theo quy tắc 3 lần (mơ hồ → khó giải thích → không thể phủ nhận)?
-- [ ] Không gian an toàn thu hẹp dần qua các hồi?
-- [ ] Ưu tiên âm thanh trên thị giác? Có "signature sound" gắn thực thể?
-- [ ] Nhân vật phản ứng sợ THẬT? Có ≥1 cảnh uncanny "sai sai"?
-- [ ] Im lặng trước cú sốc lớn ≥3 giây? Cảm giác sợ TẢ bằng triệu chứng, không kể tên?
-- [ ] Kết có dư âm rùng rợn — không giải thích sạch mọi thứ?
+The question does not always need to be "what is here?" Psychological horror may identify the fear source early and ask what part of the self can still be trusted.
+
+## 5. Threat Design
+
+Build a private threat profile:
+
+| Axis | Question |
+|---|---|
+| Want/drive | What does it seek, repeat, or react to? |
+| Signs | Before it appears, how does the world change? |
+| Scope | What places, people, senses, memories can it affect? |
+| Limits | What can it not do, or what condition does it need? |
+| Response | What character actions bring it nearer/farther/change it? |
+| Price | What must be lost to stop or understand it? |
+| Unexplained remainder | What may remain ambiguous without breaking payoff? |
+
+The threat need not be conscious. It may be a place, ritual, memory, social structure, phenomenon, or rule.
+
+Escalate signs by meaning, not only intensity. The next occurrence should reveal a new relationship, location, rule, or target.
+
+## 6. Point Of View And Sensory Detail
+
+Do not assume hearing is always the strongest sense. Choose detail by:
+
+1. what the character notices because of their goal;
+2. what information the environment can give;
+3. what is hidden or contradictory;
+4. what reaction changes the character's action.
+
+Vietnamese contrast:
+
+**Decorative:**
+
+> *Gió rít, cửa kêu, da tôi nổi gai, tim đập thình thịch.*
+
+**Informative:**
+
+> *Mỗi lần gió đẩy cửa, bản lề kêu hai tiếng. Lần thứ ba có ba tiếng. Tiếng cuối phát ra sau lưng tôi.*
+
+The second creates pattern, breaks pattern, and locates danger.
+
+You may write *"tôi sợ"* when it is the precise narrative choice. Do not use it to replace the experience or repeat it after action already shows fear. Likewise, do not turn every fear into heartbeat/cold spine/breathlessness.
+
+Give reactions from history and goal: a parent checks the child's room first; a control-obsessed person counts objects; a person who is never believed records proof.
+
+## 7. Dread, Suspense, And Reveal
+
+Each waiting passage must do at least one job:
+
+- shrink safety;
+- clarify what can be lost;
+- confirm or break a rule;
+- force a choice;
+- change the meaning of an old sign.
+
+If a passage only repeats "there is a sound but nothing appears," dread becomes delay.
+
+Reveal can move as:
+
+> consequence -> sign -> scope -> rule -> origin/form
+
+Do not force this order. Some horror is scarier when the entity is seen early but its capability remains unknown.
+
+Pay the promised questions enough for the climax to matter. You may leave an unexplained remainder if it does not contradict the payoff. Open endings are not incomplete endings; listeners must know what the character chose and what the current consequence is.
+
+Startle works when it marks a real change. Repeated loud sounds followed by "nothing" teach listeners not to care.
+
+## 8. Characters Need Reasons To Stay
+
+Before each dangerous action, answer:
+
+```text
+What does the character know?
+What explanation do they believe?
+What do they immediately lose if they leave?
+Is there a safer option, and why is it unavailable?
+```
+
+Reasons may include loved ones trapped, proof about to disappear, leaving triggering another established danger, duty/status, plausible misinterpretation, or active risk acceptance for a larger goal.
+
+Do not make characters stupid to open doors. Give them difficult decisions under incomplete information.
+
+Fear does not mean paralysis. Denial, flight, asking for help, checking, bargaining, obeying ritual, or breaking rules are all actions. Choose by character.
+
+## 9. Rules, Evidence, And Price
+
+Rule horror rules need:
+
+- how the narrator knows the rule;
+- evidence that it works;
+- scope/conditions;
+- consequence for obeying/breaking;
+- possibility of misunderstanding, if that twist is set up.
+
+Do not dump ten rules before a choice. Introduce a rule when the character needs it, and let first use test part of it.
+
+Horror need not be fair-play mystery, but rules cannot change only for the climax. If an entity "breaks" a rule, the story must show: the rule was incomplete, conditions changed, the source lied, or a previous price unlocked new power.
+
+Price is not only death. It can be memory, identity, relationship, being believed, right to return, or having to continue a ritual.
+
+## 10. Sound In Audio Horror
+
+Sound can:
+
+1. **Locate:** where, near/far.
+2. **Establish pattern:** rhythm, texture, repetition time.
+3. **Break pattern:** missing/extra beat, changed location, impossible timing.
+4. **Carry evidence:** voice, background noise, echo, impact.
+
+Pure narration example:
+
+> *Tiếng dép của mẹ vẫn kéo một nhịp dài bên chân trái. Người ngoài cửa bước đều cả hai chân.*
+
+Sound suggests familiarity and proves it is not the mother.
+
+Add production cues only when requested. Do not default to 3-5 second silence; timing depends on voice, sound bed, and platform.
+
+## 11. Horror Branches
+
+- **Supernatural/haunting:** threat intrudes into place/relationship. Explain only the origin parts needed for present choice.
+- **Folk horror:** research specific customs and communities. Do not reduce living Vietnamese belief systems to random scary props.
+- **Psychological horror:** fear source is perception, memory, control, guilt, or manipulation. Do not equate mental illness with monster/killer.
+- **Body horror:** focus on autonomy, transformation, or identity. Use graphic limits; psychological consequence and choice matter more than injury lists.
+- **Cosmic horror:** threat collapses the frame of understanding. Still give the character a local goal they can choose.
+- **Creepypasta/rule horror:** direct voice and rules must be clear by ear. Do not falsely claim "this is real" if it is fiction.
+- **Survival horror:** pressure from resources, space, and group decisions. Threat should respond to tactics, not appear randomly.
+
+## 12. Flexible Structures
+
+- **Intrusion:** safe -> sign -> first measure fails -> boundary shrinks -> confront/escape choice.
+- **Rule discovery:** consequence -> rule hypothesis -> test -> partial rule -> true price -> use/break choice.
+- **Investigation horror:** clues clarify threat while making investigator more vulnerable.
+- **Contamination/identity:** threat is discovered inside body/memory/relationship; track states carefully.
+- **Inevitable outcome:** listeners know bad end; suspense lies in how, cost, and meaning.
+
+## 13. Hybrids And Premises
+
+- **Horror + mystery:** if a solution is promised, keep fair data; ambiguity of form cannot hide evidence.
+- **Horror + drama:** threat exposes family trust/power; relationships must not act irrationally merely to isolate narrator.
+- **Horror + romance:** intimacy raises stakes or choice; do not use romance as mandatory rest beat.
+- **Horror + comedy:** decide which beats are safe enough to laugh; quips can break dread.
+- **Horror + reincarnation/loop:** knowing the outcome does not erase suspense; track changes and experiment costs.
+- **Horror + system:** the system also needs rules and limits; UI cannot explain the threat instead of scenes.
+
+## 14. Repair Examples
+
+**Symptom pile:**
+
+> *Tôi lạnh sống lưng. Tim đập thình thịch. Tóc gáy dựng lên khi nghe tiếng bước chân.*
+
+**Informative:**
+
+> *Tiếng bước chân dừng ngoài cửa phòng con. Tôi định gọi chồng thì nhận ra anh đang ngủ cạnh mình. Người ngoài hành lang dùng đúng nhịp gõ anh vẫn dùng mỗi tối: hai tiếng, nghỉ một nhịp, rồi một tiếng cuối.*
+
+**Character stupid to be scared:**
+
+> *Dù ai cũng bảo không được xuống tầng hầm, tôi vẫn tò mò mở cửa.*
+
+**Better:**
+
+> *Máy theo dõi em bé phát tiếng khóc từ tầng hầm. Chiếc nôi cạnh giường đang trống, còn cửa sổ vẫn khóa từ bên trong.*
+
+**Vague is not scary:**
+
+> *Có một thứ kinh khủng mà tôi không thể diễn tả.*
+
+**Better:**
+
+> *Trong gương, căn phòng giống hệt phía sau tôi, trừ chiếc ghế cạnh cửa đang có người ngồi.*
+
+## 15. Safety And Responsible Depiction
+
+- Follow [../audio-story-engagement/references/an-toan-tu-vung.md](../audio-story-engagement/references/an-toan-tu-vung.md).
+- Do not increase fear through self-harm methods, sexual violence, or imitable gore.
+- Do not use sexual assault as a shortcut to explain evil or shock backstory.
+- Do not romanticize self-harm as a beautiful doorway, curse, or reunion.
+- Do not default mentally ill characters to danger. If using unreliable perception, establish cause and humanity responsibly.
+- For children, limit harm detail; focus on danger, protection, and consequences.
+- For living folklore/belief, research and avoid presenting fiction as truth about a community.
+
+## 16. Common Traps
+
+| Trap | Repair |
+|---|---|
+| "Amygdala means listeners cannot stop" | Drop biology claims; build concrete threat, goal, suspense |
+| 80% dread / 20% scare | Adjust by format and scene function |
+| Same sound repeats forever | Change meaning, location, or rule each time |
+| Unseen entity automatically scary | Provide sign, scope, and consequence |
+| Character must shake/freeze | Choose reaction by history, goal, and choice |
+| Banning "tôi sợ" | Use it when voice fits; avoid repetition/over-explanation |
+| Jumpscare changes nothing | Each startle marks event or evidence |
+| Rule changes at climax | Setup condition/misunderstanding/liar first |
+| "Narrator was dead" default twist | Use only if POV, telling ability, and payoff are logical |
+| Mental illness = monster | Separate diagnosis from morality/danger; humanize and research |
+| Open ending = no answer | Pay choice/consequence; leave only residue |
+| Sound tags in pure story | Write sound into narration; cues only when requested |
+
+## 17. Checklist
+
+- [ ] Is there something worth protecting, a signed threat, limited understanding, choice, and aftertaste?
+- [ ] Does the central question include threat, stake, and price?
+- [ ] Does the threat profile have consistent scope, limits, responses, and signs?
+- [ ] Does every dread passage progress something?
+- [ ] Do sensory details carry information from the correct POV?
+- [ ] Does the character have plausible reasons for dangerous actions?
+- [ ] Are fear reactions individual, not symptom lists or emotion bans?
+- [ ] Do rule-horror rules appear when needed and stay consistent?
+- [ ] Does sound locate/pattern/prove rather than decorate?
+- [ ] Does reveal pay promised questions enough, with residue not contradiction?
+- [ ] Is horror main or secondary in hybrids?
+- [ ] Are sensitive content, mental health, and folklore handled responsibly?
+- [ ] No hard quotas for scare count, repetition count, or silence seconds?
+
+## 18. Basis
+
+- [Frontiers in Psychology: Review of empirical research on responses to horror films](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2019.02298/full)
+- [Frontiers in Psychology: Impact of uncertainty in suspense](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.01392/full)
+- [ACL: Framework for narrative surprise](https://aclanthology.org/2025.wnu-1.7/)
+- [YouTube: Violent or graphic content policies](https://support.google.com/youtube/answer/2802008?hl=en)

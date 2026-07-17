@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audio Story Final Polish"
+  short_description: "Final polish for Vietnamese audio stories"
+  default_prompt: "Use $audio-story-final-polish to run the final editorial pass on this Vietnamese audio-story manuscript before completion."

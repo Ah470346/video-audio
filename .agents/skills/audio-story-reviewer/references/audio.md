@@ -1,0 +1,226 @@
+# Audio-Specific Clarity and TTS Readiness
+
+Use this reference for cold-listening checks, audiobook clarity, TTS readiness, pronunciation, names, numbers, symbols, scene orientation, and formatting-dependent reveals.
+
+## Cold-Listening Mindset
+
+Review as if the listener:
+
+- cannot see paragraph breaks;
+- cannot see quotation marks;
+- cannot scan backward;
+- may be multitasking;
+- hears names and pronouns only once;
+- relies on rhythm, repetition, and orientation.
+
+A passage can be readable on page and confusing in audio.
+
+Do not claim that listening is inherently inferior to reading. Treat this pass as a simulation of the actual delivery constraint: continuous input, no visual formatting, and limited opportunity to inspect a prior phrase. If the platform offers transcripts, rewind, chapters, or synchronized text, note that those affordances reduce some risks.
+
+## Orientation at Scene Openings
+
+At a scene change, listeners need quick anchors:
+
+- who is present;
+- where they are;
+- when this is relative to the previous scene;
+- what emotional or plot pressure continues.
+
+Weak:
+
+> Ba ngày sau, cô đứng đó, không nói gì.
+
+Stronger:
+
+> Ba ngày sau, Lan đứng trước cửa nhà xác. Người duy nhất đi cùng cô là Hùng, và anh vẫn chưa biết trong túi áo cô có tờ xét nghiệm.
+
+## Names
+
+Check:
+
+- similar-sounding names: Lan/Linh, Minh/Vinh, Hạ/Hà, An/Anh;
+- too many names introduced close together;
+- foreign names with unclear pronunciation;
+- titles used inconsistently with names;
+- aliases not linked by audio-friendly reminders;
+- character names that sound like common words in context.
+
+Repair options:
+
+- rename one character;
+- add relationship anchors: `Minh, người anh cùng cha khác mẹ`;
+- delay minor names;
+- use titles until names matter;
+- repeat a key relationship at scene entry.
+
+## Pronoun Runs
+
+Audio pronoun ambiguity often appears after two or more characters of the same gender enter a paragraph.
+
+Flag:
+
+> Anh nhìn hắn. Hắn không nói gì. Anh biết nếu anh bước thêm một bước, hắn sẽ không tha cho anh.
+
+The listener may lose who each `anh` and `hắn` refers to.
+
+Repair:
+
+- restore names or relationship nouns;
+- split sentence clusters;
+- use an action beat;
+- keep the emotional stance of pronouns consistent.
+
+## Numbers, Dates, Units, and Symbols
+
+TTS may handle these unpredictably:
+
+- `3/4/2024`;
+- `20%`;
+- `1m65`;
+- `CEO`, `ADN`, `CMND`, `CCCD`;
+- `@`, `#`, `&`;
+- URLs;
+- legal codes;
+- currency abbreviations;
+- mixed Vietnamese-English terms.
+
+Review whether the manuscript should write them for the ear:
+
+- `ngày ba tháng tư năm hai nghìn không trăm hai mươi bốn`;
+- `hai mươi phần trăm`;
+- `một mét sáu mươi lăm`;
+- `căn cước công dân` on first use;
+- `ba trăm triệu đồng`.
+
+Do not over-expand if the platform or narrator expects standard abbreviations. Flag where pronunciation choices must be made.
+
+Build a normalization ledger for every consequential non-standard token:
+
+| Written token | Intended spoken form | Context/meaning | First occurrence | Engine tested? | Consistent? |
+|---|---|---|---|---|---|
+
+The same written form can have different readings by context. Do not approve `3/4`, `1.000`, `AI`, a score, a room number, or a legal code until the intended spoken meaning is clear.
+
+## Foreign Words and Names
+
+Check whether:
+
+- a narrator can pronounce the term consistently;
+- the term matters enough to keep;
+- a Vietnamese gloss is needed;
+- repeated English terms break voice;
+- brand/product names are essential.
+
+For fantasy names, avoid many similar invented terms in one paragraph. Audio memory is limited.
+
+If the target engine is known, render a representative sample containing every recurring foreign name, abbreviation, number pattern, and invented term. A text-only review can mark likely risk but cannot certify pronunciation.
+
+## Engine-Specific Output
+
+Use plain spoken Vietnamese as the portable baseline. If the production system supports SSML or an equivalent markup, it may help specify sentence structure, pauses, pronunciation, prosody, substitutions, and interpretation of dates or numbers.
+
+Do not insert SSML into the manuscript unless the user requests production markup and the target engine supports the chosen elements. Engine behavior varies, and unsupported markup can be ignored or spoken incorrectly.
+
+## Formatting-Dependent Reveals
+
+Audio cannot preserve:
+
+- footnotes;
+- hidden acrostics;
+- visual separators;
+- typography-based emphasis;
+- tables;
+- chat screenshots unless narrated;
+- color or layout clues;
+- quote indentation;
+- parenthetical jokes that rely on seeing parentheses.
+
+Repair direction: verbalize the clue or turn it into an object, line, sound, or narrator observation.
+
+## Dialogue in Audio
+
+Check:
+
+- speakers re-anchored after long turns;
+- interruptions readable aloud;
+- silence meaningful;
+- action beats not too frequent;
+- names or kinship terms used naturally;
+- no two voices share identical rhythm in the same exchange.
+
+When there are three or more speakers, use more anchors than page fiction would need.
+
+## Dense Lists
+
+Audio listeners struggle with long lists:
+
+- names;
+- evidence items;
+- family relations;
+- company positions;
+- fantasy ranks;
+- injuries;
+- dates.
+
+Repair:
+
+- group into two or three meaningful clusters;
+- keep only plot-relevant items;
+- repeat the key item after the list;
+- turn the list into a choice or conflict.
+
+## Strategic Repetition
+
+Repetition is not always bad in audio. It can help listeners track:
+
+- a central object;
+- a threat;
+- a relationship noun;
+- a rule;
+- a deadline;
+- a promise.
+
+Good repetition changes pressure or meaning. Bad repetition repeats wording without new function.
+
+Example:
+
+First:
+
+> Chiếc nhẫn nằm trong ngăn kéo cuối cùng.
+
+Later:
+
+> Đến khi mở ngăn kéo cuối cùng, cô mới hiểu vì sao chiếc nhẫn không được cất trong hộp trang sức.
+
+The repetition helps memory and changes meaning.
+
+## Recording Readiness
+
+Judge readiness:
+
+- **Ready after light polish:** grammar clean, speakers clear, no major logic gaps, emotional beats land.
+- **Needs targeted revision:** one or two major issues but story foundation works.
+- **Needs substantial revision:** repeated causality, POV, pacing, or emotion issues.
+- **Not ready to record:** listeners cannot understand core identity, chronology, climax, or ending.
+
+Be direct. Recording a structurally broken script wastes narration time.
+
+Keep two verdicts separate when relevant:
+
+- **Text readiness:** the manuscript is editorially coherent and pronounceable in principle.
+- **Render readiness:** the target human narrator or TTS engine has been sampled and essential names, numbers, pauses, and speaker turns are verified.
+
+Never infer render readiness from the 100-point editorial score alone.
+
+## Cold-Listening Checklist
+
+- Can the first minute be understood without reading?
+- Are scene changes verbally oriented?
+- Are similar names separated?
+- Are pronouns anchored?
+- Are speakers clear in multi-person scenes?
+- Are numbers and abbreviations pronounceable?
+- Does the climax have enough reaction space?
+- Does the ending leave an audible aftertaste?
+- Are decorative separators or layout cues converted to spoken cues?
+- Is the narrator voice consistent enough for a performer or TTS model?

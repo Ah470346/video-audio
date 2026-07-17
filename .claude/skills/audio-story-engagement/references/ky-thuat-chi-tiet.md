@@ -1,131 +1,443 @@
-# 10 Kỹ Thuật Giữ Chân — Bản Đầy Đủ
+# 10 Listener-Retention Techniques — Practical, Evidence-Aware Version
 
-Bản chi tiết của 10 kỹ thuật tóm tắt trong SKILL.md. Đọc mục cần thiết khi muốn ví dụ hoặc edge-case; không cần đọc cả file mỗi lần.
+This expands the 10 techniques from the base skill. Use it for outlining, scene writing, and final editing. Names such as *Zeigarnik, dopamine, oxytocin, cortisol, mirror neurons* are only **memory labels**, not reliable biochemical buttons that wording can press.
 
-## Mục lục
-1. Hook mở đầu — 30 giây sinh tử
-2. Zeigarnik — hệ thống vòng lặp mở
-3. Phần thưởng biến thiên
-4. Mirror neurons — viết để cơ thể người nghe phản ứng
-5. Làm chủ nhịp độ (pacing) cho audio
-6. Setup–payoff & khoảnh khắc "Aha!"
-7. Neo cảm xúc (oxytocin)
-8. Cortisol & leo thang căng thẳng
-9. Thiết kế âm thanh & chỉ dẫn sản xuất
-10. Giọng kể — cơ chế giữ chân thầm lặng
+> Retention quality does not come from "pumping chemicals" into the brain. It comes from four foundations: **the listener understands**, **the character wants**, **choices cause consequences**, and **the experience rhythm changes**.
 
----
+## Before Use: Translate Science Labels Into Writing Actions
 
-## 1. Hook mở đầu — 30 giây sinh tử
+| Old label | Do not mean | Practical meaning |
+|---|---|---|
+| **Dopamine loop** | hiding information automatically releases dopamine | expectation of an understandable, worthwhile narrative reward |
+| **Zeigarnik** | all unfinished tasks are remembered better | interrupted questions/goals may create a tendency to return, not a universal law |
+| **Variable reward** | addictive random twists | varied reward type/size inside a causal chain |
+| **Mirror neurons** | body detail guarantees listener feels the same | sensory detail, POV, and action make experience easier to imagine |
+| **Oxytocin** | child/pet/mother automatically creates attachment | goals, vulnerability, agency, and relationship create investment |
+| **Cortisol** | more danger always means more engagement | meaningful threat, rising cost, and release beats prevent numbness |
 
-> **Menu đầy đủ 10 kiểu mở đầu, cấu trúc 3 nhịp chống tụt hook, bảng chọn theo thể loại/tiền đề, và các kiểu mở giết truyện: [mo-dau.md](mo-dau.md).** Mục dưới đây là phần cốt lõi tối thiểu.
+Do not use these biological claims in user-facing explanations unless a suitable source supports the exact context.
 
-Người nghe audio quyết định ở lại hay đi trong 8–30 giây đầu. Não chỉ cấp "ngân sách chú ý" khi phát hiện điều bất thường, nguy hiểm, hoặc bí ẩn.
+## 1. Hook And Promise
 
-- **Mở giữa hành động (in medias res):** KHÔNG mở bằng lý lịch, thời tiết, bối cảnh chung. Mở ngay tại khoảnh khắc căng nhất rồi quay ngược kể lại.
-  - ❌ *"Tôi năm nay 32 tuổi, chồng tôi là người hiền lành..."*
-  - ✅ *"Chiếc nhẫn cưới nằm trong túi áo khoác của chồng tôi. Vấn đề là — nó không phải nhẫn của tôi."*
-- **Ba dạng hook mạnh nhất:** (1) câu tuyên bố nghịch lý tự mâu thuẫn (*"Ngày tôi biết chồng ngoại tình cũng là ngày hạnh phúc nhất đời tôi."*); (2) cảnh giữa khủng hoảng đã bùng nổ; (3) lời thú nhận ngôi thứ nhất về điều cấm kỵ.
-- **Treo hook lại** rồi kể từ đầu — hook thành lời hứa "nghe tiếp đi sẽ hiểu vì sao đến được khoảnh khắc đó".
-- **Tiêu đề là hook số 0:** chứa nghịch lý hoặc câu hỏi ngầm (*"Chồng tôi khóc trong đám tang của người phụ nữ tôi chưa từng gặp"*), mở một vòng lặp, không tiết lộ hết ruột.
-- **Câu đầu tiên phải tự đứng được:** tách riêng vẫn khiến người lạ muốn nghe câu thứ hai. Nhạt → viết lại trước khi làm gì khác.
+Read the full opening menu in [mo-dau.md](mo-dau.md).
 
-## 2. Zeigarnik — hệ thống vòng lặp mở
+Purpose:
 
-Não bị ám ảnh bởi việc chưa hoàn thành mạnh hơn việc đã kết thúc. Câu hỏi chưa có đáp án = "cơn ngứa nhận thức"; người nghe ở lại để được gãi.
+- match title/thumbnail promise;
+- create a concrete change;
+- give enough anchor for the listener to ask the right question;
+- push the character into action, not only surprise them.
 
-- **Nhiều vòng lặp cùng lúc, so le nhau.** Không bao giờ để chỉ còn MỘT câu hỏi mở. Quy tắc: **mở một vòng mới TRƯỚC khi đóng một vòng cũ.** Trả lời "ai gửi tin nhắn nặc danh?" thì ngay đó gieo "nhưng sao người đó biết mật khẩu điện thoại?".
-- **Ba tầng vòng lặp:** lớn (Câu Hỏi Trung Tâm — mở phút đầu, đóng hồi kết) / trung (bí ẩn phụ, quan hệ — sống 2–4 phân đoạn) / nhỏ (căng thẳng trong cảnh — mở và đóng cùng cảnh, phần thưởng tức thì).
-- **Nhỏ giọt manh mối:** mỗi lần chạm bí ẩn chỉ hé 10–20% — đủ để thấy tiến triển, không đủ thỏa mãn.
-- **Cliffhanger cuối mỗi phân đoạn nhưng XOAY VÒNG 4 loại** (chương nào cũng "nguy hiểm thể xác" → chai lỳ, thấy bị thao túng):
-  1. **Cắt trước đỉnh điểm:** dừng ngay trước khi sự thật phơi bày (cánh cửa sắp mở).
-  2. **Tiết lộ chấn động:** thông tin đảo ngược mọi hiểu biết ("người phụ nữ trong ảnh... là em gái tôi").
-  3. **Ngã ba quyết định:** nhân vật đứng trước lựa chọn người nghe không đoán được.
-  4. **Mầm họa mới:** vấn đề cũ vừa xong, hiểm họa mới nhú ở câu cuối.
-- **Cliffhanger phải NGẮN, ĐỘT NGỘT:** câu cuối cắt phựt, không giải thích, không tả dài.
+Process:
 
-## 3. Phần thưởng biến thiên (intermittent reinforcement)
+1. Write the Central Question in one sentence.
+2. Choose the first moment where the old state cannot continue.
+3. Give one certain fact and one missing piece.
+4. End the opening with decision, deadline, or next pressure.
 
-Phần thưởng đoán trước tạo ít dopamine; phần thưởng KHÔNG đoán được tạo dopamine cực đại — cơ chế gây nghiện của máy đánh bạc và mạng xã hội.
+Vietnamese contrast:
 
-- **Phá khuôn (trope subversion):** trước mỗi tình tiết hỏi *"người nghe quen thể loại sẽ đoán gì?"* rồi chọn: (1) đúng kỳ vọng nhưng SỚM hơn dự kiến (lộ bí mật ở giữa thay vì cuối → mở vùng đất mới); (2) đúng kỳ vọng nhưng hậu quả NGƯỢC chiều (phát hiện ngoại tình → im lặng và lập kế hoạch thay vì đánh ghen); (3) đảo vai — kẻ tưởng nạn nhân hóa ra người giật dây.
-- **Twist hợp lý:** chỉ tạo dopamine khi **bất ngờ nhưng tất yếu** — nhìn lại thấy manh mối đã có sẵn. Twist từ trên trời rơi xuống = cảm giác bị lừa, giết niềm tin.
-- **Chu kỳ hy vọng–tuyệt vọng (nghiêm ngặt):** không cho chuỗi thắng/thua quá 2 nhịp liên tiếp. Nhịp: *tiến nhỏ → trở ngại → tiến nhỏ → sụp đổ lớn → lóe hy vọng...* Biên độ dao động khóa chú ý, không phải bản thân sự kiện.
-- **Chiến thắng có giá:** mỗi lần đạt được gì, trả giá bằng thứ khác (biết sự thật → mất một đồng minh).
+**Weak:**
 
-## 4. Mirror neurons — viết để cơ thể người nghe phản ứng
+> *Tôi không ngờ ngày cưới của mình lại trở thành một bi kịch khủng khiếp.*
 
-Nghe tả chi tiết cảm giác sinh lý của nhân vật, não người nghe **mô phỏng lại chính cảm giác đó** (neural coupling). Họ không "biết" nhân vật sợ — họ **thấy sợ**.
+**Better:**
 
-- **Cấm kể tên cảm xúc, tả triệu chứng cơ thể:** ❌ *"Tôi rất sợ."* → ✅ *"Hơi thở tôi đứt quãng. Tim nện thịch thịch, lấn át cả tiếng bước chân sau lưng."* Quy đổi: sợ → tim đập/lạnh sống lưng/tay run; ghen → nóng bừng mặt/siết chặt điện thoại/vị đắng trong họng; tội lỗi → không dám nhìn thẳng/nuốt khan; căng thẳng → vai gồng/móng tay bấm lòng bàn tay.
-- **Liều lượng (chống sến):** mỗi cảnh chỉ MỘT triệu chứng đắt, KHÔ, cụ thể. *"Tim đập nhanh"* được; *"trái tim gào thét trong lồng ngực"* là sến.
-- **Ưu tiên âm thanh (đặc thù audio):** người nghe dùng TAI — tiếng chìa khóa tra ổ, tiếng tin nhắn rung trong đêm, tiếng thở đầu dây bên kia rồi tắt máy, sự im lặng đột ngột giữa cãi vã.
-- **Zoom cận cảnh** ở điểm cao trào: dừng cốt truyện, phóng đại MỘT chi tiết cảm giác trong 2–3 câu (tay run không mở nổi khóa điện thoại). **Vũ khí HIẾM:** cả truyện chỉ zoom 1–2 đỉnh thật sự; zoom mọi beat = sến, chùng nhịp.
-- **Đối thoại là bộ đồng bộ hóa:** thời gian nghe thoại ≈ thời gian thực → cảm giác "đang có mặt". Cảnh cao trào nặng thoại + phản ứng cơ thể, nhẹ dẫn truyện. Thoại phải nghe tự nhiên khi đọc to.
-- **Subtext:** thoại hay nhất là khi lời nói và ý thật lệch nhau. Vợ hỏi *"Anh về muộn à?"* giọng bình thản trong khi tay siết cạnh bàn. Càng ít nói thẳng cảm xúc, người nghe càng phải "nghiêng người vào" giải mã. Tránh thoại "nói toạc".
-- **Ngắt lời, im lặng, câu bỏ lửng:** người thật không nói trọn câu khi xúc động (*"Em tưởng anh đã—"*). Một câu hỏi bị đáp lại bằng im lặng nặng hơn mọi lời thú nhận.
+> *Ngay trước lúc trao nhẫn, màn hình sau sân khấu hiện ảnh tôi bước vào khách sạn với một người đàn ông lạ. Tôi chưa từng gặp anh ta. Nhưng chiếc váy trong ảnh đang nằm trong tủ em gái tôi.*
 
-## 5. Làm chủ nhịp độ (pacing) cho audio
+The better version gives evidence and contradiction instead of labeling the event.
 
-Nhịp câu văn chi phối trực tiếp nhịp tim người nghe. Nhịp đều — dù nhanh hay chậm — đều gây chai lỳ; **tương phản** mới giữ não tỉnh.
+Diagnosis:
 
-- **Cao trào/hành động/đối đầu:** câu ngắn, động từ mạnh, chủ ngữ + động từ, cắt trạng từ, có thể câu cụt một hai từ (*"Cửa bật mở. Chồng tôi đứng đó. Tay cầm điện thoại của tôi."*).
-- **Lắng đọng/u ám:** câu dài hơn, nhiều mệnh đề nối, từ tượng thanh êm và rợn (rì rào, lạo xạo, văng vẳng). **Cảnh báo:** "dài hơn" là so với cao trào, KHÔNG phải cớ để hoa mỹ lê thê. Câu dài vẫn đọc-một-hơi-được và vẫn gieo/đẩy một điều gì đó (manh mối, linh cảm, vòng lặp). Nghi ngờ thì cắt ngắn.
-- **Tương phản:** sau tối đa 3–4 đoạn cùng nhịp PHẢI đổi nhịp. Sau cao trào dồn dập cho một nhịp thở ngắn (câu tĩnh lặng) — làm cú sốc kế tiếp mạnh gấp đôi.
-- **Im lặng là vũ khí:** đánh dấu khoảng ngừng trước câu thoại quan trọng nhất. Khoảng lặng trước "Anh có điều muốn nói với em" đáng giá hơn mười câu tả.
-- **Đổi chất liệu mỗi 2–3 phút:** luân phiên thoại → hành động → nội tâm → miêu tả. Đừng để chất liệu nào kéo dài quá lâu, nhất là nội tâm độc thoại (dễ ru ngủ nhất).
-- **Tương phản cả TÔNG cảm xúc:** truyện toàn căng thẳng u ám khiến người nghe tê liệt y như nhịp đều. Cài xen khoảnh khắc dịu, ấm, chút hài chua chát trước/sau cao trào — vùng sáng làm vùng tối sâu hơn. Nỗi đau cạnh một hạnh phúc ngắn ngủi đau gấp bội nỗi đau nối tiếp nỗi đau.
+- Remove first sentence and story runs unchanged -> hook is decoration.
+- Test listener asks "who is who?" instead of "who faked the photo?" -> weak anchor.
+- Title promises stolen fiance, but first three minutes are childhood -> broken contract.
 
-## 6. Setup–payoff & khoảnh khắc "Aha!"
+## 2. Open Loops And Desire To Continue
 
-Não tận hưởng cực độ khi TỰ ghép nối được thông tin. Người nghe đoán ra sự thật ngay trước nhân vật → não tự thưởng dopamine cho sự nhạy bén của chính họ.
+Use open loops as **expectation management**, not as a universal memory law.
 
-- **Gieo chi tiết "vô thưởng vô phạt":** mỗi twist lớn cần 2–3 hạt giống gieo trước, ngụy trang thành chi tiết đời thường (chồng hay để điện thoại úp mặt xuống bàn; mùi nước hoa lạ bị đổ cho đồng nghiệp). Đặt hạt giống **giữa cảnh**, gắn hành động khác, không bao giờ ở cuối câu/cuối đoạn (cuối = đèn pha chiếu vào).
-- **Quy tắc "gieo 3 lần":** chi tiết quan trọng xuất hiện 3 lần trước khi phát nổ — lần 1 lướt qua, lần 2 hơi lạ, lần 3 phát nổ. Người nghe thấy *"trời ơi, mình đã nghe thấy nó từ đầu!"*.
-- **Cho người nghe đi trước nhân vật nửa bước:** đoán ra sự thật ~10–20 giây TRƯỚC nhân vật. Sớm hơn → sốt ruột; muộn hơn → mất phần thưởng "mình thông minh". Cho người nghe thấy manh mối nhân vật bỏ lỡ (dramatic irony).
-- **Vòng tròn khép kín (callback):** hình ảnh/câu thoại đầu quay lại ở cuối với nghĩa hoàn toàn mới. Câu ngọt ngào phút đầu thành câu mỉa mai cay đắng phút cuối.
+A valid loop needs:
 
-## 7. Neo cảm xúc (oxytocin) — khiến người nghe "có cổ phần"
+1. **Specific question/goal:** who changed the test sample?
+2. **Reason to care:** wedding ends at 5 if not solved.
+3. **Progress path:** whom/what can be investigated.
+4. **Planned closure:** where and through what action the loop will close.
 
-Dopamine giữ tò mò, nhưng oxytocin mới khiến người nghe QUAN TÂM chuyện gì xảy ra với nhân vật. Tò mò không quan tâm = bỏ đi khi biết đáp án.
+Loop ledger:
 
-- **Trao "cổ phần cảm xúc" trong 2 phút đầu:** trước khi tai họa ập xuống, cho thấy nhân vật có ≥1 điều đáng quý sắp bị đe dọa (một người mẹ tần tảo, một ước mơ gần thành, một đứa con). Mất mát chỉ đau khi biết thứ sắp mất đáng giá.
-- **Nhân vật muốn một điều cụ thể, khẩn thiết:** mọi cảnh nhân vật phải ĐANG MUỐN gì đó và bị cản. Không mong muốn = cảnh chết.
-- **Khuyết điểm tạo gắn kết:** nhân vật hoàn hảo không kích hoạt mirror neurons. Cho điểm yếu con người (cả tin, sĩ diện, hèn nhát đúng lúc cần dũng cảm) — người nghe gắn với người giống mình.
-- **Phản diện có logic riêng:** kẻ phản bội tin mình có lý do chính đáng. "Ác vì ác" làm truyện rẻ tiền; phản diện có lý làm người nghe day dứt — thứ khiến họ nghĩ về truyện sau khi tắt.
-- **Song đề, không chỉ khó khăn:** khó khăn = cần vượt qua; song đề = CHỌN giữa hai điều đều mất (nói ra sự thật thì gia đình tan vỡ, im lặng thì tự phản bội). Buộc người nghe tự hỏi *"nếu là mình?"* — mức tham gia nhận thức cao nhất.
+| Loop | Opens | Clue/progress | Closes | What changes after closure? |
+|---|---:|---|---:|---|
+| Who changed sample? | 1 | camera lost 8 min | 5 | sister had opportunity, motive unclear |
+| Why fiance trusts paper? | 2 | old paternity fraud | 4 | he is fear-driven, not just foolish |
 
-## 8. Cortisol & leo thang căng thẳng
+Loop count depends on length. Short stories may need one central loop and one subloop. Too many loops become memory load and confusion.
 
-Cortisol là tín hiệu "chú ý, có điều quan trọng". Nhưng cortisol liên tục khiến người nghe kiệt sức, phòng thủ; phải **liều lượng hóa** và **leo thang có kiểm soát**.
+Use partial payment:
 
-- **Leo thang cược:** mỗi hồi thứ có thể mất phải LỚN HƠN hồi trước: thể diện → hôn nhân → tài sản/con cái → nhân phẩm/mạng sống. Cược không tăng = truyện giậm chân dù sự kiện vẫn diễn ra.
-- **Nhịp thở sau sốc:** sau mỗi cú sốc lớn cho 30–60 giây hạ nhiệt (cảnh dịu, khoảnh khắc đời thường) — không phải để nghỉ mà để **nạp lại độ nhạy** cho cú sốc sau, và vẫn gieo hạt giống cho vòng lặp mới.
-- **Đồng hồ đếm ngược:** khi truyện chùng, thêm giới hạn thời gian ("trước khi bố mẹ hai bên gặp nhau cuối tuần", "trước khi kết quả xét nghiệm gửi về nhà"). Deadline biến căng thẳng mơ hồ thành đo đếm được.
+> **question -> real progress -> local answer -> new consequence**
 
-## 9. Thiết kế âm thanh & chỉ dẫn sản xuất
+Example: camera proves the sister entered the lab. "Who had opportunity?" closes. But she went to get medicine for the mother, and the file change used the fiance's account. New question grows from old evidence.
 
-Truyện AUDIO — âm thanh là một lớp kể chuyện song song, trực tiếp kích hoạt phản ứng sinh lý (giật mình, rợn người) mà văn bản thuần không đạt tới.
+Avoid repeated interruptions, hiding what the narrator knows, unrelated new loops, or no mid-story progress.
 
-- **Chỉ dẫn dạng thẻ vuông:** `[tiếng mưa rào ngoài cửa sổ]`, `[nhạc nền căng thẳng, nhỏ dần]`, `[tiếng chìa khóa tra vào ổ]`, `[im lặng 3 giây]`. Hỏi (hoặc mặc định) xem người dùng có cần lớp này; truyện thuần giọng đọc → lồng âm thanh vào lời văn thay vì thẻ.
-- **Ba loại âm thanh chủ đích:** (1) ambience — thiết lập không gian 1 câu (ve, quạt trần, phố xá); đổi ambience là cách rẻ nhất báo chuyển cảnh. (2) âm biến cố một phát — cửa, ly vỡ, tin nhắn; đặt đúng khoảnh khắc tạo cú giật. (3) nhạc nền — dâng trước cao trào, tắt phựt tại cú sốc (cắt nhạc đột ngột là cú sốc audio mạnh nhất).
-- **Motif âm thanh gắn manh mối:** gán một âm đặc trưng cho một manh mối (giai điệu chuông lạ, tiếng ho đặc biệt). Mỗi lần vang lên người nghe rùng mình — "gieo 3 lần" bằng âm thanh.
-- **Khoảng lặng như nhịp thật:** 2 giây im lặng là một sự kiện. Ghi rõ nơi cần ngừng; đừng để giọng đọc trôi tuột qua khoảnh khắc đáng lẽ nghẹn lại.
+## 3. Variable Rewards Without Randomness
 
-## 10. Giọng kể — cơ chế giữ chân thầm lặng
+A reward is any change that makes the listening time feel worthwhile.
 
-Cốt truyện giữ người nghe tò mò *chuyện gì tiếp theo*; **giọng kể** khiến họ muốn ở lại *bất kể* chuyện gì. Truyện dài có đoạn trầm (phát triển nhân vật, cài cắm) — giọng kể đỡ lấy các đoạn đó.
+Reward types:
 
-- **Giọng riêng, nhất quán:** cách người kể nhìn thế giới (chua chát, ngây thơ, tỉnh táo lạnh, hài cay đắng) phải xuyên suốt. Góc nhìn đặc biệt khiến cả cảnh rót tách trà cũng đáng nghe.
-- **Nội tâm sắc, không lải nhải:** ngôi thứ nhất dễ sa vào độc thoại lê thê (lỗi ru ngủ số một). Nội tâm chỉ xuất hiện khi *tiến triển* điều gì — một nhận ra mới, một mâu thuẫn — và phải ngắn, sắc, có nhịp.
-- **Quan điểm, không phải camera:** người kể *diễn giải*, phán xét, giấu giếm, tự dối mình. Người kể ngôi thứ nhất che giấu điều gì với chính mình (không đáng tin) là mỏ vàng của drama — người nghe dần nhận ra sự thật mà người kể không dám thừa nhận.
-- **Câu chữ mang khẩu khí người kể:** cách nói, ví von, thói quen ngôn ngữ khớp con người và hoàn cảnh (người bán hàng ngoài chợ không ví von như giáo sư). Cách khắc họa nhân vật gián tiếp mà không cần tả.
+1. **Information:** lie, rule, partial past.
+2. **Capability:** tool, ally, understanding.
+3. **Emotion:** apology, recognition, laughter.
+4. **Power reversal:** pressured person gains choice.
+5. **Confirmation:** listener's suspicion proven.
+6. **Fair surprise:** old data changes meaning.
 
----
+Do not deliver one same-sized twist every two minutes. Vary reward type and let size rise/fall naturally:
 
-## Ghi chú áp dụng theo thể loại (điều chỉnh chất liệu, giữ nguyên khung)
+> small clue -> warm moment -> failure -> partial confession -> local win -> major truth
 
-- **Drama/ngoại tình:** cược = quan hệ, danh dự, con cái; vòng lặp = bí mật và bằng chứng; song đề đạo đức là vũ khí chủ lực; twist mạnh nhất là đảo vai nạn nhân–thủ phạm.
-- **Trinh thám:** vòng lặp = manh mối; gieo 3 lần và "Aha!" là xương sống; mỗi nghi phạm là một vòng lặp trung.
-- **Kinh dị:** nhịp độ và âm thanh (KT 4, 5) là chủ lực; nỗi sợ đến từ điều CHƯA thấy — kéo dài vòng lặp mở lâu hơn bình thường.
-- **Tình cảm:** dao động hy vọng–tuyệt vọng áp lên khoảng cách giữa hai người; cliffhanger thiên về "ngã ba quyết định" và "tiết lộ".
+Large rewards must be earned by choice, investigation, or tradeoff. If a random helper brings the answer, reward becomes author rescue.
+
+Vietnamese contrast:
+
+**Mechanical:**
+
+> *Tôi mở ngăn kéo và tìm thấy camera bí mật.*
+
+**With cost:**
+
+> *Muốn lấy thẻ nhớ, tôi phải mở chiếc hộp bố cấm đụng vào trước khi mất. Trong đó có camera, nhưng cũng có lá thư chứng minh bố từng biết toàn bộ chuyện này.*
+
+One action pays a clue and raises emotional cost.
+
+## 4. Immersive Detail And Body Reaction
+
+The goal is not guaranteed "mirror neuron activation." The goal is a scene that can be imagined from the right point of view.
+
+Effective detail order:
+
+1. What is the character noticing because of current goal?
+2. Which sense brings that information?
+3. Does the body reaction change action?
+4. Does the character interpret correctly or not?
+
+Same kitchen, different goal:
+
+- hungry person notices rice smell;
+- investigator notices a second cup with lipstick;
+- abuse survivor notices keys outside the door;
+- person hiding a letter notices distance from spouse to drawer.
+
+Avoid stock reaction piles. `tim đập thình thịch`, `nghẹn thở`, `máu đông cứng`, `sống lưng lạnh toát` can work, but repetition gives every character the same body.
+
+Vietnamese contrast:
+
+**Cliche:**
+
+> *Tôi nghẹn thở khi thấy kết quả xét nghiệm.*
+
+**Specific action:**
+
+> *Tôi đọc dòng kết luận hai lần, rồi gập tờ giấy lại trước khi mẹ chồng kịp nhìn thấy.*
+
+The reaction shows risk and choice.
+
+Pregnancy/fetal movement must connect to relationship or choice:
+
+**Weak:**
+
+> *Đứa bé đạp làm tôi nghẹn thở đúng lúc anh phản bội.*
+
+**Better:**
+
+> *Đứa bé đạp dưới lòng bàn tay tôi. Tôi đang định đưa tay anh tới đó như mọi tối, rồi nhìn tờ xét nghiệm giữa hai người và rút tay lại.*
+
+## 5. Pacing By Scene And Ear
+
+Fast does not mean tense; slow does not mean deep. Pace is the speed of **meaningful change** and the time listeners need to understand/feel.
+
+Scene unit:
+
+> **goal -> obstacle -> turn**
+
+Each scene needs a local want, a specific blocker, and changed information/power/decision by the end.
+
+Five control layers:
+
+| Layer | Speed up | Slow intentionally |
+|---|---|---|
+| **Events** | fewer transition steps, immediate consequence | observation before irreversible choice |
+| **Sentence** | short, early verbs, fewer clauses | medium/longer lines for layered thought |
+| **Dialogue turns** | quick replies, interruption | silence, evasion, action between lines |
+| **Narrative distance** | summarize transitions/procedures | stage a crucial choice close-up |
+| **Information** | direct answer | clues for listener inference |
+
+Do not change pace by clock rules like "every 2-3 minutes." Change when the material has done its function or starts repeating.
+
+Read aloud. Mark breath breaks inside idea units, split sentences, and watch for identical sentence lengths/structures. Long names, titles, and subordinate clauses weigh more in audio than on page.
+
+Bad rhythm: five internal paragraphs with one conclusion; perfect Q&A transcript; climax with three explanation paragraphs between actions; nonstop short sentences that become monotonous.
+
+## 6. Setup-Payoff And Fair Surprise
+
+Strong surprise must be both:
+
+- hard to fully predict;
+- explainable backward from earlier data.
+
+Design backward:
+
+1. Write the final truth.
+2. Ask what traces it must leave.
+3. Choose 1-3 different trace types: behavior, object, line, absence.
+4. Give each trace a surface reason.
+5. Make it plausible for the character to miss it because of bias/goal, not random stupidity.
+
+"Plant three times" is a guideline, not a law. One obvious clue may need only one mention; three would expose it. Subtle motifs may need repetition.
+
+Example payoff:
+
+> em gái không giả làm cô dâu; cô dâu từ nhỏ đã bị gia đình bắt sống dưới tên em.
+
+Traces:
+
+- mother always corrects the bride's signature habit;
+- fifth-grade album is missing exactly one year;
+- the sister uses a nickname the "older sister" supposedly hated.
+
+Each trace has surface meaning; after payoff, all change meaning.
+
+Fairness:
+
+- no new culprit/solution at the last minute;
+- do not deny objective facts already told unless a reliable wrong POV was established;
+- do not change world rules for the twist;
+- twist must change goal, relationship, or moral judgment, not only culprit name.
+
+Let listeners be ahead of, beside, or behind the character according to suspense/surprise needs. No fixed 10-20 second rule.
+
+## 7. Emotional Investment
+
+Do not attach "oxytocin" to a baby, pet, or sick mother. Investment forms when listeners understand **what the character values, what they can do, and what their choice may cost**.
+
+Four pillars:
+
+1. **Specific want:** custody, shop, sister's trust.
+2. **Inner conflict:** wanting truth but fearing it proves their own fault.
+3. **Agency:** character acts, even wrongly.
+4. **Individual detail:** habit, voice, worldview that belongs only to them.
+
+Vietnamese contrast:
+
+**Summary:**
+
+> *Mẹ tôi là người phụ nữ tần tảo, yêu thương con hết mực.*
+
+**Scene:**
+
+> *Mẹ chia đôi viên thuốc cuối, nói nửa viên đã đủ. Tối đó tôi thấy bà ngồi ngủ trước cửa phòng em, tay vẫn giữ hóa đơn viện phí chưa thanh toán.*
+
+Characters need not be likable; they need understandable goals, consistent inner logic, awareness of cost, and no forced audience agreement.
+
+For antagonists, write:
+
+> **the reason they tell themselves + real benefit + boundary they knowingly cross**
+
+Understanding motive does not excuse responsibility.
+
+## 8. Escalation, Contrast, And Release
+
+Not every story must escalate to life and death. Good escalation makes the same conflict closer, more costly, or harder to undo.
+
+Escalation axes:
+
+| Axis | Example |
+|---|---|
+| **Cost** | embarrassment -> custody loss |
+| **Proximity** | rumor -> betrayer in the house |
+| **Time** | next week -> 20 minutes |
+| **Irreversibility** | private words -> public livestream |
+| **Relationship** | stranger objects -> birth mother signs against narrator |
+
+After each scene, answer:
+
+```text
+What did the character lose/gain?
+Where is the next choice harder?
+What can no longer return to old state?
+```
+
+If three scenes give no new answer, the story is standing still.
+
+Release beats are not useless. Quiet scenes may show consequence, shift alliances, plant clues, or let characters choose after emotion settles. Length depends on absorption and reorientation needs.
+
+Emotional contrast works only if the warm moment belongs to the real relationship, not a formula insert.
+
+## 9. Sound As Narrative Information
+
+Sound does not only illustrate. It can locate space, signal change, hide/reveal information, and create motif.
+
+Uses:
+
+1. **Location:** station speaker, ceiling fan, monitor.
+2. **Event:** lock turning, message ping, glass set down hard.
+3. **Motif:** ringtone/knock tied to person/secret and later reinterpreted.
+
+Two modes:
+
+**With sound post-production:** use short functional tags.
+
+```text
+[tiếng khóa xoay một vòng]
+[im lặng]
+```
+
+**Pure narrated story:** write sound into action.
+
+> *Ổ khóa xoay một vòng ở phía ngoài. Tôi thôi gọi tên chồng.*
+
+Do not add SFX tags when the user asks for pure story or the pipeline does not support them.
+
+Limits:
+
+- sound cannot hide information the narration must provide;
+- `[nhạc căng thẳng]` is not conflict;
+- silence only works around real change;
+- over-repeated motifs become spoiler alarms.
+
+## 10. Narrative Voice, Dialogue, And Subtext
+
+For pure single-voice audio, default to **narrator as spine, dialogue as impact**. The narrator compresses time, summarizes context, connects causality, guides psychology, and selects moments to stage closely. Direct dialogue appears only when listeners need exact wording.
+
+Narrative voice is not a list of adjectives. It is a stable pattern: what the narrator notices, how they name people, what they judge, what they avoid, and what sentence rhythm they use.
+
+### Three Narrative Distances
+
+1. **Summary:** compress travel, procedure, routine exchanges, and necessary background.
+2. **Selective staging:** slow down for one detail, realization, or action that changes the scene.
+3. **Verbatim impact:** keep one/few powerful lines, then show reaction/consequence instead of continuing explanatory dialogue.
+
+Shift distance when function changes. All-summary becomes a report; staging every step makes audio heavy.
+
+Five-line voice profile:
+
+```text
+What the narrator always notices:
+What they avoid naming:
+How they speak when defensive:
+One comparison type from their life/job:
+What they misunderstand about themselves:
+```
+
+### Verbatim Test
+
+Keep direct dialogue only if the exact wording:
+
+- performs an action: confess, refuse, promise, command, threaten, choose;
+- changes power or relationship immediately;
+- reveals voice, lie, subtext, or distance that paraphrase would lose;
+- lands comedy, twist, humiliation, tenderness, or wound.
+
+If indirect narration keeps the same force, narrate it. Compress greetings, scheduling, data Q&A, repeated arguments, spoken biography, and information both sides know. Do not use dialogue to replay what narration just explained.
+
+Vietnamese contrast:
+
+**Line-by-line exchange:**
+
+> *“Mẹ gọi con về có việc gì?” “Mẹ muốn hỏi về tờ giấy.” “Con cũng đang định nói về nó.” “Vậy con đã quyết định chưa?”*
+
+**Narrator-led with impact:**
+
+> *Mẹ gọi tôi về chỉ để hỏi về tờ giấy. Bà vòng vo qua bữa tối, công việc và cả chậu cây ngoài ban công. Tôi để bà nói hết, vì cả hai đều biết câu hỏi thật nằm ở đâu. Đến lúc tôi đứng dậy, bà mới giữ cổ tay tôi lại. “Con định đưa nó cho thằng bé thật sao?”*
+
+The second compresses procedure, shows avoidance and relationship, then preserves the line that forces choice.
+
+### Psychology Without Flatness
+
+- Narrate the awareness chain: what is seen, how it is interpreted, what the character avoids admitting, and what choice follows.
+- Tie interiority to an object/gesture/decision in the scene.
+- Let narrator have bias, humor, defense, or misunderstanding.
+- Stop explaining when detail or dialogue lets listeners infer enough.
+
+### Dialogue Layers
+
+1. **Surface goal:** what answer/action does the speaker want?
+2. **Relationship:** what power do they have over the listener?
+3. **Unsaid truth:** what makes the line mean more?
+
+**Too explicit:**
+
+> *“Em rất tức giận vì anh đã phản bội lòng tin của em.”*
+
+**With action and subtext:**
+
+> *“Anh ăn cơm chưa?” Tôi úp chiếc điện thoại của anh xuống bàn. “Hay để em gọi hỏi người vừa nhắn ‘nhớ anh’ xem cô ấy đã nấu rồi?”*
+
+Distinguish characters by goal and life logic before catchphrases. One person evades with questions; another answers too precisely; another uses titles to keep distance. Address forms shift with relationship/emotion; see [xung-ho-dat-ten.md](xung-ho-dat-ten.md).
+
+Read dialogue aloud without speaker tags. If goals, rhythm, and address do not identify most speakers, voices are not distinct enough. Do not turn each character into a cartoon verbal tic.
+
+## 11. Combined 10-Technique Workflow
+
+### Pass 1 — Causality And Character
+
+- Each scene has goal, obstacle, turn.
+- Character choices cause following events.
+- Antagonists/allies have their own motives.
+
+### Pass 2 — Expectation And Reward
+
+- Build open-loop ledger.
+- Ensure each section makes real progress.
+- Set up twists backward from payoff.
+
+### Pass 3 — Emotion And Immersion
+
+- Replace generic emotional labels with specific actions/choices.
+- Check sensory detail belongs to POV.
+- Let consequences exist long enough.
+
+### Pass 4 — Audio And Voice
+
+- Read aloud; fix breath and pronoun ambiguity.
+- Check narrator as spine and distance variation.
+- Apply verbatim test to every dialogue cluster; compress procedure and narration/dialogue duplicates.
+- Distinguish remaining character voices.
+- Keep only functional sound.
+
+### Pass 5 — Opening And Ending
+
+- Rewrite opening after knowing real payoff.
+- Match title, Central Question, and reward type.
+- Use callbacks only when they change meaning.
+
+### Anti-"AI Prose" Checklist
+
+- [ ] No repeated cycle of `shock -> heartbeat -> bigger secret`.
+- [ ] No twist replacing motive.
+- [ ] Characters are not made stupid to move plot.
+- [ ] No double explanation by action then narration.
+- [ ] No double explanation by narration then dialogue.
+- [ ] No long exchange where information, power, relationship, and decision stay unchanged.
+- [ ] Narrator shifts between summary and selective staging; not a flat event report.
+- [ ] Not every sentence is a slogan/viral line.
+- [ ] No hard duration numbers without channel data.
+- [ ] No hormone/neuroscience claims as certainty.
+- [ ] Character chooses and pays in at least one meaningful scene.
+- [ ] Each payoff changes understanding, power, or decision.
+- [ ] Read-aloud version is clear about who does what, with whom, and why.
+
+## 12. Sources
+
+- [Meta-analysis of the Zeigarnik effect (2025)](https://www.nature.com/articles/s41599-025-05000-w)
+- [PubMed: Causal integration in narrative comprehension](https://pubmed.ncbi.nlm.nih.gov/34531284/)
+- [PLOS ONE: Transportation into narrative worlds and empathy](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0055341)
+- [ACL: Framework for narrative surprise](https://aclanthology.org/2025.wnu-1.7/)
+- [Purdue OWL: Writing compelling characters](https://owl.purdue.edu/owl/subject_specific_writing/creative_writing/writers/fiction-basics/writing_compelling_characters.html)
+- [UCD Writing Centre: Revising and editing fiction](https://www.ucd.ie/writingcentre/t4media/Creative%20Writing%20Revising%20and%20Editing%20Fiction.pdf)
+- [Center for Fiction: Tips for writing dialogue](https://centerforfiction.org/writing-tools/tips-for-writing-dialogue/)
+- [Information (2025): Comparing AI-generated and human-authored narratives](https://www.mdpi.com/2078-2489/16/4/319)
+
+Final principle: technique matters only when it serves a character who wants something and must choose under pressure. Without that core, hooks, twists, sound, and sentence rhythm only make the text move in place.

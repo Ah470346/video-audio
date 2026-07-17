@@ -1,90 +1,343 @@
 ---
 name: audio-story-genre-trinh-tham
 description: |
-  Skill chuyên môn thể loại TRINH THÁM (bao gồm phá án, bí ẩn, tội phạm, điều tra).
-  Sử dụng KẾT HỢP với skill nền tảng "audio-story-engagement" — skill này KHÔNG thay thế skill base mà BỔ SUNG chuyên môn riêng của thể loại trinh thám.
-  Kích hoạt khi người dùng yêu cầu viết truyện trinh thám, bí ẩn, phá án, tội phạm, điều tra, hoặc bất kỳ câu chuyện nào xoay quanh việc giải mã một vụ việc/bí ẩn.
+  Specialist skill for MYSTERY/DETECTIVE fiction (`trinh tham`): whodunit, missing person, family mystery, cozy mystery, procedural, howdunit/whydunit, and mystery-thriller. Always use with `audio-story-engagement`; add premise modifiers when relevant. Trigger when the main reward is a solution inferred from clues, testimony, evidence, and causal chains, not merely because the story contains crime or secrets.
 ---
 
-# Thể Loại TRINH THÁM
+# Audio Story Genre: Mystery
 
-**Kết hợp:** áp skill nền `audio-story-engagement` TRƯỚC (hook, Zeigarnik, pacing, mirror neurons, checklist, an toàn từ vựng). Skill này chỉ BỔ SUNG chất liệu đặc thù trinh thám; mọi kỹ thuật nền vẫn bắt buộc.
+Mystery satisfies when the answer is **surprising forward and reasonable backward**. Listeners do not have to guess correctly, but they must feel that facts, inference rules, and conclusion belong to the same story.
 
-## Vì sao gây nghiện
-Trinh thám khai thác bản năng giải câu đố — mỗi manh mối là một liều dopamine nhỏ, người nghe tự lắp mảnh ghép ("tôi đang là thám tử"). Hai cơ chế:
-- **Khoảng trống thông tin:** biết mình THIẾU một mảnh = "ngứa" cần gãi, não không nghỉ tới khi lấp đầy.
-- **Nhu cầu khép lại nhận thức:** não ghét mơ hồ, phải xác định ai là hung thủ.
+## 1. Coordination Contract
 
-**Keyword:** bí ẩn, vụ án, hung thủ, nạn nhân, manh mối, dấu vết, chứng cứ; điều tra, suy luận, nghi phạm, alibi; hiện trường, dấu vân tay, camera, nhân chứng, lời khai; "chi tiết ai cũng bỏ qua", "câu trả lời nằm ngay trước mắt".
+- Use `audio-story-engagement` as the base and follow [../audio-story-engagement/references/phoi-hop-skills.md](../audio-story-engagement/references/phoi-hop-skills.md).
+- This skill defines the mystery question, evidence standard, and solution payoff. It does not replace approval gates, safety, Vietnamese address rules, or output format.
+- Fair play is required when the story promises a whodunit listeners can solve. In procedural/thriller modes, specialized data may be withheld, but the final solution cannot be created from information that did not exist.
+- Do not impose fixed numbers of suspects, red herrings, clues per episode, or percentage points for the culprit's first appearance.
+- Run `audio-story-final-polish` last, especially checking timeline, knowledge, and scope of proof.
 
-## Câu Hỏi Trung Tâm
-Trinh thám xoay quanh **WHO + WHY**, không chỉ WHAT. Công thức: *"Ai đứng sau [sự việc], và tại sao — khi ai cũng có lý do để bị nghi ngờ?"*
-- Án mạng: "Ai đoạt mạng người đó, và tại sao hung thủ cố tình để lại MỘT manh mối?"
-- Mất tích: "Người đó biến mất hay bị biến mất? Ai nhìn thấy họ cuối cùng?"
-- Tai nạn đáng ngờ: "Nếu là tai nạn thật, tại sao chi tiết này không khớp?"
+## 2. Branch And Genre Contract
 
-## Kiến trúc manh mối 3 tầng — xương sống
-| Tầng | Loại | Mục đích |
-|------|------|----------|
-| 1 – Mở | Hiển thị rõ, ai cũng thấy | Cảm giác tiến triển (hiện trường, vật chứng) |
-| 2 – Ẩn | Xuất hiện nhưng ngụy trang | Khoảnh khắc "Aha!" khi ghép nối (chi tiết "vô thưởng vô phạt" hóa chìa khóa) |
-| 3 – Ngược | Cố tình đánh lạc hướng | Duy trì bất ngờ (bằng chứng trỏ sai người, alibi giả) |
+### Whodunit / Fair-Play Mystery
 
-- **Fair play (bắt buộc):** mọi thông tin cần để giải mã phải gieo TRƯỚC khi tiết lộ đáp án — người nghe PHẢI có khả năng tự đoán nếu đủ chú ý. Gieo manh mối ẩn bằng "gieo 3 lần" của nền. KHÔNG tiết lộ đáp án bằng thông tin chưa từng xuất hiện. Twist "bất ngờ nhưng tất yếu khi nhìn lại" = tiêu chuẩn vàng.
-- **"Câu trả lời sai, đúng cách":** dẫn nhân vật + người nghe tới một kết luận hợp lý → phá bằng manh mối mới. Mỗi lần bác bỏ: có lý do rõ tại sao sai + hé hướng bất ngờ hơn + cảm giác "mình đã bỏ sót!".
+Promise: listeners receive the necessary facts before reveal and could infer the answer if attentive.
 
-## Hệ thống nghi phạm — mỗi nghi phạm là một vòng lặp
-- **"Không ai vô tội, không ai rõ ràng":** mỗi nghi phạm có ĐỘNG CƠ + CƠ HỘI + BÍ MẬT RIÊNG (bí mật không nhất thiết liên quan vụ án — chính sự mơ hồ "có phải manh mối không?" tạo vòng lặp phụ). Loại trừ một nghi phạm → hé bí mật riêng của họ = phần thưởng dopamine dù không phải đáp án.
-- **Hung thủ ẩn đúng cách:** xuất hiện trong 30% đầu, có mặt nhiều cảnh nhưng KHÔNG bị spotlight; mọi hành vi đáng ngờ đều giải thích được bằng lý do vô hại cho đến mảnh cuối. Tránh hung thủ "từ bóng tối chui ra" (nhắc thoáng 1 lần rồi lộ mặt → người nghe thấy bị lừa).
+### Whydunit / Howdunit
 
-## Mô hình twist mạnh
-- **"Nhìn mà không thấy":** manh mối chính ở ngay trước mắt từ đầu, ngụy trang bằng bối cảnh bình thường.
-- **"Không phải WHAT mà là WHY":** đoán đúng hung thủ rồi, nhưng ĐỘNG CƠ mới là cú sốc.
-- **"Đảo vai điều tra":** người điều tra có liên quan, hoặc là mục tiêu tiếp theo.
-- **"Tội ác thứ hai":** vụ án ban đầu chỉ là lớp vỏ, dưới là tội ác lớn hơn.
-- **"Nạn nhân không vô tội":** nạn nhân có bí mật đen — chính nó là nguyên nhân thật.
-- **"Sai thời gian":** mọi người có alibi vì sự việc không xảy ra vào lúc tưởng; twist nằm ở timeline.
+Identity or action may be clear early; the reward is motive, method, or proof.
 
-## Nhịp & thoại
-- **"Xây–Phá–Xây lại":** giả thuyết được dựng (hy vọng "sắp ra!") → manh mối mới phá vỡ (thất vọng "lại sai!") → giả thuyết mới → phá lần nữa (twist) → sự thật cuối (thỏa mãn lớn).
-- **Đếm ngược nửa sau:** hung thủ sắp tẩu thoát/phi tang, người điều tra bị đe dọa, bằng chứng sắp mất → câu ngắn hơn, cắt nhanh hơn.
-- **Xen suy luận ↔ hành động:** cảnh suy luận (nhịp chậm, cho người nghe nghĩ cùng) vs cảnh hành động (nhanh, có nguy hiểm) — KHÔNG quá 2 cảnh cùng loại liên tiếp.
-- **Thoại thẩm vấn = trận cờ:** người hỏi biết ít hơn, phải dẫn dụ; dấu hiệu nói dối ngụy trang (trả lời bằng câu hỏi; alibi quá chi tiết như học thuộc; né tránh, đổi chủ đề; kể hai lần từng từ giống nhau). Khoảnh khắc "lỡ miệng": nghi phạm tiết lộ chi tiết chỉ hung thủ mới biết.
-- **"Câu thoại chìa khóa":** một câu bỏ qua lần đầu, sau twist mới hiểu nghĩa thật ("Tôi sẽ làm bất cứ điều gì để bảo vệ gia đình" → lời thú tội).
+### Missing Person / Family Mystery
 
-## Kỹ thuật "người nghe là thám tử" & âm thanh
-- Sau mỗi cảnh thu manh mối, chèn câu mời suy luận ("Có gì đó không đúng. Nhưng tôi chưa nắm được."). KHÔNG giải thích manh mối ngay khi phát hiện — để nó treo.
-- **≥2 red herring:** hợp lý lúc xuất hiện, bị bác bằng logic (không trùng hợp), khi bác thì hé bí mật của người bị oan = phần thưởng phụ.
-- **"Tóm tắt manh mối" ở 60–70%:** cho nhân vật liệt kê điều đã biết theo cách khiến người nghe BỎ SÓT mảnh cuối → cảm giác "gần lắm rồi!" → ngay sau đó twist phá giả thuyết.
-- **Âm thanh (nếu có sản xuất):** motif cho manh mối (một nốt piano/"click" mỗi khi manh mối quan trọng xuất hiện); nhạc suy luận nhẹ đều; cắt nhạc đột ngột = phát hiện; flashback âm thanh khi nhân vật nhớ lại chi tiết.
+Investigation changes how characters understand the missing person and family. Often hybridizes with drama.
 
-## Cấu trúc "kim tự tháp ngược"
-- **Hồi 1 – Sự việc & hiện trường (10–15%):** mở bằng HẬU QUẢ (tội ác đã xảy ra), không kể quá trình; thiết lập ai điều tra + vì sao BUỘC phải tìm ra (cổ phần cá nhân); 2–3 manh mối tầng 1; hook: "Có MỘT chi tiết ai cũng bỏ qua — nó thay đổi mọi thứ."
-- **Hồi 2A – Mở rộng (25–30%):** giới thiệu nghi phạm (mỗi người = một vòng lặp); thu manh mối + bí mật riêng; xây giả thuyết đầu rồi phá; gieo manh mối tầng 2 ngụy trang.
-- **Hồi 2B – Thu hẹp & đảo chiều (25–30%):** loại trừ nghi phạm; twist giữa truyện đảo mọi giả thuyết; phát hiện manh mối tầng 3 (ai đánh lạc hướng?); người điều tra bị kéo sâu/đe dọa.
-- **Hồi 3 – Giải mã & đối đầu (15–20%):** "Aha!" lớn (ghép tầng 2); đối đầu hung thủ có nguy hiểm; tiết lộ WHY (phần thưởng cảm xúc cuối); callback: chi tiết hiện trường ban đầu mang nghĩa mới.
+### Procedural
 
-## Bẫy cần tránh (trinh thám)
-| Bẫy | Cách tránh |
-|-----|-----------|
-| Hung thủ quá rõ | Cho hung thủ thật cư xử như người vô tội nhất |
-| Quá nhiều manh mối cùng lúc | Nhỏ giọt 1–2 manh mối mỗi phân đoạn |
-| Twist không fair play | Mọi manh mối cần thiết gieo TRƯỚC |
-| Giải thích dài dòng cuối truyện | Tiết lộ qua đối đầu/thoại/hành động, không monologue |
-| Người kể thụ động | Mỗi manh mối đến từ HÀNH ĐỘNG chủ động |
-| Mọi nghi phạm alibi hoàn hảo rồi đều bị bác | Cho ≥1 nghi phạm KHÔNG alibi nhưng KHÔNG phải hung thủ |
-| Động cơ yếu ("giết vì ganh tị") | Động cơ gắn bí mật cá nhân sâu, có chiều |
+Satisfaction comes from verification process, cooperation, and professional limits. Research current practice when using agencies, forensics, or law.
 
-## Tiêu đề & keyword
-**Tò mò:** vụ án, bí ẩn, mất tích, hiện trường, manh mối, alibi, nghi phạm, hung thủ, camera, dấu vân tay, tai nạn đáng ngờ. **Trí tuệ:** suy luận, ghép nối, chi tiết bị bỏ qua, kẽ hở, mâu thuẫn, timeline, động cơ ẩn. **Hồi hộp:** bị theo dõi, đe dọa, phục kích, đối đầu, cuộc gọi lúc nửa đêm, tiếng gõ cửa.
-Mẫu tiêu đề: *"Người cuối cùng nhìn thấy chồng tôi sống — là tôi"* · *"Có 5 người ở bữa tiệc đó. Sáng hôm sau chỉ còn 4"* · *"Ai đó gửi tôi ảnh chụp bàn ăn nhà tôi — lúc tôi đang ngồi ăn"*.
+### Mystery-Thriller
 
-## Checklist bổ sung trinh thám (sau checklist nền)
-- [ ] Có hệ thống manh mối 3 tầng (mở, ẩn, ngược)?
-- [ ] Fair play: mọi thông tin cần thiết gieo TRƯỚC khi tiết lộ đáp án?
-- [ ] Mỗi nghi phạm có động cơ + cơ hội + bí mật riêng? Hung thủ xuất hiện đủ sớm, tự nhiên?
-- [ ] Có ≥2 red herring hợp lý? Có ≥1 giả thuyết xây → phá → xây lại?
-- [ ] "Aha!" lớn: người nghe đoán ra nửa bước trước nhân vật?
-- [ ] Thoại thẩm vấn có dấu hiệu nói dối ngụy trang? Có "câu thoại chìa khóa" đổi nghĩa sau twist?
-- [ ] Động cơ hung thủ có chiều sâu cá nhân? Giải đáp cuối qua đối đầu, không monologue?
-- [ ] Nhịp xen suy luận ↔ hành động, không quá 2 cảnh cùng loại liên tiếp?
+Solution runs with deadline/danger. Do not let action swallow logic or halt investigation until the culprit attacks.
+
+### Cozy
+
+Lower graphic detail, stronger community and everyday observation. Cozy does not mean easy evidence or naive characters.
+
+### Shared Contract
+
+1. There is an investigable question.
+2. Facts change probability or interpretation, not just decoration.
+3. Characters build and revise hypotheses.
+4. The solution fits timeline, motive, opportunity, and evidence.
+5. Reveal changes judgment, relationship, or action, not only names the culprit.
+
+## 3. Central Question
+
+Not every mystery is `WHO + WHY`. Choose the right variable:
+
+- **Who:** who did it / who is behind it?
+- **What:** what really happened?
+- **How:** by what means inside known limits?
+- **Why:** what motive/meaning explains the choice?
+- **Where/when:** where/when did the event actually happen?
+- **Can it be proved:** truth is known, but can it be proven?
+
+Template:
+
+> *What really happened to [event], and what chain of facts can the character use to prove it before [consequence]?*
+
+Vietnamese examples:
+
+- *Nếu chị tôi tự bỏ đi, vì sao giọng cô vẫn xuất hiện trong các cuộc gọi được ghi sau ngày mất tích?*
+- *Tôi biết ai đổi mẫu xét nghiệm; vấn đề là chứng minh thế nào khi tài khoản truy cập mang tên mình.*
+- *Ai đã dựng tai nạn, và vì sao họ cố làm thời điểm xảy ra muộn hơn ba giờ?*
+
+## 4. Design The Solution Backward
+
+Before drafting the beginning, lock:
+
+```text
+Objective truth:
+True action chain:
+Motive and boundary-crossing choice:
+Conditions/opportunity:
+Mandatory traces:
+Traces the culprit can create/delete:
+Mistake or unexpected factor:
+How the solution is proven:
+Consequence after reveal:
+```
+
+Feasibility checks:
+
+- Does the timeline allow movement/actions?
+- Does the character have established knowledge, tools, or access?
+- Would the action leave appropriate traces?
+- If traces were deleted, did deletion create another trace?
+- Is the motive strong enough for this person to choose this method over easier alternatives?
+
+Do not describe harmful methods in actionable detail. Build internal logic, then narrate only at the safe detail level needed for inference.
+
+## 5. Clue Roles
+
+Do not force every story into "three layers." Assign functional roles:
+
+| Clue role | Function | Example |
+|---|---|---|
+| Directional | opens an investigation path | access card with odd time |
+| Constraint | rules out possibility | call proves someone elsewhere |
+| Contradiction | two facts cannot both be true | rain began before alleged photo time |
+| Reinterpretation | old detail changes meaning | bell was phone, not church |
+| Link | connects person/object/place | fabric from same uniform batch |
+| Motive | explains decision | secret contract |
+| Proof | survives rebuttal | independent log + witness + physical evidence |
+
+A clue can hold multiple roles but must have source and limits.
+
+Fair-play requires listeners to hear essential facts, necessary specialist rule, POV scope, and at least one plausible inference path. Do not make the reveal depend on "I suddenly remembered an untold detail."
+
+## 6. Evidence Ledger And Chain Of Custody
+
+| Evidence | Created by | Collected/held by | Time | Proves | Does not prove | Tamperable? |
+|---|---|---|---|---|---|---|
+| lobby camera | building system | guard -> investigator | 21:10 | X entered lobby | which room they entered | missing segment |
+
+Scope of proof:
+
+- Fingerprints show contact, not automatically time or intent.
+- DNA shows biological source within sample scope, not the whole act.
+- Photos/videos have framing, timestamp, and edit chain.
+- Messages have device/account, not automatically the person holding it.
+- Testimony is data to verify, not truth because the speaker is emotional.
+
+When using real forensics, law, cameras, DNA, digital data, or procedure timing, verify current sources if accuracy affects plot.
+
+## 7. Hypotheses And Investigation Progress
+
+Scene engine:
+
+> **local question -> verification action -> fact -> interpretation -> next-route decision**
+
+Each investigation scene must change at least one of:
+
+- probability of a possibility;
+- timeline;
+- opportunity list;
+- motive;
+- source reliability;
+- risk/cost of investigating.
+
+A convincing investigation shows characters propose hypotheses from existing facts, test what could disprove them, update instead of protecting ego, and distinguish known / inferred / guessed.
+
+Investigation mistakes are strongest when they arise from blind spot, pressure, or missing data, not ignoring the obvious for convenience.
+
+Give listeners room to think. Do not insert "something was wrong" after every clue. Put the fact clearly, let a bit of action pass before interpretation, or let two characters argue competing hypotheses.
+
+## 8. Suspects And Side Secrets
+
+Each significant suspect should have at least two of:
+
+- plausible motive;
+- opportunity/access;
+- concealment behavior;
+- relationship that distorts testimony.
+
+Do not make everyone evenly have `motive + opportunity + secret`; that feels like a board game.
+
+Side secrets must work: explain a lie while clearing main crime, create motive, shift alliance, explain misread evidence, or create drama after innocence. If a secret only keeps a suspect in play and vanishes, cut or connect it to theme.
+
+In fair-play, culprit or mechanism must exist in the data system early enough for inference. No universal 30% rule.
+
+## 9. Fair Red Herrings
+
+A red herring is a **true fact misinterpreted**, or a created trace within the opponent's established ability.
+
+Types:
+
+1. **Coincidence with cause:** suspicious object belongs to another secret.
+2. **Investigator bias:** wrong weight because of relationship/prejudice.
+3. **Active misdirection:** opponent creates/deletes traces and risks doing so.
+
+Do not set a quota for red herrings. One strong herring with consequence beats three formula suspects.
+
+When disproving it, show what hypothesis failed, which facts remain true, why the old reading was reasonable then, and what new route grows from the remaining facts.
+
+## 10. Interviews And Testimony
+
+Do not use `avoids eye contact, shaking, too much detail, answering with a question` as lie detectors. Research shows people detect lies near chance; anxiety, culture, and trauma can look similar.
+
+Interviews are valuable when they lock timeline with specific questions, allow free narrative before comparison, test independently verifiable details, hold back strategic evidence, and compare content contradictions rather than diagnosing gestures.
+
+Interview scene engine:
+
+```text
+What does the questioner need to verify?
+What does the respondent need to protect?
+What evidence does each side know?
+Which line forces a tactic change?
+What new information leads to action?
+```
+
+Slips work only when the detail is truly not public and the story tracks who knows what. Do not end with a careless self-confession just because the plot needs speed.
+
+## 11. Investigator And Agency
+
+The investigator needs:
+
+- reason to participate and authority limits;
+- method/strength;
+- correctable blind spot;
+- cost of continuing;
+- active actions that create progress.
+
+Personal connection to the victim is not mandatory if duty/profession is enough. Personal stake may be responsibility, professional honor, community safety, or a belief under test.
+
+Competence should have limits. Let allies provide data/methods for the investigator to integrate, not carry the answer in.
+
+## 12. Reveal And Payoff
+
+A strong reveal pays four layers:
+
+1. **Truth:** what happened.
+2. **Inference:** which facts force the conclusion.
+3. **Motive/choice:** why this person chose it.
+4. **Consequence:** what knowing it changes.
+
+Climax does not have to be dangerous confrontation. It may be a verification trap, timeline reconstruction, formal challenge, public evidence choice, rescue before full explanation, or realizing the truth cannot be proven and choosing another cost.
+
+Avoid solution monologues. Spread inference through action, questions, objects, and rebuttals. A final synthesis is allowed for audio clarity, but each step must rest on heard facts and withstand one intelligent objection.
+
+Postdictability test:
+
+- Does the new meaning fit the old surface meaning?
+- Did culprit/method behave irrationally only to hide twist?
+- Did any objective fact get denied?
+- Does the solution matter to choice/consequence?
+
+## 13. Audio Clarity
+
+- Do not stack many names, times, and objects in one sentence.
+- Anchor each clue to a concrete object/sound/action.
+- For complex timelines, reference relational markers: *trước cuộc gọi*, *sau khi điện mất*, not only numbers.
+- Summarize only when hypothesis state changes; do not reread entire clue lists by percentage point.
+- Sound motifs are clues only if listeners can distinguish them in the actual pipeline; otherwise describe in words.
+- Read multi-suspect scenes without tags to test names and `xưng hô`.
+
+Mark fact vs inference:
+
+> *Camera ghi cô ấy vào sảnh lúc chín giờ* is a fact.
+>
+> *Vậy cô ấy là người vào phòng* is an inference.
+
+Let the narrator signal certainty: *tôi biết, dữ liệu cho thấy, có thể, tôi đoán, tôi đã nhầm*.
+
+## 14. Flexible Structures
+
+- **Whodunit:** lock solution -> introduce question -> open possibilities -> narrow by constraints -> fair reveal.
+- **Howcatchem / inverted mystery:** listener knows culprit early; tension is proof and tactics.
+- **Missing person:** each trace both locates and revises the missing person's portrait.
+- **Procedural:** methods, error margins, collaboration, institutional limits. Jargon is not conflict.
+- **Closed circle:** limited people/place/time; requires audible opportunity map.
+- **Mystery of interpretation:** objective facts may be clear; answer lies in meaning/motive.
+
+Do not force act ratios. Divide by hypothesis changes and proof strength.
+
+## 15. Hybrids And Premises
+
+- **Mystery + drama:** clue changes relationship; emotion cannot make evidence true.
+- **Mystery + horror:** if mystery is main, keep fair-play; supernatural rule is data, not a license to change rules.
+- **Mystery + romance:** romance creates bias/cost but must not remove reasoning ability.
+- **Mystery + comedy:** comedy may live in method/character; solution remains coherent.
+- **Mystery + reincarnation:** knowing outcome is not knowing cause/proof; early changes cause new timeline changes.
+- **Mystery + system:** task/points cannot deliver free answer; each hint has scope and price.
+- **Mystery + xuyên sách:** the "original text" is a POV source, not an omniscient dossier.
+
+## 16. Repair Examples
+
+**Reveal from new information:**
+
+> *Tôi chợt nhớ hung thủ bị dị ứng hoa lan, điều chưa từng được kể. Vậy chính anh ta đã vào nhà kính.*
+
+**Fairer:**
+
+> Ở cảnh đầu, anh từ chối đứng cạnh bó hoa vì “mùi quá nồng”. Giữa truyện, hồ sơ y tế xác nhận dị ứng nhưng không chứng minh anh vào nhà kính. Reveal chỉ xảy ra khi phấn hoa đặc thù được tìm trên mặt trong găng tay anh tự nói chưa từng dùng.
+
+**Body language = lying:**
+
+> *Cô ta né mắt. Tôi biết cô ta nói dối.*
+
+**Better:**
+
+> *Cô nói chưa từng vào phòng kho, nhưng mô tả chiếc khóa đã được thay. Thông tin đó chưa từng công bố.*
+
+**Clue proves too much:** fingerprint on knife proves contact, not murder. Timeline, knife source, testimony, and independent traces create the conclusion.
+
+**Confession ending weak:** one question makes culprit tell everything. Better: investigator creates a test forcing the opponent to choose between losing evidence or acting in a way only the truth-knower would.
+
+## 17. Safety And Realism
+
+- Follow [../audio-story-engagement/references/an-toan-tu-vung.md](../audio-story-engagement/references/an-toan-tu-vung.md).
+- Do not provide actionable procedures for crime, evading investigation, making dangerous substances/weapons, or destroying traces.
+- Verify official/current sources when forensics, law, cameras, DNA, digital data, or procedure timing affects the plot.
+- Do not assume a victim must have a "dark secret" to deserve harm.
+- Do not replace mystery with corpse/gore description.
+- Do not use mental illness or social groups as default culprit markers.
+
+## 18. Common Traps
+
+| Trap | Repair |
+|---|---|
+| Every mystery must be WHO + WHY | Choose correct who/what/how/why/when/proof variable |
+| Every clue must have three layers | Assign function, source, and limits |
+| Culprit must appear before 30% | Ensure fairness by promise, not percentage |
+| Everyone has motive + opportunity + secret | Create natural uneven suspect field |
+| At least two red herrings | Use only needed herrings with plausible misreading |
+| Eye aversion/shaking = lie | Test content, timeline, independent evidence |
+| Summarize clues at 60-70% | Summarize when hypothesis changes and audio needs it |
+| Listener must solve before character | Place information according to suspense/surprise |
+| Reveal by confession | Prove first; confession can add motive/emotion |
+| Forensics as magic | State limits, timing, error, and proof scope |
+| Second-half action replaces reasoning | Each danger must force investigative decisions |
+
+## 19. Checklist
+
+- [ ] Correct branch and fair-play/procedural/thriller promise chosen?
+- [ ] Central question selects correct who/what/how/why/when/proof?
+- [ ] Solution locked backward with timeline, motive, opportunity, mandatory traces?
+- [ ] Each clue has source, role, proof scope, and limit?
+- [ ] Decisive evidence has custody and can withstand rebuttal?
+- [ ] Each investigation scene updates hypothesis or risk?
+- [ ] Investigator mistakes come from plausible data/blind spot?
+- [ ] Suspects and side secrets have function, not board-game symmetry?
+- [ ] Red herrings are true/validly created facts, not erased by random info?
+- [ ] Interviews use content verification, not body-language myths?
+- [ ] Reveal pays truth + inference + motive + consequence?
+- [ ] Audio distinguishes facts from inference, people, and timeline?
+- [ ] Crime detail is enough for inference, not harmful instruction?
+- [ ] No hard quotas for clues, suspects, herrings, or percentages?
+
+## 20. Basis
+
+- [ACL: A framework for narrative surprise](https://aclanthology.org/2025.wnu-1.7/)
+- [PubMed: Causal integration in narrative comprehension](https://pubmed.ncbi.nlm.nih.gov/34531284/)
+- [APA: Deception detection](https://www.apa.org/monitor/2016/03/deception)
+- [Purdue OWL: Writing Compelling Characters](https://owl.purdue.edu/owl/subject_specific_writing/creative_writing/writers/fiction-basics/writing_compelling_characters.html)

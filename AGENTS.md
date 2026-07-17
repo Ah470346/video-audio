@@ -46,11 +46,23 @@ The graph does NOT auto-update on file edits. It refreshes in two ways:
 
 
 <!-- audio-story-engagement-SKILL:start -->
-## Audio Story Engagement — skill nền tảng viết truyện audio
+## Audio Story Engagement — base skill for Vietnamese audio stories
 
-Khi người dùng yêu cầu **tạo/viết truyện, viết kịch bản truyện audio** (bất kể thể loại: drama/ngoại tình, trinh thám, kinh dị, tình cảm, hài...), dùng skill `audio-story-engagement`. Đây là skill nền tảng quy định CÁCH TƯ DUY + CẤU TRÚC để giữ chân người nghe (dopamine loop, Zeigarnik, phần thưởng biến thiên, mirror neurons, pacing, oxytocin/cortisol, an toàn từ vựng kiểm duyệt, và quy trình duyệt ý tưởng Bước 0 — CỔNG CHẶN).
+When the user asks to **create/write a story or write an audio-story script** in any genre (drama/adultery, mystery, horror, romance, comedy, etc.), use `audio-story-engagement`. This base skill defines expectation and reward design, choice-consequence causality, motivation, pacing, POV, Vietnamese address forms (`xưng hô`), contextual safety, and idea/opening approval workflow. Do not treat neuroscience labels such as dopamine, oxytocin, mirror neurons, or Zeigarnik as buttons or laws for retention.
 
-- Skill sống tại `.claude/skills/audio-story-engagement/SKILL.md` (mirror: `.agents/skills/audio-story-engagement/`). Chi tiết nặng ở `references/`: bảng từ vựng an toàn (`an-toan-tu-vung.md`), quy trình tìm ý tưởng (`tim-y-tuong.md`), menu kỹ thuật mở đầu (`mo-dau.md`), 10 kỹ thuật đầy đủ (`ky-thuat-chi-tiet.md`) — chỉ nạp khi cần.
-- Có thể loại cụ thể → dùng KÈM skill `audio-story-genre-*`; nếu prompt có trùng sinh / hệ thống / xuyên sách → kèm `audio-story-premise-biet-truoc`; nếu prompt có truyện rác / não tàn / nhân vật ngu / tháo não / ức chế → kèm `audio-story-premise-truyen-rac`. Hai premise chồng được với nhau.
-- Kịch bản hoàn chỉnh lưu vào `kich-ban/<thể-loại>/ten-viet-thuong-khong-dau.md`, nội dung THUẦN TRUYỆN (không heading/metadata/thẻ SFX trừ khi người dùng chủ động yêu cầu).
+- Skill location: `.claude/skills/audio-story-engagement/SKILL.md` (mirror: `.agents/skills/audio-story-engagement/`). Heavy details live in `references/`: safety wording (`an-toan-tu-vung.md`), idea research (`tim-y-tuong.md`), opening menu (`mo-dau.md`), and the full 10 techniques (`ky-thuat-chi-tiet.md`). Load only when needed.
+- Coordinate all audio-story skills through `audio-story-engagement/references/phoi-hop-skills.md`: safety, factuality, and logic are hard boundaries; within those boundaries, the user's latest request wins over defaults; base controls workflow; premise controls mechanism; main genre controls payoff; `audio-story-final-polish` runs last without changing approved premise/ending.
+- If a concrete genre is present, use the matching `audio-story-genre-*` skill as well. If the prompt includes `trùng sinh`, `hệ thống`, or `xuyên sách`, also use `audio-story-premise-biet-truoc`. If it asks for `truyện rác`, `não tàn`, foolish characters, `tháo não`, or rage-bait frustration, also use `audio-story-premise-truyen-rac`. Premise modifiers can stack.
+- Save completed scripts to `kich-ban/<the-loai>/ten-viet-thuong-khong-dau.md`; file content must be PURE STORY, with no headings, metadata, or SFX tags unless the user explicitly requests production cues.
 <!-- audio-story-engagement-SKILL:end -->
+
+<!-- audio-story-final-polish-SKILL:start -->
+## Audio Story Final Polish — mandatory final pass
+
+After the agent completes **any story or audio-story script**, always use `audio-story-final-polish` as the final content pass, even if the user did not ask for review or polish.
+
+- Order: `audio-story-engagement` + relevant genre/premise skills -> their self-checks -> `audio-story-final-polish` -> save/return the story.
+- Skill location: `.claude/skills/audio-story-final-polish/SKILL.md` (mirror: `.agents/skills/audio-story-final-polish/`).
+- The skill must repair scene logic, causality, motivation, plot depth, emotion, dialogue, `xưng hô`, pronouns, and read-aloud rhythm; it must not only swap words or split sentences.
+- If any story content changes after the final pass, run the skill again from the beginning. If the user asks only for analysis, report issues but do not edit the file.
+<!-- audio-story-final-polish-SKILL:end -->

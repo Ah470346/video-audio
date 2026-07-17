@@ -1,0 +1,12 @@
+{
+  "id": "ah470346/omnivoice-vn-audio-smoke",
+  "title": "OmniVoice VN Audio Smoke",
+  "code_file": "convert_script_to_audio_k2fsa_kaggle.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "machine_shape": "NvidiaTeslaT4"
+}

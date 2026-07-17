@@ -1,91 +1,261 @@
 ---
 name: audio-story-genre-tinh-cam
 description: |
-  Skill chuyên môn thể loại TÌNH CẢM (bao gồm lãng mạn, tình yêu, ngược, HE, SE, tình đầu, tái hợp).
-  Sử dụng KẾT HỢP với skill nền tảng "audio-story-engagement" — skill này KHÔNG thay thế skill base mà BỔ SUNG chuyên môn riêng của thể loại tình cảm.
-  Kích hoạt khi người dùng yêu cầu viết truyện tình cảm, tình yêu, lãng mạn, ngược, ngọt, hoặc bất kỳ câu chuyện nào xoay quanh quan hệ tình cảm giữa hai (hoặc nhiều) người.
+  Specialist skill for ROMANCE and emotional love stories (`tinh cam`): secret crush, first love, reunion, slow burn, sweet romance, angsty romance, HE, SE, BE, established relationships, and multi-person relationships. Always use with `audio-story-engagement`; add premise modifiers when relevant. Trigger when the story's main reward is the transformation of a romantic relationship or how characters understand and choose love.
 ---
 
-# Thể Loại TÌNH CẢM
+# Audio Story Genre: Romance
 
-**Kết hợp:** áp skill nền `audio-story-engagement` TRƯỚC (hook, Zeigarnik, pacing, mirror neurons, checklist, an toàn từ vựng). Skill này chỉ BỔ SUNG chất liệu đặc thù tình cảm; mọi kỹ thuật nền vẫn bắt buộc.
+Romance does not only ask "will they get together?" It follows how two people **see, affect, and choose each other**, and what they must change or accept for the relationship to exist.
 
-## Vì sao gây nghiện
-Tình cảm khai thác nhu cầu gắn kết — nhu cầu tâm lý cơ bản nhất sau sinh tồn. Người nghe không chỉ muốn biết "họ có yêu nhau không" — họ muốn SỐNG trong cảm giác yêu và được yêu. Ba cơ chế:
-- **Trải nghiệm gián tiếp:** rung động, nhớ nhung, đau lòng đều được mirror neurons kích hoạt như thật.
-- **Kỳ vọng đoàn tụ:** dopamine MẠNH NHẤT khi hai người SẮP nhưng CHƯA đến được với nhau.
-- **Gắn kết oxytocin:** khoảnh khắc thân mật, hy sinh vì nhau → ấm áp, an toàn, gắn bó với truyện như gắn bó với người yêu.
+## 1. Coordination Contract
 
-**Keyword:** tình đầu, tái hợp, yêu thầm, crush, rung động, nhớ nhung; ngược, ngọt, HE/SE/BE; chia ly, chờ đợi, trở về, buông tay; lỡ hẹn, hiểu lầm, "người đúng sai thời điểm"; "nếu ngày đó tôi nói...".
+- Use `audio-story-engagement` as the base and follow [../audio-story-engagement/references/phoi-hop-skills.md](../audio-story-engagement/references/phoi-hop-skills.md).
+- This skill defines the relationship arc and romantic payoff. It does not replace approval gates, safety, Vietnamese address forms, or output format.
+- Do not force push-pull, slow burn, golden moments, sweet/bitter ratios, or a required number of times the word *yêu* appears.
+- If the user chose HE/SE/BE, preserve that ending type.
+- Run `audio-story-final-polish` last to repair motivation, dialogue, and `xưng hô`, without making every couple speak in the same soft voice.
 
-## Câu Hỏi Trung Tâm
-Xoay quanh **liệu hai người có đến được với nhau** + **tại sao chưa thể** + **cái giá nếu cố**. Công thức: *"Liệu [hai người] có vượt qua [rào cản cụ thể] để ở bên nhau, hay [rào cản] sẽ định nghĩa lại ý nghĩa tình yêu giữa họ?"*
-- Tình đầu: "Tôi có dám nói ra trước khi mọi thứ thay đổi — hay mang câu 'giá như' suốt đời?"
-- Tái hợp: "Người rời đi quay lại, nhưng tôi đã là người khác. Chúng tôi yêu người thật hay yêu ký ức?"
-- Ngược: "Tôi biết tình yêu này đang hủy tôi. Tại sao vẫn không đi nổi?"
+## 2. Genre Contract
 
-## Khoảng cách — vũ khí tối thượng
-Tình cảm HAY NHẤT khi hai người KHÔNG ở bên nhau. Dopamine sinh từ KHOẢNG CÁCH; đoàn tụ là phần thưởng, và phần thưởng phải ĐỢI.
-- **Năm loại khoảng cách:** vật lý (xa nhau) · tâm lý (hiểu lầm, sĩ diện, sợ từ chối) · xã hội (khác gia đình, địa vị, tuổi tác) · thời gian (lỡ hẹn, gặp sai lúc → "giá như") · bí mật (giấu bệnh, quá khứ, cảm xúc thật).
-- **Push–pull:** A tiến → B lùi → A lùi → B nhận ra cần A → gần nhau → sự kiện bên ngoài chia tách → lặp với cường độ tăng. KHÔNG bao giờ để cả hai cùng tiến hoặc cùng lùi quá lâu; một bên luôn lệch pha.
-- **"Khoảnh khắc gần":** xen giữa các đợt push-pull — NGẮN, ĐỦ NGỌT để khao khát thêm, kết thúc bằng chia tách.
+A romance needs:
 
-## Hệ thống nhân vật
-- **Chemistry phải được CHỨNG MINH, không nói "họ hợp nhau":** thoại riêng biệt (cách hai người nói với nhau khác cách nói với mọi người — ngôn ngữ riêng, câu đùa riêng); nhịp chậm lại khi ở gần nhau; đối lập bổ trợ (mạnh mẽ nhưng cô đơn + dịu dàng nhưng kiên cường); 2–3 khoảnh khắc "thế giới dừng lại".
-- **Rào cản phải THẬT:** hợp lý ("đúng là khó thật", không giải quyết được bằng một cuộc gọi); có chiều sâu (gắn tính cách/quá khứ/giá trị sống); leo thang qua từng hồi.
-- **Nhân vật thứ ba KHÔNG là "kẻ phá hoại đơn thuần":** có phẩm chất hấp dẫn thật (để "lựa chọn này không dễ"), hoặc đại diện con đường AN TOÀN vs nhân vật chính = con đường ĐAM MÊ.
+1. **Two or more subjects with lives of their own:** each has goals beyond "being loved."
+2. **Selective attention:** they notice what others miss.
+3. **Mutual influence:** contact changes actions, beliefs, or boundaries on both sides.
+4. **Costly barrier:** moving closer or leaving both have consequences.
+5. **Relationship choice:** climax comes from what they do, not only what they feel.
+6. **Promise-fit payoff:** together, separated, missed chance, healing, or redefining love.
 
-## Các "khoảnh khắc vàng" (mỗi truyện cần ≥3)
-Rung động đầu tiên · gần nhưng không chạm (tay suýt chạm, mắt giao rồi vỡ) · lần đầu thú nhận (lời hoặc HÀNH ĐỘNG) · chia ly · tái hợp/nhận ra · hy sinh · "giá như" (đọng lại lâu nhất).
-- **Viết "rung động":** KHÔNG phải "nhìn đẹp → yêu"; đến từ chi tiết NHỎ, BẤT NGỜ lộ bản chất. ❌ "Tôi thấy anh rất đẹp trai." ✅ "Anh đang nghe điện thoại, tay kia nhẹ nhàng nhặt chiếc lá trên vai người lạ đi ngang — không ai để ý, kể cả người lạ. Nhưng tôi thấy. Và tim tôi đập lạ."
-- **Viết "chia ly":** để lại "món nợ cảm xúc" — lời chưa nói, cử chỉ bị cắt ngang. ("Cửa an ninh đóng lại. Và câu 'em yêu anh' chỉ vang trong đầu tôi.")
+Romance need not be painful to be deep, and reunion is not automatically satisfying. Depth comes from specific choices and the way the relationship changes both people.
 
-## Vòng lặp & cliffhanger
-Bốn vòng lặp: **tình cảm ẩn giấu** (yêu mà không nói → đợi lời thú nhận) · **rào cản** (đợi xem vượt qua bằng cách nào) · **bí mật** (lộ ra sẽ đổi mọi thứ) · **tam giác** (ai được chọn, giá là gì).
-Cliffhanger: "ngã ba quyết định" (kết TRƯỚC khi chọn) · "lời chưa nói" (sắp nói → bị cắt ngang) · "tiết lộ đổi mọi thứ" · "sự trở về" ("đúng lúc tôi nghĩ đã quên được — tôi nghe giọng anh. Ngay sau lưng tôi.").
+## 3. Central Question
 
-## Nhịp & thoại
-- **Nhịp "sóng biển":** rung động nhẹ → gần hơn (ngọt) → rào cản (đau) → nhớ nhung (chậm, nội tâm) → cố vượt qua → gần hơn NỮA → rào cản LỚN HƠN → lặp biên độ tăng → cao trào cuối.
-- **Slow burn:** không "yêu từ cái nhìn đầu" (trừ khi twist đó có giá); tình cảm phát triển qua HÀNH ĐỘNG (mang dù vì trời sắp mưa dù cô không nói = "anh để ý"); mỗi "level up" phải có NGUYÊN NHÂN cụ thể.
-- **Tương phản ngọt–đắng:** cảnh ngọt chỉ ngọt khi cạnh cảnh đắng (hạnh phúc TRƯỚC tin dữ đau hơn); không quá 2 cảnh cùng tông liên tiếp.
-- **Thoại = nghệ thuật "không nói hết":** câu bỏ dở ("Nếu ngày đó em—" "Em sao?" "Không. Không có gì."); nói khác ý ("Em không quan tâm" — giọng run); im lặng thay trả lời; nói qua vật trung gian (trao kỷ vật = trao cảm xúc).
-- **"Câu thoại đọng lại" (≥2/truyện):** ngắn, đơn giản, đúng khoảnh khắc — *"Ở lại."* (hai từ nặng như cả thế giới sau khi dồn nén).
-- **Ngôn ngữ riêng của cặp đôi:** dùng ở đầu (khi yêu) → lại ở cuối (khi xa/tái hợp) = callback cực mạnh.
+Template:
 
-## Mô hình twist mạnh
-- **"Hy sinh ẩn":** một bên đã hy sinh lớn nhưng GIẤU — phát hiện sau, đau + cảm phục.
-- **"Lý do thật sự ra đi":** rời đi không vì hết yêu mà vì lý do đau hơn (bệnh, bảo vệ, bị ép).
-- **"Người đúng, thời điểm sai":** hoàn hảo cho nhau nhưng gặp sai lúc → cơ hội thứ hai?
-- **"Song song ẩn":** hai dòng thời gian tưởng là hai chuyện → cùng MỘT chuyện nhìn từ hai phía.
-- **"Lá thư chưa gửi":** cuối truyện phát hiện thư viết mà chưa gửi → đổi toàn bộ ý nghĩa.
+> *Can [two people] choose [relationship choice] when [barrier tied to value/circumstance], and what must they change or accept?*
 
-## Cấu trúc hồi
-- **Hồi 1 – Gặp gỡ & rung động (15–20%):** hai nhân vật RIÊNG BIỆT (thế giới riêng, nỗi đau riêng); cuộc gặp không nhất thiết lãng mạn; gieo hạt chemistry; hook "mọi thứ bắt đầu từ khoảnh khắc đó".
-- **Hồi 2A – Xây dựng & khoảnh khắc ngọt (25–30%):** gần nhau dần qua sự kiện; xen "khoảnh khắc gần"; push-pull bắt đầu; rào cản xuất hiện nhưng chưa lớn; kết phần = gần đỉnh hạnh phúc.
-- **Hồi 2B – Rào cản & chia ly (25–30%):** rào cản lớn bùng nổ; bí mật hé lộ; khoảnh khắc chia ly (viết XUẤT SẮC); nỗi đau xa cách; có thể có nhân vật thứ ba.
-- **Hồi 3 – Cao trào & kết (15–20%):** quyết định lớn (quay lại hay buông); hành động dũng cảm (một bên bước ra khỏi vùng an toàn); kết HE/SE/BE có TRỌNG LƯỢNG; callback ngôn ngữ riêng; câu cuối dư âm.
+Vietnamese examples:
 
-## Bẫy cần tránh (tình cảm)
-| Bẫy | Cách tránh |
-|-----|-----------|
-| Yêu ngay (insta-love) | Slow burn — cảm xúc phát triển qua hành động |
-| Rào cản giả (giải bằng 1 câu nói) | Rào cản gắn tính cách/hoàn cảnh sâu, không hiểu lầm nông |
-| Nhân vật "hoàn hảo" | Khuyết điểm tạo gắn kết — yêu NGƯỜI, không yêu hình tượng |
-| Chỉ ngọt, không đắng | Ngọt cần đắng làm nền |
-| Ngược quá mức | ≥1–2 khoảnh khắc ấm cho mỗi 3 khoảnh khắc đau |
-| Nói "yêu" quá nhiều | Thể hiện bằng HÀNH ĐỘNG; từ "yêu" chỉ 1–2 lần cả truyện |
-| Kết dễ dãi | Kết phải có giá — hy sinh, thỏa hiệp, chấp nhận |
-| Thoại sến sẩm | Tự nhiên, subtext, hành động |
+- *Hai người từng yêu nhau có thể bắt đầu lại khi một người cần lời giải thích còn người kia chỉ có thể đưa ra trách nhiệm?*
+- *Tôi có nói thật trước khi người mình yêu kết hôn, nếu lời thú nhận ấy buộc cô phải chọn giữa tôi và gia đình đã cứu cô?*
+- *Chúng tôi có thể ở bên nhau mà không biến sự hy sinh của một người thành món nợ của người kia?*
 
-## Tiêu đề & keyword
-**Rung động:** rung động, lần đầu, ánh mắt, khoảnh khắc, quen thuộc, ấm áp, lặng lẽ bên cạnh. **Đau lòng:** bỏ lỡ, lỡ hẹn, quay lưng, buông tay, không kịp nói, "giá như", kỷ vật, quá muộn. **Hy vọng:** quay lại, chờ đợi, tha thứ, cơ hội cuối, "anh đã về". **Day dứt:** lựa chọn, hy sinh, đúng người sai thời điểm, tình yêu hay trách nhiệm.
-Mẫu tiêu đề: *"Người tôi yêu nhất lại là người tôi không được phép yêu"* · *"Tôi nhận ra mình yêu anh — vào đúng ngày anh cưới người khác"* · *"Anh nói 'đừng đợi anh'. Tôi nói 'được'. Nhưng tôi đợi."*
+The question is not merely "do they love each other?" Listeners often recognize love before the characters do. The suspense is what they do with it.
 
-## Checklist bổ sung tình cảm (sau checklist nền)
-- [ ] Chemistry chứng minh qua thoại/hành động/chi tiết — không chỉ nói "họ hợp nhau"?
-- [ ] Push-pull: hai người không đồng pha quá lâu (>2 cảnh)?
-- [ ] Có ≥3 "khoảnh khắc vàng"? Rung động từ chi tiết nhỏ, không phải ngoại hình?
-- [ ] Rào cản có chiều sâu, không hiểu lầm nông? Slow burn có nguyên nhân cụ thể mỗi bước?
-- [ ] Thoại "không nói hết" ≥50%? Có "câu thoại đọng lại"? Có ngôn ngữ riêng/callback?
-- [ ] Tương phản ngọt–đắng, không quá 2 cảnh cùng tông? Từ "yêu" dùng tiết kiệm (1–2 lần)?
-- [ ] Kết có trọng lượng — không dễ dãi, có giá hoặc thỏa hiệp?
+## 4. Two-Person Map
+
+Create one row for each person:
+
+| Axis | A | B |
+|---|---|---|
+| goal outside love |  |  |
+| need from relationship |  |  |
+| fear of being seen |  |  |
+| how they give/receive care |  |  |
+| boundary |  |  |
+| false belief about love |  |  |
+| what the other misunderstands |  |  |
+| final choice needed |  |  |
+
+Then write:
+
+```text
+Where do they easily understand each other?
+Where do they hurt each other despite good intent?
+What can only this pair share?
+If they did not fall in love, how would they still change each other?
+```
+
+If characters exist only to complete each other, they become functions rather than people.
+
+## 5. Observable Chemistry
+
+Do not write *"giữa họ có một sức hút khó tả"* and call it enough. Chemistry is proven through:
+
+- **Attention:** one notices habits, needs, or changes the other does not state.
+- **Response:** they adjust actions because of what they notice.
+- **Friction:** two logics create rhythm and reveal priorities.
+- **Selective vulnerability:** they say/do risky things with each other that they do not with others.
+- **Shared play:** private language, shared work, comfortable silence, or play that needs no explanation.
+- **Repair:** after harm, do they take responsibility, listen, and change?
+
+Physical attraction may open attention, but the relationship needs evidence of character, choice, and response.
+
+## 6. Intimacy Ladder
+
+Use this instead of a quota for "three golden moments." Choose relevant steps and give each a cause:
+
+1. noticing;
+2. cooperation/friction;
+3. private attention;
+4. testing trust;
+5. risky sharing;
+6. relying on each other in a choice;
+7. crossing a boundary or causing hurt;
+8. repair or failed repair;
+9. relationship choice;
+10. life after the choice.
+
+The ladder need not be linear. Reunion stories may begin at level 6 historically but fall to level 2 in current trust.
+
+Each step must change access: after the intimate scene, what can one person know/do with the other that was not possible before? If nothing changes, sweetness is decoration.
+
+## 7. Real Barriers
+
+A strong barrier does not mean one conversation could not help; it means the conversation has a price or is not enough.
+
+| Type | Example | To cross it needs |
+|---|---|---|
+| Internal | fear of dependence, shame, false belief | recognition + repeated new action |
+| Relational | old betrayal, lost trust | responsibility + repair + time |
+| Values/goals | two places, conflicting duties | real choice/compromise |
+| Circumstance/power | family, job, law, distance | plan and concrete cost |
+
+Misunderstanding lasts only when current facts support the wrong interpretation, truth carries risk, another person manipulates, old belief blocks the right question, or after truth the deeper barrier remains.
+
+"Leaving to protect you" is not automatically noble. Check whether the one left behind loses agency, whether a less harmful option existed, and whether the story makes the leaving character responsible.
+
+## 8. Agency, Boundaries, And Consent
+
+Romance satisfies only when all sides are subjects who choose, not prizes for each other.
+
+- Persistence must not become rewarded harassment.
+- Jealousy does not prove love; control, isolation, and surveillance need consequences.
+- Power gaps affect the ability to refuse and choose; they cannot be only aesthetic.
+- A person may forgive without returning.
+- Apologies must name behavior, consequence, and change. Do not use the apologizer's tragedy to force forgiveness.
+- Intimacy must fit consent and base safety. Do not use coercion as a shortcut to "chemistry."
+
+At the climax, each key person needs an action that can change the outcome. If one decides and the other merely waits to be chosen, repair agency.
+
+## 9. Relationship Rhythm And Distance
+
+Distance is a tool, not a law. Some stories are gripping because people are already together but must learn to live truthfully.
+
+Track:
+
+| Index | Question |
+|---|---|
+| Closeness | How much private knowledge/sharing do they have? |
+| Trust | Can they predict how the other will act? |
+| Shared choice | Can they decide together or still protect separate goals? |
+
+A scene can increase closeness while reducing trust, e.g. a confession comes too late. This mismatch creates drama without mechanical push-pull.
+
+Useful rhythm states: moving closer, testing boundary, misunderstanding, repair, temporary alliance, leaving for a real choice, close but unable to be together, together but not yet trusting.
+
+Do not force "when A moves forward, B must retreat." Both can move forward while pressure comes from outside cost or value differences.
+
+## 10. Intimate Dialogue
+
+Romantic dialogue may use subtext or directness depending on relationship stage.
+
+Before trust: probing, joking, speaking through another subject, avoiding the emotion's name.
+
+At a boundary: clarity is necessary.
+
+> *“Em không cần anh giải thích rằng anh yêu em. Em cần biết anh có tôn trọng câu trả lời của em không.”*
+
+For repair, avoid perfect speeches. Let the speaker name what they did, avoid a self-excusing "but", ask what the other needs, and accept that forgiveness may not come.
+
+Private language/callback matters only when a phrase, object, or habit changes meaning through the relationship. Not every couple needs a catchphrase.
+
+Audio naturalness:
+
+- Do not make them use names every line.
+- Do not make both speak literary declarations.
+- Address forms shift with relationship; read the base `xung-ho-dat-ten.md`.
+- The number of times *yêu* appears depends on voice and culture; what matters is whether action supports it.
+
+## 11. Romance Structures
+
+- **Meeting and formation:** strangers to choice. Speed depends on quantity/quality of chemistry evidence.
+- **Reunion:** separate who they were from who they are now. Are they loving memory or building a new relationship?
+- **Established relationship:** begins after love/life together; arc is trust, responsibility, role change, or choosing again.
+- **Secret crush/missed chance:** not just delayed confession. Silence must create choices and consequences.
+- **Rivalry/enemies:** friction must come from goals/values, not insults renamed as chemistry.
+- **Tragedy/separation:** SE/BE must pay the relationship arc: what is understood too late, what choice was made, how the survivor lives differently.
+- **Multiple people/triangle:** each person is a subject, not formula "safe vs passion." The question may be who the protagonist needs to become, not only whom they choose.
+
+## 12. HE, SE, BE, And Payoff
+
+- **HE:** happiness must fit the built problem. A kiss does not solve values, debt, or lost trust. Give a sign of how they will live with the unresolved imperfection.
+- **SE:** sad but complete. They may not be together, but they understand, forgive, grow, or keep something meaningful. Avoid replacing scenes with "đúng người sai thời điểm."
+- **BE:** tragedy must be consequence of planted choice/rule, not random accident for tears. Follow safety for self-harm and violence.
+- **Open ending:** close the present choice and the relationship change; leave only future outcome open.
+
+## 13. Hybrids And Premises
+
+- **Romance + drama:** decide whether the main payoff is romantic choice or family/power truth.
+- **Romance + comedy:** comedy creates intimacy/friction; accidents cannot replace agency or consent.
+- **Romance + mystery:** each clue changes trust; romance must not make investigation logic collapse without reason.
+- **Romance + horror:** threat clarifies what is worth protecting; do not use lover death as a prop.
+- **Romance + reincarnation:** second chance must face the present person, not simply correct history to "win back" a person as property.
+- **Romance + xuyên sách:** knowledge of "male/female lead" is a theory about plot, not proof of a person's agency.
+- **Romance + system:** tasks must affect choice/boundaries; affection points are not consent evidence.
+
+## 14. Repair Examples
+
+**Declared chemistry:**
+
+> *Anh rất đẹp trai. Tôi cảm thấy tim mình rung động và biết chúng tôi thuộc về nhau.*
+
+**Observed and answered:**
+
+> *Tôi nói mình không lạnh. Anh không tranh luận, chỉ đổi chỗ để đứng phía gió rồi tiếp tục câu chuyện đang dở. Mười phút sau tôi mới nhận ra tay anh đã đỏ lên.*
+
+**Fake barrier:** two people separate for three years over a text they never ask about.
+
+**Deeper barrier:** the text triggers the old belief that one is always second choice. Reunion begins only when the character takes responsibility for avoidance, not merely when the text is explained.
+
+**Sacrifice that removes agency:**
+
+> *Anh bỏ đi vì yêu tôi, nên tôi phải tha thứ.*
+
+**Better:**
+
+> *Anh thừa nhận đã quyết định thay tôi. Tôi hiểu lý do, nhưng không gọi nó là cao thượng. Muốn quay lại, anh phải học cách đưa tôi sự thật trước khi đưa tôi một sự hy sinh.*
+
+**Angst by random accident:** after confession, an accident kills one person.
+
+**Stronger:** planted value conflict, delayed choice, or world rule causes the missed chance; sadness connects to responsibility and theme.
+
+## 15. Common Traps
+
+| Trap | Repair |
+|---|---|
+| "Distance is always better than reunion" | Choose conflict by relationship stage |
+| Mechanical push-pull | Track closeness, trust, and shared choice |
+| Slow burn = delay | Each intimacy step needs cause and new access |
+| Insta-love absolutely banned | Fast attraction is allowed; love needs later choice/action evidence |
+| Barrier is only not speaking | Add cost, old belief, manipulation, or value conflict |
+| Third person as evil rival | Give goal/agency; skip triangle if it has no function |
+| Persistence rewarded after refusal | Respect boundary and consent |
+| Jealous/control = deep love | Name power and consequence correctly |
+| "Leaving to protect" automatically noble | Check removed agency and repair responsibility |
+| HE by kiss | Pay the real problem |
+| SE/BE by last-minute illness/accident | Tie ending to choice/setup |
+| Dialogue all subtext | Use directness for boundary, apology, and decision |
+
+## 16. Checklist
+
+- [ ] Do all sides have goals outside love, needs, boundaries, and choices?
+- [ ] Is chemistry shown through attention, response, friction, vulnerability, shared play, or repair?
+- [ ] Does every intimacy step have cause and change access?
+- [ ] Does the barrier have real cost, not just one unsaid sentence?
+- [ ] Do both/all key people have agency at the climax?
+- [ ] Are power gaps and consent handled clearly?
+- [ ] Does rhythm follow closeness/trust/shared-choice, not mechanical push-pull?
+- [ ] Does dialogue fit stage: subtext when useful, directness when necessary?
+- [ ] If there is an apology, does it include responsibility and change?
+- [ ] Does HE/SE/BE pay the promise and arise from choice/setup?
+- [ ] Is the main genre clear in hybrids?
+- [ ] No quotas for golden moments, sweet/bitter ratio, or saying love?
+
+## 17. Basis
+
+- [Purdue OWL: Writing Compelling Characters](https://owl.purdue.edu/owl/subject_specific_writing/creative_writing/writers/fiction-basics/writing_compelling_characters.html)
+- [Purdue OWL: Building and Revealing Characters](https://owl.purdue.edu/owl/subject_specific_writing/creative_writing/writers/fiction-basics/building_and_revealing_characters.html)
+- [UCD Writing Centre: Revising and Editing Fiction](https://www.ucd.ie/writingcentre/t4media/Creative%20Writing%20Revising%20and%20Editing%20Fiction.pdf)
+- [PLOS ONE: Transportation into narrative worlds and empathy](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0055341)

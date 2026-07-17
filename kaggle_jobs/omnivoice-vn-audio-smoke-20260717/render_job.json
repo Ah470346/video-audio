@@ -1,0 +1,47 @@
+{
+  "pip_packages": [
+    "huggingface_hub>=0.24.0",
+    "pydub>=0.25.1",
+    "safetensors>=0.4.0",
+    "sentencepiece>=0.2.0",
+    "soundfile>=0.12.1",
+    "transformers>=4.55.0"
+  ],
+  "preload_model": true,
+  "render_args": [
+    "--input",
+    "job_inputs/thien-kim-gia-thue-toi-dong-vai-thien-kim-that.md",
+    "--ref_audio",
+    "job_inputs/ngoc_huyen_moi_ref_clone_tu_nhien.wav",
+    "--output_dir",
+    "results",
+    "--voice_name",
+    "NGOC HUYEN V2",
+    "--model",
+    "k2-fsa/OmniVoice",
+    "--runtime_preset",
+    "upstream_defaults",
+    "--num_step",
+    "32",
+    "--max_chunk_chars",
+    "420",
+    "--max_chunk_words",
+    "60",
+    "--batch_size",
+    "2",
+    "--nj_per_gpu",
+    "1",
+    "--warmup",
+    "0",
+    "--no-verify_asr",
+    "--story_word_limit",
+    "1000",
+    "--only",
+    "1"
+  ],
+  "zip_name": "thien-kim-gia-thue-toi-dong-vai-thien-kim-that_first_1000_words_k2fsa_ngoc_huyen_v2_kaggle_output.zip",
+  "zip_paths": [
+    "results",
+    "kaggle_render.log"
+  ]
+}
