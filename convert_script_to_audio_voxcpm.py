@@ -396,6 +396,26 @@ def build_parser():
         "heuristic is treated as a false positive and downgraded to a warning.",
     )
     parser.add_argument(
+        "--verify_ctc_min_word_score",
+        type=float,
+        default=0.15,
+        help="Fail a chunk when its worst force-aligned word has a mean CTC "
+        "posterior below this floor. A localized garble -- one or two syllables "
+        "rendered as babble -- barely moves whole-chunk CER or word similarity "
+        "(they average the error over every word), but it drives that one "
+        "word's acoustic score to ~0. On the 96-chunk "
+        "`bo-me-toi-gui-yeu-cau-hoan-tien-tap-1` run the two garbled chunks "
+        "scored 0.024/0.031 while every clean chunk stayed >=0.34, so this is "
+        "the signal that catches the dilution the aggregate floors miss.",
+    )
+    parser.add_argument(
+        "--verify_ctc_min_word_score_severity",
+        choices=["hard", "warn", "off"],
+        default="hard",
+        help="Severity for the min-word-score floor. `hard` triggers the "
+        "render retry ladder (and subsplit) so the garbled chunk is re-rendered.",
+    )
+    parser.add_argument(
         "--verify_inserted_words",
         type=int,
         default=3,
@@ -743,7 +763,14 @@ def ctc_probe_metrics(chunk_text, wav_path, args, ctc_probe):
         metrics["aligned"] = False
         return metrics, []
     metrics["aligned"] = True
-    metrics["min_word_score"] = min(row["score"] for row in aligned)
+    worst_word = min(aligned, key=lambda row: row["score"])
+    metrics["min_word_score"] = worst_word["score"]
+    metrics["min_word"] = {
+        "word": worst_word["word"],
+        "start": worst_word["start"],
+        "end": worst_word["end"],
+        "score": worst_word["score"],
+    }
 
     grace = max(0, int(round(args.verify_ctc_out_of_text_ms / 1000.0 * ctc_probe.frames_per_sec)))
     head = ctc_probe.greedy_text(emissions, 0, max(0, aligned[0]["start_frame"] - grace))
@@ -751,6 +778,25 @@ def ctc_probe_metrics(chunk_text, wav_path, args, ctc_probe):
     metrics["out_of_text"] = {"head": head, "tail": tail}
 
     defects = []
+    # A near-zero worst-word posterior is the localized-garble signal that whole
+    # chunk CER / word similarity dilute away: on `bo-me-toi...tap-1`, chunks
+    # 0002 (`tôi nghe` -> babble) and 0082 (`kê` -> `cây`) scored 0.024/0.031
+    # here yet passed every aggregate floor as a mere warning, so both shipped
+    # without a re-render. This gate escalates them to a real failure.
+    min_word_severity = getattr(args, "verify_ctc_min_word_score_severity", "hard")
+    min_word_floor = getattr(args, "verify_ctc_min_word_score", 0.15)
+    if min_word_severity != "off" and worst_word["score"] < min_word_floor:
+        defects.append(
+            (
+                "ctc_min_word_score",
+                min_word_severity,
+                f"CTC word {worst_word['word']!r} at "
+                f"{worst_word['start']:.2f}-{worst_word['end']:.2f}s scored "
+                f"{worst_word['score']:.3f} < {min_word_floor:.3f} "
+                f"(near-zero acoustic support; this word's audio is garbled)",
+                dict(metrics["min_word"]),
+            )
+        )
     for position, text in (("head", head), ("tail", tail)):
         if len(text.replace(" ", "")) >= args.verify_ctc_out_of_text_chars:
             defects.append(
@@ -1443,6 +1489,8 @@ def qc_params(args):
         "verify_ctc_out_of_text_ms": args.verify_ctc_out_of_text_ms,
         "verify_ctc_out_of_text_chars": args.verify_ctc_out_of_text_chars,
         "verify_ctc_veto_similarity": args.verify_ctc_veto_similarity,
+        "verify_ctc_min_word_score": args.verify_ctc_min_word_score,
+        "verify_ctc_min_word_score_severity": args.verify_ctc_min_word_score_severity,
         "verify_inserted_words": args.verify_inserted_words,
         "verify_repeat_max_ngram": args.verify_repeat_max_ngram,
         "verify_repeat_severity": args.verify_repeat_severity,

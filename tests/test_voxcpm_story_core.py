@@ -21,6 +21,8 @@ def ctc_args(**overrides):
         "verify_ctc_out_of_text_ms": 120,
         "verify_ctc_out_of_text_chars": 2,
         "verify_ctc_veto_similarity": 0.98,
+        "verify_ctc_min_word_score": 0.15,
+        "verify_ctc_min_word_score_severity": "hard",
     }
     values.update(overrides)
     return SimpleNamespace(**values)
@@ -204,6 +206,62 @@ class VoxCPMStoryCoreTests(unittest.TestCase):
         _metrics, defects = renderer.ctc_probe_metrics("Tôi về.", "unused.wav", args, probe)
 
         self.assertEqual(defects, [])
+
+    def test_ctc_probe_hard_fails_a_near_zero_word_score(self):
+        """Chunk 0002's real failure: `tôi nghe` rendered as babble scored
+        min_word_score 0.024 yet CER (0.083) and word similarity (0.902), both
+        averaged over 25 words, stayed in the warn band, so the chunk shipped.
+        The worst-word floor escalates the localized garble to a hard fail."""
+        args = ctc_args()
+        probe = FakeCtcProbe(
+            aligned=[
+                {"word": "tôi", "start_frame": 5, "end_frame": 20, "start": 0.1, "end": 0.4, "score": 0.024},
+                {"word": "nghe", "start_frame": 22, "end_frame": 40, "start": 0.44, "end": 0.8, "score": 0.91},
+                {"word": "về", "start_frame": 42, "end_frame": 60, "start": 0.84, "end": 1.2, "score": 0.97},
+            ],
+            greedy={},
+            full_text="tôi nghe về",
+        )
+
+        metrics, defects = renderer.ctc_probe_metrics("Tôi nghe về.", "unused.wav", args, probe)
+
+        self.assertAlmostEqual(metrics["min_word_score"], 0.024)
+        self.assertEqual(metrics["min_word"]["word"], "tôi")
+        hard = [defect for defect in defects if defect[1] == "hard"]
+        self.assertEqual(len(hard), 1)
+        self.assertEqual(hard[0][0], "ctc_min_word_score")
+        self.assertEqual(hard[0][3]["word"], "tôi")
+
+    def test_ctc_probe_min_word_score_passes_a_healthy_chunk(self):
+        """A clean chunk (every word well above the floor) raises no defect, so
+        the gate does not re-render audio that is fine."""
+        args = ctc_args()
+        probe = FakeCtcProbe(
+            aligned=[
+                {"word": "tôi", "start_frame": 5, "end_frame": 20, "start": 0.1, "end": 0.4, "score": 0.88},
+                {"word": "nghe", "start_frame": 22, "end_frame": 40, "start": 0.44, "end": 0.8, "score": 0.96},
+            ],
+            greedy={},
+            full_text="tôi nghe",
+        )
+
+        _metrics, defects = renderer.ctc_probe_metrics("Tôi nghe.", "unused.wav", args, probe)
+
+        self.assertEqual([d for d in defects if d[0] == "ctc_min_word_score"], [])
+
+    def test_ctc_probe_min_word_score_severity_off_never_fails(self):
+        args = ctc_args(verify_ctc_min_word_score_severity="off")
+        probe = FakeCtcProbe(
+            aligned=[
+                {"word": "tôi", "start_frame": 5, "end_frame": 20, "start": 0.1, "end": 0.4, "score": 0.02},
+            ],
+            greedy={},
+            full_text="tôi",
+        )
+
+        _metrics, defects = renderer.ctc_probe_metrics("Tôi.", "unused.wav", args, probe)
+
+        self.assertEqual([d for d in defects if d[0] == "ctc_min_word_score"], [])
 
     def test_ctc_probe_vetoes_when_context_free_read_is_exact(self):
         """Chunk 0071: the energy heuristic called a word swallowed while both
