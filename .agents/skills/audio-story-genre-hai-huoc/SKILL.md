@@ -87,6 +87,8 @@ Characters need real goals and vulnerability. Do not turn body type, illness, re
 
 Comic pairs come from conflicting logics: improviser vs rule follower, face-saving person vs blunt truth-teller, accurately pessimistic person vs wrongly optimistic but useful person, metaphor-understander vs literal listener. Roles can switch by arena.
 
+Conflicting logic does not mean both people trade polished quips. Literalization belongs when a character truly acts on a literal reading and the world produces consequence; it fails when one speaker offers a metaphor only so the other can reverse it like a caption. Let some replies be confused, practical, delayed, irritated, or plain. Run the base [human semantic-fit gate](../audio-story-engagement/references/ngon-ngu-con-nguoi.md) when profession/object language enters the exchange.
+
 ## 6. Beats And Punchlines
 
 Basic beat:
@@ -130,6 +132,15 @@ Misunderstandings work only when characters have a reason not to ask plainly, an
 
 The world must react. Bills still matter, guests still respond, bosses still have goals, and harmed people do not forget because the scene needs a laugh.
 
+### The Comic Set-Piece And Toppers
+
+Follow the base skill's Peak Design. Every comedy needs one **set-piece**: the scene where the comic engine runs hottest, the planted threads collide in one place with witnesses, and the character cannot retreat. Let it run visibly longer than feels safe — ending the scene right after the first laugh wastes the whole setup.
+
+- **Toppers:** after the first detonation, do not cut away. While the situation is still hot, stack two to four escalating toppers, each growing from a different already-planted thread arriving in the same room, never from a fresh coincidence. The listener should think the scene is over — then it gets worse in a way the setup already paid for.
+- **Doubling down:** at the peak the character digs deeper live — covering, improvising, defending the lie in front of everyone — instead of reflecting afterward. Commitment under witnesses converts smiles into laughs.
+- **Smile vs laugh:** narrator wit produces smiles; situation, witnesses, and irreversibility produce hard laughs. A comedy cannot live on narration wit alone; at the set-piece the situation itself must do the work.
+- "Leave room after big beats" applies once the set-piece has fully detonated, not between its toppers.
+
 ## 8. Running Gags And Callbacks
 
 A running gag must change function, not merely repeat three times.
@@ -158,6 +169,7 @@ Not every comedy needs a running gag. Observational comedy or satire may use an 
 - Laugh frequency depends on the promise: sketch is denser than dramedy. Use listening tests/retention, not a rigid 60-90 second law.
 - A joke sentence does not have to be under 15 words. Length serves setup, voice, and breath.
 - Distinguish voices by goal, logic, and status; do not make everyone quip.
+- Do not confuse rapid aphorism tennis with chemistry. Two separate speakers do not need to share one image field or deliver the exact setup and comeback the author wants.
 - Leave room after big beats when listeners need to catch the pivot; the gap can be an action, not a silence tag.
 - A serious passage does not forget the genre if it raises cost or deepens later payoff.
 - Modern comparisons such as wifi/apps work only when age, job, and voice fit. Do not turn narration into a meme pile.
@@ -212,6 +224,8 @@ Absurdity comes from the character's goal and rule.
 | Trap | Repair |
 |---|---|
 | Quips in every sentence | Let characters speak by goal; keep punchlines where setup exists |
+| Metaphor plus perfect counter-metaphor | Put the comic deviation into behavior/consequence, or let the reply use the second character's own plain language |
+| Occupation becomes every joke and emotion | Use professional knowledge in action/attention; do not turn all relationships into tools, accounts, diagnoses, or procedures |
 | Character is stupid so plot can move | Use consistent blind spot, status, or commitment |
 | Punchline forced to final word | Prioritize natural syntax and clear idea units |
 | Every scene worsens in the same way | Change axis: knowledge, status, publicity, obligation |
@@ -221,6 +235,7 @@ Absurdity comes from the character's goal and rule.
 | Satire has no target | Define the system/belief being criticized |
 | Warm ending mandatory | Pay the promised tone; warmth is optional |
 | Rhythm controlled by `[pause]` tags | Write rhythm through sentence/action; add cues only if requested |
+| Narrator caps every comic beat with a wise epigram or hindsight aside | Let reaction and consequence be the button; keep narrator commentary occasional so wit stays a voice, not a tic |
 
 ## 15. Checklist
 
@@ -229,7 +244,9 @@ Absurdity comes from the character's goal and rule.
 - [ ] Does the character have a real goal, desired image, blind spot, and competence?
 - [ ] Does each beat provide enough setup for the pivot?
 - [ ] Is the punchline clear by ear and natural in Vietnamese syntax?
+- [ ] Does the humor arise from character/situation and consequence rather than two characters co-authoring quotable lines?
 - [ ] Does escalation come from choices to fix/cover, not random events?
+- [ ] Is there one comic set-piece where planted threads collide in front of witnesses, held long enough for toppers that grow from setup?
 - [ ] Does misunderstanding have reason and real cost?
 - [ ] Are joke target and power asymmetry appropriate?
 - [ ] Does any running gag change function?

@@ -131,6 +131,9 @@ Specification:
 
 ```text
 Who receives it and who can perceive it?
+Stable narrative name for the system/agent:
+Visible interface components and each component's role:
+How the character inputs/responds the first time:
 Does it assign goals or only measure states?
 What can it observe?
 What can it affect?
@@ -144,10 +147,15 @@ Does final purpose need payoff?
 Rules:
 
 - Introduce a rule when it affects the current choice.
+- Give the hidden agent, visible frame, message, input field, submitted command/comment, and resulting effect stable, distinct labels. They are not interchangeable. Use `nó` only after one unique audible antecedent exists.
+- The first time the character writes, selects, hears, submits, deletes, or activates something, state how that interaction happens. Later repetitions may compress after the listener knows the method.
+- A system message may be mysterious about purpose, but not about surface action: listeners must know what appeared, who can perceive it, what the character did, and what changed immediately afterward.
 - Every reward has scope; do not turn it into any ability needed by the scene.
 - Punishment must fit tone and safety; do not threaten death for every small task.
 - Points matter only if they change tactic/access. Number increases without story change are dead weight.
 - If the system lies, show contradiction, observation limit, or self-interest early.
+
+Before drafting or polishing a system scene, run [../audio-story-engagement/references/ro-rang-mot-luot-nghe.md](../audio-story-engagement/references/ro-rang-mot-luot-nghe.md). In particular, reject sentences where `nó`, `thứ đó`, `khung chữ`, or `hệ thống` silently changes role, and reject connectors such as `chỉ là`, `lại`, or `sau mỗi lần` when the required promise or prior occurrence has not appeared in the prose.
 
 The character needs room to interpret, resist, bargain, exploit loopholes, or accept consequences. A system that dictates every decision makes the character a task executor.
 
@@ -298,6 +306,7 @@ Do not default to "system lies," "old life was fake," or "someone else also rein
 - [ ] Each future change follows causality?
 - [ ] Foreknowledge does not automatically create proof, repair relationships, or control others?
 - [ ] System has observation/effect/reliability spec and preserves agency?
+- [ ] System/agent, interface, message, input, and effect have stable distinct names; every pointer has one antecedent; first-use interaction method is audible?
 - [ ] Loops have deltas in information, tactic, cost, or character?
 - [ ] Limits/costs are genre-linked, not random penalties?
 - [ ] Opening shows one concrete premise sign and action?

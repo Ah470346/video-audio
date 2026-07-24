@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Review Youth Trend Language"
+  short_description: "Kịch bản review/giới thiệu sản phẩm bắt trend, có nghiên cứu web trực tiếp"
+  default_prompt: "Use $product-review-youth-trend-language to write a researched, high-humor Vietnamese short-form product script with verified claims, a stable creator persona, and TTS-safe spoken tokens."

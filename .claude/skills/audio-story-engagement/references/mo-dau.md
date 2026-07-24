@@ -122,27 +122,19 @@ Use for first person, moral conflict, imperfect narrator. Avoid vague confession
 
 **Debt:** why does one small detail not fit the normal world?
 
-> *Bàn ăn có bốn đôi đũa. Nhà tôi chỉ có ba người, và bộ thứ tư vẫn còn ấm.*
-
-Strong for horror, mystery, and detective stories. One clear anomaly is stronger than fog.
+Strong for horror, mystery, and detective stories. Establish the normal count, sequence, rule, or condition; reveal one precise mismatch; then make its consequence matter. Generate the anomaly from the story world, not a household prop remembered from an example.
 
 ### 6. Cold Open Dialogue
 
 **Debt:** who is speaking, to whom, and what does the line force?
 
-> *“Ký vào đây, rồi tôi cho cô nghe giọng thật của chồng cô.”*
->
-> *Người đàn ông đặt điện thoại giữa bàn. Tôi nhận ra giọng nói trong file, nhưng người đó đã mất ba năm.*
-
-Use for audio immediacy, confrontation, system, or phone call. Anchor identity/relationship after one or two lines.
+Use for audio immediacy, confrontation, system, or phone call. Let the first line force or threaten a concrete action, then anchor speaker, listener, and relationship after one or two lines. Do not add a placed phone, paper, key, or table beat merely to make the line land.
 
 ### 7. Off Evidence/Object
 
 **Debt:** what does this object prove, and can it be trusted?
 
-> *Chiếc nhẫn cưới nằm trong túi áo chồng tôi. Mặt trong khắc ngày cưới của một người phụ nữ khác.*
-
-Good for drama/mystery and setup-payoff. Do not treat one object as absolute proof; let characters verify and choose.
+Good for drama/mystery and setup-payoff. Use an object already required by place and causality whose condition contradicts a claim. Do not treat one object as absolute proof; let characters verify and choose.
 
 ### 8. Countdown
 

@@ -18,7 +18,7 @@ Purdue OWL emphasizes that characters need clear goals; without goals, they lack
 - Purdue OWL, *Writing Compelling Characters*: https://owl.purdue.edu/owl/subject_specific_writing/creative_writing/writers/fiction-basics/writing_compelling_characters.html
 - UCD Writing Centre, *Revising and Editing Fiction*: https://www.ucd.ie/writingcentre/t4media/Creative%20Writing%20Revising%20and%20Editing%20Fiction.pdf
 
-**Editorial inference:** every scene should have want, obstacle, choice, and change; clues and victories should not fall into a character's hands without action.
+**Editorial inference:** major causal movement should arise from character goals, choices, and consequences; clues and victories should not fall into a character's hands without action. This does not imply that every individual scene must visibly contain want, obstacle, choice, and change.
 
 ## 3. Natural Dialogue Needs Context And Subtext
 
@@ -27,7 +27,7 @@ UCD recommends using action and stage position to reveal emotion, avoiding over-
 - UCD Writing Centre, above, section *Revising Dialogue*.
 - The Center for Fiction, *Tips for Writing Dialogue*: https://centerforfiction.org/writing-tools/tips-for-writing-dialogue/
 
-**Editorial inference:** dialogue should be checked through goal, tactic, subtext, distinct voice, and read-aloud tests. "Sounds real" does not mean keeping every filler word.
+**Editorial inference:** dialogue should be checked at exchange level through want or avoidance, subtext when present, distinct voice, consequence or relationship value, and read-aloud tests. Not every utterance needs a tactic, and "sounds real" does not mean keeping every filler word.
 
 ## 4. Vietnamese Address Forms Are Relationship Data
 

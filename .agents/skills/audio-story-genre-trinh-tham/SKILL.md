@@ -233,6 +233,8 @@ Postdictability test:
 - Did any objective fact get denied?
 - Does the solution matter to choice/consequence?
 
+The mystery peak (base skill's Peak Design) is the reveal itself: stage it as one converging scene where evidence, suspects, and cost arrive together, with disproportionate room — not as a chain of small confirmations that leaks the payoff piecemeal.
+
 ## 13. Audio Clarity
 
 - Do not stack many names, times, and objects in one sentence.

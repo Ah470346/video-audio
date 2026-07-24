@@ -1,4 +1,4 @@
 interface:
   display_name: "Audio Story Reviewer"
-  short_description: "Review truyện audio tiếng Việt"
-  default_prompt: "Use $audio-story-reviewer to review this Vietnamese audio-story manuscript and return a prioritized diagnosis."
+  short_description: "Review truyện audio tiếng Việt, gồm VoxCPM/TTS readiness"
+  default_prompt: "Use $audio-story-reviewer to review this Vietnamese audio-story manuscript and return a prioritized diagnosis, including VoxCPM/TTS render readiness."

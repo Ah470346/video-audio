@@ -4,7 +4,7 @@ Use this reference when the manuscript contains direct dialogue, unclear speaker
 
 ## First Question: Should This Be Direct Dialogue?
 
-Direct dialogue is valuable when it changes story state. It should usually do at least one of these:
+Direct dialogue is valuable when hearing the exact words gives the listener something narration would lose. An exchange may do at least one of these:
 
 - force a decision;
 - change a relationship;
@@ -12,6 +12,7 @@ Direct dialogue is valuable when it changes story state. It should usually do at
 - show character under pressure;
 - create subtext between what is said and what is meant;
 - alter power, knowledge, intimacy, or danger.
+- reveal ordinary relationship texture, failed contact, or a misunderstanding whose imprecision matters.
 
 Summarize dialogue when it only:
 
@@ -28,9 +29,9 @@ Narrator-led audio often improves when routine exchanges are compressed. Do not 
 
 For each exchange, ask:
 
-1. What does each speaker want from the other person right now?
-2. What are they hiding?
-3. What tactic are they using: evade, probe, flatter, threaten, bargain, joke, deflect, accuse, surrender?
+1. What does each speaker want, avoid, misunderstand, or fail to say?
+2. What do the exact words reveal that summary would lose?
+3. If a tactic is present, what is it? Do not invent one for every line.
 4. What new information, choice, or relationship state exists after the exchange?
 5. If the exchange is paraphrased, what is lost?
 
@@ -67,13 +68,38 @@ Sượng example:
 
 Stronger direction:
 
-> "Năm năm rồi mà chiếc ghế của bố vẫn chỉ vừa với một mình anh nhỉ?"
+> "Anh có bao giờ để em được quyết chuyện gì của bố đâu."
 
-Why: the second line carries history, resentment, relationship, and subtext without announcing all facts.
+Why: the second line carries resentment and relationship pressure in language the sibling could plausibly use. The surrounding scene still needs to establish the relevant history; one polished object metaphor should not be asked to smuggle in all five years of backstory.
+
+## Human Semantic Fit And Quoteability
+
+Natural dialogue requires more than correct grammar, a tactic, and subtext. Run the shared [human semantic-fit gate](../../audio-story-engagement/references/ngon-ngu-con-nguoi.md) whenever an exchange uses profession, objects, systems, procedures, or a conspicuous comparison to discuss people or relationships.
+
+Check:
+
+- **Plain intention:** what does the speaker need the listener to understand or do now?
+- **Collocation/category:** do the words fit a human relationship, or do they make it literally obey an object's rules?
+- **Register ownership:** would this person say the image aloud here, rather than only think it or narrate it later?
+- **Speaker ownership:** does the next character answer in their own language, or inherit the field to cue a perfect comeback?
+- **Human timing:** is there room for hesitation, evasion, partial understanding, or practical response where the pressure requires it?
+- **Consequence:** does anything change after the clever line, or is the exchange complete only as a caption?
+
+Flag **aphorism tennis** when one character states a polished analogy and the next immediately extends or overturns it. This is not automatically chemistry or subtext. It often means both voices have collapsed into authorial ventriloquism.
+
+Problem:
+
+> “Anh sửa được đồ vật, sao không sửa được hôn nhân?”
+>
+> “Đồ vật không giả vờ rằng nó vẫn ổn.”
+
+Diagnosis: the second line is engineered by the first; both speakers share one repair metaphor, and the interpersonal behavior remains hidden behind an object category.
+
+Repair direction: name the behavior (`giấu`, `né`, `nói không sao để khỏi cãi`, `không còn muốn ở lại`), give each speaker separate diction, and prefer the plain reply when it does the same work more credibly. Do not merely replace `hỏng` with `nứt` or `vỡ`.
 
 ## Subtext
 
-Subtext means the spoken line is a tactic, not a report.
+Subtext is the pressure or meaning not stated directly. It may arise from a tactic, inhibition, politeness, shared history, mistaken assumptions, or an inability to formulate the truth. It is not mandatory in every line.
 
 Useful patterns:
 
@@ -109,17 +135,7 @@ Audio cannot rely on paragraph breaks alone. Check:
 - do names or kinship terms re-anchor long exchanges?
 - are multiple same-gender characters in the same scene causing pronoun confusion?
 
-Good action beats change meaning:
-
-> "Anh tin em?" Mai hỏi.
-> Hùng đặt chìa khóa xuống bàn. "Không."
-
-Weak decorative beat:
-
-> "Anh tin em?" Mai chớp mắt hỏi.
-> Hùng hít một hơi thật sâu, ánh mắt phức tạp. "Không."
-
-The second may work once, but repeated generic body beats become noise.
+An action beat is useful when it changes blocking, access, consequence, speaker identity, or the meaning of the next line. Blinking, breathing deeply, complex gazes, and placing a small object on a table may work once when caused by the scene, but repeated generic beats become noise. Diagnose function; do not substitute another prop.
 
 ## Forms of Address
 
@@ -198,13 +214,21 @@ Use precise labels:
 
 - **Expository dialogue:** characters tell each other facts both know.
 - **Interchangeable voice:** any character could say the line.
-- **No tactic:** speaker reports emotion but does not try to affect the other person.
+- **Exchange without value:** across the whole exchange, exact wording adds no decision, relationship texture, misunderstanding, pressure, voice, or information that narration would lose. A single practical or non-tactical line is not itself a defect.
 - **False conflict:** argument repeats positions without changing power, knowledge, or decision.
 - **Unclear speaker:** audio listener cannot track who says the line.
 - **Address drift:** form of address changes without trigger.
 - **Over-tagging:** tags explain every emotion and slow the exchange.
 - **Under-tagging:** speaker identity becomes ambiguous.
 - **Narration-worthy:** direct quotation adds no dramatic value.
+- **Category mismatch:** object/system wording makes a human target sound literally mechanical without earned intent.
+- **Forced occupational metaphor:** job vocabulary supplies the line although the speaker's immediate thought does not need it.
+- **Metaphor contagion:** another speaker or the narrator inherits one character's image field without ownership.
+- **Aphorism tennis:** adjacent turns form a polished maxim and counter-maxim.
+- **Authorial ventriloquism:** character voices collapse into the author's thematic statement.
+- **Over-finished speech:** insight, syntax, and timing are implausibly complete for the pressure and established voice.
+- **Instant psychological omniscience:** a speaker turns one encounter into certainty about another person's hidden lifelong pattern without sufficient history or evidence.
+- **Visible dialogue machinery:** nearly every turn performs a named tactic or sets up a polished counter-line, so the conversation reads like a craft demonstration rather than imperfect contact.
 
 ## Output Guidance
 

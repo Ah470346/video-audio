@@ -1,6 +1,6 @@
 # Audio-Specific Clarity and TTS Readiness
 
-Use this reference for cold-listening checks, audiobook clarity, TTS readiness, pronunciation, names, numbers, symbols, scene orientation, and formatting-dependent reveals.
+Use this reference for cold-listening checks, audiobook clarity, VoxCPM/TTS readiness, pronunciation, names, numbers, symbols, scene orientation, dialogue-turn rendering, pause structure, and formatting-dependent reveals.
 
 ## Cold-Listening Mindset
 
@@ -101,6 +101,31 @@ Build a normalization ledger for every consequential non-standard token:
 
 The same written form can have different readings by context. Do not approve `3/4`, `1.000`, `AI`, a score, a room number, or a legal code until the intended spoken meaning is clear.
 
+## VoxCPM/TTS Pause Readiness
+
+For scripts headed to VoxCPM, judge the manuscript as plain Vietnamese input first. Do not assume SSML, `[pause]`, speaker labels, or visual formatting will save unclear prose unless the user has explicitly requested supported production markup.
+
+Flag:
+
+- raw dates/times such as `12/5`, `19:45`, `7h30`;
+- raw symbols such as `/`, `%`, `@`, `#`, `&`;
+- dense sentences with several comma breaths and multiple referents;
+- dialogue turns from different speakers packed in one paragraph;
+- line-leading dashes used as dialogue markers;
+- repeated ellipses or dashes used as a substitute for emotional action;
+- punctuation glued to the next word;
+- quoted fragments that look like emphasis but may be mistaken for dialogue.
+
+Repair direction:
+
+- write consequential tokens in the form to be heard;
+- use periods for deliberate stops and paragraph breaks for speaker/thought resets;
+- use a sentence/paragraph boundary, withheld response, or scene-required action for a pause; do not add a decorative gesture;
+- split a long quoted line by breathable meaning units such as stop, evidence, refusal, or consequence; do not manufacture a tactic for every unit;
+- keep the story file pure unless production cues are requested.
+
+Use the shared drafting reference `../../audio-story-engagement/references/voxcpm-tts-ngat-nghi.md` when you need the fuller pause hierarchy and examples.
+
 ## Foreign Words and Names
 
 Check whether:
@@ -147,8 +172,24 @@ Check:
 - action beats not too frequent;
 - names or kinship terms used naturally;
 - no two voices share identical rhythm in the same exchange.
+- each speaker turn is separated enough for a single-voice TTS engine to reset;
+- a dialogue-heavy sample can be rendered without rushed turn-taking or swallowed words.
 
 When there are three or more speakers, use more anchors than page fiction would need.
+
+Risky:
+
+> "Ra ngoài." "Không." "Tôi bảo cô ra ngoài."
+
+Better for audio/TTS:
+
+> "Ra ngoài."
+>
+> "Không."
+>
+> Anh hạ giọng. "Tôi bảo cô ra ngoài."
+
+Do not mark every same-paragraph quote as an error. A short quote followed by narration and a second line from the same speaker may be fine. Flag it when turn ownership, breath, or render reset becomes unclear.
 
 ## Dense Lists
 
@@ -194,6 +235,14 @@ Later:
 
 The repetition helps memory and changes meaning.
 
+### Consecutive Openings That Sound Like A Synthesis Fault
+
+Separate from motif repetition, check runs of consecutive sentences that begin with the same words. A renderer cuts prose into short chunks and each chunk starts after a prosodic reset, so two chunks opening alike are heard as the engine repeating itself rather than as a device.
+
+This has produced a false bug report in production: a listener flagged a chunk as stuttering, and measuring the waveform showed the synthesis matched the script exactly. Report it as a script issue, never as a render defect — re-rendering cannot change it.
+
+Judge intent before flagging. An anaphora building toward a payoff is worth keeping; the repair is to change each sentence's first word while keeping the anchor phrase, not to delete the repetition. Do not accept a one-word insert after the same first word (`Tôi muốn` / `Tôi rất muốn` / `Tôi còn muốn`) as a completed repair — production listening showed the unstressed insert is swallowed and the run is still heard as a stutter. Sentences that merely happen to start alike carry no such credit.
+
 ## Recording Readiness
 
 Judge readiness:
@@ -209,8 +258,17 @@ Keep two verdicts separate when relevant:
 
 - **Text readiness:** the manuscript is editorially coherent and pronounceable in principle.
 - **Render readiness:** the target human narrator or TTS engine has been sampled and essential names, numbers, pauses, and speaker turns are verified.
+- **VoxCPM readiness:** plain-text punctuation, paragraphing, dialogue turns, and spoken-token forms are clean enough to render a representative sample before running the full job.
 
 Never infer render readiness from the 100-point editorial score alone.
+
+Block or downgrade render readiness when:
+
+- a central reveal depends on a token likely to be misread;
+- the climax or a multi-person scene has unclear speaker turns by ear;
+- important pauses depend on unsupported markup or decorative punctuation;
+- raw numbers/acronyms recur without a pronunciation decision;
+- no dialogue-heavy or token-heavy sample has been listened to for a long render.
 
 ## Cold-Listening Checklist
 
@@ -220,6 +278,8 @@ Never infer render readiness from the 100-point editorial score alone.
 - Are pronouns anchored?
 - Are speakers clear in multi-person scenes?
 - Are numbers and abbreviations pronounceable?
+- Are punctuation, paragraph breaks, and dialogue turns strong enough for VoxCPM/TTS?
+- Are raw dates/times/symbols/acronyms either rewritten for the ear or listed in a normalization ledger?
 - Does the climax have enough reaction space?
 - Does the ending leave an audible aftertaste?
 - Are decorative separators or layout cues converted to spoken cues?

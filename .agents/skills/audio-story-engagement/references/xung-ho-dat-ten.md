@@ -183,10 +183,12 @@ This project **defaults to Chinese-style names** written in Sino-Vietnamese read
 
 | Context | Naming system |
 |---|---|
-| Default, unless user says otherwise | Chinese surname + Sino-Vietnamese given name, generic modern setting |
+| Default, unless user says otherwise | Chinese surname + Sino-Vietnamese given name, **modern Chinese setting** (convert style: Chinese-leaning institutions, daily life, generic or Chinese-flavored places) |
 | Historical/Chinese fictional setting | Sino-Vietnamese names + correct period titles |
-| User requests Vietnam setting | natural Vietnamese names by region/generation |
-| International | culture-fitting names; test TTS |
+| User explicitly requests Vietnam setting | natural Vietnamese names by region/generation |
+| User explicitly requests another country | culture-fitting names; test TTS |
+
+The setting default is as binding as the naming default: both stay Chinese-style until the user explicitly asks otherwise. Do not drift into Vietnamese-coded places, schools, agencies, or holidays while keeping Chinese names.
 
 Direct user requests for setting/naming override this default.
 
@@ -206,10 +208,12 @@ Direct user requests for setting/naming override this default.
 
 ### Calling Chinese-Style Names
 
-- Intimate: given name, often two syllables — *“Vân Khê, về ăn cơm.”*
+- Intimate: the full two-syllable given name — *“Vân Khê, về ăn cơm.”* — or `tiểu/A + tên`.
+- **One-syllable given names take `tiểu/A + tên` when intimate** (*tiểu Nhã, A Vãn*), never the bare syllable: *“Nhã ơi”, “Hân à”* is Vietnamese register and breaks a Chinese-style world. Friends and groupmates who are on warm terms default to `tiểu + tên`.
+- Not yet close / newly met / distant: **full surname + given name** — *“Trần Nhã đúng không?”* Moving from full name to `tiểu + tên` or the given name is a relationship beat; spend it deliberately.
 - Serious/blaming/formal: full name — *“Lâm Vân Khê, em nói lại lần nữa xem.”*
 - Social/work: surname + title — *Cố tổng, bác sĩ Thẩm, luật sư Tống.*
-- Affection nickname: *A/Tiểu + one syllable* (*A Vãn, Tiểu Thất*), consistently for one person.
+- Affection nickname: *A/Tiểu + one syllable* (*A Vãn, Tiểu Thất*) or a reduplicated pet name (*Viên Viên, Đường Đường*), consistently for one person. Prefer these over inventing minor characters whose entire name is one bare syllable, which reads Vietnamese.
 - *X tổng, X thiếu* fit modern wealthy Chinese-style fiction; *lão gia, ma ma* fit historical style. Do not mix layers unless intentional. When the user requests Vietnam setting, do not use these titles just because they sound fancy.
 - **Keep Vietnamese pronoun/address system** (*anh-em, tôi-cô, con-mẹ...*) in modern stories. Do not import *ta-ngươi, thiếp-chàng* just because the names are Chinese-style.
 

@@ -66,3 +66,17 @@ yarn-error.log*
 *.sw?
 
 /results
+/results/
+
+/expose
+/videos
+/video-mau
+/kaggle_jobs
+/kaggle_datasets
+.separator_env/
+/musics
+/audio
+
+.venv*
+venv/
+env/

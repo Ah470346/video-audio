@@ -36,7 +36,7 @@ CATEGORIES: tuple[Category, ...] = (
     Category("emotion", "Emotional authenticity and human texture", 10),
     Category("dialogue", "Dialogue naturalness and function", 7),
     Category("genre", "Genre and target alignment", 7),
-    Category("audio_clarity", "Audio clarity and listenability", 6),
+    Category("audio_clarity", "Audio clarity, listenability, and TTS readiness", 6),
 )
 
 
@@ -129,6 +129,8 @@ def main() -> int:
             "ending",
             "speaker-identity",
             "essential-pronunciation",
+            "tts-pause-structure",
+            "tts-token-risk",
         ),
         help="Record an unresolved defect that blocks recording; may be repeated.",
     )

@@ -84,6 +84,8 @@ Physical attraction may open attention, but the relationship needs evidence of c
 
 ## 6. Intimacy Ladder
 
+Attraction may be immediate; psychological certainty may not. Keep observation, interpretation, repeated pattern, and confirmed truth separate. A stranger can feel unusually noticed or make a sharp guess without actually knowing the other person's deepest habit or wound. Do not use instant accurate diagnosis as proof of chemistry, intelligence, or destiny.
+
 Use this instead of a quota for "three golden moments." Choose relevant steps and give each a cause:
 
 1. noticing;
@@ -129,6 +131,8 @@ Romance satisfies only when all sides are subjects who choose, not prizes for ea
 
 At the climax, each key person needs an action that can change the outcome. If one decides and the other merely waits to be chosen, repair agency.
 
+The romance peak (base skill's Peak Design) is usually this relationship-choice scene: the moment everything the two people have hidden, misread, and owed each other converges and someone must choose at real cost, in real time. Give it a peak's room and amplitude — restraint elsewhere in the story exists to buy this scene its size.
+
 ## 9. Relationship Rhythm And Distance
 
 Distance is a tool, not a law. Some stories are gripping because people are already together but must learn to live truthfully.
@@ -158,6 +162,8 @@ At a boundary: clarity is necessary.
 > *“Em không cần anh giải thích rằng anh yêu em. Em cần biết anh có tôn trọng câu trả lời của em không.”*
 
 For repair, avoid perfect speeches. Let the speaker name what they did, avoid a self-excusing "but", ask what the other needs, and accept that forgiveness may not come.
+
+The same discipline applies to confessions and self-explanations. A person under real pressure rarely labels their own psychology in analytic vocabulary (`ngụy biện`, `cơ chế phòng vệ`, `chọn thay người khác`) or delivers fear, motive, and apology in perfectly ordered stages with the exact distinction the theme needs. Let the formulation be uneven — started wrong, corrected midway, incomplete — and let the listener assemble part of the insight; the other person may finish it, misread it, or refuse part of it.
 
 Private language/callback matters only when a phrase, object, or habit changes meaning through the relationship. Not every couple needs a catchphrase.
 
@@ -229,6 +235,7 @@ Audio naturalness:
 | Mechanical push-pull | Track closeness, trust, and shared choice |
 | Slow burn = delay | Each intimacy step needs cause and new access |
 | Insta-love absolutely banned | Fast attraction is allowed; love needs later choice/action evidence |
+| Instant mind-reading proves chemistry | Let early guesses remain limited or wrong; earn knowledge through repeated access, disclosure, response, and cost |
 | Barrier is only not speaking | Add cost, old belief, manipulation, or value conflict |
 | Third person as evil rival | Give goal/agency; skip triangle if it has no function |
 | Persistence rewarded after refusal | Respect boundary and consent |
@@ -243,6 +250,7 @@ Audio naturalness:
 - [ ] Do all sides have goals outside love, needs, boundaries, and choices?
 - [ ] Is chemistry shown through attention, response, friction, vulnerability, shared play, or repair?
 - [ ] Does every intimacy step have cause and change access?
+- [ ] Are attraction and feeling seen kept separate from earned psychological knowledge?
 - [ ] Does the barrier have real cost, not just one unsaid sentence?
 - [ ] Do both/all key people have agency at the climax?
 - [ ] Are power gaps and consent handled clearly?

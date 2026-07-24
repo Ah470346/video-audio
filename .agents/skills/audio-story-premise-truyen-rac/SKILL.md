@@ -218,11 +218,7 @@ Evidence is not denied by magic; it collides with a specific psychological debt.
 
 > Mẹ chồng ném vali tôi ra đường. Cả nhà đều vỗ tay.
 
-**Repaired:**
-
-> Bà kéo chiếc vali qua bậc cửa. Không ai vỗ tay. Bố chồng cúi nhìn bát cơm, cô em chồng lùi điện thoại khỏi khung hình, còn chồng tôi đứng chắn lối nhưng không dám nhìn tôi. Sự im lặng của họ không bênh bà; nó chỉ cho thấy chẳng ai định ngăn bà.
-
-Complicity remains infuriating, but each person reacts from position and fear.
+**Repair direction:** keep the aggravating complicity, but assign each person a distinct interest, fear, available action, and choice not to intervene. Generate behavior from their physical position and stake in this scene; do not distribute stock food, phone, gaze, or doorway gestures around the group.
 
 ### Payoff That Matches Debt
 
@@ -230,11 +226,7 @@ Complicity remains infuriating, but each person reacts from position and fear.
 
 > Tôi chiếu tất cả bằng chứng giữa tiệc cưới. Anh quỳ xuống xin tha trước hai trăm người.
 
-**Repaired:**
-
-> Tôi không mang đoạn ghi âm tới tiệc cưới. Tôi gửi nó cho luật sư, khóa tài khoản chung rồi để lại chìa khóa căn hộ trên bàn. Lần đầu tiên trong sáu năm, quyết định của tôi không cần anh tin mới có hiệu lực.
-
-The debt is agency, so the payoff is regained agency; public humiliation is unnecessary.
+**Repair direction:** if the debt is agency, make the payoff a decision the protagonist can execute through established access, evidence, boundaries, and cost. Public humiliation is unnecessary. Do not stage regained agency through a stock key, table, phone, document, or `lần đầu tiên` closer.
 
 ## 10. Common Traps
 

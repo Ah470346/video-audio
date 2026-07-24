@@ -118,6 +118,8 @@ Pay the promised questions enough for the climax to matter. You may leave an une
 
 Startle works when it marks a real change. Repeated loud sounds followed by "nothing" teach listeners not to care.
 
+The horror peak (base skill's Peak Design) is the terror set-piece: the scene where the rules, the shrinking safety, and the threat's confirmed capability converge on the character with no retreat. Give it the story's largest room and slowest, most concrete staging; do not spend the dread budget on several equal medium scares.
+
 ## 8. Characters Need Reasons To Stay
 
 Before each dangerous action, answer:

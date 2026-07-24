@@ -15,6 +15,8 @@ Check:
 - spelling and typo-like substitutions;
 - missing, duplicated, or swapped words;
 - malformed idioms and unnatural collocations;
+- semantic-domain/category mismatch: object, machine, accounting, medical, legal, or interface verbs applied to people and relationships as though the mapping were literal, with no intentional character effect;
+- translated metaphor/collocation: a source-language mapping remains understandable (`broken/fix a marriage`) but sounds unnatural when carried directly into Vietnamese;
 - subject-predicate mismatch;
 - dangling modifiers;
 - unclear clause attachment;
@@ -46,8 +48,11 @@ Check:
 - misplaced colon before dialogue;
 - inconsistent ellipses: `...`, `…`, `....`;
 - overuse of dashes as a substitute for scene logic;
+- decorative dashes or line-leading dialogue dashes in VoxCPM-bound pure prose;
+- punctuation glued to the next word, causing TTS token/rhythm risk;
 - quotation marks not closed;
 - speaker attribution separated from the utterance incorrectly;
+- multiple speaker turns in one paragraph when turn ownership or TTS reset becomes unclear;
 - numbers, abbreviations, and symbols that TTS may read awkwardly.
 
 Dialogue punctuation examples:
@@ -79,6 +84,32 @@ Revision:
 > "Tôi không cần." Anh quay đi.
 
 Why: the action beat already identifies the reaction; `nói rồi` adds little unless the beat must show sequence.
+
+VoxCPM/TTS-oriented examples:
+
+Problem:
+
+> "Ra ngoài." "Không." "Tôi bảo cô ra ngoài."
+
+Diagnosis: three turns are visually separated but may be delivered as one fast stream by single-voice TTS.
+
+Revision:
+
+> "Ra ngoài."
+>
+> "Không."
+>
+> Anh hạ giọng. "Tôi bảo cô ra ngoài."
+
+Problem:
+
+> Tin nhắn gửi lúc 19:45, kèm mã hồ sơ ADN số 03/2024.
+
+Revision:
+
+> Tin nhắn gửi lúc bảy giờ bốn mươi lăm tối, kèm mã hồ sơ xét nghiệm ADN đầu tháng tư năm đó.
+
+Why: raw times, slashes, and codes may be misread or create false pauses; write the intended spoken form unless the exact code matters.
 
 ## Sentence Listenability
 
@@ -155,20 +186,35 @@ Surface symptoms:
 - repeated `Điều tôi không ngờ là...`;
 - neat moral summaries at scene endings;
 - symmetrical sentence triples in unrelated emotional states;
+- repeated hindsight interjections (`tôi đâu biết`, `mãi về sau tôi mới hiểu`, `đó là sai lầm đầu tiên`);
+- allusive-posturing foreshadows: hints at future irony through an abstract riddle (`đúng cái thứ mình sắp thua`) instead of a concretely named stake in the character's voice;
+- most scene/paragraph endings sharing one closure shape: aphorism, thesis, balanced antithesis, or punchy fragment triple;
+- a fresh reveal restated in several escalating paraphrases before a button line;
+- a returning callback or symbol whose changed meaning the narration explains (`câu đó có nghĩa là...`);
+- most action sentences dragging a trailing evaluative clause (`, khiến tôi...`, `, như thể...`, `, để lại...`);
+- dense soft-cliché vocabulary: clusters of `khoảnh khắc`, `hành trình`, `chữa lành`, `bình yên`, `vụn vỡ`, `chông chênh`, `lặng lẽ`/`khẽ`, `như một` + abstraction;
+- paragraphs of nearly uniform length and internal shape across the manuscript;
 - all characters using the same smooth, correct, abstract voice;
 - many sentences that could be moved to another story without change.
 
 These are not automatically errors. They become errors when they flatten character, slow pacing, or explain instead of dramatizing.
 
-Example:
+Also inspect **over-finished dialogue sequences**, not only repeated sentence shells:
 
-Generic:
+- one speaker introduces a polished metaphor and the next instantly completes or overturns it;
+- a character's profession supplies every comparison even outside that register;
+- several speakers share one image field without shared history;
+- every challenge receives an exact, quotable comeback;
+- characters understand and state the theme more neatly than their current knowledge or pressure allows.
+- a new acquaintance states another person's hidden psychological pattern as fact after one small cue;
+- unrelated scenes reuse conspicuous household props, tidying motions, delayed answers, or realization phrasing as ready-made emotion;
+- every scene exposes the same sequence of setup, symbolic gesture, insight, and quotable closer.
 
-> Cô đau khổ nhận ra rằng trên đời này không ai thật sự ở bên mình.
+These symptoms are often semantic and character failures rather than grammar errors. Cross-check [dialogue.md](dialogue.md) and the shared [human semantic-fit gate](../../audio-story-engagement/references/ngon-ngu-con-nguoi.md).
 
-More character-specific:
+Do not repair generic emotion by automatically inserting a household object or small hand movement. That merely replaces one formula with another. Ask what this exact place, task, relationship history, and immediate consequence make the character notice or fail to do. Direct emotional naming may be the most precise repair.
 
-> Cô đặt thêm một đôi đũa lên bàn, rồi lặng lẽ cất lại. Ba năm rồi, tay cô vẫn quen phần việc ấy.
+Treat all examples in story skills as contaminated source material. Reuse of their objects, gestures, occupations, image fields, or sentence architecture requires independent scene necessity; a synonym or a different domestic prop is not sufficient distance.
 
 ## Diagnosing Diction
 
@@ -178,11 +224,17 @@ When a word feels wrong, name the exact mismatch:
 - relationship mismatch: the word sounds too intimate or too distant;
 - narrator mismatch: vocabulary does not fit education, region, age, or POV;
 - genre mismatch: comedy word in a grief scene, melodrama word in a procedural scene;
+- category mismatch: the word is ordinary for an object/system but makes the human target sound literally repairable, measurable, filed, debugged, or processed without an earned metaphor;
+- ownership mismatch: the word belongs to another character's profession/image field or to retrospective narration, not this speaker's live vocabulary;
 - audio mismatch: hard-to-hear abbreviation, foreign name, or symbol.
 
-Avoid vague comments like `dùng từ chưa hay`. Use:
+Avoid vague comments like `dùng từ chưa hay`. A synonym-only note is especially inadequate when the defect is category fit or speaker ownership. Use:
 
 > `định mệnh` appears three times in two paragraphs, so the word loses force and makes the narration sound prepackaged. Keep it only at the strongest turning point or replace the other two with concrete event language.
+
+Or:
+
+> `hỏng/sửa/đồ vật` forms one repair field across both speakers. The issue is not that `hỏng` is always forbidden; it is that the marriage has been reduced to an object and the reply exists to complete the metaphor. Rewrite from each speaker's immediate human intention instead of swapping in `nứt/vỡ`.
 
 ## Repair Hierarchy
 
@@ -192,11 +244,14 @@ Fix in this order:
 2. pronoun clarity and speaker clarity;
 3. sentence length and breath;
 4. unnecessary explanation;
-5. diction and rhythm polish.
+5. earned knowledge, example distance, and scene-specific selection;
+6. diction and rhythm polish.
 
 Do not polish a sentence that belongs to a scene likely to be cut or moved.
 
 For TTS-bound text, treat punctuation as a cue to be tested, not a guaranteed pause. Different engines infer structure and prosody differently; move to `audio.md` when a problem depends on the target voice or engine.
+
+For VoxCPM-bound manuscripts, also check the shared pause guide at `../../audio-story-engagement/references/voxcpm-tts-ngat-nghi.md` when deciding whether a mark should become a comma, period, paragraph break, action beat, or spoken-token rewrite.
 
 ## Evidence Frame
 

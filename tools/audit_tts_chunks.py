@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit already-rendered OmniVoice chunks without re-rendering them."""
+"""Audit already-rendered VoxCPM chunks without re-rendering them."""
 
 import argparse
 from difflib import SequenceMatcher
@@ -13,7 +13,7 @@ REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if REPO_ROOT not in sys.path:
     sys.path.insert(0, REPO_ROOT)
 
-from omnivoice_story_core import (  # noqa: E402
+from voxcpm_story_core import (  # noqa: E402
     MLXWhisperSession,
     SWALLOW_DB,
     _normalize_for_compare,

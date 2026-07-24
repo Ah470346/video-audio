@@ -2,6 +2,8 @@
 
 This expands the 10 techniques from the base skill. Use it for outlining, scene writing, and final editing. Names such as *Zeigarnik, dopamine, oxytocin, cortisol, mirror neurons* are only **memory labels**, not reliable biochemical buttons that wording can press.
 
+All examples in this reference are diagnosis-only and contaminated for generation. Never reuse or lightly disguise their objects, gestures, situations, names, image fields, or sentence shapes. Apply the principle to the manuscript's own circumstances; the correct choice may be deletion or plain direct language.
+
 > Retention quality does not come from "pumping chemicals" into the brain. It comes from four foundations: **the listener understands**, **the character wants**, **choices cause consequences**, and **the experience rhythm changes**.
 
 ## Before Use: Translate Science Labels Into Writing Actions
@@ -132,37 +134,15 @@ Same kitchen, different goal:
 
 Avoid stock reaction piles. `tim đập thình thịch`, `nghẹn thở`, `máu đông cứng`, `sống lưng lạnh toát` can work, but repetition gives every character the same body.
 
-Vietnamese contrast:
+Specificity does not mean inserting a document, phone, body beat, or household gesture. A detail earns its place when it arises from the current task and changes risk, interpretation, blocking, or choice. Direct emotional naming may be more exact than staged action.
 
-**Cliche:**
-
-> *Tôi nghẹn thở khi thấy kết quả xét nghiệm.*
-
-**Specific action:**
-
-> *Tôi đọc dòng kết luận hai lần, rồi gập tờ giấy lại trước khi mẹ chồng kịp nhìn thấy.*
-
-The reaction shows risk and choice.
-
-Pregnancy/fetal movement must connect to relationship or choice:
-
-**Weak:**
-
-> *Đứa bé đạp làm tôi nghẹn thở đúng lúc anh phản bội.*
-
-**Better:**
-
-> *Đứa bé đạp dưới lòng bàn tay tôi. Tôi đang định đưa tay anh tới đó như mọi tối, rồi nhìn tờ xét nghiệm giữa hai người và rút tay lại.*
+Pregnancy or fetal movement must connect to the character's body, relationship, or choice; never use it as a decorative empathy cue.
 
 ## 5. Pacing By Scene And Ear
 
 Fast does not mean tense; slow does not mean deep. Pace is the speed of **meaningful change** and the time listeners need to understand/feel.
 
-Scene unit:
-
-> **goal -> obstacle -> turn**
-
-Each scene needs a local want, a specific blocker, and changed information/power/decision by the end.
+Use causal scene design internally, but do not require every scene to display `goal -> obstacle -> turn`. Each scene or compact passage must earn its place through action, consequence, recognition, relationship texture, atmosphere, comic experience, orientation, accumulation, or necessary emotional processing. Do not manufacture a blocker or miniature twist to complete a template.
 
 Five control layers:
 
@@ -317,19 +297,11 @@ Narrative voice is not a list of adjectives. It is a stable pattern: what the na
 
 1. **Summary:** compress travel, procedure, routine exchanges, and necessary background.
 2. **Selective staging:** slow down for one detail, realization, or action that changes the scene.
-3. **Verbatim impact:** keep one/few powerful lines, then show reaction/consequence instead of continuing explanatory dialogue.
+3. **Verbatim impact:** keep only the line or few lines whose exact wording performs necessary action, then show reaction/consequence instead of continuing explanatory dialogue.
 
 Shift distance when function changes. All-summary becomes a report; staging every step makes audio heavy.
 
-Five-line voice profile:
-
-```text
-What the narrator always notices:
-What they avoid naming:
-How they speak when defensive:
-One comparison type from their life/job:
-What they misunderstand about themselves:
-```
+Hold the voice as judgment, not a form to complete. Keep track of what this narrator habitually notices, what they avoid naming, how they talk when defensive, and what they misunderstand about themselves, then prove it through selection and phrasing rather than a written profile. A job may color at most one comparison the narrator would naturally reach for; it never obliges occupational metaphors.
 
 ### Verbatim Test
 
@@ -341,6 +313,8 @@ Keep direct dialogue only if the exact wording:
 - lands comedy, twist, humiliation, tenderness, or wound.
 
 If indirect narration keeps the same force, narrate it. Compress greetings, scheduling, data Q&A, repeated arguments, spoken biography, and information both sides know. Do not use dialogue to replay what narration just explained.
+
+Quoteability is not dialogue value. First write the speaker's immediate intention in plain Vietnamese. Keep a marked comparison or polished formulation only if this character owns it, would say it aloud under the current pressure, and loses real action/subtext when paraphrased. If one speaker supplies a metaphor and the next instantly completes or defeats it, run [ngon-ngu-con-nguoi.md](ngon-ngu-con-nguoi.md); this is often aphorism tennis rather than natural conflict.
 
 Vietnamese contrast:
 
@@ -357,7 +331,7 @@ The second compresses procedure, shows avoidance and relationship, then preserve
 ### Psychology Without Flatness
 
 - Narrate the awareness chain: what is seen, how it is interpreted, what the character avoids admitting, and what choice follows.
-- Tie interiority to an object/gesture/decision in the scene.
+- Express interiority through the most exact available mode: direct naming, selection, thought, decision, necessary behavior, or consequence. Do not add an object or gesture by default.
 - Let narrator have bias, humor, defense, or misunderstanding.
 - Stop explaining when detail or dialogue lets listeners infer enough.
 
@@ -371,9 +345,7 @@ The second compresses procedure, shows avoidance and relationship, then preserve
 
 > *“Em rất tức giận vì anh đã phản bội lòng tin của em.”*
 
-**With action and subtext:**
-
-> *“Anh ăn cơm chưa?” Tôi úp chiếc điện thoại của anh xuống bàn. “Hay để em gọi hỏi người vừa nhắn ‘nhớ anh’ xem cô ấy đã nấu rồi?”*
+**Repair direction:** let the exact words carry the relationship pressure if they matter; otherwise compress. Add action only when current blocking or consequence requires it, not as a standard subtext prop.
 
 Distinguish characters by goal and life logic before catchphrases. One person evades with questions; another answers too precisely; another uses titles to keep distance. Address forms shift with relationship/emotion; see [xung-ho-dat-ten.md](xung-ho-dat-ten.md).
 
@@ -383,7 +355,7 @@ Read dialogue aloud without speaker tags. If goals, rhythm, and address do not i
 
 ### Pass 1 — Causality And Character
 
-- Each scene has goal, obstacle, turn.
+- Each scene or compact passage earns its place; goal, obstacle, and turn are used when the material actually contains them, not imposed as visible machinery.
 - Character choices cause following events.
 - Antagonists/allies have their own motives.
 
@@ -395,7 +367,7 @@ Read dialogue aloud without speaker tags. If goals, rhythm, and address do not i
 
 ### Pass 3 — Emotion And Immersion
 
-- Replace generic emotional labels with specific actions/choices.
+- Repair generic emotion with scene-specific cause, selection, action, choice, consequence, or exact direct naming; do not automatically externalize it through props.
 - Check sensory detail belongs to POV.
 - Let consequences exist long enough.
 
@@ -423,6 +395,8 @@ Read dialogue aloud without speaker tags. If goals, rhythm, and address do not i
 - [ ] No long exchange where information, power, relationship, and decision stay unchanged.
 - [ ] Narrator shifts between summary and selective staging; not a flat event report.
 - [ ] Not every sentence is a slogan/viral line.
+- [ ] No high-impact exchange is built as a polished metaphor plus instant metaphorical comeback.
+- [ ] Professional vocabulary shapes only the character who owns it and only where natural; concrete object language has not replaced the actual human behavior or relationship problem.
 - [ ] No hard duration numbers without channel data.
 - [ ] No hormone/neuroscience claims as certainty.
 - [ ] Character chooses and pays in at least one meaningful scene.

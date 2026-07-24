@@ -18,7 +18,15 @@ from pathlib import Path
 WORD_RE = re.compile(r"[0-9A-Za-zÀ-ỹĐđ]+(?:[-'][0-9A-Za-zÀ-ỹĐđ]+)*", re.UNICODE)
 SENTENCE_RE = re.compile(r"[^.!?…\n]+(?:[.!?…]+|$)", re.UNICODE)
 DIALOGUE_RE = re.compile(r'["“][^"”]{2,}["”]|^\s*[-–]\s+\S+', re.MULTILINE)
-SYMBOL_RE = re.compile(r"(?:https?://|www\.|[@#&%]|[A-Z]{2,}\b|\d+/\d+/\d+|\d+[.,]?\d*\s?(?:%|kg|km|cm|m2|m3|USD|VND))")
+SYMBOL_RE = re.compile(r"(?:https?://|www\.|[@#&%]|[A-ZĐ]{2,}\b|\d+/\d+(?:/\d+)?|\d+[.,]?\d*\s?(?:%|kg|km|cm|m2|m3|USD|VND))")
+
+TTS_TOKEN_PATTERNS = {
+    "numeric-time": re.compile(r"\b\d{1,2}\s*(?:[hH:])\s*\d{0,2}\b"),
+    "raw-date": re.compile(r"\b\d{1,2}/\d{1,2}(?:/\d{2,4})?\b"),
+    "repeated-ellipsis": re.compile(r"\.{4,}|…{2,}"),
+    "punctuation-glued": re.compile(r"(?<=[.,!?;:])(?=[^\s\d.,!?;:\"'”’)\]])"),
+    "line-leading-dialogue-dash": re.compile(r"(?m)^[ \t]*[-–—][ \t]*\S.*"),
+}
 
 FORMULA_PATTERNS = {
     "khong-phai-vi-ma-vi": re.compile(r"không phải vì.{0,160}?mà vì", re.I | re.S),
@@ -164,6 +172,38 @@ def collect_flags(text: str) -> list[Flag]:
                 compact(match.group()),
             )
         )
+
+    for label, pattern in TTS_TOKEN_PATTERNS.items():
+        for match in pattern.finditer(text):
+            flags.append(
+                Flag(
+                    "tts-render-risk",
+                    line_number(text, match.start()),
+                    f"VoxCPM/TTS pause or token risk: {label}.",
+                    compact(text[max(0, match.start() - 70) : match.end() + 70]),
+                )
+            )
+
+    offset = 0
+    for paragraph in re.split(r"\n\s*\n", text):
+        if not paragraph.strip():
+            offset += len(paragraph)
+            continue
+        quote_count = len(re.findall(r'["“][^"”\n]{2,}["”]', paragraph))
+        if quote_count >= 2:
+            found = text.find(paragraph, offset)
+            flags.append(
+                Flag(
+                    "dialogue-turn-risk",
+                    line_number(text, found if found >= 0 else offset),
+                    f"{quote_count} quoted spans in one paragraph; inspect whether TTS needs speaker-turn separation.",
+                    compact(paragraph),
+                )
+            )
+            offset = (found if found >= 0 else offset) + len(paragraph)
+        else:
+            found = text.find(paragraph, offset)
+            offset = (found if found >= 0 else offset) + len(paragraph)
 
     flags.extend(repeated_sentence_openings(sentences))
     return sorted(flags, key=lambda flag: (flag.line, flag.category))

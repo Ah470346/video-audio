@@ -98,20 +98,31 @@ Check:
 
 ## Scene Coherence
 
-Segment the manuscript into scenes. For each scene, record:
+Segment the manuscript into scenes. Record only fields that are actually relevant; the table is a diagnostic lens, not a quota.
 
 | Field | Question |
 |---|---|
 | Entry condition | What state exists at the start? |
-| Goal/need | What does someone want now? |
-| Obstacle | What blocks or pressures that want? |
+| Goal/need | What concern, want, task, or state organizes attention, if any? |
+| Obstacle | What blocks or pressures it, if conflict is active? |
 | Key event | What action, revelation, or choice occurs? |
 | Turn/result | What changes by the end? |
 | Emotion | What changes inside a key character? |
 | Link | Why does the next scene follow? |
 | Function | Why does the story need this scene? |
 
-Flag scenes that leave story state unchanged, repeat a prior function, or exist only to explain information before listeners need it.
+Flag scenes that add no necessary action, relationship texture, absorption, atmosphere, orientation, accumulation, comedy, meaning, or later consequence. Do not manufacture a goal, obstacle, or turn in a scene that earns its place another way.
+
+## Earned Knowledge And Psychological Certainty
+
+For every important judgment about another person, separate:
+
+1. what the focal character directly observed;
+2. what they infer now and how uncertain that inference is;
+3. what repeated contact has established as a pattern;
+4. what later evidence or confession makes verified truth.
+
+First-person intimacy is not permission to skip this ladder. A narrator may guess wrongly or retrospectively explain a pattern, but the prose must signal the difference. Flag a new acquaintance who instantly identifies the exact habit, wound, motive, or lifelong defense the focal character has hidden unless the scene supplies unusually strong evidence and frames the claim at the right certainty level.
 
 ## Situation-Model and Boundary-Stack Test
 
@@ -140,7 +151,7 @@ Scene openings should orient by ear:
 - when this is relative to the prior scene;
 - what pressure is active.
 
-Scene endings should change something:
+Many scene endings change something:
 
 - decision;
 - information;
@@ -149,6 +160,8 @@ Scene endings should change something:
 - emotional state;
 - plan;
 - power balance.
+
+Others simply leave a necessary question, pressure, image, or emotional residue active. Do not require every scene to close with a revelation, slogan, decision, or miniature twist.
 
 Weak exit:
 
@@ -253,7 +266,7 @@ Repair options:
 
 - delay until a character needs the information;
 - distribute across conflict beats;
-- convert to an object, habit, rumor, or changed address;
+- attach it to a choice, consequence, disagreement, or scene-specific task;
 - compress into one vivid narrator sentence;
 - place after a disturbance so listeners know why it matters.
 

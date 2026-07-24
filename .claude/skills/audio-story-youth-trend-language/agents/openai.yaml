@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audio Story Youth Trend Language"
+  short_description: "Teencode/từ trend cho truyện audio tiếng Việt, có nghiên cứu web trực tiếp"
+  default_prompt: "Use $audio-story-youth-trend-language to add researched, character-specific Vietnamese youth trend language to this audio-story script without breaking causality, emotion, safety, or VoxCPM/TTS readiness."

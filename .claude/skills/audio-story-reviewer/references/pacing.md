@@ -120,15 +120,7 @@ Weak openings:
 
 Opening can start quietly if the quiet object or routine already carries tension.
 
-Example:
-
-Flat:
-
-> Sáng hôm ấy trời mưa rất to. Lan thức dậy và cảm thấy cuộc đời mình thật mệt mỏi.
-
-Stronger direction:
-
-> Lan đặt ba bát cơm lên bàn như mọi sáng. Đến bát thứ ba, cô mới nhớ người đó đã chết từ tối qua.
+Do not repair a flat opening by inserting food, weather, a household count, or a small routine from a craft example. Derive the first selected detail from the opening's actual disturbance, place, body, task, or relationship consequence; direct narration may be strongest.
 
 ## Climax Review
 
@@ -212,7 +204,7 @@ Strong hook example:
 
 ## Rhythm Within Scenes
 
-Scene rhythm often works as:
+One possible diagnostic map is:
 
 1. orientation;
 2. pressure;
@@ -222,7 +214,7 @@ Scene rhythm often works as:
 6. reaction;
 7. bridge.
 
-Not every scene needs all seven beats. But if a scene feels rushed, find which beat is missing. If it feels slow, find which beat repeats or explains.
+Do not turn this into a seven-beat requirement. If a scene feels rushed, ask what the listener lacked: orientation, causal access, absorption, relationship meaning, or a necessary response. If it feels slow, ask whether material repeats, explains, or lacks relation to the whole. A scene may legitimately accumulate atmosphere or residue without attempt, complication, or turn.
 
 ## Backstory Placement
 
@@ -234,7 +226,7 @@ Good placements:
 - before a choice that depends on it;
 - during a low-motion emotional beat;
 - as a sharp contrast to present action;
-- through an object, habit, or line of dialogue.
+- through a present consequence, choice, disagreement, task, or line whose exact wording matters.
 
 Weak placements:
 

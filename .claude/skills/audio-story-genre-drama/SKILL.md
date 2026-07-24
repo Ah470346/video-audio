@@ -66,9 +66,11 @@ A third person matters only if they alter the force between two people: they hol
 
 ## 5. Scene Engine
 
-Drama scenes run as:
+One useful conflict map is:
 
-> **relationship goal -> tactic -> reaction -> crack revealed -> power shift**
+> **relationship pressure -> attempt -> response -> consequence**
+
+Use it only when conflict is active. A drama scene may instead absorb damage, expose an ordinary relationship pattern, prepare a choice, or carry residue. Do not make every exchange a duel or every scene end in a power shift.
 
 Example:
 
@@ -83,7 +85,7 @@ Common tactics:
 - bargaining;
 - setting a boundary or exiting the game.
 
-End each scene by changing at least one thing: who trusts whom, who knows what, who has leverage, which boundary was crossed, or which decision can no longer be withdrawn.
+Across the sequence, ensure relationship pressure develops. Individual scenes may change trust, knowledge, leverage, boundary, or decision, but some may legitimately hold or accumulate pressure without a visible turn.
 
 ## 6. Betrayal, Secrets, And Evidence
 
@@ -155,7 +157,9 @@ Vietnamese examples:
 
 > *“Đừng xin lỗi nữa. Nói anh định sửa điều gì.”*
 
-A memorable line must result from accumulation, not be pasted in as a slogan.
+Do not aim for a memorable line. Keep the line a specific person must say to obtain, avoid, or end something now; any resonance must result from accumulated pressure and later consequence. If a plainer formulation performs the same action more credibly, use it. Reject metaphor-plus-counter-metaphor exchanges that make both characters sound like co-writers of a slogan; run the base [human semantic-fit gate](../audio-story-engagement/references/ngon-ngu-con-nguoi.md).
+
+The drama peak (base skill's Peak Design) is usually the confrontation where the strongest evidence, the most invested witnesses, and the least deniable choice arrive in the same room. Stage it with disproportionate space and let consequences land on-screen; do not defuse it into several smaller separate talks.
 
 ## 9. Escalation And Consequence Rhythm
 
@@ -224,7 +228,8 @@ The stronger version uses the reveal to change the goal and make the dilemma con
 | Whole family acts irrationally to isolate narrator | Give each person separate interest, fear, and information source |
 | Public unmasking by default | Choose payoff by character: legal, private, leaving, reconciliation, or public |
 | Forgiveness = reset | Forgiveness does not erase boundaries or consequence |
-| Dialogue is all viral lines | Each line is a tactic; keep resonant lines only when earned |
+| Dialogue is all viral lines | Judge the exchange as human contact; allow partial, practical, failed, or non-tactical lines, and choose plain speech when quoteability adds no truth |
+| One speaker's metaphor cues the other's perfect comeback | Separate their language and goals; let the reply answer the behavior, not complete the author's image |
 | Everyone changes personality after climax | Payoff comes from planted choices and preparation |
 
 ## 14. Checklist
@@ -232,12 +237,13 @@ The stronger version uses the reveal to change the goal and make the dilemma con
 - [ ] Does the contract include a relationship worth losing, a truth/need, a choice, and a consequence?
 - [ ] Does the central question ask both "what is known" and "what is done after knowing"?
 - [ ] Does each main pair have wants, fear, leverage, and boundary?
-- [ ] Does each scene change trust, information, power, boundary, or decision?
+- [ ] Does each scene earn its place, without forcing every scene to display a change in trust, information, power, boundary, or decision?
 - [ ] Does betrayal have need, opportunity, choice, self-justification, and consequence?
 - [ ] Does the harm-doer have motive while remaining responsible?
 - [ ] Is the narrator active without being forced into false blame?
 - [ ] Does evidence prove only its actual scope?
-- [ ] Does subtext appear as tactic, and direct speech at the right break?
+- [ ] Does subtext arise naturally where needed, and is direct speech used where exact wording matters?
+- [ ] Does confrontation sound like two separate people under pressure rather than aphorism tennis or a theme delivered in turns?
 - [ ] Does escalation follow meaningful axes rather than quotas?
 - [ ] After major reveal, is there consequence and a new decision?
 - [ ] Does the ending answer what the relationship becomes, not only who wins?

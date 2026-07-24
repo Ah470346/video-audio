@@ -170,9 +170,7 @@ The second keeps drama promise without framing self-harm as victory or bait.
 
 Problem: `đoạt mạng` is not safer than `giết`; the scene still focuses on method and graphic image.
 
-**Better:**
-
-> *Khi cảnh sát tới, cô đã không còn sống. Trên bàn, nồi canh vẫn được đậy kín cho người chồng chưa bao giờ về ăn tối.*
+**Repair direction:** name the death clearly enough for the listener, then shift to a consequence that belongs to the established people and circumstances. Do not use an untouched meal, covered pot, table setting, or waiting household object as automatic grief shorthand.
 
 ### Keep Event Clear, Shift To Consequence
 
@@ -180,9 +178,7 @@ Problem: `đoạt mạng` is not safer than `giết`; the scene still focuses on
 
 > *Sau nhiều năm bị đánh đập, cô đau đớn đến mức không thể chịu nổi nữa.*
 
-**Better:**
-
-> *Sáng hôm sau, cô chụp lại vết bầm, gửi bản sao cho luật sư rồi đổi ổ khóa. Lần đầu tiên, anh ta phải đứng ngoài cánh cửa từng thuộc về cả hai.*
+**Repair direction:** move from the harm to a credible act of documentation, help-seeking, protection, boundary, or exit appropriate to the character's access and risk. Let the concrete consequence carry agency without a stock key/door image or a `lần đầu tiên` thesis.
 
 ### Self-Harm Is Not Decorative Twist
 

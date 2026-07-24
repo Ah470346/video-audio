@@ -50,7 +50,7 @@ def extract_bgm(separator_bin, video_path, output_dir):
     return final_bgm_path
 
 def mix_audio(voice_path, bgm_path, output_path, bgm_volume=0.15):
-    print(f">> Đang mix giọng đọc OmniVoice với nhạc nền...")
+    print(f">> Đang mix giọng đọc VoxCPM với nhạc nền...")
     
     # -stream_loop -1: Lặp lại nhạc nền vô tận nếu nó ngắn hơn giọng đọc
     # amix=duration=first: Cắt kết quả cho bằng độ dài của file giọng đọc (file 0)

@@ -4,11 +4,11 @@ Use this reference when the story feels vo hon, emotionally flat, overexplained,
 
 ## Core Emotional Chain
 
-Look for:
+Use this as one possible causal trace, not a required five-beat surface pattern:
 
 > Event -> personal meaning -> bodily/behavioral response -> choice -> consequence.
 
-An event alone is not emotion. A label alone is not emotion. The listener needs to understand what the event means to this character and how it changes what they do next.
+An event alone may not carry enough emotion, but neither must every event receive a body beat, symbolic object, choice, and consequence on the page. The listener needs enough context to understand personal meaning over the relevant span. Direct emotional naming is valid when it is the most exact and economical choice.
 
 Test both local and distant antecedents:
 
@@ -28,15 +28,7 @@ Ask:
 - What choice becomes harder afterward?
 - What can this reaction reveal that narration has not already explained?
 
-Generic reaction:
-
-> Cô rất đau khổ vì bị phản bội.
-
-Character-specific reaction:
-
-> Cô gấp chiếc áo cưới lại, đường kim trên tay run đến mức mũi chỉ cuối cùng lệch hẳn ra ngoài.
-
-The second version ties betrayal to a concrete object and behavior.
+Do not assume a concrete object or hand movement makes a reaction character-specific. Test whether the detail is required by this place, task, history, or consequence. If it can be replaced by any familiar household prop without changing the scene, it is decorative choreography, not human texture.
 
 ## Emotional Residue
 
@@ -52,8 +44,7 @@ Residue may appear as:
 - inability to perform a familiar routine;
 - changed strategy;
 - misplaced anger;
-- a habit repeated without the person it belonged to;
-- a small object gaining new meaning.
+- a familiar task performed differently for a reason established in the story;
 
 Flag instant recovery only when the manuscript has not justified it through character, genre, compression, or scene purpose.
 
@@ -77,16 +68,7 @@ Weak telling:
 - tells emotion without personal trigger;
 - replaces the decisive scene.
 
-Problem:
-
-> "Đừng đợi anh nữa," Nam nói. Câu nói ấy khiến cô rất đau khổ bởi cô hiểu rằng tình yêu của họ đã kết thúc.
-
-Stronger:
-
-> "Đừng đợi anh nữa."
-> Chiếc chìa khóa trong tay cô rơi xuống nền gạch. Lần này, Nam không cúi xuống nhặt giúp.
-
-Why: the action carries the emotional conclusion and changed relationship.
+When narration overexplains a line, first try deleting the explanation and trusting the dialogue. Add a reaction only if the scene needs it, and derive that reaction from current circumstance rather than an interchangeable dropped, folded, gripped, straightened, or put-away object.
 
 ## Melodrama
 
@@ -111,7 +93,7 @@ Weak melodrama has:
 - forgiveness or revenge without cost;
 - suffering described in labels rather than scenes.
 
-Repair direction: keep the heightened emotion, but attach it to a specific choice, public humiliation, lost object, broken promise, or changed form of address.
+Repair direction: keep the heightened emotion, but attach it to a specific cause, choice, public consequence, broken promise, or relationship change already grounded in the story.
 
 ## Catharsis
 
@@ -149,13 +131,16 @@ Symptoms:
 - trauma disappears when plot needs competence;
 - relationships change without an intermediate emotional step;
 - theme explained instead of experienced.
+- strangers possess instant certainty about one another's hidden defenses;
+- stock domestic props and tiny hand movements repeatedly perform emotion regardless of scene;
+- every emotional scene ends with a realization, symbolic gesture, or polished thesis.
 
 Evidence frame:
 
 - **Evidence:** exact phrase or passage.
 - **Symptom:** generic label, overexplanation, missing residue, interchangeable reaction, etc.
 - **Missing layer:** personal meaning, sensory anchor, behavior, choice, consequence.
-- **Repair direction:** add one character-specific behavior or consequence; cut the explanatory sentence; connect reaction to prior wound.
+- **Repair direction:** restore the missing cause or consequence; cut the explanatory sentence; use a scene-required behavior when one exists; or name the emotion directly when that is more exact than staged symbolism.
 
 ## Emotional Arc Map
 
@@ -187,11 +172,7 @@ Real-feeling characters often experience mixed states:
 
 Contradiction is valuable when grounded in motive. It becomes incoherent only when the story gives no reason.
 
-Example:
-
-> Cô mỉm cười khi nghe tin hắn thất bại, nhưng tối đó vẫn nấu đúng món hắn từng thích.
-
-This can be emotionally rich if the story has prepared love, habit, resentment, and loss.
+Contradiction is not proved by pairing a smile with a domestic ritual. It must alter perception, conduct, or choice in a way prepared by the character's history.
 
 ## Reporting Emotional Issues
 
@@ -204,12 +185,4 @@ Prioritize:
 5. relationship change without visible emotional step;
 6. flat character voice across multiple people.
 
-For repair, recommend the smallest useful addition:
-
-- one concrete object;
-- one changed habit;
-- one delayed answer;
-- one form-of-address shift;
-- one decision with cost;
-- one sentence of specific inner meaning;
-- one removed explanatory sentence after the image.
+For repair, recommend the smallest useful change. This may be restoring a cause, allowing residue, changing a decision, correcting an address shift, adding one sentence of specific inner meaning, or deleting an explanatory line. Addition is not automatically better than restraint.

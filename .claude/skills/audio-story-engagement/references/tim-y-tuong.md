@@ -4,6 +4,8 @@ This reference turns "look for trends" into a process with clear inputs, evidenc
 
 > **A trend is a signal, not a complete idea.** A rising hashtag does not prove listeners want a long story about it; a comment-heavy post does not represent the whole audience.
 
+**Scope note.** This reference researches trends as *story material* — topics, pains, motifs, angles. Researching trends as *language* — current slang, teencode, meme phrasing, `nói lái` — belongs to `audio-story-youth-trend-language`, which is manual-only and runs only when the user explicitly asks for it. Finding a hot topic here never authorizes writing in trend slang.
+
 ## 1. When To Research
 
 Use web research when the user:
@@ -268,7 +270,7 @@ All three use "twins" but differ in central role, mechanism, choice, and reward.
 - Say clearly that no current trend data was accessed; do not pretend to have "caught trends."
 - Use genre knowledge to create diverse seeds, score them, and pick 3-5 ideas through the same process.
 - Label the output: *"Các ý dưới đây dựa trên mô-típ bền và phán đoán sáng tác, chưa được kiểm chứng bằng xu hướng hiện tại."*
-- Keep the approval gate unless the user authorized choosing.
+- Keep the approval gate unless the user gave an explicit no-approval instruction (*"không cần hỏi"*, *"cứ viết luôn"*); a detailed brief or *"bạn tự tìm ý tưởng"* is not authorization.
 
 ## 12. Verification Sources
 
