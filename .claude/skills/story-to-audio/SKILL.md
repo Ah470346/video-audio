@@ -24,8 +24,9 @@ unless the user already named one:
 
 - `adam`
 - `ngoc huyen`
+- `thuy nguyen`
 
-Map `ngoc huyen`, `ngoc_huyen`, or `ngoc huyen v2` to `--voice ngoc_huyen`. Map `adam` to `--voice adam`.
+Map `ngoc huyen`, `ngoc_huyen`, or `ngoc huyen v2` to `--voice ngoc_huyen`. Map `adam` to `--voice adam`. Map `thuy nguyen`, `thúy nguyễn`, `thuy_nguyen`, or `thúy_nguyễn` to `--voice thuy_nguyen`.
 
 ## Pipeline Selection
 
@@ -55,6 +56,7 @@ the user prioritizes voice consistency over expressive style control.
 
 - `ngoc_huyen`: `NGOC HUYEN V2`, reference `voice_samples/ngoc_huyen_moi_ref_clone_tu_nhien.wav`.
 - `adam`: `ADAM`, reference `voice_samples/adam_dominant_firm_ref_10p795_18p857.wav`.
+- `thuy_nguyen`: `THUY NGUYEN`, reference `voice_samples/download_no_bgm_full_sentence_123p73_129p82_voxcpm.wav`.
 
 ## Prepare And Push
 
@@ -79,7 +81,7 @@ python3 tools/prepare_kaggle_voxcpm_job.py \
   --title "VoxCPM VN Audio Full Render" \
   --job-dir kaggle_jobs/<story_slug>_<timestamp> \
   --input <input_md> \
-  --voice <adam-or-ngoc_huyen> \
+  --voice <adam-or-ngoc_huyen-or-thuy_nguyen> \
   --model openbmb/VoxCPM2 \
   --clone-mode ultimate \
   --cfg-value 1.5 \
@@ -104,7 +106,7 @@ For short expressive renders, use:
 python3 tools/prepare_kaggle_voxcpm_short_job.py \
   --job-dir kaggle_jobs/<story_slug>_<timestamp> \
   --input <input_md> \
-  --voice <adam-or-ngoc_huyen> \
+  --voice <adam-or-ngoc_huyen-or-thuy_nguyen> \
   --model openbmb/VoxCPM2 \
   --clone-mode reference \
   --control "expressive Vietnamese dramatic short-form narration, emotional emphasis, natural pauses, clear articulation" \

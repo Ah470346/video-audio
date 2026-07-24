@@ -39,6 +39,10 @@ VOICE_PRESETS = {
         "voice_name": "ADAM",
         "ref_audio": "voice_samples/adam_dominant_firm_ref_10p795_18p857.wav",
     },
+    "thuy_nguyen": {
+        "voice_name": "THUY NGUYEN",
+        "ref_audio": "voice_samples/download_no_bgm_full_sentence_123p73_129p82_voxcpm.wav",
+    },
 }
 COPY_FILES = [
     "convert_script_to_audio_voxcpm.py",
