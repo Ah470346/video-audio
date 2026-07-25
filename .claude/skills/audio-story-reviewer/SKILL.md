@@ -48,6 +48,24 @@ It checks:
 
 Do not demand more dialogue by default. Narrator-led audio often works best when routine exchanges are summarized and only irreversible, high-pressure, or character-revealing turns are dramatized.
 
+## Coordination With `audio_story_clarity_check`
+
+The reviewer and the clarity-check subagent may flag some of the same sentences, but they have different jobs:
+
+| Component | Trigger and timing | Scope | Output authority |
+|---|---|---|---|
+| `audio_story_clarity_check` | Mandatory only inside the story-writing/revision pipeline: every 500-1,000 drafted words and once on the assembled draft before final polish | Narrow sentence-shape check for over-abstraction, pseudo-philosophy, hidden agency, idea-stuffing, and first-hearing clarity | Read-only English finding blocks and proposed rewrites; no file edits, global diagnosis, severity, score, or readiness verdict |
+| `audio-story-reviewer` | Manual-only when the user explicitly requests review/audit/score/diagnosis | Whole-manuscript editorial diagnosis, including structure, causality, character, emotion, dialogue, language, audio, and render readiness | Vietnamese evidence-based findings, priority, score, and readiness verdict; no manuscript edits unless explicitly requested |
+
+Apply these coordination rules:
+
+1. **Do not auto-spawn the clarity-check subagent during a review-only task.** Its mandatory cadence belongs to drafting and full-manuscript revision, not independent editorial review.
+2. The reviewer must still catch obstructive over-abstraction when it appears. This is intentional coverage, not duplicate workflow: report only the evidence needed for prioritization and use the reviewer's Vietnamese finding format.
+3. If the user explicitly asks to run both, treat the clarity report as one diagnostic input. Verify every flag in scene context; do not paste its English blocks into the final review. The reviewer alone assigns severity, scoring impact, and recording/render readiness.
+4. Do not apply the subagent's `REWRITE` suggestions to manuscript files in a review-only task. An illustrative revision remains a recommendation, not an edit.
+5. If the user asks for a full manuscript rewrite or revision, finish the reviewer diagnosis first, then hand content editing to the normal story-writing pipeline. That pipeline owns the 500-1,000-word clarity cadence, the full-draft clarity pass, `audio-story-final-polish`, and any file changes. Up to three short illustrative revisions in a review do not by themselves trigger that pipeline.
+6. After any full revision, a new reviewer run is optional and still requires an explicit user request; it is never auto-chained after final polish.
+
 ## Core Principles
 
 1. Review for the ear. Audio listeners cannot scan backward, inspect quotation marks, or visually identify speakers.
@@ -105,6 +123,7 @@ Start with this `SKILL.md`. Load reference files only when needed by the manuscr
 
 For any complaint about stiff, mechanical, AI-like, generic, over-literary, or emotionally false prose, also read [../audio-story-engagement/references/van-xuoi-chuyen-nghiep.md](../audio-story-engagement/references/van-xuoi-chuyen-nghiep.md) and use its earned-insight, dialogue-contact, object-presence, example-immunity, and invisible-craft tests.
 
+- Read [../audio-story-engagement/references/cau-van-truu-tuong.md](../audio-story-engagement/references/cau-van-truu-tuong.md) when over-abstraction, pseudo-philosophy, hidden agency, or hard-to-hear reflective sentences are central. In a review-only task, use its defect definition and two listening tests manually; its section on mandatory subagent cadence applies only when the task becomes story drafting or full manuscript revision.
 - Read [references/grammar.md](references/grammar.md) for grammar, punctuation, wording, semantic-domain/category mismatch, sentence flow, AI-like cadence, and listenability at the line level.
 - Read [references/narrator.md](references/narrator.md) for story contract, POV, narrator voice, scene coherence, focalization, and story-bible technique.
 - Read [references/causality.md](references/causality.md) for timeline, knowledge flow, object continuity, setup-payoff, foreshadowing, logic, plausibility, and continuity.
@@ -129,7 +148,7 @@ Perform these passes in order. For quick reviews, preserve the order but compres
 | Pass | Core action | Reference |
 |---:|---|---|
 | 1 | Establish genre contract, protagonist goal, obstacle, stakes, main dramatic question, POV, tense, tone, and promised listener experience. | `narrator.md`, `genre.md` |
-| 2 | Audit grammar, wording, punctuation, natural collocation, semantic-domain/category fit, sentence length, pronoun clarity, repeated cadence, VoxCPM/TTS pause structure, and TTS-unfriendly text. | `grammar.md`, `audio.md` |
+| 2 | Audit grammar, wording, punctuation, natural collocation, semantic-domain/category fit, sentence length, pronoun clarity, repeated cadence, VoxCPM/TTS pause structure, and TTS-unfriendly text. When a sentence reaches for depth or summary, use the literal-translation and dishwashing tests to distinguish meaningful compression from obstructive abstraction. | `grammar.md`, `audio.md`, `cau-van-truu-tuong.md` when central |
 | 3 | Segment scenes by entry condition, change, bridge, and function. Record goal, obstacle, or turn only when present; do not fault a scene for lacking a miniature dramatic machine if it earns its place through absorption, atmosphere, accumulating pressure, relationship texture, or precise orientation. Test boundary stacks across protagonist, time, space, causality, and intention. | `narrator.md`, `pacing.md` |
 | 4 | Check POV, narrator voice, focalization, tense, knowledge boundaries, accidental mind-hopping, and the epistemic ladder `observation -> inference -> repeated pattern -> verified truth`. Flag certainty or intimacy that the relationship and evidence have not earned. | `narrator.md` |
 | 5 | Build the relationship/xung ho matrix and test address shifts against age, rank, intimacy, public/private context, and triggers. | `dialogue.md` |
@@ -282,6 +301,8 @@ Group findings under:
 
 Never invent a quotation or location.
 
+When a clarity-check report is also available, merge only context-verified findings into the relevant groups above. Do not add a second exhaustive clarity-report appendix unless the user explicitly requests sentence-by-sentence output.
+
 ### 6. Ma trận xưng hô và quan hệ
 
 | Direction/context | Self-reference | Addressee term | Third-person reference | Narrator term | Social effect | Recommended rule/trigger |
@@ -333,4 +354,4 @@ State whether the story fulfills its genre promise, the highest-return change, r
 
 ## Final Discipline Checklist
 
-Before finalizing, confirm that the review is complete or clearly labeled partial; quotes are exact; global claims are supported by evidence; structural issues are prioritized before line polish; narrator-led compression is respected; flatness symptoms are evidence-based; conspicuous metaphors and high-impact exchanges have passed the human semantic-fit gate; observation/inference/pattern/truth are not collapsed; stock choreography and skill-example residue were actively checked; visible craft machinery was not mistaken for quality; recording-readiness and VoxCPM/TTS render-readiness verdicts are clear.
+Before finalizing, confirm that the review is complete or clearly labeled partial; quotes are exact; global claims are supported by evidence; structural issues are prioritized before line polish; narrator-led compression is respected; flatness symptoms are evidence-based; conspicuous metaphors and high-impact exchanges have passed the human semantic-fit gate; observation/inference/pattern/truth are not collapsed; stock choreography and skill-example residue were actively checked; visible craft machinery was not mistaken for quality; recording-readiness and VoxCPM/TTS render-readiness verdicts are clear; the clarity-check subagent was not auto-invoked for review-only work; any supplied clarity findings were context-verified and mapped into the reviewer format; and any requested full rewrite was handed to the normal drafting/revision pipeline rather than silently performed as part of diagnosis.

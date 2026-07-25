@@ -171,6 +171,17 @@ class VoxCPMStoryCoreTests(unittest.TestCase):
 
         self.assertEqual(args.max_verify_retries, 3)
 
+    def test_resolve_ref_text_uses_known_thuy_nguyen_transcript(self):
+        args = SimpleNamespace(ref_text=None, voice_name="thuy nguyen")
+
+        resolved = renderer.resolve_ref_text(args)
+
+        self.assertEqual(
+            resolved,
+            "Không biết có phải như mọi người nói, gái một con trông mòn con mắt "
+            "không, mà mình thấy khi đẻ con, ai cũng khen mình ngon đẹp hẳn ra.",
+        )
+
     def test_ctc_probe_flags_out_of_text_tail_audio(self):
         """Chunk 0038's real failure: junk after the sentence that full-text
         ASR ignores because it never becomes a word."""

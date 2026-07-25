@@ -61,6 +61,18 @@ The texture pass may conclude `no added material needed`. Its purpose is judgmen
 
 Image fields and professional vocabulary are optional resources, not obligations. They may shape what one POV notices, but they may not turn people or relationships into objects by default, spread one character's vocabulary into every speaker, or create paired aphorisms for their own sake. Use the mandatory gate in [ngon-ngu-con-nguoi.md](ngon-ngu-con-nguoi.md) whenever a conspicuous metaphor or high-impact dialogue cluster uses an object, profession, system, or procedural source domain.
 
+### Drafting Diagnostic Subagent — `audio-story-clarity-check`
+
+The clarity-check subagent is not a fifth layer, a genre, a craft pass, or an editor with independent authority. It is a narrow read-only detector for sentence shapes that hide the concrete proposition or basic first-hearing orientation.
+
+- Run it at the cadence defined by the base skill and [cau-van-truu-tuong.md](cau-van-truu-tuong.md).
+- Treat every finding and `REWRITE` as advisory evidence. The main writing agent validates it against full context and owns the final text.
+- Apply every confirmed clarity repair. Reject false positives rather than flattening direct emotional naming, efficient telling, deliberate genre ambiguity, fair clue withholding, subtext, character-owned metaphor, researched slang/wordplay, or emotionally open resonance.
+- It may not grade or repair plot causality, motive, genre payoff, evidence logic, emotional arc, literary quality, trend freshness, or TTS pronunciation. Route those issues to their owning skill.
+- Its literal-translation test asks whether the concrete proposition is recoverable, not whether the sentence has only one motive, symbol, suspect, emotional reading, or future explanation.
+
+When a clarity suggestion conflicts with safety, approved intent, established fact, main genre, premise law, character voice, fair withholding, or the shared priority order, the higher authority wins. Record the rejection internally; do not combine incompatible rewrites.
+
 ### Opt-In Lexical Sub-Pass — `audio-story-youth-trend-language`
 
 Manual-only. It runs **only when the user explicitly asks for teencode, trend words, slang, meme phrasing, `nói lái`, or Gen Z speech in a story**. Finishing, polishing, or reviewing a story never activates it.
@@ -104,6 +116,7 @@ When two same-level instructions conflict, choose the one that best serves **app
 5. **Map:** base choice-consequence chain + genre scene engine + premise law/knowledge ledger + semantic-clarity ledger for stable entity/mechanism names, first-use interaction methods, and the explicit premise behind consequential connectors.
 6. **Write:** prioritize story, not visible technique labels. Treat all skill examples as contaminated teaching material; generate names, occupations, objects, gestures, sensory anchors, and sentence shapes from the current story rather than the example bank. Run [van-xuoi-chuyen-nghiep.md](van-xuoi-chuyen-nghiep.md).
    - **Literary texture (all genres):** once the draft reads clearly for action and causality, run `audio-story-literary-texture` to add POV imagery, motif, and rhythm only where they change meaning, staying inside the firm-modern-prose default. Run it before final polish, never before a causally clear draft exists.
+   - **Clarity diagnostic (all genres):** after each 500-1000-word drafting segment, run the clarity-check subagent and apply only context-confirmed repairs before continuing. After all drafting and literary-texture changes, run it once on the full current draft; repair confirmed defects before final polish.
 7. **Self-check:** run base, main genre, and premise checks. For secondary genres, check only promises actually used.
 8. **Final polish:** after a complete story draft exists, run full `audio-story-final-polish`, including the VoxCPM/TTS pause and spoken-token pass. If story content changes afterward, rerun it. For premise contracts, outlines, or opening options, use relevant checks only; do not claim the whole story is final-polished.
 9. **Save/respond:** follow base output contract and user request. Hybrid stories save under the main genre folder; premises do not create folders.
@@ -191,6 +204,7 @@ A conflict exists only when two rules require incompatible behavior or one skill
 | Trend slang uses accusation labels (`trà xanh`, `tiểu tam`, `red flag`) | Base safety wording rules win. The label is a character's judgment, not narrator-confirmed fact, unless the story proved it |
 | Trend skill implies a modern influencer setting; base defaults to Chinese-style names and a modern Chinese setting | Base naming/setting defaults hold unless the user changes them. Trend language adapts to the world; the world does not adapt to the slang |
 | Trend phrase lands on a death, confession, or final emotional beat | Genre payoff wins. Move the joke earlier or cut it, unless the character is visibly using humor as defense and the weight survives |
+| Clarity subagent proposes a rewrite that resolves intentional ambiguity, removes direct emotional naming, normalizes character voice/slang, changes clue scope, or alters approved meaning | Reject the finding as outside scope. The subagent detects literal sentence clarity only; base/genre/premise/texture/trend/final-polish authority and the approved promise control the text. |
 
 ## 8. Combination Examples
 
@@ -233,6 +247,7 @@ A conflict exists only when two rules require incompatible behavior or one skill
 - [ ] One-listen semantic clarity is preserved: every pointer has one antecedent, every connector has its prerequisite, first-use mechanism actions are audible, and no basic identity/action/geography/causality must be guessed?
 - [ ] Human semantic fit is preserved: concrete wording uses natural Vietnamese collocation; marked metaphors have exact mappings and character ownership; no profession/object field has spread across speakers; no exchange exists mainly as quotable aphorism and comeback?
 - [ ] Professional prose judgment is preserved: insight is earned; no skill-example object/action/sentence shape leaked into the draft; technique does not show as a checklist; quiet scenes are valued by function rather than forced into visible turns?
+- [ ] The clarity-check subagent ran at the required segment/full-draft cadence; every finding was context-validated; confirmed defects were repaired; false positives were rejected without flattening ambiguity, direct emotion, voice, clues, slang, or texture?
 - [ ] When instructions conflicted, the priority table decided instead of combining incompatible demands?
 - [ ] Safety and causality were not loosened by genre/premise?
 - [ ] The base character-life gate was applied during contract lock and drafting, and `audio-story-literary-texture` (if used) ran after a causally clear draft and before final polish?

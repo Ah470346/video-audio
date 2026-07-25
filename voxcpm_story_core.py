@@ -112,6 +112,10 @@ KNOWN_VOICE_REFTEXT = {
         "hương hoa sữa thoảng trong không khí. Cô mỉm cười như vừa nhớ lại một "
         "câu chuyện rất xa."
     ),
+    "THUY NGUYEN": (
+        "Không biết có phải như mọi người nói, gái một con trông mòn con mắt "
+        "không, mà mình thấy khi đẻ con, ai cũng khen mình ngon đẹp hẳn ra."
+    ),
     "giọng-audio": (
         "Anh sẽ cưới ai? Không ai cả. Anh ngáp một cái, sống một mình. Tại sao? "
         "Một mình vẫn ổn mà, biết đặt đồ ăn, biết dùng máy giặt. Tôi nhìn anh, "
