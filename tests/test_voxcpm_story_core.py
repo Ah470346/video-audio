@@ -166,10 +166,10 @@ class VoxCPMStoryCoreTests(unittest.TestCase):
 
         self.assertEqual(ladder[0]["cfg_value"], 2.0)
 
-    def test_renderer_uses_three_verify_retries_by_default(self):
+    def test_renderer_uses_two_verify_retries_by_default(self):
         args = renderer.build_parser().parse_args(["--input", "story.md"])
 
-        self.assertEqual(args.max_verify_retries, 3)
+        self.assertEqual(args.max_verify_retries, 2)
 
     def test_resolve_ref_text_uses_known_thuy_nguyen_transcript(self):
         args = SimpleNamespace(ref_text=None, voice_name="thuy nguyen")
@@ -340,6 +340,7 @@ class VoxCPMShortRendererTests(unittest.TestCase):
         self.assertEqual(args.max_chunk_words, 14)
         self.assertEqual(args.cfg_value, 2.0)
         self.assertEqual(args.inference_timesteps, 16)
+        self.assertEqual(args.max_verify_retries, 2)
         self.assertIn("expressive Vietnamese", short_args.control)
 
     def test_style_directive_is_metadata_not_spoken_text(self):
@@ -379,7 +380,7 @@ class VoxCPMPrepareJobTests(unittest.TestCase):
             ],
         )
 
-    def test_prepare_uses_three_verify_retries_by_default(self):
+    def test_prepare_uses_two_verify_retries_by_default(self):
         args = prepare.build_parser().parse_args(
             [
                 "--kernel-id", "user/kernel",
@@ -389,7 +390,7 @@ class VoxCPMPrepareJobTests(unittest.TestCase):
             ]
         )
 
-        self.assertEqual(args.max_verify_retries, 3)
+        self.assertEqual(args.max_verify_retries, 2)
 
     def test_prepare_never_installs_whisperx(self):
         """whisperx pins faster-whisper==1.0.0 and ctranslate2==4.4.0, which
@@ -439,6 +440,7 @@ class VoxCPMShortPrepareJobTests(unittest.TestCase):
         self.assertEqual(args.clone_mode, "reference")
         self.assertEqual(args.max_chunk_chars, 80)
         self.assertEqual(args.cfg_value, 2.0)
+        self.assertEqual(args.max_verify_retries, 2)
         self.assertIn("expressive Vietnamese", args.control)
         self.assertIn(prepare_short.base.DEFAULT_MODEL_DATASET_SOURCE, args.dataset_source)
 

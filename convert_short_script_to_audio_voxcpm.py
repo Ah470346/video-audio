@@ -37,7 +37,7 @@ SHORT_EXPRESSIVE_DEFAULT_ARGS = [
     "--stitch_scene_pause_ms", "900",
     "--stitch_expressive_pause_ms", "620",
     "--verify_speaker_severity", "warn",
-    "--max_verify_retries", "3",
+    "--max_verify_retries", "2",
 ]
 
 STYLE_DIRECTIVE_RE = re.compile(r"^\s*@style(?:\s*:\s*|\s+)?(.*?)\s*$", re.IGNORECASE)

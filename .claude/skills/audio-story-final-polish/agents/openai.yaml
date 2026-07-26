@@ -1,4 +1,0 @@
-interface:
-  display_name: "Audio Story Final Polish"
-  short_description: "Final polish for Vietnamese audio stories, including TTS readiness"
-  default_prompt: "Use $audio-story-final-polish to run the final editorial and VoxCPM/TTS readiness pass on this Vietnamese audio-story manuscript before completion."

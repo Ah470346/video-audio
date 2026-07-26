@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepare a Kaggle VoxCPM2 job for short expressive scripts."""
+"""Prepare a gate-validated Kaggle VoxCPM2 job for short expressive scripts."""
 
 from __future__ import annotations
 
@@ -35,6 +35,7 @@ def build_parser():
     parser.add_argument("--title", default=DEFAULT_TITLE)
     parser.add_argument("--job-dir", required=True, help="Folder to push with kaggle kernels push")
     parser.add_argument("--input", required=True, help="Short script Markdown path")
+    base.add_story_gate_args(parser)
     parser.add_argument("--voice", choices=sorted(base.VOICE_PRESETS), default="adam")
     parser.add_argument("--voice-name", default=None, help="Override the clone profile label")
     parser.add_argument("--ref-audio", default=None, help="Override the reference WAV")
@@ -64,7 +65,7 @@ def build_parser():
     parser.add_argument("--verify-speaker-severity", choices=("hard", "warn", "off"), default="warn")
     parser.add_argument("--verify-ctc-probe", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--verify-ctc-model", default=base.DEFAULT_CTC_MODEL)
-    parser.add_argument("--max-verify-retries", type=int, default=3)
+    parser.add_argument("--max-verify-retries", type=int, default=2)
     parser.add_argument("--verify-subsplit", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--master", action=argparse.BooleanOptionalAction, default=True)
 
@@ -147,6 +148,12 @@ def build_info_payload(job_dir, ref_audio, pip_packages, bundle_sha=None):
 
 def main():
     args = build_parser().parse_args()
+    story_gate, input_path, story_manifest_path = base.validate_story_for_render(
+        args.input,
+        manifest_path=args.manifest,
+        allow_user_bypass=args.allow_user_bypass,
+        bypass_reason=args.bypass_reason,
+    )
     if args.control and args.clone_mode == "ultimate":
         raise SystemExit(
             "--control cannot be used with --clone-mode ultimate; short expressive "
@@ -162,16 +169,21 @@ def main():
         dst.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(ROOT / rel_path, dst)
 
-    input_name = Path(args.input).name
+    input_name = input_path.name
     ref_name = Path(args.ref_audio).name
     (job_dir / "job_inputs").mkdir(parents=True, exist_ok=True)
-    shutil.copy2(Path(args.input).resolve(), job_dir / "job_inputs" / input_name)
+    bundled_story = job_dir / "job_inputs" / input_name
+    shutil.copy2(input_path, bundled_story)
+    if base.sha256_file(bundled_story) != story_gate["story_sha256"]:
+        raise SystemExit("story changed after gate validation; refusing to prepare a stale bundle")
+    if story_manifest_path.is_file():
+        bundled_manifest = job_dir / "job_inputs" / story_manifest_path.name
+        shutil.copy2(story_manifest_path, bundled_manifest)
+        if base.sha256_file(bundled_manifest) != story_gate["manifest_sha256"]:
+            raise SystemExit("story gate manifest changed after validation; refusing to prepare a stale bundle")
     shutil.copy2(Path(args.ref_audio).resolve(), job_dir / "job_inputs" / ref_name)
     input_rel = f"job_inputs/{input_name}"
     ref_rel = f"job_inputs/{ref_name}"
-    env_path = ROOT / ".env"
-    if env_path.is_file():
-        shutil.copy2(env_path, job_dir / ".env")
 
     pip_packages = list(base.DEFAULT_PIP_PACKAGES) + list(args.pip_package)
     pip_packages_no_deps = list(base.DEFAULT_PIP_PACKAGES_NO_DEPS)
@@ -194,6 +206,7 @@ def main():
         "zip_paths": zip_paths,
         "profile_gpu": args.profile_gpu,
         "reference_audio_qc": reference_qc,
+        "story_gate": story_gate,
     }
     base.write_json(job_dir / "render_job.json", manifest)
     base.write_json(job_dir / "build_info.json", build_info_payload(job_dir, args.ref_audio, all_pip_packages))
@@ -206,7 +219,7 @@ def main():
     )
     base.write_json(metadata_path, metadata)
 
-    bundle_paths = [*COPY_FILES, "job_inputs", "render_job.json", "build_info.json", ".env"]
+    bundle_paths = [*COPY_FILES, "job_inputs", "render_job.json", "build_info.json"]
     bundle_bytes = base.build_bundle_bytes(job_dir, bundle_paths)
     bundle_sha = base.write_embedded_kaggle_entry(job_dir, bundle_bytes, code_file=metadata["code_file"])
     base.write_json(
@@ -217,6 +230,7 @@ def main():
     print(f"Prepared short expressive Kaggle job folder: {job_dir}")
     print(f"Kernel id      : {args.kernel_id}")
     print(f"Voice          : {args.voice_name} ({args.clone_mode} cloning)")
+    print(f"Story gate     : {story_gate['status']} ({story_gate['story_sha256']})")
     print(f"Control        : {args.control}")
     print(
         f"Reference      : {reference_qc['duration_sec']}s @ {reference_qc['sample_rate']} Hz, "

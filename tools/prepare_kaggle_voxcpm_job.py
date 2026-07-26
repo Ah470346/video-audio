@@ -3,8 +3,9 @@
 
 The job attaches a Kaggle Dataset cache for VoxCPM2 plus QC model snapshots
 when available, while keeping internet enabled as a fallback for Python
-packages or a missing cache. The story Markdown and selected reference WAV ride
-inside the embedded bundle.
+packages or a missing cache. A verified (or explicitly user-bypassed) story,
+its available gate sidecar, and the selected reference WAV ride inside the
+embedded bundle. Repository .env files are never embedded.
 """
 
 from __future__ import annotations
@@ -85,6 +86,7 @@ def build_parser():
     parser.add_argument("--title", required=True, help="Kaggle kernel title")
     parser.add_argument("--job-dir", required=True, help="Folder to push with kaggle kernels push")
     parser.add_argument("--input", required=True, help="Story markdown path")
+    add_story_gate_args(parser)
     parser.add_argument("--voice", choices=sorted(VOICE_PRESETS), default=DEFAULT_VOICE_KEY)
     parser.add_argument("--voice-name", default=None, help="Override the clone profile label")
     parser.add_argument("--ref-audio", default=None, help="Override the reference WAV")
@@ -125,7 +127,7 @@ def build_parser():
     parser.add_argument("--verify-speaker-severity", choices=("hard", "warn", "off"), default="warn")
     parser.add_argument("--verify-ctc-probe", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--verify-ctc-model", default=DEFAULT_CTC_MODEL)
-    parser.add_argument("--max-verify-retries", type=int, default=3)
+    parser.add_argument("--max-verify-retries", type=int, default=2)
     parser.add_argument("--verify-subsplit", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--master", action=argparse.BooleanOptionalAction, default=True)
 
@@ -145,6 +147,87 @@ def build_parser():
     parser.add_argument("--dataset-source", action="append", default=[DEFAULT_MODEL_DATASET_SOURCE])
     parser.add_argument("--pip-package", action="append", default=[])
     return parser
+
+
+def add_story_gate_args(parser):
+    parser.add_argument(
+        "--manifest",
+        default=None,
+        help="Protocol-v2 story gate manifest. Defaults to the input path with .gate.json suffix.",
+    )
+    parser.add_argument(
+        "--allow-user-bypass",
+        action="store_true",
+        help="Proceed only for an explicit user-requested manuscript-gate bypass.",
+    )
+    parser.add_argument(
+        "--bypass-reason",
+        default=None,
+        help="Required short reason when --allow-user-bypass is used.",
+    )
+
+
+def validate_story_for_render(input_path, manifest_path=None, allow_user_bypass=False, bypass_reason=None):
+    story = Path(input_path).expanduser().resolve()
+    manifest = (
+        Path(manifest_path).expanduser().resolve()
+        if manifest_path
+        else story.with_suffix(".gate.json")
+    )
+    if allow_user_bypass and not (bypass_reason or "").strip():
+        raise SystemExit("--bypass-reason is required with --allow-user-bypass")
+
+    command = [
+        sys.executable,
+        str(ROOT / "agent-tools" / "agent-workflow" / "validate_story_gate.py"),
+        "--story",
+        str(story),
+        "--manifest",
+        str(manifest),
+        "--mode",
+        "final",
+    ]
+    if allow_user_bypass:
+        command.extend(["--allow-user-bypass", "--bypass-reason", bypass_reason.strip()])
+
+    result = subprocess.run(command, text=True, capture_output=True)
+    validator_output = "\n".join(
+        part.strip() for part in (result.stdout, result.stderr) if part.strip()
+    )
+    if validator_output:
+        print(validator_output)
+    if result.returncode != 0:
+        raise SystemExit(result.returncode)
+
+    if "GATE_VALIDATION_OK" in result.stdout:
+        status = "verified"
+    elif "GATE_VALIDATION_BYPASSED" in result.stdout:
+        status = "user-bypassed"
+    else:
+        raise SystemExit("story gate validator returned success without a recognized status")
+
+    manifest_data = {}
+    if manifest.is_file():
+        try:
+            loaded = json.loads(manifest.read_text(encoding="utf-8"))
+            if isinstance(loaded, dict):
+                manifest_data = loaded
+        except (OSError, json.JSONDecodeError):
+            if status == "verified":
+                raise SystemExit("verified story gate manifest became unreadable after validation")
+
+    evidence = {
+        "schema_version": 1,
+        "status": status,
+        "validator_mode": "final",
+        "story_sha256": sha256_file(story),
+        "manifest_name": manifest.name,
+        "manifest_sha256": sha256_file(manifest) if manifest.is_file() else None,
+        "protocol_version": manifest_data.get("protocol_version"),
+        "current_revision": manifest_data.get("current_revision"),
+        "bypass_reason": bypass_reason.strip() if status == "user-bypassed" else None,
+    }
+    return evidence, story, manifest
 
 
 def resolve_voice_args(args):
@@ -384,6 +467,12 @@ def render_args(args, input_rel, ref_rel):
 
 def main():
     args = build_parser().parse_args()
+    story_gate, input_path, story_manifest_path = validate_story_for_render(
+        args.input,
+        manifest_path=args.manifest,
+        allow_user_bypass=args.allow_user_bypass,
+        bypass_reason=args.bypass_reason,
+    )
     resolve_voice_args(args)
     reference_qc = check_reference_audio(args.ref_audio)
 
@@ -394,16 +483,21 @@ def main():
         dst.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(ROOT / rel_path, dst)
 
-    input_name = Path(args.input).name
+    input_name = input_path.name
     ref_name = Path(args.ref_audio).name
     (job_dir / "job_inputs").mkdir(parents=True, exist_ok=True)
-    shutil.copy2(Path(args.input).resolve(), job_dir / "job_inputs" / input_name)
+    bundled_story = job_dir / "job_inputs" / input_name
+    shutil.copy2(input_path, bundled_story)
+    if sha256_file(bundled_story) != story_gate["story_sha256"]:
+        raise SystemExit("story changed after gate validation; refusing to prepare a stale bundle")
+    if story_manifest_path.is_file():
+        bundled_manifest = job_dir / "job_inputs" / story_manifest_path.name
+        shutil.copy2(story_manifest_path, bundled_manifest)
+        if sha256_file(bundled_manifest) != story_gate["manifest_sha256"]:
+            raise SystemExit("story gate manifest changed after validation; refusing to prepare a stale bundle")
     shutil.copy2(Path(args.ref_audio).resolve(), job_dir / "job_inputs" / ref_name)
     input_rel = f"job_inputs/{input_name}"
     ref_rel = f"job_inputs/{ref_name}"
-    env_path = ROOT / ".env"
-    if env_path.is_file():
-        shutil.copy2(env_path, job_dir / ".env")
 
     pip_packages = list(DEFAULT_PIP_PACKAGES) + list(args.pip_package)
     pip_packages_no_deps = list(DEFAULT_PIP_PACKAGES_NO_DEPS)
@@ -426,6 +520,7 @@ def main():
         "zip_paths": zip_paths,
         "profile_gpu": args.profile_gpu,
         "reference_audio_qc": reference_qc,
+        "story_gate": story_gate,
     }
     write_json(job_dir / "render_job.json", manifest)
     write_json(
@@ -438,7 +533,7 @@ def main():
     metadata = preserve_existing_kernel_identity(metadata_path, kernel_metadata(args, code_file))
     write_json(metadata_path, metadata)
 
-    bundle_paths = [*COPY_FILES, "job_inputs", "render_job.json", "build_info.json", ".env"]
+    bundle_paths = [*COPY_FILES, "job_inputs", "render_job.json", "build_info.json"]
     bundle_bytes = build_bundle_bytes(job_dir, bundle_paths)
     bundle_sha = write_embedded_kaggle_entry(job_dir, bundle_bytes, code_file=metadata["code_file"])
     # Keep the source-side artifact exact too; the launcher writes this same
@@ -451,6 +546,7 @@ def main():
     print(f"Prepared Kaggle job folder: {job_dir}")
     print(f"Kernel id      : {args.kernel_id}")
     print(f"Voice          : {args.voice_name} ({args.clone_mode} cloning)")
+    print(f"Story gate     : {story_gate['status']} ({story_gate['story_sha256']})")
     print(f"Reference      : {reference_qc['duration_sec']}s @ {reference_qc['sample_rate']} Hz, "
           f"tail silence {reference_qc['tail_silence_sec']}s")
     print(f"Bundle sha256  : {bundle_sha}")

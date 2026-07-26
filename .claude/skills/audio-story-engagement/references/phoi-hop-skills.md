@@ -1,256 +1,109 @@
-# Coordination Contract For Audio Story Skills
+# Audio Story Skill Coordination
 
-This is the shared priority source when multiple audio-story skills trigger. The goal is for each skill to do one job without stacking conflicting formulas.
+This file is the authority when several audio-story skills or subagents run together.
 
-**Supreme goal, binding on every layer:** the finished story must read as told by a human expert — natural, alive, worth retelling. Every rule below is an instrument for that outcome. When mechanical compliance with any rule would make the prose sound less human, choose the more human option within safety, logic, and one-listen clarity.
+## Priority
 
-## 1. Four Layers And Scope
+Use this order when instructions conflict:
 
-### Layer 1: Base — `audio-story-engagement`
+1. Safety and non-instructional handling of sensitive content.
+2. The user's latest explicit requirement and approved creative choices.
+3. Factual/causal consistency, human truth, and one-listen clarity.
+4. Anti-template naturalness: do not turn the manuscript into rigid, uniform, over-finished AI prose.
+5. Fail-closed revision/receipt protocol.
+6. Main genre promise and active premise rules.
+7. Optional style, trend language, motifs, packaging, and examples.
 
-Responsible for:
+A plain sentence that is true to the character beats a clever or “complete” sentence that weakens the person. No rule creates a quota. `No change needed` is valid. Preserve intentional roughness, silence, asymmetry, fragments, and uneven attention when they remain clear and causal.
 
-- idea and opening approval workflow;
-- central question, causality, narrative reward;
-- narrator-led default, criteria for direct dialogue, and one-listen semantic clarity: stable referents, explicit connector premises, action/mechanism legibility, and scene orientation;
-- human semantic fit: natural Vietnamese collocation, category fit between words and their human targets, speaker ownership of marked metaphors, and dialogue that serves immediate intention rather than quote production;
-- professional prose judgment: earned character knowledge, example immunity, scene-derived detail, imperfect human formulation, and technique that stays invisible;
-- VoxCPM/TTS-ready punctuation, paragraphing, spoken-token forms, and dialogue turn shape;
-- Vietnamese address forms (`xưng hô`) and base safety;
-- output format and save location.
+`audio-story-human-life` is retired and must not be recreated, mirrored, referenced as active, or replaced by an equivalent mandatory life-detail checklist.
 
-The base skill does **not** decide how a story must be scary, romantic, funny, or mysterious.
+## Roles and Non-Overlap
 
-### Layer 2: Genre — `audio-story-genre-*`
+### `audio-story-trend-researcher` — user-opt-in pre-writing researcher
+Owns current market evidence and broad opportunity territories only. For an opted-in story request, it receives exactly one selected platform (`TikTok`, `Facebook`, or `YouTube`) and one selected format (`video dài (trên 5 phút)` or `Short (30-90 giây)`). It never creates a concrete premise, plot, character, title, hook, or publishing package.
 
-Responsible for:
+### `audio-story-engagement` — always-active main writer
+Owns concrete ideation, story contract, causality, character agency, narrator-led default, anti-template prose, Vietnamese `xưng hô`, drafting, revision state, and output status.
 
-- emotional/genre promise;
-- conflict type, scene engine, and genre-specific payoff;
-- mistakes that break the audience expectation of that genre.
+### `audio-story-architect` — optional structural handoff
+Use only when complexity, length, episodic continuity, investigation, multiple timelines, ensemble knowledge, or special rules justify it. It maps a selected direction and never writes prose, selects a new premise, or issues receipts. Its fields are descriptive, not mandatory beats.
 
-Genre provides choices; it must not impose hard quotas. A story has one **main genre**. Secondary genres only add material.
+### One `audio-story-genre-*` — main genre
+Owns the audience promise, genre scene engine, peak, payoff, and genre-breaking mistakes. Secondary genres contribute selectively and never steal the ending.
 
-### Layer 3: Premise — `audio-story-premise-*`
+### `audio-story-premise-*` — only when triggered
+Owns special knowledge, world/mechanism rules, limits, divergence, and costs. Premise never replaces character choice or genre payoff.
 
-Responsible for:
+### `audio-story-youth-trend-language` — manual only
+Owns only researched contemporary slang/wordplay and spoken form. It never repairs plot, emotion, character, or pacing.
 
-- rules of mechanisms such as reincarnation, system, book transmigration, or `truyện rác`;
-- limits of knowledge/ability;
-- consequences when the mechanism changes choices and the world.
+### `audio-story-series-continuity` — optional factual continuity
+Use only for episodic/shared-world risk. It checks persistent canon and proposes a bible patch. It never judges entertainment, edits prose, or issues receipts.
 
-Premise does not decide the final emotional payoff. Main genre and user intent do.
+### `audio-story-developmental-editor` — mandatory read-only manuscript gate
+Owns whole-story promise, propulsion, scene-state progression, agency, adaptive opposition, differentiation, emotional residue, predictability/fairness, setup/payoff, peak, ending, audio memory load, and systematic AI-template stiffness. It diagnoses with evidence and emits `DEVELOPMENT_RECEIPT`; it never edits.
 
-### Layer 4: Final Pass — `audio-story-final-polish`
+It must not demand a uniform scene formula, regular twist cadence, more dialogue, more description, or generic “lived detail.” It routes the smallest responsible repair.
 
-Runs last to repair logic, motivation, emotion, dialogue, address forms, read-aloud rhythm, and VoxCPM/TTS pause readiness. It:
+### `audio-story-scene-doctor` — bounded repair writer
+Runs only on named findings and named scenes/ranges. It may compress, dramatize, or rebuild that scope while preserving protected roughness and approved choices. It updates revision/hash and invalidates stale receipts; it never issues quality receipts or beautifies the full manuscript.
 
-- must not change main genre, premise, approved ending, or approved intent;
-- must not replace the narrator-led base default with dense dialogue unless the user requested audio drama / dialogue-heavy mode;
-- must not insert SSML, `[pause]`, SFX/BGM, or production markup into pure story files unless the user requested that mode;
-- must not add missing quotas or techniques for their own sake;
-- must report to the user if fixing logic requires changing an approved creative decision.
+### `audio-story-literary-texture` — optional surface repair
+Use only when a causally sound passage remains generic, over-explained, or rhythmically flat. It may delete, reorder attention, choose a more exact fact, or use one owned image. It must not add ornamental realism, compulsory metaphors, or a new “human-life” checklist.
 
-### Cross-Genre Craft Skill — `audio-story-literary-texture`
+### `audio-story-clarity-check` — read-only first-hearing checker
+Targeted mode is optional. Full-draft mode is mandatory in `stage: pre-polish` before final polish and `stage: post-polish` after final polish. It owns local actor/referent/speaker/semantic-landing/syntax/cadence failures only.
 
-Character and relationship life is **not** a separate skill. It is base judgment: the base skill applies the character-life gate in [van-xuoi-chuyen-nghiep.md](van-xuoi-chuyen-nghiep.md) (§2 earned insight, §3 dialogue, §6 character life, directional relationships, and opposing/minor characters) during contract lock, mapping, and drafting. Off-plot life, directional relationships, motivated error, and earned intimacy belong there, applied as judgment rather than filled-in worksheets, and never as an ordinary action inserted into every scene.
+### `audio-story-final-polish` — mandatory last content editor
+Runs only when current developmental and clarity receipts are clean. It preserves protected roughness, removes systematic machine signatures, and performs the smallest line/logic/audio edits. Its changes invalidate input receipts.
 
-`audio-story-literary-texture` is the one cross-genre craft sub-pass. It applies to **every** genre but is not a new genre or premise, so it does not sit in the four-layer stack; it runs **inside** the base workflow, **after a causally clear draft exists and before final polish**. It never runs before the draft, because its own rule is to draft action and causality clearly first. It shapes POV imagery, metaphor, motif, sentence rhythm, and acoustic language.
+### `audio-story-completion-gate` — mandatory read-only release gate
+Runs after final polish plus current clean post-polish development and clarity receipts. It verifies protocol-v2 sidecar state and validator output. It alone can issue `GATE_PASS`.
 
-The texture pass may conclude `no added material needed`. Its purpose is judgment, not visible technique coverage. Do not choose an image field by default or add a motif/callback because a skill offers one.
+### `audio-story-reviewer` — manual only
+Runs only when the user asks for review/audit/score. It diagnoses and prioritizes but cannot replace development, clarity, polish, or completion receipts.
 
-Image fields and professional vocabulary are optional resources, not obligations. They may shape what one POV notices, but they may not turn people or relationships into objects by default, spread one character's vocabulary into every speaker, or create paired aphorisms for their own sake. Use the mandatory gate in [ngon-ngu-con-nguoi.md](ngon-ngu-con-nguoi.md) whenever a conspicuous metaphor or high-impact dialogue cluster uses an object, profession, system, or procedural source domain.
+### `audio-story-platform-packaging` — post-gate derived assets
+Owns titles, cover/thumbnail concepts, captions, descriptions, clip boundaries, CTAs, platform variants, and experiments. It never edits the canonical story.
 
-### Drafting Diagnostic Subagent — `audio-story-clarity-check`
+### `story-to-audio`
+Owns rendering only and requires a protocol-v2 final gate.
 
-The clarity-check subagent is not a fifth layer, a genre, a craft pass, or an editor with independent authority. It is a narrow read-only detector for sentence shapes that hide the concrete proposition or basic first-hearing orientation.
+### `audio-story-performance-analyst` — optional post-publication analyst
+Uses real evidence to separate topic, packaging, opening, story, clarity, pacing, audio/TTS, distribution, and policy hypotheses. It never edits or issues receipts.
 
-- Run it at the cadence defined by the base skill and [cau-van-truu-tuong.md](cau-van-truu-tuong.md).
-- Treat every finding and `REWRITE` as advisory evidence. The main writing agent validates it against full context and owns the final text.
-- Apply every confirmed clarity repair. Reject false positives rather than flattening direct emotional naming, efficient telling, deliberate genre ambiguity, fair clue withholding, subtext, character-owned metaphor, researched slang/wordplay, or emotionally open resonance.
-- It may not grade or repair plot causality, motive, genre payoff, evidence logic, emotional arc, literary quality, trend freshness, or TTS pronunciation. Route those issues to their owning skill.
-- Its literal-translation test asks whether the concrete proposition is recoverable, not whether the sentence has only one motive, symbol, suspect, emotional reading, or future explanation.
+## Revision Rules
 
-When a clarity suggestion conflicts with safety, approved intent, established fact, main genre, premise law, character voice, fair withholding, or the shared priority order, the higher authority wins. Record the rejection internally; do not combine incompatible rewrites.
+- Story text stays pure; state lives in sibling `<story>.gate.json`.
+- New and migrated manifests use `protocol_version: 2`.
+- Increment revision after every byte-changing story edit and recompute SHA-256.
+- A receipt is valid only for its exact revision/hash and mode.
+- No component may copy a receipt to another revision. Final polish preserves validated input receipts only as historical `pre_polish_*` evidence bound to their original revision/hash.
+- Working drafts may be saved or shown only as `UNVERIFIED DRAFT`.
+- Missing tools, required subagents, or validator means the manuscript cannot be called complete.
+- Packaging files are derived artifacts and record source revision/hash plus a stable variant ID.
 
-### Opt-In Lexical Sub-Pass — `audio-story-youth-trend-language`
+## Standard Workflow
 
-Manual-only. It runs **only when the user explicitly asks for teencode, trend words, slang, meme phrasing, `nói lái`, or Gen Z speech in a story**. Finishing, polishing, or reviewing a story never activates it.
-
-It is a lexical layer, not a layer in the four-layer stack:
-
-- select trend candidates **after the contract and base character-life calibration are locked**, so the slang belongs to a character who already exists;
-- apply them during drafting or during the `audio-story-literary-texture` pass;
-- `audio-story-final-polish` still runs last and still owns the final spoken-token decision.
-
-Authority: it sits **below base clarity, main genre payoff, safety, and TTS readiness**. It may not raise density past the base skill's one-listen clarity and anti-`sến` default, may not rename characters or move the setting to satisfy a trend, and may not put slang into a scene the genre needs to keep grave. Its density ceilings are ceilings, never targets. Every English-origin or stylized token it introduces must carry a decided VoxCPM spoken form (see `voxcpm-tts-ngat-nghi.md`, "English, Teencode, And Trend Tokens").
-
-The product-side sibling, `product-review-youth-trend-language`, is **outside this contract entirely**: it writes commercial scripts, not fiction, and no audio-story skill (including final polish) should edit its output.
-
-Authority: the literary-texture craft pass sits **below main genre payoff** in the priority order below. It adds material and surface; it must not steal the genre payoff, break one-listen clarity, obscure fair clues, hide missing motive, or change the approved premise/ending. It operates **inside** the base skill's firm-modern-prose / anti-`sến` default: when a texture suggestion conflicts with base clarity or restraint, base wins. Texture raises specificity and POV-distinctiveness, not ornamentation. Order: base character-life gate -> draft -> `audio-story-literary-texture` -> `audio-story-final-polish` (always last).
-
-## 2. Priority Order When Instructions Conflict
-
-Apply from top to bottom:
-
-1. **Safety, truthfulness, non-contradictory logic, one-listen semantic clarity, human semantic fit, and earned character knowledge.** No creative request, genre, premise, literary omission, or stylistic compression can loosen harmful guidance, misrepresent real people, break established world rules, leave basic referents/actions/mechanisms unidentified, use connectors whose required premise is absent, make people sound like objects/systems merely to satisfy a motif, or let a character know another person's hidden truth without sufficient evidence/history. If logic requires changing an approved idea, report instead of silently changing it.
-2. **The user's latest direct requirement inside those boundaries.** Example: third person, sad ending, no twist, or "choose and proceed" overrides defaults that it directly addresses.
-3. **User-approved premise, ending, and promise.** Do not silently change these while polishing.
-4. **Base workflow and output contract.** Genre/premise cannot skip approval gates or add metadata to pure story files.
-5. **Active premise mechanism rules.** Only rules established in the story count.
-6. **Main genre.** Controls emotional question and primary payoff.
-7. **Secondary genres.** Add scenes, tone, or techniques without stealing payoff.
-8. **Tips, numbers, title patterns, examples.** These are suggestions, not laws.
-
-When two same-level instructions conflict, choose the one that best serves **approved promise + causal chain + one-listen clarity**. Record the choice in the story map; do not try to satisfy both.
-
-**A pass that adds nothing is a valid and often correct result.** Every checklist in these skills tests for the *absence of defects*, not the *presence of technique*. Do not insert a hook, reversal, motif, ordinary action, worksheet field, or quotable line merely to satisfy a checklist item; when the draft already earns its value, conclude `no change needed` and move on. Technique added only to tick boxes — especially cumulatively across base, genre, premise, texture, and final polish — is itself the machinery these skills exist to prevent.
-
-## 3. Unified Workflow
-
-1. **Identify layers:** base always applies; choose main genre; add secondary genre or premise only when triggered.
-2. **Step 0:** research/propose ideas through the base workflow. Each idea states main genre, premise, and payoff type. Stop for the user's choice. Skip only on an explicit no-approval instruction (*"không cần hỏi"*, *"cứ viết luôn"*); a detailed brief or *"bạn tự tìm ý tưởng"* is NOT authority to proceed. When skipping, record the chosen direction.
-3. **Lock the contract:** central question, target emotion, listener reward, world rules, and things the user does not want.
-   - **Human life (all genres):** after locking the contract and before mapping, apply the base character-life gate in [van-xuoi-chuyen-nghiep.md](van-xuoi-chuyen-nghiep.md) (§6) so major characters carry off-plot pressure, directional relationships, competence limits, and contradictions relevant to action. This is judgment, not a worksheet; do not equalize depth across the cast, fill every field, or insert an ordinary action into every scene.
-4. **Step 2:** propose different openings through the base workflow. Genre/premise helps generate options but cannot skip the gate or force one type. Skip only when the user gave a concrete opening to use, or an explicit no-approval instruction; then choose with a reason and continue. Approving an idea in Step 0 does not approve the opening.
-5. **Map:** base choice-consequence chain + genre scene engine + premise law/knowledge ledger + semantic-clarity ledger for stable entity/mechanism names, first-use interaction methods, and the explicit premise behind consequential connectors.
-6. **Write:** prioritize story, not visible technique labels. Treat all skill examples as contaminated teaching material; generate names, occupations, objects, gestures, sensory anchors, and sentence shapes from the current story rather than the example bank. Run [van-xuoi-chuyen-nghiep.md](van-xuoi-chuyen-nghiep.md).
-   - **Literary texture (all genres):** once the draft reads clearly for action and causality, run `audio-story-literary-texture` to add POV imagery, motif, and rhythm only where they change meaning, staying inside the firm-modern-prose default. Run it before final polish, never before a causally clear draft exists.
-   - **Clarity diagnostic (all genres):** after each 500-1000-word drafting segment, run the clarity-check subagent and apply only context-confirmed repairs before continuing. After all drafting and literary-texture changes, run it once on the full current draft; repair confirmed defects before final polish.
-7. **Self-check:** run base, main genre, and premise checks. For secondary genres, check only promises actually used.
-8. **Final polish:** after a complete story draft exists, run full `audio-story-final-polish`, including the VoxCPM/TTS pause and spoken-token pass. If story content changes afterward, rerun it. For premise contracts, outlines, or opening options, use relevant checks only; do not claim the whole story is final-polished.
-9. **Save/respond:** follow base output contract and user request. Hybrid stories save under the main genre folder; premises do not create folders.
-
-`final-polish` is the **last content editing pass** of the story draft, not a label to attach to intermediate artifacts. Saving a file after polish is not content editing; any sentence/scene change is.
-
-## 4. Choose The Main Genre For Hybrids
-
-Ask:
-
-1. What reward keeps the listener listening?
-2. What type is the central question?
-3. If one genre is removed, which loss breaks the identity or ending?
-
-| Main reward | Usual main genre |
-|---|---|
-| relationship truth + choice after betrayal | drama |
-| laughter from deviation and consequence | comedy |
-| unease/fear + confronting threat | horror |
-| romantic relationship transformation | romance |
-| evidence-based solution to mystery | mystery |
-
-Example: a missing-person story with a ghost, but the final payoff is proving who staged the scene, is mainly `trinh-tham` with `kinh-di` secondary. If the solution is less important than a force invading the family, reverse it.
-
-Do not trigger a secondary genre merely because there is a love scene, a joke, or a secret. Trigger it only when the story promises a meaningful experience from that genre.
-
-## 5. How Genre And Premise Cooperate
-
-Genre answers:
-
-- What emotion/reward does the listener expect?
-- What type of choice creates the climax?
-- What ending fulfills the promise?
-
-Premise answers:
-
-- What special ability/knowledge/constraint exists?
-- What limits and world-state changes follow?
-- How does the mechanism make the genre choice harder or different?
-
-Do not let premise replace story with interface. Example: a system in romance must complicate/clarify romantic choice; it must not become unrelated point collection.
-
-If multiple premises apply:
-
-- make a law ledger for each;
-- keep only mechanisms that change choice;
-- decide whether one law contains the other;
-- do not use a second premise only to rescue the first.
-
-## 6. What Is Not A Conflict
-
-- **Tone variation inside one story:** a light joke in horror is contrast, not automatically comedy genre.
-- **One technique, many uses:** dramatic irony in drama and mystery serves different information structures.
-- **Genre-specific pacing:** mystery may delay information; comedy may pay off more frequently. This is fine if causality and progress remain.
-- **Non-default endings:** romance may be SE/BE if approved; horror may explain everything; mystery may intentionally fail if that is the promise.
-
-A conflict exists only when two rules require incompatible behavior or one skill breaks the main skill's promise.
-
-## 7. Common Conflict Matrix
-
-| Conflict | Unified handling |
-|---|---|
-| Genre wants a special hook; base asks user to choose | Genre creates suitable options; base keeps the gate unless user gave authority |
-| Premise wants a law info-dump; base wants action opening | Introduce only the law affecting current choice |
-| Comedy wants harmlessness; drama wants heavy consequence | Main genre decides. Drama main: jokes do not erase harm. Comedy main: limit harm |
-| Horror wants ambiguity; mystery wants fair play | Hide form/meaning, not data needed for promised solution |
-| Romance wants closeness; mystery/thriller wants suspicion | Each intimate scene also changes trust or evidence |
-| Truyen-rac wants "stupid" characters; base requires motive | Write consistent bias/need that causes wrong choices |
-| Foreknowledge removes surprise | Shift suspense to prevention, cost, proof, ethics; do not force every forecast to fail |
-| Final polish finds premise illogical | Repair inside approved law; if law/ending must change, report to user |
-| Any skill sets number/minute/percentage quotas | Treat as pacing examples, not law |
-| Safety weakens a "heavy" scene | Keep event clear; move weight to choice/consequence |
-| Literary texture wants imagery; base wants firm, anti-`sến` prose | Base clarity/restraint wins ties; keep only texture that passes the device-function test and the "pushes plot/character" test |
-| Character profession supplies an image field; dialogue wants natural speech | Profession may shape perception, action, or one owned comparison. It does not require occupational metaphors, does not transfer that vocabulary to other speakers, and never outranks the plain line that better performs the human intention. |
-| Genre wants a memorable/punchy line; human speech would be plainer | Use the plainer line. Quoteability, symmetry, and instant comeback are not genre payoffs. Resonance must emerge from pressure and consequence, not aphorism tennis. |
-| Character-life gate offers ordinary action; scene works without choreography | Add nothing. Food, cleaning, clothing adjustment, object alignment, and household ritual are optional; stillness or direct narration may be more truthful. |
-| Skill example offers a fitting object/gesture/occupation | Do not reuse it. Re-derive detail from physical presence, schedule, money, body, setting, and current task in the approved story. |
-| Retention rule wants a hook/turn every minute; scene needs consequence or absorption | Let the consequence/absorption carry value. Retention is not constant surprise, reversal, or slogan density. |
-| Sharp observer appears to understand a stranger immediately | Separate observation from inference and truth. Keep certainty provisional until repeated evidence, history, or disclosure earns it. |
-| Mystery, horror, or literary omission wants ambiguity; base requires orientation | Withhold motive, answer, or meaning; name the current actor/object/mechanism, establish scene geography, and state the rule needed to understand present danger. Missing referents and causal steps are not suspense. |
-| Character-life gate wants messy detail; final polish is the last pass | Character-life judgment (base gate) runs during drafting before final polish; final polish preserves that roughness and remains the last content edit |
-| Craft-skill detail competes with genre payoff | Main genre keeps the central reward; the base character-life gate and texture add material without stealing payoff or obscuring fair clues |
-| User asks for teencode/trend words; base wants firm, clear, anti-`sến` prose | Trend language is an accent on specific characters and scenes, not a narration style. Base one-listen clarity wins ties; keep plain Vietnamese around every trend cluster |
-| Trend skill wants an English word; VoxCPM cannot pronounce it | Write the spoken form in the file (`inbox` -> `in bốc`) or use a Vietnamese equivalent. Final polish verifies it; never ship a bare Latin token to the renderer |
-| Trend slang uses accusation labels (`trà xanh`, `tiểu tam`, `red flag`) | Base safety wording rules win. The label is a character's judgment, not narrator-confirmed fact, unless the story proved it |
-| Trend skill implies a modern influencer setting; base defaults to Chinese-style names and a modern Chinese setting | Base naming/setting defaults hold unless the user changes them. Trend language adapts to the world; the world does not adapt to the slang |
-| Trend phrase lands on a death, confession, or final emotional beat | Genre payoff wins. Move the joke earlier or cut it, unless the character is visibly using humor as defense and the weight survives |
-| Clarity subagent proposes a rewrite that resolves intentional ambiguity, removes direct emotional naming, normalizes character voice/slang, changes clue scope, or alters approved meaning | Reject the finding as outside scope. The subagent detects literal sentence clarity only; base/genre/premise/texture/trend/final-polish authority and the approved promise control the text. |
-
-## 8. Combination Examples
-
-### Drama + Book Transmigration
-
-- **Genre:** betrayal truth and choice after knowing.
-- **Premise:** narrator remembers the book version but not off-page scenes.
-- **Correct climax:** choose between publishing evidence or saving someone who once betrayed them.
-- **Wrong:** every scene says "in the book" and events happen exactly as written.
-
-### Mystery + Horror
-
-- **Main mystery:** listeners get enough data to solve; supernatural rules are testable facts.
-- **Secondary horror:** clue presentation creates dread and unsafe space.
-- **Wrong:** hiding evidence and calling it supernatural mystery.
-
-### Romance + Comedy
-
-- **Main romance:** relationship changes through sincere choice.
-- **Secondary comedy:** mismatched logics create friction and intimacy.
-- **Wrong:** prolonging a misunderstanding because they do not say one obvious sentence.
-
-### Truyen-Rac + Reincarnation + Drama
-
-- **Drama:** payoff is the narrator regaining choice after betrayal.
-- **Reincarnation:** memory enables preparation, but changes cause future divergence.
-- **Truyen-rac:** other characters keep choosing wrongly through built bias.
-- **Wrong:** narrator knows everything and wins everything while everyone else is foolish only for revenge scenes.
-
-## 9. Coordination Checklist
-
-- [ ] Main genre, secondary genres, and premises are recorded?
-- [ ] Central question and payoff belong to the main genre?
-- [ ] Each premise has tracked rules, limits, and state?
-- [ ] Secondary genres add experience without stealing payoff?
-- [ ] No genre/premise skipped approval gates unless the user gave an explicit no-approval instruction?
-- [ ] No numeric/minute/percentage quota is treated as law without user/channel data?
-- [ ] Genre, premise, and final polish preserve narrator-led default and selective dialogue?
-- [ ] VoxCPM/TTS readiness is preserved: natural punctuation, clean paragraph resets, clear speaker turns, and pronounceable numbers/acronyms/symbols?
-- [ ] One-listen semantic clarity is preserved: every pointer has one antecedent, every connector has its prerequisite, first-use mechanism actions are audible, and no basic identity/action/geography/causality must be guessed?
-- [ ] Human semantic fit is preserved: concrete wording uses natural Vietnamese collocation; marked metaphors have exact mappings and character ownership; no profession/object field has spread across speakers; no exchange exists mainly as quotable aphorism and comeback?
-- [ ] Professional prose judgment is preserved: insight is earned; no skill-example object/action/sentence shape leaked into the draft; technique does not show as a checklist; quiet scenes are valued by function rather than forced into visible turns?
-- [ ] The clarity-check subagent ran at the required segment/full-draft cadence; every finding was context-validated; confirmed defects were repaired; false positives were rejected without flattening ambiguity, direct emotion, voice, clues, slang, or texture?
-- [ ] When instructions conflicted, the priority table decided instead of combining incompatible demands?
-- [ ] Safety and causality were not loosened by genre/premise?
-- [ ] The base character-life gate was applied during contract lock and drafting, and `audio-story-literary-texture` (if used) ran after a causally clear draft and before final polish?
-- [ ] `audio-story-youth-trend-language` ran **only** because the user explicitly asked for trend/teencode language, with live research and a decided spoken form for every English-origin token?
-- [ ] Craft-skill life detail and literary texture added material without stealing genre payoff, breaking one-listen clarity, or obscuring fair clues?
-- [ ] Final polish ran last and preserved approved intent?
+1. Before `audio-story-engagement` starts, ask: `Bạn có muốn sử dụng nghiên cứu xu hướng mạng xã hội cho truyện này không?` unless the prompt has already answered clearly.
+2. If the answer is no, decline trend research, skip the researcher and begin `audio-story-engagement` immediately. Do not ask about platform or format.
+3. If the answer is yes, ask for one platform in this exact set: `TikTok`, `Facebook`, `YouTube`.
+4. Once the platform is set, ask for one format: `video dài (trên 5 phút)` or `Short (30-90 giây)`.
+5. Reuse any clear answer already supplied in the user's prompt, and ask only for the first missing answer. Normalize `fb` to `Facebook`, `ytb`/`yt` to `YouTube`, `dài`/`long`/`>5p` to `video dài (trên 5 phút)`, and `short`/`30-90s` to `Short (30-90 giây)`. Do not lock a story contract, generate directions, or draft while an opted-in answer or research handoff is pending.
+6. Invoke `audio-story-trend-researcher` only after the opted-in platform and format are both set. Pass `RESEARCH_MODE: story_intake`, the exact selection, and relevant story context; use its report as constraints, not a plot.
+7. Lock listener contract, main genre, POV, setting, length, plot question, emotional question, ending, and anti-template risks.
+8. Add only premise/lexical skills triggered by the brief.
+9. Use architect only when complexity warrants it; never force it onto a simple story.
+10. Draft with the smallest active set and no quotas.
+11. Run full-draft development; repair only supported findings; rerun development after any edit.
+12. Use literary texture only for causally sound generic passages; rerun development after any edit.
+13. Run full-draft clarity in `stage: pre-polish`; after any edit, rerun full-draft development and clarity.
+14. Run final polish.
+15. Run post-polish full-draft development and full-draft clarity in `stage: post-polish`.
+16. If either post-polish check leads to text changes, invalidate the current final chain; on the repaired revision rerun developmental review and `stage: pre-polish` clarity until clean, then rerun final polish and both post-polish checks.
+17. Run completion gate and validator.
+18. Save/return/package/render as final only when protocol-v2 receipts match current revision/hash.
+19. Use packaging after gate and performance analysis only after real publication data exists.
+
+Do not stack every available component. Use the smallest set that serves the story, but never omit mandatory production gates. The absence of a technique is not a defect.

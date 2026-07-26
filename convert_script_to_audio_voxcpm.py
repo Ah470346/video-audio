@@ -442,7 +442,7 @@ def build_parser():
     parser.add_argument(
         "--max_verify_retries",
         type=int,
-        default=3,
+        default=2,
         help="Extra render attempts (beyond attempt 0) per chunk via VOXCPM_RETRY_LADDER.",
     )
     parser.add_argument(
