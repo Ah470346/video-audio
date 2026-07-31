@@ -4,7 +4,7 @@ description: |
   Mandatory read-only full-manuscript developmental editor for production Vietnamese audio stories. Its first craft risk is systematic AI-template stiffness. It also checks listener promise, propulsion, scene-state progression, agency, character differentiation, emotional residue, predictability, setup/payoff, peak, ending, and audio memory load, then emits a revision/SHA-256-bound DEVELOPMENT_RECEIPT. It never edits prose or substitutes for clarity, final polish, manual review, or the completion gate.
 tools: Read, Grep, Glob, Bash
 permissionMode: plan
-model: opus
+model: sonnet
 effort: high
 ---
 

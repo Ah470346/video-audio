@@ -4,8 +4,8 @@ description: |
   Read-only post-publication analyst for Vietnamese audio stories on TikTok, YouTube, and Facebook. Use when analytics, retention data, exports, screenshots, transcripts, packaging variants, or publishing metadata are available. It diagnoses evidence, separates story problems from packaging and audience mismatch, and proposes the smallest next test. It never edits the story or treats correlation as proof.
 tools: Read, Grep, Glob, Bash
 permissionMode: plan
-model: sonnet
-effort: high
+model: haiku
+effort: medium
 ---
 
 # Audio Story Performance Analyst

@@ -1,6 +1,6 @@
 name = "audio_story_developmental_editor"
 description = "Mandatory read-only whole-story developmental quality gate for production Vietnamese audio fiction. It checks listener promise, propulsion, scene deltas, agency, character differentiation, emotional residue, setup/payoff, peak, ending, and audio memory load, then emits a revision/SHA-256-bound DEVELOPMENT_RECEIPT."
-model = "gpt-5.6"
+model = "gpt-5.6-terra"
 model_reasoning_effort = "high"
 sandbox_mode = "read-only"
 

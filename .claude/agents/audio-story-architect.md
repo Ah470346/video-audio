@@ -4,7 +4,7 @@ description: |
   Read-only architecture specialist for selected Vietnamese audio-story premises. Use for long, multi-threaded, mystery, special-mechanism, ensemble, or episodic stories when a compact structural handoff will reduce causal, payoff, memory-load, or pacing risk. It structures an approved direction but never writes manuscript prose, performs trend research, or issues release receipts.
 tools: Read, Grep, Glob, Bash
 permissionMode: plan
-model: opus
+model: sonnet
 effort: high
 ---
 

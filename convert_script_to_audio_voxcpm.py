@@ -396,6 +396,13 @@ def build_parser():
         "heuristic is treated as a false positive and downgraded to a warning.",
     )
     parser.add_argument(
+        "--verify_ctc_single_word_support_similarity",
+        type=float,
+        default=0.90,
+        help="Minimum context-free CTC word similarity required before CTC may "
+        "independently confirm a word that Whisper reported as missing.",
+    )
+    parser.add_argument(
         "--verify_ctc_min_word_score",
         type=float,
         default=0.15,
@@ -724,6 +731,42 @@ def longest_silence_seconds(samples, sample_rate, threshold_db):
 #         acoustics; it is caught during drafting/polish instead (see
 #         audio-story-engagement and audio-story-final-polish).
 # ---------------------------------------------------------------------------
+def canonicalize_ctc_spoken_number_variants(text):
+    """Canonicalize safe Vietnamese number variants for acoustic comparison.
+
+    After ``mươi``, ``mốt/lăm/tư`` and ``một/năm/bốn`` are normal spoken
+    alternatives.  Mapping both the expected sentence and the context-free CTC
+    transcript to the same forms prevents forced alignment from assigning a
+    near-zero score to a correctly spoken numeric variant.
+    """
+    tokens = str(text or "").split()
+    replacements = {"một": "mốt", "năm": "lăm", "bốn": "tư"}
+    for index in range(1, len(tokens)):
+        if tokens[index - 1] == "mươi":
+            tokens[index] = replacements.get(tokens[index], tokens[index])
+    return " ".join(tokens)
+
+
+def ctc_supports_missing_span(diff_evidence, ctc_metrics, minimum_similarity=0.90):
+    """Whether independent CTC evidence contains Whisper's missing span."""
+    if not ctc_metrics.get("available"):
+        return False
+    similarity = ctc_metrics.get("ctc_similarity")
+    if not isinstance(similarity, (int, float)) or similarity < minimum_similarity:
+        return False
+
+    missing = canonicalize_ctc_spoken_number_variants(
+        normalize_for_ctc(diff_evidence.get("longest_missing_text", ""))
+    ).split()
+    heard = canonicalize_ctc_spoken_number_variants(
+        normalize_for_ctc(ctc_metrics.get("ctc_text", ""))
+    ).split()
+    if not missing:
+        return False
+    width = len(missing)
+    return any(heard[index:index + width] == missing for index in range(len(heard) - width + 1))
+
+
 def ctc_probe_metrics(chunk_text, wav_path, args, ctc_probe):
     """Measure a chunk with the CTC acoustic model.
 
@@ -740,7 +783,7 @@ def ctc_probe_metrics(chunk_text, wav_path, args, ctc_probe):
             [("ctc_probe", "warn", f"CTC probe unavailable: {error}", {})],
         )
 
-    expected = normalize_for_ctc(chunk_text)
+    expected = canonicalize_ctc_spoken_number_variants(normalize_for_ctc(chunk_text))
     emissions = ctc_probe.emissions(wav_path)
     if emissions is None:
         return (
@@ -748,12 +791,14 @@ def ctc_probe_metrics(chunk_text, wav_path, args, ctc_probe):
             [("ctc_probe", "warn", f"CTC probe failed: {ctc_probe.error}", {})],
         )
 
-    heard = ctc_probe.greedy_text(emissions)
+    heard_raw = ctc_probe.greedy_text(emissions)
+    heard = canonicalize_ctc_spoken_number_variants(normalize_for_ctc(heard_raw))
     similarity = SequenceMatcher(None, expected.split(), heard.split()).ratio()
     metrics = {
         "enabled": True,
         "available": True,
-        "ctc_text": heard,
+        "ctc_text": heard_raw,
+        "ctc_compare_text": heard,
         "ctc_similarity": round(similarity, 4),
         "veto": similarity >= args.verify_ctc_veto_similarity,
     }
@@ -881,7 +926,7 @@ def retry_ladder_for_result(result):
     return TEXT_LOCK_RETRY_LADDER if has_text_lock_defect(result) else VOXCPM_RETRY_LADDER
 
 
-def candidate_quality_key(result):
+def candidate_quality_key(result, source_penalty=0):
     """Lexicographic quality rank; lower is always safer to publish.
 
     A retry is allowed to replace the current WAV only when it improves this
@@ -897,6 +942,17 @@ def candidate_quality_key(result):
     cer = float(cer) if isinstance(cer, (int, float)) else 1.0
     similarity = metrics.get("asr_word_similarity")
     similarity = float(similarity) if isinstance(similarity, (int, float)) else 0.0
+    ctc_metrics = metrics.get("ctc_probe") or {}
+    ctc_similarity = ctc_metrics.get("ctc_similarity")
+    ctc_similarity = float(ctc_similarity) if isinstance(ctc_similarity, (int, float)) else 0.0
+    ctc_min_word_score = ctc_metrics.get("min_word_score")
+    ctc_min_word_score = (
+        float(ctc_min_word_score) if isinstance(ctc_min_word_score, (int, float)) else 0.0
+    )
+    speaker_similarity = metrics.get("speaker_similarity")
+    speaker_similarity = (
+        float(speaker_similarity) if isinstance(speaker_similarity, (int, float)) else 0.0
+    )
     return (
         1 if result.get("status") != "ok" else 0,
         longest_missing,
@@ -904,6 +960,10 @@ def candidate_quality_key(result):
         cer,
         -similarity,
         warning_count,
+        -ctc_similarity,
+        -ctc_min_word_score,
+        int(source_penalty),
+        -speaker_similarity,
     )
 
 
@@ -1012,17 +1072,41 @@ def verify_chunk(
     elif args.verify_cer_severity != "off" and cer > args.verify_cer_warn:
         add_defect(result, "asr_cer", "warn", f"ASR CER {cer:.3f} exceeds warning floor {args.verify_cer_warn:.3f}")
 
-    if args.verify_single_word_severity != "off" and diff_evidence["longest_missing"] == 1:
-        add_defect(
-            result,
-            "single_word_omission",
-            args.verify_single_word_severity,
-            f"ASR found one acoustically absent expected word ({diff_evidence['longest_missing_text']!r})",
-            diff_evidence,
-        )
-
     ctc_metrics, ctc_defects = ctc_probe_metrics(chunk["text"], wav_path, args, ctc_probe)
     result["metrics"]["ctc_probe"] = ctc_metrics
+
+    if args.verify_single_word_severity != "off" and diff_evidence["longest_missing"] == 1:
+        ctc_supports_word = ctc_supports_missing_span(
+            diff_evidence,
+            ctc_metrics,
+            getattr(args, "verify_ctc_single_word_support_similarity", 0.90),
+        )
+        if ctc_supports_word:
+            payload = {
+                **diff_evidence,
+                "ctc_support": {
+                    "ctc_text": ctc_metrics.get("ctc_text"),
+                    "ctc_similarity": ctc_metrics.get("ctc_similarity"),
+                },
+            }
+            add_defect(
+                result,
+                "asr_ctc_disagreement",
+                "warn",
+                f"Whisper omitted {diff_evidence['longest_missing_text']!r}, "
+                "but independent CTC evidence contains it",
+                payload,
+            )
+        else:
+            add_defect(
+                result,
+                "single_word_omission",
+                args.verify_single_word_severity,
+                f"ASR found one acoustically absent expected word "
+                f"({diff_evidence['longest_missing_text']!r})",
+                diff_evidence,
+            )
+
     for kind, severity, message, payload in ctc_defects:
         add_defect(result, kind, severity, message, payload)
 
@@ -1307,7 +1391,10 @@ def render_and_verify_chunk(
                 "attempt": attempt, "cfg_value": cfg_value, "inference_timesteps": inference_timesteps,
                 "seed": seed, "status": result["status"], "path": str(attempt_path),
                 "reason": ladder.get("reason", "base"),
-                "defects": result.get("defects", []),
+                # Preserve the complete verdict so every retry remains auditable
+                # after the Kaggle output bundle is downloaded.
+                "candidate_quality_key": list(key),
+                "result": copy.deepcopy(result),
             }
         )
         if best is None or key < best["key"]:
@@ -1330,8 +1417,9 @@ def render_and_verify_chunk(
             best = sub_best
 
     final_path = chunk_dir / f"{chunk['id']}.wav"
+    source_path = best["path"]
     sf.write(str(final_path), best["wav"], sample_rate)
-    best = {**best, "path": final_path}
+    best = {**best, "source_path": source_path, "path": final_path}
     timing = {"render_sec": round(render_sec, 3), "verify_sec": round(verify_sec, 3)}
     return best, attempts_log, subsplit_event, timing
 
@@ -1360,10 +1448,10 @@ def try_subsplit_chunk(
     sub_args.verify_subsplit = False
     sub_args.max_verify_retries = max(1, min(2, args.max_verify_retries))
 
-    sub_wavs, sub_results = [], []
+    sub_wavs, sub_results, subchunk_audits = [], [], []
     for index, sub in enumerate(sub_chunks):
         piece_seed_base = seed_base + 5000 + index * 200
-        sub_best, _log, _event, piece_timing = render_and_verify_chunk(
+        sub_best, sub_attempts_log, sub_event, piece_timing = render_and_verify_chunk(
             model, sub, sub_args, ref_audio, ref_text, transcriber, speaker_checker, ctc_probe,
             chunk_dir, sample_rate,
             seed_base=piece_seed_base,
@@ -1373,6 +1461,21 @@ def try_subsplit_chunk(
         verify_sec += piece_timing["verify_sec"]
         sub_wavs.append(sub_best["wav"])
         sub_results.append(sub_best["result"])
+        subchunk_audits.append(
+            {
+                "id": sub["id"],
+                "text": sub["text"],
+                "attempts": sub_attempts_log,
+                "subsplit": sub_event,
+                "selected_candidate": {
+                    "attempt": sub_best["attempt"],
+                    "source_path": str(sub_best["source_path"]),
+                    "published_path": str(sub_best["path"]),
+                    "candidate_quality_key": list(sub_best["key"]),
+                    "result": copy.deepcopy(sub_best["result"]),
+                },
+            }
+        )
         Path(sub_best["path"]).unlink(missing_ok=True)  # scratch; the combined take is what ships
 
     pieces = []
@@ -1396,6 +1499,7 @@ def try_subsplit_chunk(
         combined_result = {"id": chunk["id"], "status": "ok", "defects": [], "metrics": {}}
 
     event["sub_statuses"] = [result["status"] for result in sub_results]
+    event["subchunks"] = subchunk_audits
     all_subchunks_ok = all(result["status"] != "fail" for result in sub_results)
     if combined_result["status"] == "fail" and all_subchunks_ok:
         combined_result = copy.deepcopy(combined_result)
@@ -1415,7 +1519,14 @@ def try_subsplit_chunk(
         event["status"] = "published" if combined_result["status"] != "fail" else "subchunk_failed"
     best = {
         "attempt": "subsplit", "wav": combined, "path": combined_path, "result": combined_result,
-        "key": candidate_quality_key(combined_result),
+        # Prefer a whole-chunk take when all content/QC evidence is tied.  A
+        # subsplit still wins whenever an earlier content metric is better.
+        "key": candidate_quality_key(combined_result, source_penalty=1),
+    }
+    event["combined_candidate"] = {
+        "path": str(combined_path),
+        "candidate_quality_key": list(best["key"]),
+        "result": copy.deepcopy(combined_result),
     }
     return True, event, best, {"render_sec": round(render_sec, 3), "verify_sec": round(verify_sec, 3)}
 
@@ -1489,6 +1600,7 @@ def qc_params(args):
         "verify_ctc_out_of_text_ms": args.verify_ctc_out_of_text_ms,
         "verify_ctc_out_of_text_chars": args.verify_ctc_out_of_text_chars,
         "verify_ctc_veto_similarity": args.verify_ctc_veto_similarity,
+        "verify_ctc_single_word_support_similarity": args.verify_ctc_single_word_support_similarity,
         "verify_ctc_min_word_score": args.verify_ctc_min_word_score,
         "verify_ctc_min_word_score_severity": args.verify_ctc_min_word_score_severity,
         "verify_inserted_words": args.verify_inserted_words,
@@ -1629,9 +1741,16 @@ def master_loudnorm_two_pass(input_path, output_path, args, sample_rate):
 # ---------------------------------------------------------------------------
 def write_verify_report(path, per_chunk_records):
     payload = {
-        "schema_version": 1,
+        "schema_version": 2,
         "updated_at": datetime.now(timezone.utc).isoformat(),
-        "chunks": [{"id": rec["id"], "result": rec["result"]} for rec in per_chunk_records],
+        "chunks": [
+            {
+                "id": rec["id"],
+                "result": rec["result"],
+                "qc_audit": rec.get("qc_audit"),
+            }
+            for rec in per_chunk_records
+        ],
     }
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -1666,7 +1785,16 @@ def export_verify_failures(output_dir, output_name, per_chunk_records):
         row_dir.mkdir(parents=True, exist_ok=True)
         (row_dir / "chunk.txt").write_text(rec["text"] + "\n", encoding="utf-8")
         (row_dir / "result.json").write_text(
-            json.dumps(rec["result"], ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+            json.dumps(
+                {
+                    "id": rec["id"],
+                    "result": rec["result"],
+                    "qc_audit": rec.get("qc_audit"),
+                },
+                ensure_ascii=False,
+                indent=2,
+            ) + "\n",
+            encoding="utf-8",
         )
         source = Path(rec["wav_path"])
         if source.is_file():
@@ -1808,6 +1936,9 @@ def _render_worker(worker_id, device_index, work_queue, args, ref_audio, ref_tex
                     "result": best["result"],
                     "attempts_log": attempts_log,
                     "subsplit_event": subsplit_event,
+                    "selected_attempt": best["attempt"],
+                    "selected_source_path": str(best["source_path"]),
+                    "selected_quality_key": list(best["key"]),
                     "elapsed": time.time() - chunk_started,
                     "render_sec": timing["render_sec"],
                     "verify_sec": timing["verify_sec"],
@@ -2077,6 +2208,17 @@ def main(argv=None):
             "text": chunk["text"],
             "wav_path": str(chunk_dir / f"{chunk['id']}.wav"),
             "result": row["result"],
+            "qc_audit": {
+                "attempts": row["attempts_log"],
+                "subsplit": row.get("subsplit_event"),
+                "selected_candidate": {
+                    "attempt": row["selected_attempt"],
+                    "source_path": row["selected_source_path"],
+                    "published_path": str(chunk_dir / f"{chunk['id']}.wav"),
+                    "candidate_quality_key": row["selected_quality_key"],
+                    "result": copy.deepcopy(row["result"]),
+                },
+            },
         }
 
     work_items = [(position, chunk) for position, chunk in enumerate(chunks) if chunk["id"] not in good_ids]
@@ -2118,6 +2260,9 @@ def main(argv=None):
                     "result": best["result"],
                     "attempts_log": attempts_log,
                     "subsplit_event": subsplit_event,
+                    "selected_attempt": best["attempt"],
+                    "selected_source_path": str(best["source_path"]),
+                    "selected_quality_key": list(best["key"]),
                     "elapsed": time.time() - chunk_started,
                     "render_sec": timing["render_sec"],
                     "verify_sec": timing["verify_sec"],
@@ -2154,15 +2299,30 @@ def main(argv=None):
                 "text": chunk["text"],
                 "wav_path": str(chunk_dir / f"{chunk['id']}.wav"),
                 "result": {"id": chunk["id"], "status": "resumed", "defects": [], "metrics": {}},
+                "qc_audit": {
+                    "attempts": [],
+                    "subsplit": None,
+                    "selected_candidate": {
+                        "attempt": "resumed",
+                        "source_path": str(chunk_dir / f"{chunk['id']}.wav"),
+                        "published_path": str(chunk_dir / f"{chunk['id']}.wav"),
+                        "candidate_quality_key": None,
+                        "result": {"id": chunk["id"], "status": "resumed", "defects": [], "metrics": {}},
+                    },
+                },
             }
             print(f"[{position + 1}/{len(chunks)}] {chunk['id']} resumed")
 
+    per_chunk_records = [per_chunk_records_by_id[chunk["id"]] for chunk in chunks]
+    failures = [rec for rec in per_chunk_records if rec["result"]["status"] == "fail"]
+
     ordered_wavs = [chunk_audio[chunk["id"]] for chunk in chunks]
     final_raw, stitch_report = stitch(chunks, ordered_wavs, sample_rate, args)
-    premaster_path = output_dir / f"{output_name}_premaster.wav"
+    artifact_name = output_name if not failures else f"{output_name}_qc_failed_preview"
+    premaster_path = output_dir / f"{artifact_name}_premaster.wav"
     sf.write(str(premaster_path), final_raw, sample_rate)
 
-    final_path = output_dir / f"{output_name}.wav"
+    final_path = output_dir / f"{artifact_name}.wav"
     if args.master:
         mastering_report = master_loudnorm_two_pass(premaster_path, final_path, args, sample_rate)
     else:
@@ -2175,8 +2335,6 @@ def main(argv=None):
         for path in chunk_dir.glob("*.wav"):
             path.unlink()
 
-    per_chunk_records = [per_chunk_records_by_id[chunk["id"]] for chunk in chunks]
-    failures = [rec for rec in per_chunk_records if rec["result"]["status"] == "fail"]
     write_verify_report(output_dir / f"{output_name}_verify_report.json", per_chunk_records)
     review_dir = export_verify_failures(output_dir, output_name, per_chunk_records)
     write_render_status(output_dir / f"{output_name}_render_status.json", chunks, final_path)
@@ -2184,7 +2342,7 @@ def main(argv=None):
     speech_sec = sum(chunk.get("duration_sec") or 0.0 for chunk in chunks)
     manifest_base.update(
         {
-            "status": "rendered",
+            "status": "rendered" if not failures else "qc_failed_preview",
             "sample_rate": sample_rate,
             "final_wav": str(final_path),
             "final_duration_sec": round(final_raw.size / sample_rate, 3) if not args.master else None,

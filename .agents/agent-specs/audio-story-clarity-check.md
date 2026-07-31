@@ -4,8 +4,8 @@ description: |
   Read-only clarity checker for Vietnamese audio-story prose. Targeted mode checks risky passages; full-draft mode is mandatory before final polish and after final polish. Detects first-hearing failures only and emits a SHA-256/revision-bound receipt. It never edits files or judges plot, genre, emotion, or literary quality.
 tools: Read, Grep, Glob, Bash
 permissionMode: plan
-model: opus
-effort: high
+model: sonnet
+effort: medium
 ---
 
 # Audio Story Clarity Check

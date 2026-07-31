@@ -50,7 +50,9 @@ The graph does NOT auto-update on file edits. It refreshes in two ways:
 - Canonical custom-agent specifications live under `.agents/agent-specs/*.md`.
 - Codex wrappers live under `.codex/agents/*.toml` and must reference the canonical spec.
 - Claude mirrors live under `.claude/skills/` and `.claude/agents/`; generate them with `python3 agent-tools/agent-workflow/sync_claude_from_agents.py --root .`.
-- After every skill or subagent change, run `python3 agent-tools/agent-workflow/validate_claude_codex_parity.py --root .`.
+- After any skill change under `.agents/skills/` (including `SKILL.md`, references, scripts, assets, or templates), run `python3 agent-tools/agent-workflow/sync_claude_from_agents.py --root .`, then `python3 agent-tools/agent-workflow/validate_claude_codex_parity.py --root .`.
+- After every custom-agent/subagent specification change, run `python3 agent-tools/agent-workflow/sync_claude_from_agents.py --root .`, then `python3 agent-tools/agent-workflow/validate_claude_codex_parity.py --root .`.
+- When changing root `AGENTS.md`, update `CLAUDE.md` and `.agents/AGENTS.md` in the same turn so Codex, Claude, and canonical agent instructions stay aligned.
 - Never update only Claude or only Codex. A parity failure blocks treating the project configuration as complete.
 - Also run `python3 agent-tools/agent-workflow/validate_story_workflow_contract.py --root .`; anti-template contract failure blocks completion.
 
@@ -77,7 +79,7 @@ For all story writing and editing, after safety, explicit user intent, causality
 <!-- audio-story-trend-researcher:start -->
 ## Audio Story Trend Researcher — user-opt-in social-trend intake
 
-For every Vietnamese fiction-writing request, complete this intake before invoking `audio-story-engagement`, creating a story contract, proposing ideas, or drafting prose:
+For every new or substantially re-premised Vietnamese fiction-writing request, complete this intake before invoking `audio-story-engagement`, creating a story contract, proposing ideas, or drafting prose. Do not run it for a bounded edit that preserves the existing manuscript's premise, format, and publishing direction:
 
 1. If the prompt does not already give an unambiguous answer, ask: `Bạn có muốn sử dụng nghiên cứu xu hướng mạng xã hội cho truyện này không?`
 2. If the user says no, declines, or says trend research is unnecessary, do not ask any platform or duration question. Skip `audio_story_trend_researcher` and begin `audio-story-engagement` immediately.
@@ -119,9 +121,9 @@ For every Vietnamese fiction-writing task, complete the social-trend intake abov
 - Shared craft references include natural Vietnamese prose, single-voice dialogue, premise originality, listener propulsion, and character voice/lived detail.
 - `audio-story-engagement` owns concrete ideation and the audience/story contract; trend research and architecture may inform but never replace that ownership.
 - Use `audio_story_architect` only for justified complexity and `audio_story_series_continuity` only for cross-episode state.
-- Run mandatory full-draft `audio_story_developmental_editor` before final polish; use `audio_story_scene_doctor` only for explicit bounded findings.
-- Run full-draft clarity in `stage: pre-polish` before final polish and fresh post-polish development plus `stage: post-polish` clarity after final polish.
-- Maintain sibling `<story>.gate.json` under protocol version 2, increment revision after every text change, and bind every receipt to its designated issuer, revision, and SHA-256. Preserve the clean pre-polish receipts as historical inputs to the final-polish chain.
+- For a bounded local edit, change only the named scope and indispensable continuity text; run no subagent by default. Use only targeted clarity for a real local listening risk or when the user asks for it.
+- Run mandatory full-draft `audio_story_developmental_editor`, pre-polish clarity, final polish, and post-polish checks only for a new complete manuscript or when the user explicitly asks for final/release-ready/full-manuscript validation, packaging, export, or rendering.
+- Maintain sibling `<story>.gate.json` under protocol version 2. Increment revision and SHA-256 after every text change; a bounded edit clears stale receipts and returns `UNVERIFIED DRAFT`, while the release workflow binds fresh receipts to the current revision/hash.
 - Working drafts may be shown only as `UNVERIFIED DRAFT`; they are not production-ready.
 - Save pure story text under `kich-ban/<the-loai>/`; never put gate metadata inside the story.
 <!-- audio-story-engagement-SKILL:end -->
@@ -130,7 +132,7 @@ For every Vietnamese fiction-writing task, complete the social-trend intake abov
 <!-- audio-story-developmental-editor:start -->
 ## Audio Story Developmental Editor — mandatory whole-story quality gate
 
-Use custom agent `audio_story_developmental_editor` from `.codex/agents/audio_story_developmental_editor.toml` on every complete production manuscript before final polish and again in post-polish mode.
+Use custom agent `audio_story_developmental_editor` from `.codex/agents/audio_story_developmental_editor.toml` on every manuscript entering the production release workflow before final polish and again in post-polish mode.
 
 - It is read-only and must read the complete file and verify SHA-256.
 - Its first craft risk is systematic AI-template stiffness. It also owns macro promise, propulsion, scene-state progression, agency, character differentiation, emotional residue, predictability, setup/payoff, peak, ending, and audio memory load.
@@ -152,14 +154,14 @@ Use custom agent `audio_story_scene_doctor` from `.codex/agents/audio_story_scen
 <!-- audio-story-final-polish-SKILL:start -->
 ## Audio Story Final Polish — mandatory last content editor
 
-Run `audio-story-final-polish` only when the current revision has clean full-draft development and clarity receipts.
+Run `audio-story-final-polish` only when a manuscript is entering the production release workflow and the current revision has clean full-draft development and clarity receipts.
 
 - It first protects useful irregularity and removes systematic template machinery; then it may repair momentum, logic, motivation, emotion, dialogue, `xưng hô`, prose rhythm, peak/ending, and TTS readiness within the approved contract.
 - It emits `FINAL_POLISH_RECEIPT` protocol version 2 with `issued_by: audio-story-final-polish` plus input/output revision and SHA-256.
 - Its edits invalidate prior development and clarity receipts.
 - Run fresh post-polish developmental review and full-draft clarity on the polished output.
 - If either post-polish check requires a story edit, rerun full-draft development and clarity on the repaired revision before final polish, then rerun post-polish development and final clarity.
-- Final polish never marks a manuscript complete by itself.
+- Final polish never marks a manuscript complete by itself. Do not run final polish or its full-manuscript prerequisites for a bounded local edit unless the user explicitly requests full release validation.
 <!-- audio-story-final-polish-SKILL:end -->
 
 <!-- audio_story_completion_gate:start -->
@@ -175,6 +177,15 @@ Before a story is returned as final, exported, rendered, or packaged as producti
 
 No receipt, stale hash, unavailable gate, or validator failure means `UNVERIFIED DRAFT`, never final, unless the user explicitly asks to bypass the repository story gate. User bypasses must be stated in the response and must not be silent.
 <!-- audio_story_completion_gate:end -->
+
+<!-- audio_story_receipt_validator:start -->
+## Audio Story Receipt Validator — optional deterministic preflight
+
+Use custom agent `audio_story_receipt_validator` from `.claude/agents/audio-story-receipt-validator.md` when a sidecar needs a fast, deterministic receipt/hash preflight before the completion gate.
+
+- It loads only its own spec, the sidecar, and `validate_story_gate.py`; it does not read manuscript prose or story skills.
+- It may return only `RECEIPT_VALIDATION_REPORT` and never replaces `audio_story_completion_gate`, `GATE_PASS_RECEIPT`, development, or clarity receipts.
+<!-- audio_story_receipt_validator:end -->
 
 <!-- audio-story-literary-texture-SKILL:start -->
 ## Audio Story Literary Texture — POV prose surface (all genres)

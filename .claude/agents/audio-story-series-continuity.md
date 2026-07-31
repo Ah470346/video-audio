@@ -5,7 +5,7 @@ description: |
 tools: Read, Grep, Glob, Bash
 permissionMode: plan
 model: sonnet
-effort: high
+effort: medium
 ---
 
 # Audio Story Series Continuity

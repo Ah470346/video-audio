@@ -1,6 +1,6 @@
 ---
 name: audio-story-final-polish
-description: Mandatory final manuscript-editing pass for every completed or revised Vietnamese audio story. Run only after the current full draft has clean developmental and clarity receipts. Its first craft task is preserving human irregularity while removing systematic AI-template stiffness. It repairs logic, motivation, dialogue, xưng hô, natural Vietnamese, one-listen clarity, rhythm, and TTS readiness without changing approved intent. It emits a protocol-v2 receipt but never declares completion; the output still requires post-polish full-draft development, clarity, and completion gate.
+description: Mandatory final manuscript-editing pass for every Vietnamese audio story being returned as final, production-ready, packaged, exported, or rendered. Run only after the current full draft has clean developmental and clarity receipts. It does not run for bounded local edits unless the user explicitly requests full-manuscript release validation. Its first craft task is preserving human irregularity while removing systematic AI-template stiffness. It repairs logic, motivation, dialogue, xưng hô, natural Vietnamese, one-listen clarity, rhythm, and TTS readiness without changing approved intent. It emits a protocol-v2 receipt but never declares completion; the output still requires post-polish full-draft development, clarity, and completion gate.
 ---
 
 # Audio Story Final Polish
@@ -8,6 +8,10 @@ description: Mandatory final manuscript-editing pass for every completed or revi
 Edit the manuscript itself. Preserve approved premise, main genre, POV, ending, voice, and protected roughness. Do not add techniques, details, dialogue, twists, motifs, or emotional beats merely to satisfy a checklist.
 
 Use the base skill and its active references, especially `phoi-hop-skills.md`, `van-xuoi-chuyen-nghiep.md`, `hoi-thoai-mot-giong-va-nhip-cau.md`, and `completion-gate-protocol.md`.
+
+## Scope
+
+Do not run this skill for a bounded edit to an existing manuscript. Return that edit as `UNVERIFIED DRAFT` after only proportionate local checking. Run this skill only for the release workflow.
 
 ## Entry Gate
 

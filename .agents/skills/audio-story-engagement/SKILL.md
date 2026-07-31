@@ -43,13 +43,25 @@ User instructions override these defaults within safety, logic, and one-listen c
 
 ## Social Trend Research Intake
 
-Before using this skill's Story Contract, ideation, or drafting rules for a new Vietnamese fiction request, complete the social-trend intake in [references/phoi-hop-skills.md](references/phoi-hop-skills.md).
+Before using this skill's Story Contract, ideation, or drafting rules for a new or substantially re-premised Vietnamese fiction request, complete the social-trend intake in [references/phoi-hop-skills.md](references/phoi-hop-skills.md).
 
 - Ask whether the user wants social-media trend research unless they have already given an unambiguous answer.
 - If they decline, skip trend research and begin this skill immediately.
 - If they opt in, collect one platform (`TikTok`, `Facebook`, or `YouTube`) and then one format (`video dài (trên 5 phút)` or `Short (30-90 giây)`) before invoking `audio_story_trend_researcher`.
 - Do not lock the story contract, propose directions, or draft until the opted-in research handoff is returned.
 - Treat answers already present in the original prompt as settled; ask only for the missing step. Normalize `fb` to `Facebook`, `ytb`/`yt` to `YouTube`, `dài`/`long`/`>5p` to `video dài (trên 5 phút)`, and `short`/`30-90s` to `Short (30-90 giây)`.
+
+Do not run trend intake or the trend researcher for a bounded edit to an existing manuscript that does not change its premise, target format, or publishing direction.
+
+## Bounded Edit Mode
+
+Treat a request as a bounded edit when the user names a passage, scene, paragraph, or narrow problem and does not ask for a final, release-ready, exportable, renderable, packaged, or full-manuscript result.
+
+- Edit only the named scope and the minimum directly required continuity text.
+- Preserve the story contract, premise rules, ending, and unrelated wording unless the user asks otherwise.
+- Use no subagent by default. Use only a targeted clarity check when the edited passage has a real first-listen risk, or when the user explicitly requests a check. Do not invoke architecture, developmental review, final polish, completion gate, or trend research solely because a local edit changed bytes.
+- If the story has a sidecar, increment its revision, recompute its SHA-256, and remove stale receipts. Return the changed manuscript as `UNVERIFIED DRAFT`; never call it final or production-ready.
+- Enter the release workflow only when the user explicitly asks for a final/release-ready/full-manuscript check, packaging, export, or rendering. A later release request must validate the complete current manuscript, not just the edited passage.
 
 ## Story Contract
 
@@ -116,7 +128,7 @@ Use punctuation and paragraphs as a performance map. Separate speaker turns, nor
 
 ## Revision State
 
-For every complete manuscript, maintain a sidecar `<story-name>.gate.json` outside the pure story file.
+For every manuscript intended for release, maintain a sidecar `<story-name>.gate.json` outside the pure story file. A bounded edit to an existing sidecar still increments revision and invalidates receipts, but does not itself trigger the release workflow.
 
 - Use `protocol_version: 2` for new or migrated sidecars.
 - Start `current_revision` at 1.
@@ -127,11 +139,11 @@ For every complete manuscript, maintain a sidecar `<story-name>.gate.json` outsi
 
 Working drafts may be shown or saved, but must be labeled `UNVERIFIED DRAFT`. They are not complete, exportable, or renderable.
 
-## Mandatory Development Checks
+## Release Development Checks
 
-`audio_story_developmental_editor` is read-only and owns manuscript-scale quality diagnosis.
+`audio_story_developmental_editor` is read-only and owns manuscript-scale quality diagnosis for the release workflow.
 
-- Run full-draft development after the draft and after any scene-doctor, literary-texture, or main-writer change until the current revision has a clean `DEVELOPMENT_RECEIPT` in `mode: developmental`.
+- In the release workflow, run full-draft development after the draft and after any scene-doctor, literary-texture, or main-writer change until the current revision has a clean `DEVELOPMENT_RECEIPT` in `mode: developmental`.
 - Repeated AI-template stiffness—uniform scene machinery, overly finished dialogue, equal sentence cadence, compulsory gestures, explain-after-impact, or generic reactions—is a major finding when it materially affects the manuscript.
 - The editor must cite evidence and route the smallest repair. It may not rewrite, impose quotas, or demand “more life detail.”
 - After final polish, run it again in `mode: post-polish` on the polished revision. Only this current post-polish receipt satisfies protocol v2.
@@ -140,13 +152,15 @@ Working drafts may be shown or saved, but must be labeled `UNVERIFIED DRAFT`. Th
 
 `audio_story_clarity_check` is read-only.
 
-- Targeted checks on risky passages are recommended, not quota-driven.
-- A full-draft check is mandatory before final polish.
+- In bounded edit mode, use a targeted check only when it is proportionate to a real first-listen risk or the user requests it.
+- In the release workflow, a full-draft check is mandatory before final polish.
 - If it returns findings, adjudicate them, change the manuscript, increment the revision, and rerun full-draft development and clarity until both receipts are clean for the current hash.
 - After final polish, run another mandatory full-draft clarity check on the polished output with `stage: post-polish`.
 - Any text change after either post-polish check invalidates the current final-polish chain. On the repaired revision, rerun developmental review in `mode: developmental` and clarity in `stage: pre-polish` until both are clean before entering final polish again.
 
-## Fail-Closed Workflow
+## Release Workflow
+
+Run this workflow only for a new complete manuscript or when the user explicitly requests final/release-ready/full-manuscript validation, packaging, export, or rendering. It does not apply to bounded edit mode.
 
 1. Complete the social-trend intake; when the user opts in, use the returned platform-and-format-specific research handoff.
 2. Lock the contract and main genre.
@@ -188,7 +202,9 @@ Store gate state in the sibling sidecar:
 
 Do not mark the manuscript final, return it as production-ready, or send it to `story-to-audio` without a valid final gate receipt.
 
-## Final Check
+## Release Final Check
+
+For bounded edit mode, instead verify the requested passage and any directly affected continuity, update revision/hash state, clear stale receipts, and return `UNVERIFIED DRAFT`.
 
 - The manuscript does not read like a visible checklist or AI writing template.
 - Plot question, emotional question, peak, and ending are paid.

@@ -1,6 +1,7 @@
 import math
 import contextlib
 import io
+import json
 import tempfile
 import unittest
 import wave
@@ -38,6 +39,7 @@ class FakeCtcProbe:
         self.aligned = aligned
         self.greedy = greedy
         self.full_text = full_text
+        self.aligned_text = None
 
     def load(self):
         return True
@@ -50,7 +52,8 @@ class FakeCtcProbe:
             return self.full_text
         return self.greedy.get((start_frame, end_frame), "")
 
-    def align(self, _emissions, _text):
+    def align(self, _emissions, text):
+        self.aligned_text = text
         return self.aligned
 
 
@@ -171,6 +174,89 @@ class VoxCPMStoryCoreTests(unittest.TestCase):
 
         self.assertEqual(args.max_verify_retries, 2)
 
+    def test_candidate_quality_key_uses_ctc_similarity_to_break_a_qc_tie(self):
+        def result(ctc_similarity):
+            return {
+                "status": "fail",
+                "defects": [
+                    {"severity": "hard"},
+                    {"severity": "hard"},
+                    {"severity": "warn"},
+                ],
+                "metrics": {
+                    "asr_token_diff": {"longest_missing": 1},
+                    "asr_cer": 0.078947,
+                    "asr_word_similarity": 0.969697,
+                    "ctc_probe": {
+                        "ctc_similarity": ctc_similarity,
+                        "min_word_score": 0.0,
+                    },
+                    "speaker_similarity": 0.91,
+                },
+            }
+
+        attempt0 = renderer.candidate_quality_key(result(0.80))
+        attempt2 = renderer.candidate_quality_key(result(0.9412))
+
+        self.assertLess(attempt2, attempt0)
+
+    def test_candidate_quality_key_prefers_whole_take_over_tied_subsplit(self):
+        result = {
+            "status": "fail",
+            "defects": [{"severity": "hard"}],
+            "metrics": {
+                "asr_token_diff": {"longest_missing": 1},
+                "asr_cer": 0.08,
+                "asr_word_similarity": 0.97,
+                "ctc_probe": {"ctc_similarity": 0.94, "min_word_score": 0.0},
+                "speaker_similarity": 0.90,
+            },
+        }
+        subsplit = {
+            **result,
+            "metrics": {**result["metrics"], "speaker_similarity": 0.95},
+        }
+
+        whole_key = renderer.candidate_quality_key(result)
+        subsplit_key = renderer.candidate_quality_key(subsplit, source_penalty=1)
+
+        self.assertLess(whole_key, subsplit_key)
+
+    def test_verify_report_keeps_full_qc_audit_trail(self):
+        record = {
+            "id": "0007",
+            "text": "Một đoạn thử nghiệm.",
+            "wav_path": "chunks/0007.wav",
+            "result": {"id": "0007", "status": "fail", "defects": [], "metrics": {}},
+            "qc_audit": {
+                "attempts": [
+                    {
+                        "attempt": 0,
+                        "candidate_quality_key": [1, 1, 2, 0.1, -0.9, 0],
+                        "result": {"id": "0007", "status": "fail", "defects": [], "metrics": {}},
+                    }
+                ],
+                "subsplit": {
+                    "subchunks": [],
+                    "combined_candidate": {"result": {"id": "0007", "status": "fail"}},
+                },
+                "selected_candidate": {
+                    "attempt": 0,
+                    "source_path": "chunks/.attempts/0007_attempt0.wav",
+                },
+            },
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            report_path = Path(tmp) / "verify_report.json"
+            renderer.write_verify_report(report_path, [record])
+            payload = json.loads(report_path.read_text(encoding="utf-8"))
+
+        self.assertEqual(payload["schema_version"], 2)
+        audit = payload["chunks"][0]["qc_audit"]
+        self.assertEqual(audit["attempts"][0]["result"]["status"], "fail")
+        self.assertEqual(audit["selected_candidate"]["attempt"], 0)
+        self.assertIn("combined_candidate", audit["subsplit"])
+
     def test_resolve_ref_text_uses_known_thuy_nguyen_transcript(self):
         args = SimpleNamespace(ref_text=None, voice_name="thuy nguyen")
 
@@ -273,6 +359,48 @@ class VoxCPMStoryCoreTests(unittest.TestCase):
         _metrics, defects = renderer.ctc_probe_metrics("Tôi.", "unused.wav", args, probe)
 
         self.assertEqual([d for d in defects if d[0] == "ctc_min_word_score"], [])
+
+    def test_ctc_probe_canonicalizes_safe_spoken_number_variant_before_alignment(self):
+        args = ctc_args()
+        probe = FakeCtcProbe(
+            aligned=[
+                {
+                    "word": "tư",
+                    "start_frame": 5,
+                    "end_frame": 20,
+                    "start": 0.1,
+                    "end": 0.4,
+                    "score": 0.95,
+                },
+            ],
+            greedy={},
+            full_text="hệ thống có một nghìn tám trăm sáu mươi tư điều",
+        )
+
+        metrics, defects = renderer.ctc_probe_metrics(
+            "Hệ thống có một nghìn tám trăm sáu mươi bốn điều.",
+            "unused.wav",
+            args,
+            probe,
+        )
+
+        self.assertEqual(metrics["ctc_similarity"], 1.0)
+        self.assertIn("sáu mươi tư điều", probe.aligned_text)
+        self.assertEqual(defects, [])
+
+    def test_ctc_can_confirm_a_word_whisper_reported_missing(self):
+        diff = {
+            "longest_missing": 1,
+            "longest_missing_text": "nghìn",
+        }
+        ctc_metrics = {
+            "available": True,
+            "ctc_similarity": 0.9412,
+            "ctc_text": "hệ thống có một nghìn tám trăm sáu mươi tư điều",
+        }
+
+        self.assertTrue(renderer.ctc_supports_missing_span(diff, ctc_metrics, 0.90))
+        self.assertFalse(renderer.ctc_supports_missing_span(diff, ctc_metrics, 0.95))
 
     def test_ctc_probe_vetoes_when_context_free_read_is_exact(self):
         """Chunk 0071: the energy heuristic called a word swallowed while both

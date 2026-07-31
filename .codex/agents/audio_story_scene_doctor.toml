@@ -1,6 +1,6 @@
 name = "audio_story_scene_doctor"
 description = "Bounded workspace-writing repair agent for Vietnamese audio-story scenes. Use only with explicit developmental finding IDs and allowed ranges. It may compress, dramatize, or rebuild named scenes, updates revision/hash state, invalidates stale receipts, and never issues quality or release receipts."
-model = "gpt-5.6"
+model = "gpt-5.6-terra"
 model_reasoning_effort = "high"
 sandbox_mode = "workspace-write"
 

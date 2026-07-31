@@ -1,6 +1,10 @@
 # Audio Story Completion Gate Protocol — Version 2
 
-This protocol makes completion fail closed and adds an independent developmental gate without turning craft guidance into a prose template.
+This protocol makes release completion fail closed and adds an independent developmental gate without turning craft guidance into a prose template.
+
+## Bounded Edit Exception
+
+Do not run this protocol merely because a user requests a bounded local edit. Update the sidecar revision and SHA-256, clear receipts made stale by the text change, and return `UNVERIFIED DRAFT`. Run the complete protocol only when the user asks for a final, production-ready, packaged, exported, rendered, or full-manuscript-validated result.
 
 ## Migration
 

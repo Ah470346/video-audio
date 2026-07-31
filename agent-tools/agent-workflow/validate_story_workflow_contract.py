@@ -11,6 +11,7 @@ REQUIRED_AGENTS = {
     "audio-story-completion-gate.md",
     "audio-story-developmental-editor.md",
     "audio-story-performance-analyst.md",
+    "audio-story-receipt-validator.md",
     "audio-story-scene-doctor.md",
     "audio-story-series-continuity.md",
     "audio-story-trend-researcher.md",
@@ -135,7 +136,7 @@ def main() -> int:
         print("WORKFLOW_CONTRACT_FAIL")
         print("\n".join(f"- {e}" for e in errors))
         return 1
-    print("WORKFLOW_CONTRACT_OK skills=15 agents=8 protocol=2 retired_human_life=absent")
+    print("WORKFLOW_CONTRACT_OK skills=15 agents=9 protocol=2 retired_human_life=absent")
     return 0
 
 

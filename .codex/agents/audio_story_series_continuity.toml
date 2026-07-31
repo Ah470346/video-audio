@@ -1,6 +1,6 @@
 name = "audio_story_series_continuity"
 description = "Read-only continuity specialist for episodic/shared-world Vietnamese audio stories. It checks recurring characters, timelines, relationships, knowledge, evidence, property, rules, emotional residue, and cross-episode promises against a series bible, then returns a bounded bible patch."
-model = "gpt-5.6"
+model = "gpt-5.5"
 model_reasoning_effort = "high"
 sandbox_mode = "read-only"
 

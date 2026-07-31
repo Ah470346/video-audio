@@ -23,6 +23,8 @@ A plain sentence that is true to the character beats a clever or “complete” 
 ### `audio_story_trend_researcher` — user-opt-in pre-writing researcher
 Owns current market evidence and broad opportunity territories only. For an opted-in story request, it receives exactly one selected platform (`TikTok`, `Facebook`, or `YouTube`) and one selected format (`video dài (trên 5 phút)` or `Short (30-90 giây)`). It never creates a concrete premise, plot, character, title, hook, or publishing package.
 
+Do not use it for bounded edits that preserve the existing story's premise, format, and publishing direction.
+
 ### `audio-story-engagement` — always-active main writer
 Owns concrete ideation, story contract, causality, character agency, narrator-led default, anti-template prose, Vietnamese `xưng hô`, drafting, revision state, and output status.
 
@@ -41,7 +43,7 @@ Owns only researched contemporary slang/wordplay and spoken form. It never repai
 ### `audio_story_series_continuity` — optional factual continuity
 Use only for episodic/shared-world risk. It checks persistent canon and proposes a bible patch. It never judges entertainment, edits prose, or issues receipts.
 
-### `audio_story_developmental_editor` — mandatory read-only manuscript gate
+### `audio_story_developmental_editor` — mandatory read-only release gate
 Owns whole-story promise, propulsion, scene-state progression, agency, adaptive opposition, differentiation, emotional residue, predictability/fairness, setup/payoff, peak, ending, audio memory load, and systematic AI-template stiffness. It diagnoses with evidence and emits `DEVELOPMENT_RECEIPT`; it never edits.
 
 It must not demand a uniform scene formula, regular twist cadence, more dialogue, more description, or generic “lived detail.” It routes the smallest responsible repair.
@@ -55,8 +57,8 @@ Use only when a causally sound passage remains generic, over-explained, or rhyth
 ### `audio_story_clarity_check` — read-only first-hearing checker
 Targeted mode is optional. Full-draft mode is mandatory in `stage: pre-polish` before final polish and `stage: post-polish` after final polish. It owns local actor/referent/speaker/semantic-landing/syntax/cadence failures only.
 
-### `audio-story-final-polish` — mandatory last content editor
-Runs only when current developmental and clarity receipts are clean. It preserves protected roughness, removes systematic machine signatures, and performs the smallest line/logic/audio edits. Its changes invalidate input receipts.
+### `audio-story-final-polish` — mandatory last release editor
+Runs only in the release workflow when current developmental and clarity receipts are clean. It preserves protected roughness, removes systematic machine signatures, and performs the smallest line/logic/audio edits. Its changes invalidate input receipts.
 
 ### `audio_story_completion_gate` — mandatory read-only release gate
 Runs after final polish plus current clean post-polish development and clarity receipts. It verifies protocol-v2 sidecar state and validator output. It alone can issue `GATE_PASS`.
@@ -84,9 +86,21 @@ Uses real evidence to separate topic, packaging, opening, story, clarity, pacing
 - Missing tools, required subagents, or validator means the manuscript cannot be called complete.
 - Packaging files are derived artifacts and record source revision/hash plus a stable variant ID.
 
-## Standard Workflow
+## Bounded Edit Workflow
 
-1. Before `audio-story-engagement` starts, ask: `Bạn có muốn sử dụng nghiên cứu xu hướng mạng xã hội cho truyện này không?` unless the prompt has already answered clearly.
+Use this mode when the user asks to change a named passage, scene, paragraph, or narrow defect and does not ask for a final/release-ready/full-manuscript result.
+
+1. Do not run trend research when premise, format, and publishing direction stay unchanged.
+2. Change only the named scope plus indispensable continuity text.
+3. Run no subagent by default. Use `audio_story_clarity_check` only in targeted mode for a real local listening risk or at the user's request.
+4. Increment the sidecar revision, recompute the story hash, and remove stale receipts if a sidecar exists.
+5. Return `UNVERIFIED DRAFT`. Do not package, export, render, or call it final.
+
+The full release workflow below begins only for a new complete manuscript or an explicit final/release-ready/full-manuscript request.
+
+## Release Workflow
+
+1. Before `audio-story-engagement` starts for a new or substantially re-premised story, ask: `Bạn có muốn sử dụng nghiên cứu xu hướng mạng xã hội cho truyện này không?` unless the prompt has already answered clearly.
 2. If the answer is no, decline trend research, skip the researcher and begin `audio-story-engagement` immediately. Do not ask about platform or format.
 3. If the answer is yes, ask for one platform in this exact set: `TikTok`, `Facebook`, `YouTube`.
 4. Once the platform is set, ask for one format: `video dài (trên 5 phút)` or `Short (30-90 giây)`.

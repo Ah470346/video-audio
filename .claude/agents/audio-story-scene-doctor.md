@@ -4,7 +4,7 @@ description: |
   Bounded workspace-writing repair agent for Vietnamese audio-story scenes. Use only with explicit developmental findings or a user-approved targeted repair scope. It may compress, dramatize, or rebuild named scenes while preserving the approved contract and protected strengths. It updates revision/hash state and invalidates stale receipts but never issues quality or release receipts.
 tools: Read, Grep, Glob, Bash, Edit, Write
 permissionMode: acceptEdits
-model: opus
+model: sonnet
 effort: high
 ---
 

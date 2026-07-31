@@ -4,8 +4,8 @@ description: |
   Read-only market and audience researcher for Vietnamese audio stories. Use after the user opts into social-trend research and selects exactly one platform (TikTok, Facebook, or YouTube) plus one format (video longer than 5 minutes or Short 30-90 seconds), or for a standalone current-demand request. It researches platform-and-format-specific market territory only; it never creates story ideas, premises, characters, plots, twists, climaxes, endings, or promises of virality.
 tools: Read, Grep, Glob, Bash
 permissionMode: plan
-model: sonnet
-effort: high
+model: haiku
+effort: medium
 ---
 
 # Audio Story Trend Researcher
