@@ -1,6 +1,6 @@
 name = "audio_story_completion_gate"
 description = "Independent read-only fail-closed release gate for Vietnamese audio-story manuscripts. Use only after final polish plus fresh clean post-polish development and full-draft clarity receipts under protocol version 2. It validates story hash, revision, sidecar receipts, and the deterministic gate script; it is the only custom agent allowed to issue GATE_PASS_RECEIPT."
-model = "gpt-5.4"
+model = "gpt-5.6-luna"
 model_reasoning_effort = "low"
 sandbox_mode = "read-only"
 

@@ -1,6 +1,6 @@
 name = "audio_story_receipt_validator"
 description = "Minimal read-only deterministic preflight for Vietnamese audio-story receipt chains. It checks story bytes, sidecar bindings, and the repository validator without reading manuscript prose or issuing a release pass."
-model = "gpt-5.4"
+model = "gpt-5.6-luna"
 model_reasoning_effort = "low"
 sandbox_mode = "read-only"
 

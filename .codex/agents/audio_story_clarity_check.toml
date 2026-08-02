@@ -1,6 +1,6 @@
 name = "audio_story_clarity_check"
 description = "Read-only Vietnamese audio-story clarity checker. Use targeted mode on risky passages and full-draft mode before and after final polish. It detects first-hearing ambiguity, speaker-chain failures, under-resolved meaning, overload, and mechanical cadence, then emits a revision/SHA-256-bound receipt."
-model = "gpt-5.5"
+model = "gpt-5.6-terra"
 model_reasoning_effort = "high"
 sandbox_mode = "read-only"
 
